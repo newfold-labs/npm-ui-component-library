@@ -1,0 +1,15 @@
+@layer components {
+	.nfd-root {
+		.nfd-feature-upsell {
+			@apply nfd-relative;
+		}
+
+		.nfd-feature-upsell--default {
+			@apply nfd-grayscale;
+		}
+
+		.nfd-feature-upsell--card {
+			@apply nfd-p-6;
+		}
+	}
+}

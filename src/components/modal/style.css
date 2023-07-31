@@ -1,0 +1,53 @@
+@layer components {
+	.nfd-root {
+		.nfd-modal {
+			@apply nfd-fixed nfd-inset-0 nfd-z-10 nfd-p-4 sm:nfd-p-8 md:nfd-p-20;
+		}
+
+		.nfd-modal__layout {
+			@apply nfd-flex nfd-min-h-full;
+		}
+
+		.nfd-modal--center .nfd-modal__layout {
+			@apply nfd-items-center nfd-justify-center;
+		}
+
+		.nfd-modal--top-center .nfd-modal__layout {
+			@apply nfd-items-start nfd-justify-center;
+		}
+
+		.nfd-modal__overlay {
+			@apply nfd-absolute nfd-inset-0 nfd-bg-slate-500 nfd-bg-opacity-75 nfd-transition-opacity;
+		}
+
+		.nfd-modal__panel {
+			@apply
+			nfd-relative
+			nfd-w-full
+			nfd-max-w-xl
+			nfd-p-6
+			nfd-overflow-hidden
+			nfd-bg-white
+			nfd-rounded-lg
+			nfd-shadow-xl;
+		}
+
+		.nfd-modal__close {
+			@apply nfd-block nfd-absolute nfd-top-4 nfd-right-4;
+		}
+
+		.nfd-modal__close-button {
+			@apply
+			nfd-relative
+			nfd-z-10
+			nfd-bg-white
+			nfd-text-slate-400
+			nfd-rounded-md
+			hover:nfd-text-slate-500
+			focus:nfd-outline-none
+			focus:nfd-ring-2
+			focus:nfd-ring-offset-2
+			focus:nfd-ring-primary-500;
+		}
+	}
+}

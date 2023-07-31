@@ -1,0 +1,19 @@
+@layer components {
+	.nfd-root {
+		.nfd-progress-bar {
+			@apply nfd-block nfd-w-full nfd-bg-slate-200 nfd-rounded-full nfd-overflow-hidden;
+		}
+
+		.nfd-progress-bar__progress {
+			@apply
+			nfd-block
+			nfd-h-1.5
+			nfd-bg-primary-500
+			nfd-rounded-full
+			nfd-transform
+			nfd-transition-all
+			nfd-ease-linear
+			nfd-duration-200;
+		}
+	}
+}

@@ -1,0 +1,40 @@
+@layer components {
+	.nfd-root {
+		.nfd-radio-group--inline-block {
+
+			.nfd-radio-group__options {
+				@apply
+				nfd-flex
+				nfd-flex-wrap
+				nfd-flex-row
+				nfd-gap-2;
+			}
+		}
+
+		.nfd-radio-group--disabled {
+			.nfd-radio-group__label,
+			.nfd-radio-group__description {
+				@apply nfd-opacity-50;
+			}
+
+			.nfd-radio-group__label {
+				@apply nfd-cursor-not-allowed;
+			}
+		}
+
+		.nfd-radio-group__label {
+			@apply nfd-mb-2;
+		}
+
+		.nfd-radio-group__options {
+			@apply
+			nfd-flex
+			nfd-flex-col
+			nfd-gap-2;
+		}
+
+		.nfd-radio-group__description {
+			@apply -nfd-mt-2 nfd-mb-4;
+		}
+	}
+}

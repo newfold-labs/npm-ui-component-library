@@ -1,0 +1,27 @@
+@layer components {
+	.nfd-root {
+		.nfd-checkbox-group {}
+
+		.nfd-checkbox-group--disabled {
+			.nfd-checkbox-group__label,
+			.nfd-checkbox-group__description {
+				@apply nfd-opacity-50 nfd-cursor-not-allowed;
+			}
+		}
+
+		.nfd-checkbox-group__label {
+			@apply nfd-mb-2;
+		}
+
+		.nfd-checkbox-group__options {
+			@apply
+			nfd-flex
+			nfd-flex-col
+			nfd-gap-3;
+		}
+
+		.nfd-checkbox-group__description {
+			@apply -nfd-mt-2 nfd-mb-4;
+		}
+	}
+}

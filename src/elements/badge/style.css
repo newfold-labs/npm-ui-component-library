@@ -1,0 +1,51 @@
+@layer components {
+	.nfd-root {
+		.nfd-badge {
+			@apply
+			nfd-inline-flex
+			nfd-items-center
+			nfd-px-2
+			nfd-py-0.5
+			nfd-rounded-full
+			nfd-text-xs
+			nfd-font-medium
+			nfd-align-middle
+			nfd-leading-tight
+			nfd-whitespace-nowrap
+			nfd-bg-blue-100
+			nfd-text-blue-800;
+		}
+
+		/* Variants */
+
+		.nfd-badge--info {
+			@apply
+			nfd-bg-blue-200
+			nfd-text-blue-900;
+		}
+
+		.nfd-badge--upsell {
+			@apply
+			nfd-bg-amber-200
+			nfd-text-amber-900;
+		}
+
+		.nfd-badge--plain {
+			@apply
+			nfd-bg-slate-200
+			nfd-text-slate-900;
+		}
+
+		/* Sizes */
+
+		.nfd-badge--small {
+			@apply nfd-text-xxs;
+		}
+
+		.nfd-badge--large {
+			@apply
+			nfd-px-3
+			nfd-text-base;
+		}
+	}
+}

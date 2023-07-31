@@ -1,0 +1,31 @@
+@layer components {
+	.nfd-root {
+		.nfd-checkbox {
+			@apply
+			nfd-flex
+			nfd-items-center;
+		}
+
+		.nfd-checkbox--disabled {
+			.nfd-checkbox__input,
+			.nfd-checkbox__label {
+				@apply nfd-opacity-50 nfd-cursor-not-allowed;
+			}
+		}
+
+		.nfd-checkbox__input {
+			@apply
+			nfd-h-4
+			nfd-w-4
+			nfd-text-primary-500
+			nfd-border-slate-300
+			nfd-rounded
+
+			focus:nfd-ring-primary-500;
+		}
+
+		.nfd-checkbox__label {
+			@apply nfd-ml-3;
+		}
+	}
+}

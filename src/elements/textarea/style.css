@@ -1,0 +1,27 @@
+@layer components {
+	.nfd-root {
+		.nfd-textarea {
+			@apply
+			nfd-w-full
+			nfd-py-2
+			nfd-px-3
+			nfd-border
+			nfd-border-slate-300
+			nfd-rounded-md
+			nfd-shadow-sm
+			nfd-bg-white
+			nfd-text-sm
+			nfd-text-slate-800	
+			focus:nfd-outline-none
+			focus:nfd-ring-primary-500
+			focus:nfd-border-primary-500;
+		}
+
+		.nfd-textarea--disabled {
+			@apply
+			nfd-opacity-50
+			nfd-cursor-not-allowed
+			focus:nfd-ring-0;
+		}
+	}
+}

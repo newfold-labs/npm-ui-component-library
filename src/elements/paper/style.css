@@ -1,0 +1,15 @@
+@layer components {
+	.nfd-root {
+		.nfd-paper {
+			@apply nfd-flex nfd-flex-col nfd-rounded-lg nfd-bg-white nfd-shadow;
+		}
+
+		.nfd-paper__header {
+			@apply nfd-p-8 nfd-border-b;
+		}
+
+		.nfd-paper__content {
+			@apply nfd-flex-grow nfd-p-8;
+		}
+	}
+}

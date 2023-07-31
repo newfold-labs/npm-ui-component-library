@@ -1,0 +1,118 @@
+@layer components {
+	.nfd-root {
+		.nfd-button {
+			@apply
+			nfd-inline-flex
+			nfd-items-center
+			nfd-justify-center
+			nfd-py-2
+			nfd-px-3
+			nfd-border
+			nfd-shadow-sm
+			nfd-no-underline
+			nfd-cursor-pointer
+			nfd-rounded-md
+			nfd-text-sm
+			nfd-font-medium
+			nfd-leading-4
+			nfd-text-center
+
+			focus:nfd-outline-none
+			focus:nfd-ring-2
+			focus:nfd-ring-offset-2
+			focus:nfd-ring-primary-500;
+		}
+
+		/* Special styling for buttons rendered `as` "a" (to override anchor defaults). */
+		a.nfd-button {
+			@apply
+			focus:nfd-ring-offset-white
+			focus:nfd-rounded-md;
+		}
+
+		/* Variants */
+
+		.nfd-button--primary {
+			@apply
+			nfd-text-white
+			nfd-bg-primary-500
+			nfd-border-transparent
+
+			hover:nfd-text-white
+			hover:nfd-bg-primary-700
+			focus:nfd-text-white
+			focus:nfd-ring-primary-700
+			visited:nfd-text-white
+			visited:hover:nfd-text-white;
+		}
+
+		.nfd-button--secondary {
+			@apply
+			nfd-text-slate-800
+			nfd-bg-white
+			nfd-border-slate-300
+
+			hover:nfd-text-slate-800
+			hover:nfd-bg-slate-50
+			focus:nfd-text-slate-800
+			focus:nfd-ring-primary-700
+			visited:nfd-text-slate-800
+			visited:hover:nfd-text-slate-800;
+		}
+
+		.nfd-button--error {
+			@apply
+			nfd-text-white
+			nfd-bg-red-600
+			nfd-border-transparent
+
+			hover:nfd-text-white
+			hover:nfd-bg-red-700
+			focus:nfd-text-white
+			focus:nfd-ring-red-600
+			visited:nfd-text-white
+			visited:hover:nfd-text-white;
+		}
+
+		.nfd-button--upsell {
+			@apply
+			nfd-text-amber-900
+			nfd-bg-amber-300
+			nfd-border-transparent
+
+			hover:nfd-text-amber-900
+			hover:nfd-bg-amber-400
+			focus:nfd-text-amber-900
+			focus:nfd-ring-amber-400
+			visited:nfd-text-amber-900
+			visited:hover:nfd-text-amber-900;
+		}
+
+		/* Sizes */
+
+		.nfd-button--large {
+			@apply
+			nfd-py-3
+			nfd-px-6
+			nfd-text-base
+			nfd-leading-5;
+		}
+
+		.nfd-button--small {
+			@apply
+			nfd-text-xs
+			nfd-py-1.5
+			nfd-px-2.5;
+		}
+
+		/* States */
+
+		.nfd-button--disabled {
+			@apply
+			nfd-opacity-50
+			nfd-cursor-not-allowed
+
+			focus:nfd-ring-0;
+		}
+	}
+}

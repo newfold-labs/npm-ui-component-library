@@ -1,0 +1,42 @@
+@layer components {
+	.nfd-root {
+		.nfd-card {
+			@apply
+			nfd-relative
+			nfd-flex
+			nfd-flex-col
+			nfd-bg-white
+			nfd-rounded-lg
+			nfd-border
+			nfd-p-6
+			nfd-space-y-6
+			nfd-overflow-hidden
+			nfd-transition-transform
+			nfd-ease-in-out nfd-shadow-sm;
+		}
+
+		.nfd-card__header {
+			@apply
+			nfd-relative
+			nfd-flex
+			nfd-items-center
+			nfd-justify-center
+			nfd-h-24
+			nfd-bg-gray-100
+			nfd--mx-6
+			nfd--mt-6
+			nfd-p-6;
+		}
+
+		.nfd-card__content {
+			@apply nfd-flex-grow;
+		}
+
+		.nfd-card__footer {
+			@apply
+			nfd-border-t
+			nfd-border-gray-200
+			nfd-pt-6
+		}
+	}
+}

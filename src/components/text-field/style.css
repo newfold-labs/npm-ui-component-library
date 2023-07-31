@@ -1,0 +1,28 @@
+@layer components {
+	.nfd-root {
+		.nfd-text-field--disabled {
+			.nfd-text-field__label,
+			.nfd-text-field__description {
+				@apply nfd-opacity-50;
+			}
+
+			.nfd-text-field__label {
+				@apply nfd-cursor-not-allowed;
+			}
+		}
+
+		.nfd-text-field--read-only {
+			.nfd-text-field__label {
+				@apply nfd-cursor-default;
+			}
+		}
+
+		.nfd-text-field__description {
+			@apply nfd-mt-2;
+		}
+
+		.nfd-text-field__validation {
+			@apply nfd-mt-2;
+		}
+	}
+}

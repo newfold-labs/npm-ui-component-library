@@ -1,0 +1,10 @@
+@layer components {
+	.nfd-root {
+		.nfd-label {
+			@apply
+			nfd-text-sm
+			nfd-font-medium
+			nfd-text-slate-800;
+		}
+	}
+}

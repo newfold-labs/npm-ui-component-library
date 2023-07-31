@@ -1,0 +1,91 @@
+@layer components {
+	.nfd-root {
+		.nfd-toggle {
+			@apply
+			nfd-relative
+			nfd-inline-flex
+			nfd-flex-shrink-0
+			nfd-h-6
+			nfd-w-11
+			nfd-border-2
+			nfd-border-transparent
+			nfd-rounded-full
+			nfd-transition-colors
+			nfd-ease-in-out
+			nfd-duration-200
+			nfd-bg-slate-300
+			nfd-cursor-pointer
+			focus:nfd-outline-none
+			focus:nfd-ring-2
+			focus:nfd-ring-offset-2
+			focus:nfd-ring-primary-500;
+		}
+
+		/* States */
+		.nfd-toggle--checked {
+			@apply nfd-bg-primary-500;
+
+			.nfd-toggle__handle {
+				@apply nfd-translate-x-5;
+			}
+		}
+
+		.nfd-toggle--disabled {
+			@apply
+			nfd-opacity-50
+			nfd-cursor-not-allowed
+
+			focus:nfd-ring-0;
+		}
+
+		/* Elements */
+		.nfd-toggle__handle {
+			@apply
+			nfd-pointer-events-none
+			nfd-relative
+			nfd-flex
+			nfd-items-center
+			nfd-justify-center
+			nfd-h-5
+			nfd-w-5
+			nfd-bg-white
+			nfd-rounded-full
+			nfd-shadow
+			nfd-transform
+			nfd-ring-0
+			nfd-transition
+			nfd-ease-in-out
+			nfd-duration-200
+			nfd-translate-x-0;
+		}
+
+		.nfd-toggle__icon {
+			@apply
+			nfd-h-2.5
+			nfd-w-2.5
+			nfd-shrink-0
+			nfd-grow-0
+			nfd-transition-opacity
+			nfd-ease-out
+			nfd-duration-100
+			nfd-text-white
+			nfd-stroke-current
+			nfd-stroke-2;
+		}
+
+		.nfd-toggle__icon--check {
+			@apply nfd-text-primary-500;
+		}
+
+		.nfd-toggle__icon--x {
+			@apply nfd-text-slate-500;
+		}
+	}
+
+	/* RTL styles */
+	[dir=rtl] .nfd-root {
+		.nfd-toggle--checked .nfd-toggle__handle {
+			@apply nfd--translate-x-5;
+		}
+	}
+}

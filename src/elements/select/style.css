@@ -1,0 +1,95 @@
+@layer components {
+	.nfd-root {
+		.nfd-select {
+			@apply nfd-relative;
+		}
+
+		.nfd-select--disabled {
+			.nfd-select__label,
+			.nfd-select__button {
+				@apply nfd-opacity-50 nfd-cursor-not-allowed;
+			}
+		}
+
+		.nfd-select__button {
+			@apply
+			nfd-relative
+			nfd-w-full
+			nfd-leading-6
+			nfd-py-2
+			nfd-px-3
+			nfd-text-left
+			nfd-text-slate-800
+			nfd-bg-white
+			nfd-border
+			nfd-border-slate-300
+			nfd-rounded-md
+			nfd-shadow-sm
+			nfd-cursor-default
+			nfd-flex
+			nfd-items-center
+			nfd-justify-between
+
+			focus:nfd-outline-none
+			focus:nfd-ring-1
+			focus:nfd-ring-primary-500
+			focus:nfd-border-primary-500;
+		}
+
+		.nfd-select__button-icon {
+			@apply nfd-absolute nfd-top-2.5 nfd-right-2.5 nfd-text-slate-400 nfd-pointer-events-none nfd-w-5 nfd-h-5;
+		}
+
+		.nfd-select__options {
+			@apply
+			nfd-absolute
+			nfd-z-10
+			nfd-w-full
+			nfd-mt-1
+			nfd-overflow-auto
+			nfd-bg-white
+			nfd-rounded-md
+			nfd-shadow-lg
+			nfd-max-h-60
+			nfd-ring-1
+			nfd-ring-black
+			nfd-ring-opacity-5
+			focus:nfd-outline-none
+			nfd-text-sm;
+		}
+
+		.nfd-select__option {
+			@apply
+			nfd-cursor-default
+			nfd-select-none
+			nfd-relative
+			nfd-flex
+			nfd-items-center
+			nfd-justify-between
+			nfd-px-3
+			nfd-py-2
+			nfd-text-slate-700;
+
+			&--active {
+				@apply nfd-bg-slate-200;
+			}
+
+			&--selected {
+				@apply nfd-text-white nfd-bg-primary-600;
+			}
+		}
+
+		.nfd-select__option-label,
+		.nfd-select__button-label {
+			@apply nfd-block nfd-truncate;
+		}
+
+		.nfd-select__option-check {
+			@apply
+			nfd-w-5
+			nfd-h-5
+			nfd-text-white
+			nfd-shrink-0;
+		}
+	}
+}

@@ -1,0 +1,11 @@
+@layer components {
+	.nfd-root {
+		.nfd-autocomplete-field__description {
+			@apply nfd-mt-2;
+		}
+
+		.nfd-autocomplete-field__validation {
+			@apply nfd-mt-2;
+		}
+	}
+}

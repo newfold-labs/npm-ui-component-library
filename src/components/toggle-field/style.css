@@ -1,0 +1,40 @@
+@layer components {
+	.nfd-root {
+		.nfd-toggle-field {
+			@apply
+			nfd-flex
+			nfd-flex-col
+			nfd-gap-1;
+		}
+
+		.nfd-toggle-field--disabled {
+			.nfd-toggle-field__label-wrapper,
+			.nfd-toggle-field__description {
+				@apply nfd-opacity-50;
+			}
+
+			.nfd-toggle-field__label,
+			.nfd-toggle-field__label-wrapper,
+			.nfd-toggle-field__description {
+				@apply nfd-cursor-not-allowed;
+			}
+		}
+
+		.nfd-toggle-field__header {
+			@apply
+			nfd-flex
+			nfd-flex-row
+			nfd-items-center
+			nfd-justify-between
+			nfd-gap-6;
+		}
+
+		.nfd-toggle-field__label-wrapper {
+			@apply nfd-flex nfd-items-center nfd-gap-1;
+		}
+
+		.nfd-toggle-field__description {
+			@apply nfd-mr-[4.25rem];
+		}
+	}
+}

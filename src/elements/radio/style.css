@@ -1,0 +1,104 @@
+@layer components {
+	.nfd-root {
+		.nfd-radio {
+			@apply nfd-flex nfd-items-center;
+		}
+
+		/* Variants */
+		.nfd-radio--disabled {
+			.nfd-radio__input,
+			.nfd-radio__label,
+			.nfd-radio__check {
+				@apply
+				nfd-opacity-50
+				nfd-cursor-not-allowed
+				focus:nfd-ring-0;
+			}
+		}
+
+		.nfd-radio--inline-block {
+			@apply nfd-inline-flex;
+
+			/* Elements of the inline-block variant */
+
+			.nfd-radio__input {
+				@apply nfd-sr-only;
+				&:checked + .nfd-radio__content {
+					.nfd-radio__label {
+						@apply nfd-border-transparent nfd-ring-2 nfd-ring-primary-500;
+					}
+
+					.nfd-radio__check {
+						@apply nfd-visible;
+					}
+					
+				}
+
+				&:focus + .nfd-radio__content {
+					.nfd-radio__label {
+						@apply nfd-ring-2 nfd-ring-primary-500 nfd-ring-offset-2;
+					}
+				}
+
+				&:checked {
+					&:focus + .nfd-radio__content {
+						.nfd-radio__label {
+							@apply nfd-ring-offset-1 nfd-ring-[3px];
+						}
+					}
+				} 
+			}
+
+			.nfd-radio__content {
+				@apply nfd-relative;
+			}
+
+			.nfd-radio__label {
+				@apply
+				nfd-flex
+				nfd-h-14
+				nfd-w-14
+				nfd-ml-0
+				nfd-justify-center
+				nfd-items-center
+				nfd-text-base
+				nfd-bg-white
+				nfd-border
+				nfd-rounded-lg
+				nfd-shadow-sm
+				nfd-cursor-pointer
+				nfd-border-slate-300
+				focus:nfd-ring-2 focus:nfd-ring-primary-500 focus:nfd-ring-offset-2
+				hover:nfd-border-slate-400
+				focus:nfd-outline-none;
+			}
+
+			.nfd-radio__check {
+				@apply
+				nfd-invisible
+				nfd-absolute
+				nfd-top-0.5
+				nfd-right-0.5
+				nfd-h-5
+				nfd-w-5
+				nfd-text-primary-600;
+			}
+		}
+
+		/* State */
+
+		.nfd-radio__input {
+			@apply
+			nfd-h-4
+			nfd-w-4
+			nfd-text-primary-500
+			nfd-border-slate-300
+
+			focus:nfd-ring-primary-500;
+		}
+
+		.nfd-radio__label {
+			@apply nfd-ml-3;
+		}
+	}
+}
