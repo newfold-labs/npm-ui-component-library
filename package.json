@@ -13,9 +13,10 @@
   "sideEffects": false,
   "scripts": {
     "clean:build": "rm -rf build",
-    "build": "npm run clean:build && npm run build:js && npm run build:css",
+    "build": "npm run clean:build && npm run build:js && npm run build:css && npm run copy:package-files",
     "build:js": "babel src --out-dir build --ignore \"src/**/*.stories.js\",\"src/**/stories.js\"",
     "build:css": "node ./scripts/build-css.js",
+    "copy:package-files": "cp README.md package.json build/",
     "watch": "npm watch:js & npm watch:css",
     "watch:js": "npm build:js --watch",
     "watch:css": "node ./scripts/watch-css.js",
