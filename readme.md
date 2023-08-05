@@ -44,7 +44,7 @@ To include this packages CSS in your build, import it in your stylesheet before 
 
 Now that your CSS is set up, you can start using the React components. Always start your React tree with the `Root` component, which provides a context for general options and a CSS classname for scoping this libraries CSS. Without it, components in this library will not render properly.
 
-```js
+```jsx
 import { Root, Alert } from "@newfold-labs/ui-components";
 
 export default () => (

@@ -1,7 +1,5 @@
-# Welcome to the Yoast UI library
-The Yoast UI library is a React component library for building Yoast user interfaces. This Storybook provides an interactive overview of all available components and examples on how to use them.
-
-[View the changelog here](https://github.com/Yoast/wordpress-seo/blob/trunk/packages/ui-library/changelog.md).
+# Newfold UI Components Library
+The Newfold UI library is a React component library for building user interfaces. This Storybook provides an interactive overview of all available components and examples on how to use them.
 
 ## Important!
 **These components are UI components only and should remain free from business logic, translations, implementation details and other non-general concepts.**
@@ -17,17 +15,3 @@ The components layer contains more complex and smarter components. They are prob
 
 ### Patterns
 The patterns layer contains example implementations of standardized element/component combinations. They are not actually components you can import and use in your code, but function more as a reference on how to work with the UI library to create rich interfaces. Examples of patterns could be `PageLayout` and `Header`, that combine multiple elements/components/plain HTML elements.
-
-## The `as` property
-To make components in this library as flexible as possible, most of them implement the `as` property pattern. The idea is simple: it allows you to render a component as every valid JSX element, so HTML elements or custom React components. It can be read in a sentence like this: "Render `ComponentA` **as** `ComponentB`". Popular examples are rendering an anchor that looks like a button, or a label that looks like a title:
-
-```jsx
-import { Button, Title } from "@yoast/ui-library";
-
-export default () => (
-    <>
-        <Button as="a" href="https://yoast.com">I look like a button but am actually an achor.</Button>
-        <Title as="label">I look like a title but am actually a label.</Title>
-    </>
-);
-```

@@ -5,15 +5,15 @@ const theme = tailwindConfig.presets[ 0 ].theme;
 
 export default create( {
 	base: "light",
-	brandTitle: "Yoast UI library",
-	brandUrl: "https://yoast.com",
-	brandImage: "https://yoast.com/app/uploads/2021/01/yoast_logo_rgb_optm.svg",
+	brandTitle: "Newfold Digital UI Components",
+	brandUrl: "https://github.com/newfold-labs/npm-ui-components",
+	brandImage: "https://cdn.hiive.space/newfold/logo-newfold-modern.svg",
 
-	colorPrimary: theme.extend.colors.primary[ 500 ],
-	colorSecondary: theme.extend.colors.primary[ 500 ],
+	colorPrimary: "#F27121",
+	colorSecondary: "#F27121",
 
 	// UI
-	appBg: "#f4f1f4",
+	appBg: "#F1F5F9",
 	appContentBg: "#ffffff",
 	// appBorderColor: "grey",
 	// appBorderRadius: 4,
@@ -28,7 +28,7 @@ export default create( {
 
 	// Toolbar default and active colors
 	// barTextColor: "silver",
-	barSelectedColor: theme.extend.colors.primary[ 500 ],
+	barSelectedColor: "#F1650F",
 	// barBg: "hotpink",
 
 	// Form colors
