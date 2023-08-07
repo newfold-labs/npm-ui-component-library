@@ -1,13 +1,21 @@
 {
-  "name": "@newfold-labs/ui-components",
-  "version": "1.0.0",
-  "description": "A UI components library by Newfold Digital",
+  "name": "@newfold/ui-component-library",
+  "version": "0.1.0",
+  "description": "A UI component library by Newfold Digital",
   "main": "build/index.js",
   "style": "build/css/style.css",
   "files": [
     "build/**/*"
   ],
-  "author": "Newfold Labs <wordpress-coe@newfold.com>",
+  "author": {
+    "name": "Newfold Labs",
+    "url": "https://github.com/newfold-labs"
+  },
+  "homepage": "https://github.com/newfold-labs/npm-ui-component-library#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/newfold-labs/npm-ui-component-library.git"
+  },
   "license": "GPL-3.0",
   "private": false,
   "sideEffects": false,
