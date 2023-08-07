@@ -1,4 +1,4 @@
-# Newfold Digital UI Components Library
+# Newfold Digital UI Component Library
 
 A React component library for building user interfaces. Please visit this resource for the documentation of all available components and examples on how to use them.
 
@@ -8,7 +8,7 @@ A React component library for building user interfaces. Please visit this resour
 Start with installing the package and its peer dependencies from NPM:
 
 ```bash
-  npm install @newfold-labs/ui-components @wordpress/element
+  npm install @newfold/ui-component-library @wordpress/element
 ```
     
 ## Setup
@@ -18,7 +18,7 @@ This package assumes the use of tailwindcss for building CSS and therefore ships
 In your `tailwind.config.js`, make sure to import this module in your content configuration to prevent Tailwind from purging its styles like so:
 
 ```js
-import { TAILWINDCSS_PRESET } from "@newfold-labs/ui-components";
+import { TAILWINDCSS_PRESET } from "@newfold/ui-component-library";
 
 module.exports = {
     presets: [ TAILWINDCSS_PRESET ],
@@ -34,7 +34,7 @@ To include this packages CSS in your build, import it in your stylesheet before 
 
 ```css
 /* Import main CSS including all components. */
-@import "@newfold-labs/ui-components";
+@import "@newfold/ui-component-library";
 
 /* Tailwind layers */
 @tailwind base;
@@ -45,7 +45,7 @@ To include this packages CSS in your build, import it in your stylesheet before 
 Now that your CSS is set up, you can start using the React components. Always start your React tree with the `Root` component, which provides a context for general options and a CSS classname for scoping this libraries CSS. Without it, components in this library will not render properly.
 
 ```jsx
-import { Root, Alert } from "@newfold-labs/ui-components";
+import { Root, Alert } from "@newfold/ui-component-library";
 
 export default () => (
     <Root context={ { isRtl: false } }>
