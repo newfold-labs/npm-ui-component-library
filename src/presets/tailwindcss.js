@@ -46,7 +46,7 @@ const TAILWINDCSS_PRESET = {
 	corePlugins: {
 		preflight: false,
 	},
-	content: [ "./node_modules/@newfold/ui-library/**/*.js" ],
+	content: [ "./node_modules/@newfold/ui-component-library/**/*.js" ],
 };
 
 export default TAILWINDCSS_PRESET;
