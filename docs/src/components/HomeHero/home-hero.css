@@ -1,0 +1,120 @@
+#home-hero {
+    background: hsla(23, 98%, 44%, 1);
+    background: linear-gradient(45deg, hsla(23, 98%, 44%, 1) 48%, hsla(23, 89%, 54%, 1) 100%);
+    background: -moz-linear-gradient(45deg, hsla(23, 98%, 44%, 1) 48%, hsla(23, 89%, 54%, 1) 100%);
+    background: -webkit-linear-gradient(45deg, hsla(23, 98%, 44%, 1) 48%, hsla(23, 89%, 54%, 1) 100%);
+}
+
+#home-hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5rem 0;
+}
+
+.home-hero-col {
+    width: 40%;
+}
+
+#home-hero-intro {
+    color: white;
+}
+
+#home-hero-intro h1 {
+    font-size: 2.5rem;
+}
+
+#home-hero-intro p {
+    font-size: 1.35rem;
+}
+
+#home-hero-showcase #home-hero-showcase-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#home-hero-showcase .home-hero-showcase-component {
+    background-color: #FFF;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 1rem;
+}
+
+#home-hero-showcase #home-hero-showcase-cards {
+    display: flex;
+    gap: 1rem;
+}
+
+#home-hero-showcase .home-hero-showcase-card-svg {
+    fill: #F27121;
+    width: 48px;
+    height: 48px;
+}
+
+#home-hero-showcase #home-hero-showcase-select {
+    display: flex;
+    gap: 1rem;
+}
+
+@media screen and (max-width: 1440px) {
+    .home-hero-col {
+        width: 47%;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    #home-hero-intro h1 {
+        font-size: 2rem;
+    }
+    
+    #home-hero-intro p {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 996px) {
+    #home-hero-content {
+        flex-direction: column;
+        gap: 3rem;
+        padding: 5rem 0;
+    }
+
+    .home-hero-col {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #home-hero-content {
+        padding: 3rem 0;
+    }
+
+    #home-hero-intro h1 {
+        font-size: 1.65rem;
+    }
+
+    #home-hero-intro p {
+        font-size: 1rem;
+    }
+
+    .home-hero-col {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 525px) {
+    #home-hero-showcase #home-hero-showcase-cards {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #home-hero-showcase #home-hero-showcase-select {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #home-hero-showcase .home-hero-showcase-component {
+        width: 100% !important;
+    }
+}
