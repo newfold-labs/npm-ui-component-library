@@ -22,11 +22,10 @@ jobs:
               run: npm ci
 
             - name: Bump Version
-              run: npm version prerelease
+              run: npm version prerelease -m "Bump version to %s"
             
             - name: Push Changes
               run: |
-                git commit -am "Bump version"
                 git push origin main
 
             - name: Create Build
