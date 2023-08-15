@@ -11,20 +11,18 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
+              with:
+                  token: ${{ secrets.NEWFOLD_ACCESS_TOKEN }}
             - uses: actions/setup-node@v3
               with:
                   node-version: 20.x
-            
-            - name: Set up Git Config
-              run: |
-               git config --global user.name "wpalani"
-               git config --global user.email "abdulrahmanalani95@gmail.com"
+            - uses: fregante/setup-git-user@v2
 
             - name: Install Dependencies
               run: npm ci
 
             - name: Bump Version
-              run: npm version prerelease
+              run: npm version prerelease -m "[Version Bump] %s"
 
             - name: Create Build
               run: npm run build
