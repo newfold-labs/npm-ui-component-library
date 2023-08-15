@@ -22,7 +22,9 @@ jobs:
               run: npm ci
 
             - name: Bump Version
-              run: npm version prerelease -m "Bump version to %s"
+              run: |
+                npm version prerelease -m "Bump version to %s"
+                git status
             
             - name: Push Changes
               run: |
