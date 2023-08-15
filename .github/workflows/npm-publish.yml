@@ -21,7 +21,7 @@ jobs:
             - name: Install Dependencies
               run: npm ci
 
-            - name: Bump Version
+            - name: Bump Build Version
               run: npm version prerelease
 
             - name: Create Build
