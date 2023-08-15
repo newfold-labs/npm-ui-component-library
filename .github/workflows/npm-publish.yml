@@ -12,7 +12,6 @@ jobs:
         steps:
             - uses: actions/checkout@v3
               with:
-                  ref: main
                   token: ${{ secrets.NEWFOLD_ACCESS_TOKEN }}
             - uses: actions/setup-node@v3
               with:
@@ -23,13 +22,7 @@ jobs:
               run: npm ci
 
             - name: Bump Version
-              run: |
-                npm version prerelease -m "Bump version to %s"
-                git status
-            
-            - name: Push Changes
-              run: |
-                git push origin main
+              run: npm version prerelease
 
             - name: Create Build
               run: npm run build
@@ -48,4 +41,4 @@ jobs:
                   node-version: 20.x
                   registry-url: https://registry.npmjs.org
                   scope: '@newfold'
-            - run: npm publish
+            # - run: npm publish
