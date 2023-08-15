@@ -9,6 +9,8 @@ jobs:
     build:
         name: Build Package
         runs-on: ubuntu-latest
+        env:
+            NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
         steps:
             - uses: actions/checkout@v3
               with:
@@ -16,29 +18,20 @@ jobs:
             - uses: actions/setup-node@v3
               with:
                   node-version: 20.x
+                  registry-url: https://registry.npmjs.org
+                  scope: '@newfold'
             - uses: fregante/setup-git-user@v2
-
-            - name: Install Dependencies
-              run: npm ci
 
             - name: Bump Build Version
               run: npm version prerelease
 
+            - name: Install Dependencies
+              run: npm ci
+
             - name: Create Build
               run: npm run build
 
-    publish:
-        name: Publish Package
-        needs: build
-        runs-on: ubuntu-latest
-        env:
-            NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-            working-directory: ./build
-        steps:
-            - uses: actions/checkout@v3
-            - uses: actions/setup-node@v3
-              with:
-                  node-version: 20.x
-                  registry-url: https://registry.npmjs.org
-                  scope: '@newfold'
-            # - run: npm publish
+            - name: Publish Package
+              run: npm publish
+              working-directory: ./build
+
