@@ -11,14 +11,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
+            - uses: fregante/setup-git-user@v2
             - uses: actions/setup-node@v3
               with:
-                  node-version: 20.x       
-
-            - name: Git Config
-              run: |
-                git config user.name github-actions[bot]
-                git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+                  node-version: 20.x
 
             - name: Install Dependencies
               run: npm ci
