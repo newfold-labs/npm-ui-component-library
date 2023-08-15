@@ -9,13 +9,13 @@ jobs:
     build:
         name: Build Package
         runs-on: ubuntu-latest
-        env:
-            NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
         steps:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
+            - uses: oleksiyrudenko/gha-git-credentials@v2-latest
               with:
-                  node-version: 20.x
+                  token: '${{ secrets.GITHUB_TOKEN }}'
+                  node-version: 20.x       
             - run: npm version prerelease
             - run: npm ci
             - run: npm run build
@@ -25,7 +25,7 @@ jobs:
         needs: build
         runs-on: ubuntu-latest
         env:
-            NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+            NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
             working-directory: ./build
         steps:
             - uses: actions/checkout@v3
