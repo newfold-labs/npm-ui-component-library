@@ -12,6 +12,7 @@ jobs:
         steps:
             - uses: actions/checkout@v3
               with:
+                  ref: main
                   token: ${{ secrets.NEWFOLD_ACCESS_TOKEN }}
             - uses: actions/setup-node@v3
               with:
