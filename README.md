@@ -1,6 +1,6 @@
 # Newfold Digital UI Component Library
 
-A React component library for building user interfaces. Please visit this resource for the documentation of all available components and examples on how to use them.
+A React component library for building user interfaces. Please visit this resource for the [documentation](https://newfold-labs.github.io/npm-ui-component-library/) of all available components and examples on how to use them.
 
 
 ## Installation
