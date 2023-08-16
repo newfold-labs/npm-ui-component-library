@@ -1,4 +1,4 @@
-name: Docs Build and Deploy
+name: Docs Build and Deploy # Deploys docs build dir to gh-pages branch
 
 on:
   push:
