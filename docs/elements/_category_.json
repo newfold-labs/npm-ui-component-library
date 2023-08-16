@@ -1,0 +1,8 @@
+{
+  "label": "Elements",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "The elements layer contains the simplest and stupidest components. They are the smallest building blocks. They are opinionated, will hardly ever contain internal state and basically represent regular HTML elements with some added branding. Examples of elements are the Button, Input and Title components."
+  }
+}
