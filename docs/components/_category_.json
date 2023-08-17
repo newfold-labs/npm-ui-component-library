@@ -1,0 +1,8 @@
+{
+  "label": "Components",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "The components layer contains more complex and smarter components. They are probably the most used building blocks. They are a little opinionated, will sometimes contain internal state and represent regular use case components that group multiple elements together into a friendly interface. Examples of components are the InputField and other form field components, that provide an interface for adding labelling and error messaging to an input element."
+  }
+}

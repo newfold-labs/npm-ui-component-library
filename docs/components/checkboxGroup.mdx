@@ -1,0 +1,128 @@
+---
+
+---
+import PropsTable from '@site/src/components/PropsTable';
+import { Root as NewfoldRoot, CheckboxGroup } from "@newfold/ui-component-library";
+// import Variants from '@site/docs/partials/card/_card-variants.mdx';
+
+# Checkbox Group
+A simple checkbox group component.
+
+<NewfoldRoot>
+    <CheckboxGroup
+        id="checkbox-group"
+        label="A checkbox group"
+        onChange={function noRefCheck(){}}
+        name="name"
+        description="This is the description"
+        options={[
+        {
+            label: 'Option 1',
+            value: '1'
+        },
+        {
+            label: 'Option 2',
+            value: '2'
+        },
+        {
+            label: 'Option 3',
+            value: '3'
+        },
+        {
+            label: 'Option 4',
+            value: '4'
+        }
+        ]}
+        values={[
+        '1','3'
+        ]}
+    >
+    </CheckboxGroup>
+</NewfoldRoot>
+
+---
+### Usage
+```jsx
+<CheckboxGroup
+    id="checkbox-group"
+    label="A checkbox group"
+    onChange={function noRefCheck(){}}
+    name="name"
+    options={[
+    {
+        label: 'Option 1',
+        value: '1'
+    },
+    {
+        label: 'Option 2',
+        value: '2'
+    },
+    {
+        label: 'Option 3',
+        value: '3'
+    },
+    {
+        label: 'Option 4',
+        value: '4'
+    }
+    ]}
+    values={[
+    '1','3'
+    ]}
+>
+</CheckboxGroup>
+```
+
+---
+### Variants
+
+---
+### Props
+<PropsTable.Table docs={{
+    children: {
+        type: 'node',
+    },
+    className: {
+        type: 'string',
+        description: 'Class attribute to apply to the element',
+        defaultValue: '""',
+    },
+    description: {
+        type: 'string',
+        description: 'Form element description for whole checkbox group',
+        defaultValue: '""',
+    },
+    disabled: {
+        type: 'boolean',
+        description: 'Disabled flag',
+        defaultValue: 'false',
+    },
+    id: {
+        type: 'string',
+        description: 'Element id attribute',
+        defaultValue: '""',
+    },
+    label: {
+        type: 'string',
+        description: 'Form label for whole checkbox group',
+        defaultValue: '""',
+    },
+    name: {
+        type: 'string',
+        description: 'Element name',
+        defaultValue: '""',
+    },
+    onChange: {
+        type: 'func',
+        defaultValue: 'noop',
+        description: 'Handler for when value changes',
+    },
+    options: {
+        type: 'Array of Objects',
+        description: 'The checkboxes destined for the group. [{value: string,label: string},...]',
+    },
+    values: {
+        type: 'Array of values',
+        description: 'Desired selected values matching the values of the options',
+    },
+}} />

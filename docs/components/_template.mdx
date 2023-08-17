@@ -1,0 +1,50 @@
+---
+
+---
+import PropsTable from '@site/src/components/PropsTable';
+import { Root as NewfoldRoot, Component } from "@newfold/ui-component-library";
+import Variants from '@site/docs/partials/Component/_component-variants.mdx';
+
+# Component
+Component description
+
+<NewfoldRoot>
+  <Component>
+    
+  </Component>
+</NewfoldRoot>
+
+---
+### Usage
+```jsx
+import { Component } from "@newfold/ui-component-library";
+
+<Component>
+
+</Component>
+```
+---
+### Variants
+
+---
+### Props
+<PropsTable.Table docs={{
+  as: {
+    type: 'elementType',
+    description: 'Element type of the Card',
+    defaultValue: "div",
+    isRequired: false,
+  },
+  children: {
+    type: 'node',
+    description: '',
+    isRequired: true,
+  },
+  className: {
+    type: 'string',
+    description: 'Class name for the component',
+    defaultValue: "''",
+    isRequired: false,
+  },
+}}
+/>
