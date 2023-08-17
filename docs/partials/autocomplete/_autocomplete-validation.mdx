@@ -1,0 +1,145 @@
+import { Root as NewfoldRoot } from "@newfold/ui-component-library";
+import AutocompleteDemo from './AutocompleteDemo';
+
+#### Success
+<NewfoldRoot>
+    <AutocompleteDemo 
+        label="With validation of variant success"
+        selectedLabel="Success unlocked. Keep soaring!"
+        validation={{ variant: 'success', message: 'Success unlocked. Keep soaring!' }}
+    />
+</NewfoldRoot>
+
+```jsx
+<Autocomplete
+    id="autocomplete-input"
+    onChange={handleChange}
+    onQueryChange={handleQueryChange}
+    value=""
+    label="With validation of variant success"
+    placeholder="Type to autocomplete options"
+    selectedLabel="Success unlocked. Keep soaring!"
+    validation={{ 
+        variant: "success", 
+        message: "Success unlocked. Keep soaring!'"
+    }}
+>
+    <Autocomplete.Option value="1">
+        Option 1
+    </Autocomplete.Option>
+    <Autocomplete.Option value="2">
+        Option 2
+    </Autocomplete.Option>
+    <Autocomplete.Option value="3">
+        Option 3
+    </Autocomplete.Option>
+</Autocomplete>
+```
+
+
+#### Warning
+<NewfoldRoot>
+    <AutocompleteDemo 
+        label="With validation of variant warning"
+        selectedLabel="Caution: Proceed with care to avoid potential pitfalls."
+        validation={{ variant: 'warning', message: 'Caution: Proceed with care to avoid potential pitfalls.' }}
+    />
+</NewfoldRoot>
+
+```jsx
+<Autocomplete
+    id="autocomplete-input"
+    onChange={handleChange}
+    onQueryChange={handleQueryChange}
+    value=""
+    label="With validation of variant warning"
+    placeholder="Type to autocomplete options"
+    selectedLabel="Caution: Proceed with care to avoid potential pitfalls."
+    validation={{ 
+        variant: "warning", 
+        message: "Caution: Proceed with care to avoid potential pitfalls."
+    }}
+>
+    <Autocomplete.Option value="1">
+        Option 1
+    </Autocomplete.Option>
+    <Autocomplete.Option value="2">
+        Option 2
+    </Autocomplete.Option>
+    <Autocomplete.Option value="3">
+        Option 3
+    </Autocomplete.Option>
+</Autocomplete>
+```
+
+
+#### Info
+<NewfoldRoot>
+    <AutocompleteDemo 
+        label="With validation of variant info"
+        selectedLabel="Information: Knowledge is the key to empowerment."
+        validation={{ variant: 'info', message: 'Information: Knowledge is the key to empowerment.' }}
+    />
+</NewfoldRoot>
+
+```jsx
+<Autocomplete
+    id="autocomplete-input"
+    onChange={handleChange}
+    onQueryChange={handleQueryChange}
+    value=""
+    label="With validation of variant info"
+    placeholder="Type to autocomplete options"
+    selectedLabel="Information: Knowledge is the key to empowerment."
+    validation={{ 
+        variant: "info", 
+        message: "Information: Knowledge is the key to empowerment." 
+    }}
+>
+    <Autocomplete.Option value="1">
+        Option 1
+    </Autocomplete.Option>
+    <Autocomplete.Option value="2">
+        Option 2
+    </Autocomplete.Option>
+    <Autocomplete.Option value="3">
+        Option 3
+    </Autocomplete.Option>
+</Autocomplete>
+```
+
+
+#### Error
+<NewfoldRoot>
+    <AutocompleteDemo 
+        label="With validation of variant error"
+        selectedLabel="Error: Connection lost. Please reconnect."
+        validation={{ variant: 'error', message: 'Error: Connection lost. Please reconnect.' }}
+    />
+</NewfoldRoot>
+
+```jsx
+<Autocomplete
+    id="autocomplete-input"
+    onChange={handleChange}
+    onQueryChange={handleQueryChange}
+    value=""
+    label="With validation of variant error"
+    placeholder="Type to autocomplete options"
+    selectedLabel="Error: Connection lost. Please reconnect."
+    validation={{ 
+        variant: "error", 
+        message: "Error: Connection lost. Please reconnect." 
+    }}
+>
+    <Autocomplete.Option value="1">
+        Option 1
+    </Autocomplete.Option>
+    <Autocomplete.Option value="2">
+        Option 2
+    </Autocomplete.Option>
+    <Autocomplete.Option value="3">
+        Option 3
+    </Autocomplete.Option>
+</Autocomplete>
+```
