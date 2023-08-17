@@ -1,0 +1,172 @@
+import { Root as NewfoldRoot, Autocomplete } from "@newfold/ui-component-library";
+import PropsTable from '@site/src/components/PropsTable';
+import { AutocompleteDemo, AutocompleteValidationVariants } from '@site/docs/partials/autocomplete';
+
+# Autocomplete
+A simple autocomplete select component.
+
+<NewfoldRoot>
+    <AutocompleteDemo />
+</NewfoldRoot>
+
+---
+### Usage
+```jsx
+import { Autocomplete } from "@newfold/ui-component-library";
+
+<Autocomplete
+    id="autocomplete-input"
+    onChange={handleChange}
+    onQueryChange={handleQueryChange}
+    placeholder="Type to autocomplete options"
+    value=""
+>
+    <Autocomplete.Option value="1">
+        Option 1
+    </Autocomplete.Option>
+    <Autocomplete.Option value="2">
+        Option 2
+    </Autocomplete.Option>
+    <Autocomplete.Option value="3">
+        Option 3
+    </Autocomplete.Option>
+</Autocomplete>
+```
+
+---
+### Label
+An example with a label using `label` prop.
+
+<NewfoldRoot>
+    <AutocompleteDemo label="Select an Option"/>
+</NewfoldRoot>
+
+```jsx
+<Autocomplete
+    id="autocomplete-input"
+    onChange={handleChange}
+    onQueryChange={handleQueryChange}
+    placeholder="Type to autocomplete options"
+    value=""
+    label="Select an Option"
+>
+    <Autocomplete.Option value="1">
+        Option 1
+    </Autocomplete.Option>
+    <Autocomplete.Option value="2">
+        Option 2
+    </Autocomplete.Option>
+    <Autocomplete.Option value="3">
+        Option 3
+    </Autocomplete.Option>
+</Autocomplete>
+```
+
+---
+### Placeholder
+An example with placeholder using `placeholder` prop.
+
+<NewfoldRoot>
+    <AutocompleteDemo 
+        label="Select an Option"
+        placeholder="A custom placeholder"
+    />
+</NewfoldRoot>
+
+```jsx
+<Autocomplete
+    id="autocomplete-input"
+    onChange={handleChange}
+    onQueryChange={handleQueryChange}
+    value=""
+    label="Select an Option"
+    placeholder="A custom placeholder"
+>
+    <Autocomplete.Option value="1">
+        Option 1
+    </Autocomplete.Option>
+    <Autocomplete.Option value="2">
+        Option 2
+    </Autocomplete.Option>
+    <Autocomplete.Option value="3">
+        Option 3
+    </Autocomplete.Option>
+</Autocomplete>
+```
+
+---
+### Selected Label
+An example with default value using `selectedLabel` prop.
+
+<NewfoldRoot>
+    <AutocompleteDemo 
+        label="Select an Option"
+        placeholder="A custom placeholder"
+        selectedLabel="Option 2"
+        value="2"
+    />
+</NewfoldRoot>
+
+```jsx
+<Autocomplete
+    id="autocomplete-input"
+    onChange={handleChange}
+    onQueryChange={handleQueryChange}
+    value="2"
+    label="Select an Option"
+    placeholder="Type to autocomplete options"
+    selectedLabel="Option 2"
+>
+    <Autocomplete.Option value="1">
+        Option 1
+    </Autocomplete.Option>
+    <Autocomplete.Option value="2">
+        Option 2
+    </Autocomplete.Option>
+    <Autocomplete.Option value="3">
+        Option 3
+    </Autocomplete.Option>
+</Autocomplete>
+```
+
+---
+### Nullable
+Allow empty values with reset button `X` or deleting the option and clicking outside the field.
+
+<NewfoldRoot>
+    <AutocompleteDemo 
+        label="Select an Option"
+        placeholder="Type to autocomplete options"
+        nullable={true}
+    />
+</NewfoldRoot>
+
+```jsx
+<Autocomplete
+    id="autocomplete-input"
+    onChange={handleChange}
+    onQueryChange={handleQueryChange}
+    value=""
+    label="Select an Option"
+    placeholder="Type to autocomplete options"
+    selectedLabel=""
+>
+    <Autocomplete.Option value="1">
+        Option 1
+    </Autocomplete.Option>
+    <Autocomplete.Option value="2">
+        Option 2
+    </Autocomplete.Option>
+    <Autocomplete.Option value="3">
+        Option 3
+    </Autocomplete.Option>
+</Autocomplete>
+```
+
+---
+### Validation
+<AutocompleteValidationVariants />    
+
+---
+### Props
+<PropsTable.Table docs={Autocomplete.docs} />
