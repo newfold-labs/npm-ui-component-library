@@ -1,0 +1,73 @@
+---
+
+---
+import PropsTable from '@site/src/components/PropsTable';
+import { Root as NewfoldRoot, FeatureUpsell } from "@newfold/ui-component-library";
+// import Variants from '@site/docs/partials/FeatureUpsell/_FeatureUpsell-variants.mdx';
+
+# Feature Upsell
+A feature upsell component.
+
+<NewfoldRoot>
+  <FeatureUpsell
+    cardText="Upgrade Now!"
+    cardLink="https://bluehost.com"
+  >
+    <p className="nfd-p-2 nfd-bg-blue-700 nfd-text-white">
+        Content that will be grayscale.
+    </p>
+  </FeatureUpsell>
+</NewfoldRoot>
+
+---
+### Usage
+```jsx
+import { FeatureUpsell } from "@newfold/ui-component-library";
+
+
+<FeatureUpsell
+    cardText="Upgrade Now!"
+    cardLink="https://bluehost.com"
+>
+    <p className="nfd-p-2 nfd-bg-blue-700 nfd-text-white">
+        Content that will be grayscale.
+    </p>
+</FeatureUpsell>
+```
+---
+### Variants
+
+---
+### Props
+<PropsTable.Table 
+    docs={{
+        cardLink: {
+            type: 'string',
+            defaultValue: '""',
+            description: 'Upsell Link for the upgrade button',
+        },
+        cardText: {
+            type: 'string',
+            defaultValue: '""',
+            description: 'Text for the upgrade button',
+        },
+        children: {
+            type: 'node',
+        },
+        className: {
+            type: 'string',
+            description: 'Class attribute to add to the element',
+            defaultValue: '""',
+        },
+        shouldUpsell: {
+            type: 'boolean',
+            description: 'Upsell flag',
+            defaultValue: 'true',
+        },
+        variant: {
+            type: 'string "default" "card"',
+            defaultValue: 'card',
+            description: 'Type of element to render as',
+        },
+    }}
+/>

@@ -1,0 +1,84 @@
+---
+
+---
+import PropsTable from '@site/src/components/PropsTable';
+import { Root as NewfoldRoot, ChildrenLimiter, Button } from "@newfold/ui-component-library";
+// import Variants from '@site/docs/partials/ChildrenLimiter/_ChildrenLimiter-variants.mdx';
+
+# ChildrenLimiter
+ChildrenLimiter description
+
+<NewfoldRoot>
+  <ChildrenLimiter 
+    limit={5}
+    renderButton={ ( { show, toggle, ariaProps } ) => {
+		return <Button className="nfd-my-1.5" onClick={ toggle } { ...ariaProps }>{ show ? "Show Less" : "Show More" }</Button>; } 
+    }>
+    <p>0</p>
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+    <p>5</p>
+    <p>6</p>
+    <p>7</p>
+    <p>8</p>
+    <p>9</p>
+  </ChildrenLimiter>
+</NewfoldRoot>
+
+---
+### Usage
+```jsx
+import { ChildrenLimiter } from "@newfold/ui-component-library";
+
+<ChildrenLimiter 
+    limit={5}
+    renderButton={ ( { show, toggle, ariaProps } ) => {
+		return <Button className="nfd-my-1.5" onClick={ toggle } { ...ariaProps }>{ show ? "Show Less" : "Show More" }</Button>; } 
+    }>
+    <p>0</p>
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+    <p>5</p>
+    <p>6</p>
+    <p>7</p>
+    <p>8</p>
+    <p>9</p>
+</ChildrenLimiter>
+```
+---
+### Variants
+
+---
+### Props
+<PropsTable.Table 
+    docs={{
+        children: {
+            type: 'node',
+            description: 'Contents to be limited',
+        },
+        className: {
+            type: 'string',
+            description: 'Class attribute to add to the element',
+            defaultValue: '""',
+        },
+        id: {
+            type: 'string',
+            description: 'Element id attribute',
+            defaultValue: '""',
+        },
+        renderButton: {
+            type: 'func',
+            defaultValue: 'noop',
+            description: 'Handler for rendering the limiter button',
+        },
+        initialShow: {
+            type: 'boolean',
+            description: 'Show full contents initially',
+            defaultValue: 'false',
+        },
+    }}
+/>

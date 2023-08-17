@@ -78,51 +78,53 @@ A simple checkbox group component.
 
 ---
 ### Props
-<PropsTable.Table docs={{
-    children: {
-        type: 'node',
-    },
-    className: {
-        type: 'string',
-        description: 'Class attribute to apply to the element',
-        defaultValue: '""',
-    },
-    description: {
-        type: 'string',
-        description: 'Form element description for whole checkbox group',
-        defaultValue: '""',
-    },
-    disabled: {
-        type: 'boolean',
-        description: 'Disabled flag',
-        defaultValue: 'false',
-    },
-    id: {
-        type: 'string',
-        description: 'Element id attribute',
-        defaultValue: '""',
-    },
-    label: {
-        type: 'string',
-        description: 'Form label for whole checkbox group',
-        defaultValue: '""',
-    },
-    name: {
-        type: 'string',
-        description: 'Element name',
-        defaultValue: '""',
-    },
-    onChange: {
-        type: 'func',
-        defaultValue: 'noop',
-        description: 'Handler for when value changes',
-    },
-    options: {
-        type: 'Array of Objects',
-        description: 'The checkboxes destined for the group. [{value: string,label: string},...]',
-    },
-    values: {
-        type: 'Array of values',
-        description: 'Desired selected values matching the values of the options',
-    },
-}} />
+<PropsTable.Table 
+        docs={{
+        children: {
+            type: 'node',
+        },
+        className: {
+            type: 'string',
+            description: 'Class attribute to add to the element',
+            defaultValue: '""',
+        },
+        description: {
+            type: 'string',
+            description: 'Form element description for whole checkbox group',
+            defaultValue: '""',
+        },
+        disabled: {
+            type: 'boolean',
+            description: 'Disabled flag',
+            defaultValue: 'false',
+        },
+        id: {
+            type: 'string',
+            description: 'Element id attribute',
+            defaultValue: '""',
+        },
+        label: {
+            type: 'string',
+            description: 'Form label for whole checkbox group',
+            defaultValue: '""',
+        },
+        name: {
+            type: 'string',
+            description: 'Element name',
+            defaultValue: '""',
+        },
+        onChange: {
+            type: 'func',
+            defaultValue: 'noop',
+            description: 'Handler for when value changes',
+        },
+        options: {
+            type: 'Array of Objects',
+            description: 'The checkboxes destined for the group. [{value: string,label: string},...]',
+        },
+        values: {
+            type: 'Array of values',
+            description: 'Desired selected values matching the values of the options',
+        },
+    }} 
+/>

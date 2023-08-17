@@ -10,19 +10,19 @@ A simple card component. It has subcomponents for header, content and footer tha
 
 
 <NewfoldRoot>
-  <Card>
-    <React.Fragment key=".0">
-      <Card.Header>
-        This is Card header!
-      </Card.Header>
-      <Card.Content>
-        This is Card content!
-      </Card.Content>
-      <Card.Footer>
-        This is Card footer!
-      </Card.Footer>
-    </React.Fragment>
-  </Card>
+    <Card>
+        <React.Fragment key=".0">
+            <Card.Header>
+                This is Card header!
+            </Card.Header>
+            <Card.Content>
+                This is Card content!
+            </Card.Content>
+            <Card.Footer>
+                This is Card footer!
+            </Card.Footer>
+        </React.Fragment>
+    </Card>
 </NewfoldRoot>
 
 ---
@@ -31,17 +31,17 @@ A simple card component. It has subcomponents for header, content and footer tha
 import { Card } from "@newfold/ui-component-library";
 
 <Card>
-  <React.Fragment key=".0">
-    <Card.Header>
-      This is Card header!
-    </Card.Header>
-    <Card.Content>
-      This is Card content!
-    </Card.Content>
-    <Card.Footer>
-      This is Card footer!
-    </Card.Footer>
-  </React.Fragment>
+    <React.Fragment key=".0">
+        <Card.Header>
+            This is Card header!
+        </Card.Header>
+        <Card.Content>
+            This is Card content!
+        </Card.Content>
+        <Card.Footer>
+            This is Card footer!
+        </Card.Footer>
+    </React.Fragment>
 </Card>
 ```
 ---
@@ -51,23 +51,24 @@ Card variants
 
 ---
 ### Props
-<PropsTable.Table docs={{
-  as: {
-    type: 'elementType',
-    description: 'Element type of the Card',
-    defaultValue: "div",
-    isRequired: false,
-  },
-  children: {
-    type: 'node',
-    description: '',
-    isRequired: true,
-  },
-  className: {
-    type: 'string',
-    description: 'Class name for the component',
-    defaultValue: "''",
-    isRequired: false,
-  },
-}}
+<PropsTable.Table 
+    docs={{
+        as: {
+            type: 'elementType',
+            description: 'Element type of the Card',
+            defaultValue: "div",
+            isRequired: false,
+        },
+        children: {
+            type: 'Card.Header, Card.Content, Card.Footer',
+            description: '',
+            isRequired: true,
+        },
+        className: {
+            type: 'string',
+            description: 'Class attribute to add to the element',
+            defaultValue: "''",
+            isRequired: false,
+        },
+    }}
 />

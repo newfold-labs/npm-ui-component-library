@@ -1,6 +1,8 @@
 import { Root as NewfoldRoot, Autocomplete } from "@newfold/ui-component-library";
 import PropsTable from '@site/src/components/PropsTable';
 import { AutocompleteDemo, AutocompleteValidationVariants } from '@site/docs/partials/autocomplete';
+import CodeBlock from '@theme/CodeBlock';
+import AudocompleteDemoCode from '!!raw-loader!../partials/autocomplete/AutocompleteDemo.js';
 
 # Autocomplete
 A simple autocomplete select component.
@@ -11,27 +13,7 @@ A simple autocomplete select component.
 
 ---
 ### Usage
-```jsx
-import { Autocomplete } from "@newfold/ui-component-library";
-
-<Autocomplete
-    id="autocomplete-input"
-    onChange={handleChange}
-    onQueryChange={handleQueryChange}
-    placeholder="Type to autocomplete options"
-    value=""
->
-    <Autocomplete.Option value="1">
-        Option 1
-    </Autocomplete.Option>
-    <Autocomplete.Option value="2">
-        Option 2
-    </Autocomplete.Option>
-    <Autocomplete.Option value="3">
-        Option 3
-    </Autocomplete.Option>
-</Autocomplete>
-```
+<CodeBlock language="jsx">{AudocompleteDemoCode}</CodeBlock>
 
 ---
 ### Label
@@ -169,4 +151,43 @@ Allow empty values with reset button `X` or deleting the option and clicking out
 
 ---
 ### Props
-<PropsTable.Table docs={Autocomplete.docs} />
+<PropsTable.Table 
+    docs={{
+        children: {
+            type: 'Autocomplete.Option',
+        },
+        className: {
+            type: 'string',
+            description: 'Class attribute to add to the element',
+            defaultValue: '""',
+        },
+        description: {
+            type: 'string',
+            description: 'Form element description for whole checkbox group',
+            defaultValue: '""',
+        },
+        placeholder: {
+            type: 'string',
+            description: 'Placeholder text',
+        },
+        id: {
+            type: 'string',
+            description: 'Element id attribute',
+            defaultValue: '""',
+        },
+        label: {
+            type: 'string',
+            description: 'Label for form element',
+            defaultValue: '""',
+        },
+        name: {
+            type: 'string',
+            description: 'Element name',
+            defaultValue: '""',
+        },
+        validation: {
+            type: 'Array of values',
+            description: 'Desired selected values matching the values of the options',
+        },
+    }}
+/>

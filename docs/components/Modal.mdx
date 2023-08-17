@@ -2,26 +2,36 @@
 
 ---
 import PropsTable from '@site/src/components/PropsTable';
-import { Root as NewfoldRoot, Component } from "@newfold/ui-component-library";
-// import Variants from '@site/docs/partials/Component/_Component-variants.mdx';
+import { Root as NewfoldRoot, Modal, Button } from "@newfold/ui-component-library";
+// import Variants from '@site/docs/partials/Modal/_Modal-variants.mdx';
+let exModalOpen = false;
 
-# Component
-Component description
+# Modal
+A modal component.
 
 <NewfoldRoot>
-  <Component>
-    
-  </Component>
+  <Button onClick={() => { }}>
+    Open modal
+  </Button>
+  <Modal
+    onClose={() => {}}
+    isOpen={ false }
+    position="center"
+  >
+    <Modal.Panel>
+      Text inside a panel.
+    </Modal.Panel>
+  </Modal>
 </NewfoldRoot>
 
 ---
 ### Usage
 ```jsx
-import { Component } from "@newfold/ui-component-library";
+import { Modal } from "@newfold/ui-component-library";
 
-<Component>
+<Modal>
 
-</Component>
+</Modal>
 ```
 ---
 ### Variants
