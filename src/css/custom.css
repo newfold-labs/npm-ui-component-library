@@ -39,6 +39,23 @@
   background-color: #130801;
 }
 
-.theme-code-block {
+article .theme-code-block {
   margin-top: .6rem;
+}
+
+@layer base {
+  article {
+    .nfd-root {
+      @apply
+      nfd-p-6
+      nfd-border
+      nfd-border-[#dadde1]
+      nfd-border-solid
+      nfd-rounded-md
+      nfd-shadow-sm
+      nfd-transition-shadow	
+
+      hover:nfd-shadow
+    }
+  }
 }
