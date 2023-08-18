@@ -152,7 +152,7 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Newfold Digital Inc.`,
       },
       prism: {
-        theme: lightCodeTheme,
+        theme: require('prism-react-renderer/themes/dracula'),
         darkTheme: darkCodeTheme,
       },
       colorMode: {
