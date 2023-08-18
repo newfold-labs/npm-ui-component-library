@@ -1,0 +1,137 @@
+---
+
+---
+import PropsTable from '@site/src/components/PropsTable';
+import { Root as NewfoldRoot, SelectField } from "@newfold/ui-component-library";
+// import Variants from '@site/docs/partials/SelectField/_SelectField-variants.mdx';
+
+# SelectField
+A simple select field component that extends select element.
+
+
+<NewfoldRoot>
+    <SelectField
+        id="select-field"
+        label="A select field"
+        name="select-field"
+        description="Select field description"
+        onChange={() => {}}
+        options={[
+        {
+            label: 'Option 1',
+            value: '1'
+        },
+        {
+            label: 'Option 2',
+            value: '2'
+        },
+        {
+            label: 'Option 3',
+            value: '3'
+        },
+        {
+            label: 'Option 4',
+            value: '4'
+        }
+        ]}
+        selectedLabel="Option 1"
+        value="1"
+    />
+</NewfoldRoot>
+
+---
+### Usage
+```jsx
+import { SelectField } from "@newfold/ui-component-library";
+
+<SelectField
+    id="select-field"
+    label="A select field"
+    name="select-field"
+    description="Select field description"
+    onChange={() => {}}
+    options={[
+    {
+        label: 'Option 1',
+        value: '1'
+    },
+    {
+        label: 'Option 2',
+        value: '2'
+    },
+    {
+        label: 'Option 3',
+        value: '3'
+    },
+    {
+        label: 'Option 4',
+        value: '4'
+    }
+    ]}
+    selectedLabel="Option 1"
+    value="1"
+/>
+```
+---
+### Variants
+
+---
+### Props
+<PropsTable.Table docs={{
+    children: {
+        type: 'node',
+        description: 'Alternative to options.',
+    },
+    className: {
+        type: 'string',
+        description: 'Class attribute to add to the element',
+        defaultValue: '""',
+    },
+    description: {
+        type: 'string',
+        description: 'Form element description for whole checkbox group',
+        defaultValue: '""',
+    },
+    disabled: {
+        type: 'boolean',
+        description: 'Disabled flag',
+        defaultValue: 'false',
+    },
+    id: {
+        type: 'string',
+        description: 'Select list id attribute',
+        defaultValue: '""',
+        isRequired: true,
+    },
+    label: {
+        type: 'string',
+        description: 'Form label for select',
+        defaultValue: '""',
+        isRequired: true,
+    },
+    labelSuffix: {
+        type: 'string',
+        description: 'Label suffix',
+        defaultValue: '""',
+    },
+    name: {
+        type: 'string',
+        description: 'Element name',
+        defaultValue: '""',
+        isRequired: true,
+    },
+    options: {
+        type: 'Array of Objects',
+        description: 'The options destined for the select list. [{value: string,label: string},...]',
+    },
+    validation: {
+        type: 'Object',
+        description: '{variant: string, message: node}',
+        defaultValue: '{}',
+    },
+    value: {
+        type: 'string',
+        description: 'Desired selected value matching the value of the selected option',
+    },
+}}
+/>

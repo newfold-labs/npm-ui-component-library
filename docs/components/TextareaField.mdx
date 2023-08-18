@@ -1,0 +1,62 @@
+---
+
+---
+import PropsTable from '@site/src/components/PropsTable';
+import { Root as NewfoldRoot, TextareaField } from "@newfold/ui-component-library";
+// import Variants from '@site/docs/partials/TextArea/_TextArea-variants.mdx';
+
+# Textarea Field
+A simple textarea field component.
+
+<NewfoldRoot>
+    <TextareaField
+        id="textarea-field"
+        label="A textarea field"
+    />
+</NewfoldRoot>
+
+---
+### Usage
+```jsx
+import { TextArea } from "@newfold/ui-component-library";
+
+<TextareaField
+  id="textarea-field"
+  label="A textarea field"
+/>
+```
+---
+### Variants
+
+---
+### Props
+<PropsTable.Table 
+    docs={{
+        className: {
+            type: 'string',
+            description: 'Class attribute to add to the element',
+            defaultValue: '""',
+        },
+        description: {
+            type: 'string',
+            description: 'Form element description',
+            defaultValue: '""',
+        },
+        id: {
+            type: 'string',
+            description: 'Element id attribute',
+            defaultValue: '""',
+            isRequired: true,
+        },
+        label: {
+            type: 'string',
+            description: 'Form label for field',
+            defaultValue: '""',
+            isRequired: true,
+        },
+        validation: {
+            type: 'Object',
+            description: '{ variant: string, message: node }',
+        },
+    }}
+/>

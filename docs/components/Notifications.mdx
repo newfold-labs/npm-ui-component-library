@@ -1,0 +1,114 @@
+---
+
+---
+import PropsTable from '@site/src/components/PropsTable';
+import { Root as NewfoldRoot, Notifications } from "@newfold/ui-component-library";
+// import Variants from '@site/docs/partials/Notifications/_Notifications-variants.mdx';
+
+# Notifications
+The Notifications component shows notifications on a specified position on the screen. Switch position in the control panel to view.
+
+<NewfoldRoot >
+    <Notifications>
+        <Notifications.Notification
+            description="Notification description"
+            dismissScreenReaderLabel="Dismiss"
+            id="notification"
+            title="Notification title"
+            onDismiss={ (id) => { console.log('dismissed', id); } }
+        />
+    </Notifications>
+    <p>Default notification position is bottom-left.</p>
+</NewfoldRoot>
+
+---
+### Usage
+```jsx
+import { Notifications } from "@newfold/ui-component-library";
+
+<Notifications>
+    <Notifications.Notification
+        description="Notification description"
+        dismissScreenReaderLabel="Dismiss"
+        id="notification"
+        title="Notification title"
+        onDismiss={ (id) => { console.log('dismissed', id); } }
+    />
+</Notifications>
+```
+---
+### Variants
+
+---
+### Notifications Props
+<PropsTable.Table
+    docs={{
+        children: {
+            type: 'node',
+        },
+        className: {
+            type: 'string',
+            description: 'Class attribute to add to the element',
+            defaultValue: '""',
+        },
+        position: {
+            type: 'string',
+            description: 'The desired position of the notifications. ["bottom-center", "bottom-left", "top-center"]',
+            defaultValue: '"bottom-left"',
+        },
+    }}
+/>
+
+### Notification Props
+<PropsTable.Table
+    docs={{
+        autoDismiss: {
+            type: 'number',
+            description: 'Milliseconds for Notification to disappear',
+        },
+        children: {
+            type: 'node',
+        },
+        description: {
+            type: 'string',
+            description: 'Notification description',
+            defaultValue: '""',
+        },
+        dismissScreenReaderLabel: {
+            type: 'string',
+            description: 'Notification label for screen readers',
+            defaultValue: '""',
+            isRequired: true,
+        },
+        id: {
+            type: 'string',
+            description: 'Element id attribute',
+            defaultValue: '""',
+            isRequired: true,
+        },
+        name: {
+            type: 'string',
+            description: 'Element name',
+            defaultValue: '""',
+        },
+        onDismiss: {
+            type: 'func',
+            description: 'Handler for when notification is dismissed. If omitted, the notification cannot be dismissed',
+        },
+        size: {
+            type: 'string ["large"]',
+            description: 'Notification size',
+            defaultValue: '""',
+        },
+        title: {
+            type: 'string',
+            description: 'Notification Title',
+            defaultValue: '""',
+        },
+        variant: {
+            type: 'string ["info", "warning", "success", "error"]',
+            description: 'The notification variant',
+            defaultValue: '"info"',
+        },
+    }}
+/>

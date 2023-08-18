@@ -1,0 +1,90 @@
+---
+
+---
+import PropsTable from '@site/src/components/PropsTable';
+import { Root as NewfoldRoot, ToggleField } from "@newfold/ui-component-library";
+// import Variants from '@site/docs/partials/ToggleField/_ToggleField-variants.mdx';
+
+# Toggle Field
+A simple textarea field component.
+
+<NewfoldRoot>
+    <ToggleField
+        id="textarea-field"
+        label="A textarea field"
+        onChange={()=>{}}
+    />
+</NewfoldRoot>
+
+---
+### Usage
+```jsx
+import { TextArea } from "@newfold/ui-component-library";
+
+<ToggleField
+    id="textarea-field"
+    label="A textarea field"
+    onChange={()=>{}}
+/>
+```
+---
+### Variants
+
+---
+### Props
+<PropsTable.Table 
+    docs={{
+        "aria-label": {
+            type: 'string',
+        },
+        children: {
+            type: 'node',
+        },
+        className: {
+            type: 'string',
+            description: 'Class attribute to add to the element',
+            defaultValue: '""',
+        },
+        checked: {
+            type: 'boolean',
+            description: 'Checked flag',
+            isRequired: true,
+        },
+        description: {
+            type: 'string',
+            description: 'Form element description',
+            defaultValue: '""',
+        },
+        disabled: {
+            type: 'boolean',
+            description: 'Disabled flag',
+            defaultValue: 'false',
+        },
+        id: {
+            type: 'string',
+            description: 'Element id attribute',
+            defaultValue: '""',
+            isRequired: true,
+        },
+        label: {
+            type: 'string',
+            description: 'Form label for field',
+            defaultValue: '""',
+            isRequired: true,
+        },
+        labelSuffix: {
+            type: 'string',
+            description: 'Label suffix',
+        },
+        onChange: {
+            type: 'func',
+            defaultValue: 'noop',
+            description: 'Handler for when value changes',
+            isRequired: true,
+        },
+        validation: {
+            type: 'Object',
+            description: '{ variant: string, message: node }',
+        },
+    }}
+/>

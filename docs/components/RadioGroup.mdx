@@ -2,75 +2,79 @@
 
 ---
 import PropsTable from '@site/src/components/PropsTable';
-import { Root as NewfoldRoot, CheckboxGroup } from "@newfold/ui-component-library";
-// import Variants from '@site/docs/partials/card/_card-variants.mdx';
+import { Root as NewfoldRoot, RadioGroup } from "@newfold/ui-component-library";
+// import Variants from '@site/docs/partials/radioGroup/_radioGroup-variants.mdx';
 
-# Checkbox Group
-A simple checkbox group component.
+# Radio Group
+A simple radio group component.
 
 <NewfoldRoot>
-    <CheckboxGroup
-        id="checkbox-group"
-        label="A checkbox group"
+    <RadioGroup
+        id="radio-group"
+        label="A radio group"
         onChange={function noRefCheck(){}}
         name="name"
         description="This is the description"
         options={[
         {
             label: 'Option 1',
-            value: '1'
+            value: '1',
+            screenReaderLabel: "Option 1",
         },
         {
             label: 'Option 2',
-            value: '2'
+            value: '2',
+            screenReaderLabel: "Option 2",
         },
         {
             label: 'Option 3',
-            value: '3'
+            value: '3',
+            screenReaderLabel: "Option 3",
         },
         {
             label: 'Option 4',
-            value: '4'
+            value: '4',
+            screenReaderLabel: "Option 4",
         }
         ]}
-        values={[
-        '1','3'
-        ]}
+        value='3'
     >
-    </CheckboxGroup>
+    </RadioGroup>
 </NewfoldRoot>
 
 ---
 ### Usage
 ```jsx
-<CheckboxGroup
-    id="checkbox-group"
-    label="A checkbox group"
+<RadioGroup
+    id="radio-group"
+    label="A radio group"
     onChange={function noRefCheck(){}}
     name="name"
     options={[
     {
         label: 'Option 1',
-        value: '1'
+        value: '1',
+        screenReaderLabel: "Option 1",
     },
     {
         label: 'Option 2',
-        value: '2'
+        value: '2',
+        screenReaderLabel: "Option 2",
     },
     {
         label: 'Option 3',
-        value: '3'
+        value: '3',
+        screenReaderLabel: "Option 3",
     },
     {
         label: 'Option 4',
-        value: '4'
+        value: '4',
+        screenReaderLabel: "Option 4",
     }
     ]}
-    values={[
-    '1','3'
-    ]}
+    value='3'
 >
-</CheckboxGroup>
+</RadioGroup>
 ```
 
 ---
@@ -90,7 +94,7 @@ A simple checkbox group component.
         },
         description: {
             type: 'string',
-            description: 'Form element description for whole checkbox group',
+            description: 'Form element description for whole radio group',
             defaultValue: '""',
         },
         disabled: {
@@ -105,7 +109,7 @@ A simple checkbox group component.
         },
         label: {
             type: 'string',
-            description: 'Form label for whole checkbox group',
+            description: 'Form label for whole radio group',
             defaultValue: '""',
         },
         name: {
@@ -120,11 +124,16 @@ A simple checkbox group component.
         },
         options: {
             type: 'Array of Objects',
-            description: 'The checkboxes destined for the group. [{value: string,label: string},...]',
+            description: 'The radio options destined for the group. [{value: string,label: string,screenReaderLabel: string},...]',
         },
-        values: {
-            type: 'Array of values',
-            description: 'Desired selected values matching the values of the options',
+        value: {
+            type: 'string',
+            description: 'Desired selected value matching the value of the option',
+        },
+        variant: {
+            type: 'string ["default", "inline-block"]',
+            description: 'Type of radio group to render',
+            defaultValue: "default",
         },
     }} 
 />

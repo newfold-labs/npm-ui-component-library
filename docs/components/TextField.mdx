@@ -1,0 +1,81 @@
+---
+
+---
+import PropsTable from '@site/src/components/PropsTable';
+import { Root as NewfoldRoot, TextField } from "@newfold/ui-component-library";
+// import Variants from '@site/docs/partials/TextField/_TextField-variants.mdx';
+
+# Text Field
+A simple text input field component.
+
+
+<NewfoldRoot>
+    <TextField
+        description="Text field with a description."
+        id="text-field-1"
+        label="Text field with a label"
+        onChange={() => {}}
+    />
+</NewfoldRoot>
+
+---
+### Usage
+```jsx
+import { TextField } from "@newfold/ui-component-library";
+
+<TextField
+    description="Text field with a description."
+    id="text-field-1"
+    label="Text field with a label"
+    onChange={() => {}}
+/>
+```
+---
+### Variants
+
+---
+### Props
+<PropsTable.Table 
+    docs={{
+        className: {
+            type: 'string',
+            description: 'Class attribute to add to the element',
+            defaultValue: '""',
+        },
+        description: {
+            type: 'string',
+            description: 'Form element description',
+            defaultValue: '""',
+        },
+        disabled: {
+            type: 'boolean',
+            description: 'Disabled flag',
+            defaultValue: 'false',
+        },
+        id: {
+            type: 'string',
+            description: 'Element id attribute',
+            defaultValue: '""',
+            isRequired: true,
+        },
+        label: {
+            type: 'string',
+            description: 'Form label for field',
+            defaultValue: '""',
+            isRequired: true,
+        },
+        labelSuffix: {
+            type: 'string',
+            description: 'Label suffix',
+        },
+        onChange: {
+            type: 'func',
+            defaultValue: 'noop',
+            description: 'Handler for when value changes',
+        },
+        validation: {
+            type: 'Object',
+            description: '{ variant: string, message: node }',
+        },
+    }}
+/>

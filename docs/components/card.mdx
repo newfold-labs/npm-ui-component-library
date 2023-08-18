@@ -8,30 +8,9 @@ import Variants from '@site/docs/partials/card/_card-variants.mdx';
 # Card
 A simple card component. It has subcomponents for header, content and footer that has `as` and `className` props.
 
-
+const Card = ();
 <NewfoldRoot>
     <Card>
-        <React.Fragment key=".0">
-            <Card.Header>
-                This is Card header!
-            </Card.Header>
-            <Card.Content>
-                This is Card content!
-            </Card.Content>
-            <Card.Footer>
-                This is Card footer!
-            </Card.Footer>
-        </React.Fragment>
-    </Card>
-</NewfoldRoot>
-
----
-### Usage
-```jsx
-import { Card } from "@newfold/ui-component-library";
-
-<Card>
-    <React.Fragment key=".0">
         <Card.Header>
             This is Card header!
         </Card.Header>
@@ -41,7 +20,24 @@ import { Card } from "@newfold/ui-component-library";
         <Card.Footer>
             This is Card footer!
         </Card.Footer>
-    </React.Fragment>
+    </Card>
+</NewfoldRoot>
+
+---
+### Usage
+```jsx
+import { Card } from "@newfold/ui-component-library";
+
+<Card>
+    <Card.Header>
+        This is Card header!
+    </Card.Header>
+    <Card.Content>
+        This is Card content!
+    </Card.Content>
+    <Card.Footer>
+        This is Card footer!
+    </Card.Footer>
 </Card>
 ```
 ---

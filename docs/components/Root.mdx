@@ -1,0 +1,46 @@
+---
+
+---
+import PropsTable from '@site/src/components/PropsTable';
+import { Root as NewfoldRoot } from "@newfold/ui-component-library";
+// import Variants from '@site/docs/partials/Component/_Component-variants.mdx';
+
+# Root
+The `Root` component provides your React tree with a `RootContext` which contains general options such as `isRtl` to indicate right to left language direction. It also provides a `.yst-root` CSS class for scoping our CSS in opinionated environments. You can use the `RootContext` by using the `useRootContext` hook exported from `@yoast/ui-library/hooks`.
+
+Please note that the CSS scoping adds one level of CSS specificity. Therefore `@yoast/tailwindcss-preset` does the following:
+
+1. Enables the `important` rule for all utilities.
+1. Disables the Tailwind `preflight` styles (as they are included in the `Root` component's CSS).
+1. Configures `@tailwindcss/forms` to use the `class` strategy (they are included in the `Root` component's CSS).
+
+<NewfoldRoot>
+    <p>Root Contents</p>
+</NewfoldRoot>
+
+---
+### Usage
+```jsx
+import { Root } from "@newfold/ui-component-library";
+
+<Root>
+    <p>Root Contents</p>
+</Root>
+```
+---
+### Variants
+
+---
+### Props
+<PropsTable.Table
+    docs={{
+        children: {
+            type: 'node',
+        },
+        context: {
+            type: 'Object',
+            description: '{ isRtl: bool }',
+            defaultValue: '{}',
+        },
+    }}
+/>

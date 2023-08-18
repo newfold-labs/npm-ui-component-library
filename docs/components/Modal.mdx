@@ -3,93 +3,66 @@
 ---
 import PropsTable from '@site/src/components/PropsTable';
 import { Root as NewfoldRoot, Modal, Button } from "@newfold/ui-component-library";
+import CodeBlock from '@theme/CodeBlock';
 // import Variants from '@site/docs/partials/Modal/_Modal-variants.mdx';
-let exModalOpen = false;
+import { ModalDemo } from '@site/docs/partials/modal';
+import ModalDemoCode from '!!raw-loader!../partials/modal/ModalDemo.js';
 
 # Modal
 A modal component.
 
-<NewfoldRoot>
-  <Button onClick={() => { }}>
-    Open modal
-  </Button>
-  <Modal
-    onClose={() => {}}
-    isOpen={ false }
-    position="center"
-  >
-    <Modal.Panel>
-      Text inside a panel.
-    </Modal.Panel>
-  </Modal>
-</NewfoldRoot>
+<ModalDemo />
 
 ---
 ### Usage
 ```jsx
 import { Modal } from "@newfold/ui-component-library";
-
-<Modal>
-
+<Modal
+    isOpen={ modalOpen }
+    onClose={ modalClose }
+>
+ <p>Modal content</p>
 </Modal>
+
 ```
+<CodeBlock language="jsx">{ModalDemoCode}</CodeBlock>
+
 ---
 ### Variants
 
 ---
 ### Props
-<PropsTable.Table docs={{
-  as: {
-    type: 'elementType',
-    description: 'Element type of the Card',
-    defaultValue: "div",
-    isRequired: false,
-  },
-  children: {
-      type: 'node',
-  },
-  className: {
-      type: 'string',
-      description: 'Class attribute to add to the element',
-      defaultValue: '""',
-  },
-  description: {
-      type: 'string',
-      description: 'Form element description for whole checkbox group',
-      defaultValue: '""',
-  },
-  disabled: {
-      type: 'boolean',
-      description: 'Disabled flag',
-      defaultValue: 'false',
-  },
-  id: {
-      type: 'string',
-      description: 'Element id attribute',
-      defaultValue: '""',
-  },
-  label: {
-      type: 'string',
-      description: 'Form label for whole checkbox group',
-      defaultValue: '""',
-  },
-  name: {
-      type: 'string',
-      description: 'Element name',
-      defaultValue: '""',
-  },
-  onChange: {
-      type: 'func',
-      defaultValue: 'noop',
-      description: 'Handler for when value changes',
-  },
-  options: {
-      type: 'Array of Objects',
-      description: 'The checkboxes destined for the group. [{value: string,label: string},...]',
-  },
-  values: {
-      type: 'Array of values',
-      description: 'Desired selected values matching the values of the options',
-  },
-}}
+<PropsTable.Table
+    docs={{
+        children: {
+            type: 'node',
+            isRequired: true,
+        },
+        className: {
+            type: 'string',
+            description: 'Class attribute to add to the Modal',
+            defaultValue: '""',
+        },
+        isOpen: {
+            type: 'boolean',
+            description: 'Open flag',
+            defaultValue: 'false',
+            isRequired: true,
+        },
+        onClose: {
+            type: 'function',
+            description: 'Close callback',
+            defaultValue: 'false',
+            isRequired: true,
+        },
+        position: {
+            type: 'string [center] [top-center]',
+            description: 'Modal position',
+            defaultValue: 'center',
+        },
+        size: {
+            type: 'number',
+            description: 'Prop for the `Modal.Title` component. [1, 2, 3, 4, 5]',
+        },
+    }}
 />

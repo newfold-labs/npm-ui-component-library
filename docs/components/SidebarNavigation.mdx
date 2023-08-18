@@ -1,0 +1,253 @@
+---
+
+---
+import PropsTable from '@site/src/components/PropsTable';
+import { Root as NewfoldRoot, SidebarNavigation } from "@newfold/ui-component-library";
+// import Variants from '@site/docs/partials/SidebarNavigation/_SidebarNavigation-variants.mdx';
+
+# SidebarNavigation
+A sidebar navigation component. Contains the subcomponents `Sidebar`, `Mobile`, `MenuItem` and `SubmenuItem` and contains the hook `useNavigationContext`.
+
+
+<NewfoldRoot>
+    <SidebarNavigation>
+        <SidebarNavigation.Sidebar className="yst-w-1/3">
+            <SidebarNavigation.MenuItem
+                id="menu-item-default-1"
+                label="MenuItem 1 label"
+            >
+            <SidebarNavigation.SubmenuItem
+                label="SubmenuItem 1 label"
+                to="#sub1"
+            />
+            <SidebarNavigation.SubmenuItem
+                label="SubmenuItem 2 label"
+                to="#sub2"
+            />
+            <SidebarNavigation.SubmenuItem
+                label="SubmenuItem 3 label"
+                to="#sub3"
+            />
+            </SidebarNavigation.MenuItem>
+            <SidebarNavigation.MenuItem
+                id="menu-item-default-2"
+                label="MenuItem 2 label"
+            >
+            <SidebarNavigation.SubmenuItem
+                label="SubmenuItem 1 label"
+                to="#sub1"
+            />
+            <SidebarNavigation.SubmenuItem
+                label="SubmenuItem 2 label"
+                to="#sub2"
+            />
+            <SidebarNavigation.SubmenuItem
+                label="SubmenuItem 3 label"
+                to="#sub3"
+            />
+            </SidebarNavigation.MenuItem>
+            <SidebarNavigation.MenuItem
+                id="menu-item-default-3"
+                label="MenuItem 3 label"
+            >
+            <SidebarNavigation.SubmenuItem
+                label="SubmenuItem 1 label"
+                to="#sub1"
+            />
+            <SidebarNavigation.SubmenuItem
+                label="SubmenuItem 2 label"
+                to="#sub2"
+            />
+            <SidebarNavigation.SubmenuItem
+                label="SubmenuItem 3 label"
+                to="#sub3"
+            />
+            </SidebarNavigation.MenuItem>
+        </SidebarNavigation.Sidebar>
+    </SidebarNavigation>
+</NewfoldRoot>
+
+---
+### Usage
+```jsx
+import { SidebarNavigation } from "@newfold/ui-component-library";
+
+<SidebarNavigation>
+    <SidebarNavigation.Sidebar className="yst-w-1/3">
+        <SidebarNavigation.MenuItem
+            id="menu-item-default-1"
+            label="MenuItem 1 label"
+        >
+        <SidebarNavigation.SubmenuItem
+            label="SubmenuItem 1 label"
+            to="#sub1"
+        />
+        <SidebarNavigation.SubmenuItem
+            label="SubmenuItem 2 label"
+            to="#sub2"
+        />
+        <SidebarNavigation.SubmenuItem
+            label="SubmenuItem 3 label"
+            to="#sub3"
+        />
+        </SidebarNavigation.MenuItem>
+        <SidebarNavigation.MenuItem
+            id="menu-item-default-2"
+            label="MenuItem 2 label"
+        >
+        <SidebarNavigation.SubmenuItem
+            label="SubmenuItem 1 label"
+            to="#sub1"
+        />
+        <SidebarNavigation.SubmenuItem
+            label="SubmenuItem 2 label"
+            to="#sub2"
+        />
+        <SidebarNavigation.SubmenuItem
+            label="SubmenuItem 3 label"
+            to="#sub3"
+        />
+        </SidebarNavigation.MenuItem>
+        <SidebarNavigation.MenuItem
+            id="menu-item-default-3"
+            label="MenuItem 3 label"
+        >
+        <SidebarNavigation.SubmenuItem
+            label="SubmenuItem 1 label"
+            to="#sub1"
+        />
+        <SidebarNavigation.SubmenuItem
+            label="SubmenuItem 2 label"
+            to="#sub2"
+        />
+        <SidebarNavigation.SubmenuItem
+            label="SubmenuItem 3 label"
+            to="#sub3"
+        />
+        </SidebarNavigation.MenuItem>
+    </SidebarNavigation.Sidebar>
+</SidebarNavigation>
+```
+---
+### SidebarNavigation Props
+<PropsTable.Table
+    docs={{
+        children: {
+            type: 'node',
+        },
+        activePath: {
+            type: 'string',
+            description: 'Active path',
+            defaultValue: '""',
+        },
+    }}
+/>
+
+## MenuItem
+The subcomponent `SidebarNavigation.MenuItem` accepts the subcomponents `SidebarNavigation.SubmenuItem` as children.
+
+### MenuItem Props
+<PropsTable.Table
+    docs={{
+        children: {
+            type: 'node',
+        },
+        defaultOpen: {
+            type: 'boolean',
+            description: 'Default open flag',
+            defaultValue: 'false',
+        },
+        icon: {
+            type: 'node',
+            description: 'Icon',
+        },
+        label: {
+            type: 'string',
+            description: 'Form label for whole checkbox group',
+            defaultValue: '""',
+        },
+    }}
+/>
+
+## SubmenuItem 
+The subcomponent `SidebarNavigation.SubmenuItem`.
+
+### SubmeunItem Props
+<PropsTable.Table 
+    docs={{
+        as: {
+            type: 'elementType',
+            description: 'Element type of the Card',
+            defaultValue: "div",
+            isRequired: false,
+        },
+        isActive: {
+            type: 'boolean',
+            description: 'Active menu item flag',
+            defaultValue: 'false',
+        },
+        label: {
+            type: 'string',
+            description: 'Label for submenu item',
+            defaultValue: '""',
+            isRequired: true,
+        },
+        pathProp: {
+            type: 'string',
+            description: 'Path',
+        },
+    }}
+/>
+
+## Sidebar
+The subcomponent `SidebarNavigation.Sidebar` is a `<nav>` wrapper component. It's props are `className` and `children` (`MenuItem` subomponents).
+
+### Sidebar Props
+<PropsTable.Table 
+    docs={{
+        className: {
+            type: 'string',
+            description: 'Class attribute to add to the element',
+            defaultValue: '""',
+        },
+        children: {
+            type: 'node',
+        },
+    }}
+/>
+
+## Mobile
+The subcomponent `SidebarNavigation.Mobile` is a wrapper component over the `MenuItem` subcomponents for mobile view.
+
+### Mobile Props
+<PropsTable.Table 
+    docs={{
+        children: {
+            type: 'node',
+        },
+        openButtonId: {
+            type: 'string',
+            description: 'Open button id',
+        },
+        closeButtonId: {
+            type: 'string',
+            description: 'Close button id',
+        },
+        openButtonScreenReaderText: {
+            type: 'string',
+            description: 'Open button screen reader text',
+            defaultValue: "Open",
+        },
+        closeButtonScreenReaderText: {
+            type: 'string',
+            description: 'Close button screen reader text',
+            defaultValue: "Close",
+        },
+        "aria-label": {
+            type: 'string',
+        },
+    }}
+/>
+
+---
+### Variants
