@@ -9,6 +9,7 @@ node_modules
 build
 storybook-static
 storybook-git-repo
+.docusaurus
 
 # Misc
 .DS_Store
