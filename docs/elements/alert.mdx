@@ -1,9 +1,6 @@
----
-sidebar_position: 1
----
 import PropsTable from '@site/src/components/PropsTable';
 import { Root as NewfoldRoot, Alert } from "@newfold/ui-component-library";
-import Variants from '@site/docs/partials/alert/_alert-variants.mdx';
+import { AlertVariants, alertProps } from '@site/docs/partials/alert';
 
 # Alert
 A simple alert component.
@@ -23,8 +20,8 @@ import { Alert } from "@newfold/ui-component-library";
 ---
 ### Variants
 The Alert provides four different levels, each with a unique icon and color.
-<Variants />
+<AlertVariants />
 
 ---
 ### Props
-<PropsTable.Table docs={Alert.docs} />
+<PropsTable.Table docs={alertProps} />
