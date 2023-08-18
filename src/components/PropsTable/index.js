@@ -6,16 +6,24 @@ const PropsTable = {};
 /**
  * Renders a table of component props.
  * @param {JSX.Element[]} children - The child elements representing the rows of the table.
+ * @param {object} docs - The object containing the props API documentation.
  * 
  * @returns {JSX.Element} - The rendered table.
  */
 PropsTable.Table = ({ children, docs }) => {
     const rows = [];
 
+    const isValidDocs = () => {
+        if (docs && typeof docs === 'object' && Object.keys(docs).length > 0) {
+            return true;
+        }
+
+        return false;
+    };
+
     const renderRows = () => {
-        if (docs) {
+        if (isValidDocs()) {
             for (const key in docs) {
-                console.log(key);
                 if (docs.hasOwnProperty(key)) {
                     const prop = docs[key];
                     prop.name = key;
@@ -66,7 +74,7 @@ PropsTable.Table = ({ children, docs }) => {
                 </thead>
 
                 <tbody>
-                    {(!children && !docs) &&
+                    {(!children && !isValidDocs()) &&
                         <div className="empty-props">This component has no props.</div>
                     }
                     {renderRows()}
