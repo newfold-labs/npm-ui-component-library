@@ -1,0 +1,60 @@
+import PropsTable from '@site/src/components/PropsTable';
+import { Root as NewfoldRoot, Checkbox } from "@newfold/ui-component-library";
+import { checkboxProps } from '@site/docs/partials/checkbox';
+
+# Checkbox
+The Checkbox element is used to select one or more options from a list of options.
+
+<NewfoldRoot>
+    <Checkbox
+        id="checkbox"
+        label="I am a checkbox."
+        name="name"
+        value="value"
+    />
+</NewfoldRoot>
+
+---
+### Usage
+```jsx
+import { Checkbox } from "@newfold/ui-component-library";
+
+<Checkbox
+    id="checkbox"
+    label="I am a checkbox."
+    name="name"
+    value="value"
+/>
+```
+
+---
+### Disabled
+No user interaction, indicated by opacity and cursor.
+
+<NewfoldRoot>
+    <Checkbox
+        disabled
+        id="checkbox-disabled"
+        label="I am a checkbox."
+        name="name"
+        value="value"
+    />
+</NewfoldRoot>
+
+```jsx
+<Checkbox
+    disabled
+    id="checkbox-diabled"
+    label="I am a checkbox."
+    name="name"
+    value="value"
+/>
+```
+
+---
+### Checkbox List
+Use the [`CheckboxGroup`](../components/checkboxGroup) component to render a list of checkboxes.
+
+---
+### Props
+<PropsTable.Table docs={checkboxProps} />
