@@ -1,0 +1,20 @@
+import PropsTable from '@site/src/components/PropsTable';
+import { Root as NewfoldRoot, ErrorBoundary } from "@newfold/ui-component-library";
+
+# Error Boundary
+React component that catches errors anywhere in their child component tree, log those errors,
+and display a fallback UI instead of the component tree that crashed.
+
+---
+### Usage
+```jsx
+import { ErrorBoundary } from "@newfold/ui-component-library";
+
+<ErrorBoundary
+    fallback={<div>Something went wrong</div>}
+>
+    <App />
+</ErrorBoundary>
+```
+
+Complete component documentation: [bvaughn/react-error-boundary](https://github.com/bvaughn/react-error-boundary)
