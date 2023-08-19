@@ -1,6 +1,6 @@
 import PropsTable from '@site/src/components/PropsTable';
 import { Root as NewfoldRoot, Badge } from "@newfold/ui-component-library";
-import { Variants, Sizes } from '@site/docs/partials/badge';
+import { BadgeVariants, BadgeSizes, badgeProps } from '@site/docs/partials/badge';
 
 # Badge
 Badges are visual elements that convey information to users in a subtle way, often used to
@@ -23,13 +23,13 @@ import { Badge } from "@newfold/ui-component-library";
 ---
 ### Variants
 There are 3 variants of the badge component, each with a different color scheme and usage purpose.
-<Variants />
+<BadgeVariants />
 
 ---
 ### Sizes
 The badge variants can be used in three different sizes.
-<Sizes />
+<BadgeSizes />
 
 ---
 ### Props
-<PropsTable.Table docs={Badge.docs} />
+<PropsTable.Table docs={badgeProps} />
