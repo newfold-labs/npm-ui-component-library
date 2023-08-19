@@ -1,0 +1,31 @@
+import PropsTable from '@site/src/components/PropsTable';
+import { Root as NewfoldRoot, Code } from "@newfold/ui-component-library";
+import { CodeVariants, codeProps } from '@site/docs/partials/code';
+
+# Code
+The Code element displays its contents styled in a fashion intended to indicate that the text is a short fragment of computer code.
+
+<NewfoldRoot>
+   <Code>
+        CodeContent();
+    </Code>
+</NewfoldRoot>
+
+---
+### Usage
+```jsx
+import { Code } from "@newfold/ui-component-library";
+
+<Code>
+    CodeContent();
+</Code>
+```
+
+---
+### Variants
+The Code provides two variants.
+<CodeVariants />
+
+---
+### Props
+<PropsTable.Table docs={codeProps} />

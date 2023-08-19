@@ -1,0 +1,47 @@
+import { Root as NewfoldRoot, Code } from "@newfold/ui-component-library";
+
+#### 1. Default (default)
+The default variant renders an inline code element.
+
+<NewfoldRoot>
+    <Code>console.log('default');</Code>
+</NewfoldRoot>
+
+```jsx
+<Code>
+    console.log('default');
+</Code>
+```
+
+:::info
+If the parent element has a display flex property with column direction,
+the code element will be streched to full width. To avoid this,
+add `nfd-w-fit` class to the code element.
+:::
+
+<NewfoldRoot>
+    <div className="nfd-flex nfd-flex-col nfd-gap-2">
+        <Code>console.log('default but full width');</Code>
+        <Code className="nfd-w-fit">console.log('default with `nfd-w-fit` class');</Code>
+    </div>
+</NewfoldRoot>
+
+```jsx
+<div className="nfd-flex nfd-flex-col nfd-gap-2">
+    <Code>console.log('default but full width');</Code>
+    <Code className="nfd-w-fit">console.log('default with `nfd-w-fit` class');</Code>
+</div>
+```
+
+#### 2. Block
+The block variant renders a block (full width) code element.
+
+<NewfoldRoot>
+    <Code variant="block">console.log('block');</Code>
+</NewfoldRoot>
+
+```jsx
+<Code variant="block">
+    console.log('block');
+</Code>
+```
