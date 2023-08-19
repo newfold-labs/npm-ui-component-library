@@ -43,6 +43,11 @@ article .theme-code-block {
   margin-top: .6rem;
 }
 
+article code {
+  padding: 1.5px 4px;
+  border-radius: 3px;
+}
+
 @layer base {
   article {
     .nfd-root {
