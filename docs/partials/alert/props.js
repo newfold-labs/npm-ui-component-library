@@ -1,4 +1,4 @@
-const props = {
+const alertProps = {
     children: {
         type: 'node',
         description: 'The content of the alert.',
@@ -23,4 +23,4 @@ const props = {
     }
 };
 
-export default props;
+export default alertProps;
