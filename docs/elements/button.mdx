@@ -1,0 +1,38 @@
+import PropsTable from '@site/src/components/PropsTable';
+import { Root as NewfoldRoot, Button } from "@newfold/ui-component-library";
+import { ButtonVariants, ButtonSizes, ButtonStates, buttonProps } from '@site/docs/partials/button';
+
+# Button
+Buttons are essential components in a user interface. They are used to trigger actions and provide users with feedback.
+A button should immediately trigger an action on a page or screen when clicked or tapped.
+
+<NewfoldRoot>
+    <Button>Button 🤟</Button>
+</NewfoldRoot>
+
+---
+### Usage
+```jsx
+import { Button } from "@newfold/ui-component-library";
+
+<Button>Button 🤟</Button>
+```
+
+---
+### Variants
+The Button provides four variants, each with a unique color scheme and intent.
+<ButtonVariants />
+
+---
+### Sizes
+The Button variants can be used in three different sizes.
+<ButtonSizes />
+
+---
+### States
+In addition to the default, hover, and focus states, two other button states have been specified.
+<ButtonStates />
+
+---
+### Props
+<PropsTable.Table docs={buttonProps} />

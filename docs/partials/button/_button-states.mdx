@@ -1,0 +1,52 @@
+import { Root as NewfoldRoot, Button } from "@newfold/ui-component-library";
+
+#### 1. Loading State
+The loading state is used when a button click triggers a process that takes some time to complete,
+such as running a data optimization or uploading a file.
+
+<NewfoldRoot>
+    <Button isLoading>Loading...</Button>
+</NewfoldRoot>
+
+```jsx
+<Button isLoading>
+    Loading...
+</Button>
+```
+
+#### 2. Disabled State
+The disabled state, represented by a transparent button, is used when the button cannot be clicked due to a certain condition.
+
+<NewfoldRoot>
+    <Button disabled>Disabled</Button>
+</NewfoldRoot>
+
+```jsx
+<Button disabled>
+    Disabled
+</Button>
+```
+
+:::info
+
+The disabled state does not remove pointer-events. If you want to remove pointer-events, you can use the `className` prop to add a class that sets pointer-events to none.
+
+:::
+
+<NewfoldRoot>
+    <Button
+        className="nfd-pointer-events-none"
+        disabled
+    >
+        Disabled & without pointer-events
+    </Button>
+</NewfoldRoot>
+
+```jsx
+<Button
+    className="nfd-pointer-events-none"
+    disabled
+>
+    Disabled & without pointer-events
+</Button>
+```
