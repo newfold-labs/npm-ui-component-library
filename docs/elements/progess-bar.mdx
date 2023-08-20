@@ -1,0 +1,30 @@
+import PropsTable from '@site/src/components/PropsTable';
+import { Root as NewfoldRoot, ProgressBar } from "@newfold/ui-component-library";
+import { progressBarProps } from '@site/docs/partials/progress-bar';
+
+# Progress Bar
+A progress bar component.
+
+<NewfoldRoot>
+    <ProgressBar 
+        max={100}
+        min={0}
+        progress={60}
+    />
+</NewfoldRoot>
+
+---
+### Usage
+```jsx
+import { ProgressBar } from "@newfold/ui-component-library";
+
+<ProgressBar 
+    max={100}
+    min={0}
+    progress={60}
+/>
+```
+
+---
+### Props
+<PropsTable.Table docs={progressBarProps} />
