@@ -1,0 +1,111 @@
+import PropsTable from '@site/src/components/PropsTable';
+import { Root as NewfoldRoot, Link } from "@newfold/ui-component-library";
+import { linkProps } from '@site/docs/partials/link';
+
+# Link
+Renders a link, either as an anchor tag or a button.
+
+<NewfoldRoot>
+    <Link>Click Here</Link>
+</NewfoldRoot>
+
+---
+### Usage
+```jsx
+import { Link } from "@newfold/ui-component-library";
+
+<Link>Click Here</Link>
+```
+
+---
+### Anchor
+When the link component is used as an anchor tag, you can pass the `href`, `target` and `rel` props.
+
+<NewfoldRoot>
+    <Link
+        href="https://www.google.com/"
+        target="_self"
+        rel="noopener noreferrer"
+    >
+        Google
+    </Link>
+</NewfoldRoot>
+
+```jsx
+<Link
+    href="https://www.google.com/"
+    target="_self"
+    rel="noopener noreferrer"
+>
+    Google
+</Link>
+```
+
+:::tip
+Accessibility tip: when using target `target="_blank"`, you can add a visually hidden text inside the link to notify
+screen reader users to the fact that the link opens in a new tab.
+:::
+
+<NewfoldRoot>
+    <Link
+        href="https://www.google.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        <span className="nfd-sr-only">
+            (Opens in a new browser tab)
+        </span>
+        Link with visually hidden text
+    </Link>
+</NewfoldRoot>
+
+```jsx
+<Link
+    href="https://www.google.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    <span className="nfd-sr-only">
+        (Opens in a new browser tab)
+    </span>
+    Link with visually hidden text
+</Link>
+```
+
+---
+### Button
+When the link component is used as a button, you can pass the `onClick` prop to add functionality.
+
+<NewfoldRoot>
+    <Link
+        as="button"
+        onClick={() => alert('Hello World!')}
+    >
+        Link as a button
+    </Link>
+</NewfoldRoot>
+
+```jsx
+ <Link
+    as="button"
+    onClick={() => alert('Hello World!')}
+>
+    Link as a button
+</Link>
+```
+
+---
+### Custom Component
+You can pass a custom component to the `as` prop to render a custom link.
+
+```jsx
+const Component = ( { className, children } ) => <span className={ className }>Custom { children }</span>
+
+<Link as={ Component }>
+  component link
+</Link>
+```
+
+---
+### Props
+<PropsTable.Table docs={linkProps} />
