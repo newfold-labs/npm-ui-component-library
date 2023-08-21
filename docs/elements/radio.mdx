@@ -1,0 +1,87 @@
+import PropsTable from '@site/src/components/PropsTable';
+import { Root as NewfoldRoot, Radio } from "@newfold/ui-component-library";
+import { RadioVariants, radioProps } from '@site/docs/partials/radio';
+
+# Radio
+Radio buttons are a type of input element that allows users to select only
+one option from a list of mutually exclusive options. They are commonly
+used in forms where users need to select one option from a set of options.
+
+<NewfoldRoot>
+    <Radio
+        id="radio"
+        label="I am a radio button."
+        name="name"
+        value="value"
+    />
+</NewfoldRoot>
+
+---
+### Usage
+```jsx
+import { Radio } from "@newfold/ui-component-library";
+
+<Radio
+    id="radio"
+    label="I am a radio button."
+    name="name"
+    value="value"
+/>
+```
+
+---
+### Variants
+The Radio component offers two variants: `default` and `inline-block`.
+<RadioVariants />
+
+---
+### Disabled
+Use the `disabled` prop to disable the radio button.
+
+<NewfoldRoot>
+    <Radio
+        id="radio-disabled"
+        label="I am a radio button."
+        name="name"
+        value="disabled-radio"
+        disabled
+    />
+</NewfoldRoot>
+
+```jsx
+<Radio
+    id="radio-disabled"
+    label="I am a radio button."
+    name="name"
+    value="disabled-radio"
+    disabled
+/>
+```
+
+---
+### Dangerous label
+If you need to render dangerous HTML inside the label, use the `isLabelDangerousHtml` prop.
+
+<NewfoldRoot>
+    <Radio
+        id="radio-dangerous"
+        isLabelDangerousHtml
+        label="&bull; Dangerous label."
+        name="option-dangerous"
+        value="D"
+    />
+</NewfoldRoot>
+
+```jsx
+<Radio
+    id="radio-dangerous"
+    isLabelDangerousHtml
+    label="&bull; Dangerous label."
+    name="option-dangerous"
+    value="dangerous-radio"
+/>
+```
+
+---
+### Props
+<PropsTable.Table docs={radioProps} />

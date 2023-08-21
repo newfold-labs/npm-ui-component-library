@@ -1,0 +1,55 @@
+import { Root as NewfoldRoot, Radio } from "@newfold/ui-component-library";
+
+#### 1. Default (default)
+The `default` radio variant renders a classic radio element.
+
+<NewfoldRoot>
+    <Radio
+        id="radio-default"
+        label="Radio button with default variant."
+        name="option-default"
+        value="1"
+    />
+</NewfoldRoot>
+
+```jsx
+<Radio
+    id="radio-default"
+    label="Radio button with default variant."
+    name="option-default"
+    value="1"
+/>
+```
+
+#### 2. Inline Block
+The `inline-block` variant renders a button shaped radio element.
+
+<NewfoldRoot>
+    <Radio
+        id="radio-inline-block"
+        label="2"
+        name="option-inline-block"
+        value="2"
+        variant="inline-block"
+        screenReaderLabel="Option #2"
+    />
+</NewfoldRoot>
+
+```jsx
+<Radio
+    id="radio-inline-block"
+    label="2"
+    name="option-inline-block"
+    value="2"
+    variant="inline-block"
+    screenReaderLabel="Option #2"
+/>
+```
+
+:::tip
+
+Accessibility tip: when using the `inline-block` variant, it is recommended
+to pass a meaningful label name to the `screenReaderLabel` prop.
+See the example in the code snippet above.
+
+:::
