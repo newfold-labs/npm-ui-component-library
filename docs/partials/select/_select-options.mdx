@@ -1,0 +1,71 @@
+#### 1. Options as Children
+Use the `childrern` prop to pass in the options by utilizing `Select.Option` component.
+In this case changing the `selectedLabel` should be done manually in the `handleChange` function
+
+```jsx
+const [selectedVal, setSelectedVal] = useState(1);
+
+const handleChange = (val) => {
+    setSelectedVal(val);
+};
+
+<Select
+    id='select-demo-children'
+    onChange={handleChange}
+    value={selectedVal}
+    selectedLabel={`Option ${selectedVal}`}
+>
+    <Select.Option
+        label="Option 1"
+        value="1"
+    />
+    <Select.Option
+        label="Option 2"
+        value="2"
+    />
+    <Select.Option
+        label="Option 3"
+        value="3"
+    />
+    <Select.Option
+        label="Option 4"
+        value="4"
+    />
+</Select>
+```
+
+#### 2. Options as Array
+Use the `options` prop to pass in the options as an array of objects.
+In this case, displayed `selectedLabel` will be updated automatically on change.
+
+```jsx
+const [selectedVal, setSelectedVal] = useState(1);
+
+const handleChange = (val) => {
+    setSelectedVal(val);
+};
+
+<Select
+    id='select-demo-array'
+    onChange={handleChange}
+    value={selectedVal}
+    options={[
+      {
+        label: 'Option 1',
+        value: '1'
+      },
+      {
+        label: 'Option 2',
+        value: '2'
+      },
+      {
+        label: 'Option 3',
+        value: '3'
+      },
+      {
+        label: 'Option 4',
+        value: '4'
+      }
+    ]}
+/>
+```

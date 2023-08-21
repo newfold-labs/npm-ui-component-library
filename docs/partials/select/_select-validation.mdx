@@ -1,0 +1,174 @@
+import { Root as NewfoldRoot } from "@newfold/ui-component-library";
+import { SelectDemo } from './';
+
+#### Success
+<NewfoldRoot>
+    <SelectDemo 
+        id="select-demo-success"
+        label="Success variant"
+        validation={{
+            variant: "success",
+            message: "Success unlocked. Keep soaring!"
+        }}
+    />
+</NewfoldRoot>
+
+```jsx
+<Select
+    id='select-demo-success'
+    onChange={handleChange}
+    value='1'
+    selectedLabel='Option 1'
+    label="Success variant"
+    validation={{
+        variant: "success",
+        message: "Success unlocked. Keep soaring!"
+    }}
+>
+    <Select.Option
+        label="Option 1"
+        value="1"
+    />
+    <Select.Option
+        label="Option 2"
+        value="2"
+    />
+    <Select.Option
+        label="Option 3"
+        value="3"
+    />
+    <Select.Option
+        label="Option 4"
+        value="4"
+    />
+</Select>
+```
+
+#### Warning
+<NewfoldRoot>
+    <SelectDemo 
+        id="select-demo-warning"
+        label="Warning variant"
+        validation={{
+            variant: "warning",
+            message: "Caution: Proceed with care to avoid potential pitfalls."
+        }}
+    />
+</NewfoldRoot>
+
+```jsx
+<Select
+    id='select-demo-warning'
+    onChange={handleChange}
+    value='1'
+    selectedLabel='Option 1'
+    label="Warning variant"
+    validation={{
+        variant: "warning",
+        message: "Caution: Proceed with care to avoid potential pitfalls."
+    }}
+>
+    <Select.Option
+        label="Option 1"
+        value="1"
+    />
+    <Select.Option
+        label="Option 2"
+        value="2"
+    />
+    <Select.Option
+        label="Option 3"
+        value="3"
+    />
+    <Select.Option
+        label="Option 4"
+        value="4"
+    />
+</Select>
+```
+
+#### Info
+<NewfoldRoot>
+    <SelectDemo 
+        id="select-demo-info"
+        label="Info variant"
+        validation={{
+            variant: "info",
+            message: "Information: Knowledge is the key to empowerment."
+        }}
+    />
+</NewfoldRoot>
+
+```jsx
+<Select
+    id='select-demo-info'
+    onChange={handleChange}
+    value='1'
+    selectedLabel='Option 1'
+    label="Info variant"
+    validation={{
+        variant: "info",
+        message: "Information: Knowledge is the key to empowerment."
+    }}
+>
+    <Select.Option
+        label="Option 1"
+        value="1"
+    />
+    <Select.Option
+        label="Option 2"
+        value="2"
+    />
+    <Select.Option
+        label="Option 3"
+        value="3"
+    />
+    <Select.Option
+        label="Option 4"
+        value="4"
+    />
+</Select>
+```
+
+#### Error
+<NewfoldRoot>
+    <SelectDemo 
+        id="select-demo-error"
+        label="Error variant"
+        validation={{
+            variant: "error",
+            message: "Error: Unable to proceed without required input."
+        }}
+    />
+</NewfoldRoot>
+
+```jsx
+<Select
+    id='select-demo-error'
+    onChange={handleChange}
+    value='1'
+    selectedLabel='Option 1'
+    label="Error variant"
+    validation={{
+        variant: "error",
+        message: "Error: Unable to proceed without required input."
+    }}
+>
+    <Select.Option
+        label="Option 1"
+        value="1"
+    />
+    <Select.Option
+        label="Option 2"
+        value="2"
+    />
+    <Select.Option
+        label="Option 3"
+        value="3"
+    />
+    <Select.Option
+        label="Option 4"
+        value="4"
+    />
+</Select>
+```

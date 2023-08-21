@@ -1,0 +1,136 @@
+import PropsTable from '@site/src/components/PropsTable';
+import { Root as NewfoldRoot, Select } from "@newfold/ui-component-library";
+import { SelectDemo, SelectOptions, SelectValidationVariants, selectProps } from '@site/docs/partials/select';
+
+# Select
+A dropdown list for selecting a single item.
+
+<NewfoldRoot>
+    <SelectDemo 
+        id="select-demo"
+    />
+</NewfoldRoot>
+
+---
+### Usage
+```jsx
+import { Select } from "@newfold/ui-component-library";
+
+<Select
+    id='select-demo'
+    onChange={handleChange}
+    value='1'
+    selectedLabel='Option 1'
+>
+    <Select.Option
+        label="Option 1"
+        value="1"
+    />
+    <Select.Option
+        label="Option 2"
+        value="2"
+    />
+    <Select.Option
+        label="Option 3"
+        value="3"
+    />
+    <Select.Option
+        label="Option 4"
+        value="4"
+    />
+</Select>
+```
+
+---
+### Options
+You can pass options to the Select component in two ways. You can
+pass them as children of the Select component or you can
+pass them as an array of objects to the options prop.
+<SelectOptions />
+
+---
+### Label
+Use the `label` prop to add a label to the Select component.
+
+<NewfoldRoot>
+    <SelectDemo 
+        id="select-demo-label"
+        label="Select an option"
+    />
+</NewfoldRoot>
+
+```jsx
+<Select
+    id='select-demo-label'
+    onChange={handleChange}
+    value='1'
+    selectedLabel='Option 1'
+    label="Select an option"
+>
+    <Select.Option
+        label="Option 1"
+        value="1"
+    />
+    <Select.Option
+        label="Option 2"
+        value="2"
+    />
+    <Select.Option
+        label="Option 3"
+        value="3"
+    />
+    <Select.Option
+        label="Option 4"
+        value="4"
+    />
+</Select>
+```
+
+---
+### Disabled
+Use the `disabled` prop to disable the Select component.
+
+<NewfoldRoot>
+    <SelectDemo 
+        id="select-demo-disabled"
+        label="A disabled select"
+        disabled={true}
+    />
+</NewfoldRoot>
+
+```jsx
+<Select
+    id='select-demo-disabled'
+    onChange={handleChange}
+    value='1'
+    selectedLabel='Option 1'
+    label="A disabled select"
+    disabled={true}
+>
+    <Select.Option
+        label="Option 1"
+        value="1"
+    />
+    <Select.Option
+        label="Option 2"
+        value="2"
+    />
+    <Select.Option
+        label="Option 3"
+        value="3"
+    />
+    <Select.Option
+        label="Option 4"
+        value="4"
+    />
+</Select>
+```
+
+### Validation
+You can use the `validation` prop to render a validation variant to the Select component.
+The select component provide four validation variants: `success`, `warning`, `info`, and `error`.
+<SelectValidationVariants />
+
+---
+### Props
+<PropsTable.Table docs={selectProps} />
