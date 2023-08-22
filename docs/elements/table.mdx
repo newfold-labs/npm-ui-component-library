@@ -1,0 +1,110 @@
+import PropsTable from '@site/src/components/PropsTable';
+import { Root as NewfoldRoot, Table } from "@newfold/ui-component-library";
+import { tableProps } from '@site/docs/partials/table';
+
+# Table
+A basic table component. The table component contains sub components that allows you to construct a table.
+
+<NewfoldRoot>
+    <Table className="nfd-m-0 nfd-table">
+        <Table.Head>
+            <Table.Row>
+                <Table.Header>
+                    Header 1
+                </Table.Header>
+                <Table.Header>
+                    Header 2
+                </Table.Header>
+                <Table.Header>
+                    Header 3
+                </Table.Header>
+            </Table.Row>
+        </Table.Head>
+        <Table.Body>
+            <Table.Row>
+                <Table.Cell>
+                    Cell 1
+                </Table.Cell>
+                <Table.Cell>
+                    Cell 2
+                </Table.Cell>
+                <Table.Cell>
+                    Cell 3
+                </Table.Cell>
+            </Table.Row>
+            <Table.Row>
+                <Table.Cell>
+                    Cell 1
+                </Table.Cell>
+                <Table.Cell>
+                    Cell 2
+                </Table.Cell>
+                <Table.Cell>
+                    Cell 3
+                </Table.Cell>
+            </Table.Row>
+        </Table.Body>
+    </Table>
+</NewfoldRoot>
+
+---
+### Usage
+```jsx
+import { Table } from "@newfold/ui-component-library";
+
+<Table>
+    <Table.Head>
+        <Table.Row>
+            <Table.Header>
+                Header 1
+            </Table.Header>
+            <Table.Header>
+                Header 2
+            </Table.Header>
+            <Table.Header>
+                Header 3
+            </Table.Header>
+        </Table.Row>
+    </Table.Head>
+    <Table.Body>
+        <Table.Row>
+            <Table.Cell>
+                Cell 1
+            </Table.Cell>
+            <Table.Cell>
+                Cell 2
+            </Table.Cell>
+            <Table.Cell>
+                Cell 3
+            </Table.Cell>
+        </Table.Row>
+        <Table.Row>
+            <Table.Cell>
+                Cell 1
+            </Table.Cell>
+            <Table.Cell>
+                Cell 2
+            </Table.Cell>
+            <Table.Cell>
+                Cell 3
+            </Table.Cell>
+        </Table.Row>
+    </Table.Body>
+</Table>
+```
+
+---
+### Sub Components
+The table component contains the following sub components:
+
+-- `Table` <br/>
+--- `Table.Head` <br/>
+---- `Table.Row` <br/>
+----- `Table.Header` <br/>
+--- `Table.Body` <br/>
+---- `Table.Row` <br/>
+----- `Table.Cell`
+
+---
+### Props
+<PropsTable.Table docs={tableProps} />
