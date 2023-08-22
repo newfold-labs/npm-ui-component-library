@@ -1,0 +1,94 @@
+import { Root as NewfoldRoot, Spinner } from "@newfold/ui-component-library";
+
+#### 1. Size 3 (Small)
+To render size 3 spinner pass `'3'` to the `size` prop.
+
+<NewfoldRoot>
+    <div className="nfd-flex nfd-items-center nfd-gap-3">
+        <Spinner size="3" />
+        <Spinner 
+            size="3"
+            variant="primary"
+        />
+        <div className="nfd-inline-block nfd-bg-[#2B2B2B] nfd-p-1.5 nfd-rounded">
+            <Spinner
+                size="3"
+                variant="white" 
+            />
+        </div>
+    </div>
+</NewfoldRoot>
+
+```jsx
+<div className="nfd-flex nfd-items-center nfd-gap-3">
+    <Spinner size="3" />
+    <Spinner 
+        size="3"
+        variant="primary"
+    />
+    <div className="nfd-inline-block nfd-bg-[#2B2B2B] nfd-p-1.5 nfd-rounded">
+        <Spinner
+            size="3"
+            variant="white" 
+        />
+    </div>
+</div>
+```
+
+#### 2. Size 4 (Medium)
+Size 4 spinner is the default spinner size.
+
+<NewfoldRoot>
+    <div className="nfd-flex nfd-items-center nfd-gap-4">
+        <Spinner />
+        <Spinner variant="primary" />
+        <div className="nfd-inline-block nfd-bg-[#2B2B2B] nfd-p-1.5 nfd-rounded">
+            <Spinner variant="white" />
+        </div>
+    </div>
+</NewfoldRoot>
+
+```jsx
+<div className="nfd-flex nfd-items-center nfd-gap-4">
+    <Spinner />
+    <Spinner variant="primary" />
+    <div className="nfd-inline-block nfd-bg-[#2B2B2B] nfd-p-2 nfd-rounded">
+        <Spinner variant="white" />
+    </div>
+</div>
+```
+
+#### 3. Size 8 (Large)
+To render size 8 spinner pass `'8'` to the `size` prop.
+
+<NewfoldRoot>
+    <div className="nfd-flex nfd-items-center nfd-gap-6">
+        <Spinner size="8" />
+        <Spinner 
+            size="8"
+            variant="primary"
+        />
+        <div className="nfd-inline-block nfd-bg-[#2B2B2B] nfd-p-2.5 nfd-rounded-md">
+            <Spinner
+                size="8"
+                variant="white" 
+            />
+        </div>
+    </div>
+</NewfoldRoot>
+
+```jsx
+<div className="nfd-flex nfd-items-center nfd-gap-6">
+    <Spinner size="8" />
+    <Spinner 
+        size="8"
+        variant="primary"
+    />
+    <div className="nfd-inline-block nfd-bg-[#2B2B2B] nfd-p-2.5 nfd-rounded-md">
+        <Spinner
+            size="8"
+            variant="white" 
+        />
+    </div>
+</div>
+```

@@ -1,0 +1,35 @@
+import { Root as NewfoldRoot, Spinner } from "@newfold/ui-component-library";
+
+#### 1. Default (default)
+
+<NewfoldRoot>
+    <Spinner />
+</NewfoldRoot>
+
+```jsx
+<Spinner />
+```
+
+#### 2. Primary
+Pass `'primary'` to the `variant` prop to render the primary variant spinner.
+
+<NewfoldRoot>
+    <Spinner variant="primary" />
+</NewfoldRoot>
+
+```jsx
+<Spinner variant="primary" />
+```
+
+#### 3. White
+Pass `'white'` to the `variant` prop to render the white variant spinner. The white variant is used in dark mode environments.
+
+<NewfoldRoot>
+     <div className="nfd-inline-block nfd-bg-[#2B2B2B] nfd-p-2 nfd-rounded">
+        <Spinner variant="white" />
+    </div>
+</NewfoldRoot>
+
+```jsx
+<Spinner variant="white" />
+```

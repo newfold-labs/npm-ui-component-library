@@ -1,0 +1,32 @@
+import PropsTable from '@site/src/components/PropsTable';
+import { Root as NewfoldRoot, Spinner } from "@newfold/ui-component-library";
+import { SpinnerVariants, SpinnerSizes, spinnerProps } from '@site/docs/partials/spinner';
+
+# Spinner
+A loading spinner component.
+
+<NewfoldRoot>
+    <Spinner />
+</NewfoldRoot>
+
+---
+### Usage
+```jsx
+import { Spinner } from "@newfold/ui-component-library";
+
+<Spinner />
+```
+
+---
+### Variants
+The Spinner provides 3 variants: `default`, `primary` and `white`.
+<SpinnerVariants />
+
+---
+### Sizes
+The Spinner provides 3 sizes: `3` (small), `4` (medium) and `8` (large).
+<SpinnerSizes />
+
+---
+### Props
+<PropsTable.Table docs={spinnerProps} />
