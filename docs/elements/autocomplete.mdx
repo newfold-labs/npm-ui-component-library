@@ -167,7 +167,53 @@ Allow empty values with reset button `X` or deleting the option and clicking out
 ### Validation
 You can use the `validation` prop to render a validation variant to the Autocomplete component.
 The Autocomplete component provide four validation variants: `success`, `warning`, `info`, and `error`.
-<AutocompleteValidationVariants />    
+<AutocompleteValidationVariants />
+
+---
+### onChange
+The `onChange` prop is a function that will be called when the value of the Autocomplete component changes.
+The function will receive the new value of the Autocomplete component as a parameter.
+
+```jsx
+<Autocomplete
+    id="autocomplete-input"
+    onChange={new_val => console.log(new_val)}
+    onQueryChange={handleQueryChange}
+>
+    <Autocomplete.Option value="1">
+        Option 1
+    </Autocomplete.Option>
+    <Autocomplete.Option value="2">
+        Option 2
+    </Autocomplete.Option>
+    <Autocomplete.Option value="3">
+        Option 3
+    </Autocomplete.Option>
+</Autocomplete>
+```
+
+---
+### onQueryChange
+The `onQueryChange` prop is a function that will be called when the query of the Autocomplete component changes.
+The function will receive the new query event of the Autocomplete component as a parameter.
+
+```jsx
+<Autocomplete
+    id="autocomplete-input"
+    onChange={(new_val) => console.log(new_val)}
+    onQueryChange={(event) => console.log(event.target.value)}
+>
+    <Autocomplete.Option value="1">
+        Option 1
+    </Autocomplete.Option>
+    <Autocomplete.Option value="2">
+        Option 2
+    </Autocomplete.Option>
+    <Autocomplete.Option value="3">
+        Option 3
+    </Autocomplete.Option>
+</Autocomplete>
+```
 
 ---
 ### Props

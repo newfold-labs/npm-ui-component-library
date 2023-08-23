@@ -36,7 +36,12 @@ const AutocompleteDemo = ({
             return setQuery(options);
         }
 
-        const filteredOptions = options.filter((option) => option.label.toLowerCase().includes(value.toLowerCase()));
+        const filteredOptions = () => {
+            if (options.length > 0) {
+                return options.filter((option) => option.label.toLowerCase().includes(value.toLowerCase()));
+            }
+        }
+        
         return setQuery(filteredOptions);
     };
 
