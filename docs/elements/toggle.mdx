@@ -1,0 +1,106 @@
+import PropsTable from '@site/src/components/PropsTable';
+import { Root as NewfoldRoot, Label, Toggle } from "@newfold/ui-component-library";
+import { ToggleDemo, toggleProps } from '@site/docs/partials/toggle';
+
+# Toggle
+A toggle switch allows users to switch between two states (on and off) by clicking or
+tapping on it. Toggle switches are commonly used in settings or
+options menus to enable or disable certain features or functions.
+
+<NewfoldRoot>
+    <ToggleDemo />
+</NewfoldRoot>
+
+---
+### Usage
+```jsx
+import { Toggle } from "@newfold/ui-component-library";
+
+const [isChecked, setIsChecked] = useState(checked);
+
+<Toggle
+    id="toggle-id"
+    screenReaderLabel="Toggle"
+    onChange={setIsChecked}
+/>
+```
+
+---
+### Label
+You can use the [`Label`](./label) component to add a label to the toggle.
+
+<NewfoldRoot>
+    <div className="nfd-flex nfd-flex-col">
+        <Label 
+            htmlFor="toggle-id-label"
+            label="Enable Airplane Mode"
+            className="nfd-cursor-pointer"
+        />
+        <ToggleDemo 
+            id="toggle-id-label"
+            screenReaderLabel="Enable Airplane Mode"
+            className="nfd-mt-2"
+        />
+    </div>
+</NewfoldRoot>
+
+```jsx
+import { Toggle, Label } from "@newfold/ui-component-library";
+
+<Label 
+    htmlFor="toggle-id-label"
+    label="Enable Airplane Mode"
+    className="nfd-cursor-pointer"
+/>
+<Toggle
+    id="toggle-id-label"
+    screenReaderLabel="Enable Airplane Mode"
+    onChange={handleChange}
+    className="nfd-mt-2"
+/>
+```
+
+---
+### Checked
+You can set the toggle to be checked by default by passing the `checked` prop.
+
+<NewfoldRoot>
+    <ToggleDemo
+        id="toggle-id-checked"
+        checked 
+    />
+</NewfoldRoot>
+
+```jsx
+<Toggle
+    id="toggle-id-checked"
+    screenReaderLabel="Toggle"
+    onChange={handleChange}
+    checked={true}
+/>
+```
+
+---
+### Disabled
+You can disable the toggle by passing the `disabled` prop.
+
+<NewfoldRoot>
+    <ToggleDemo
+        id="toggle-id-disabled"
+        disabled 
+    />
+</NewfoldRoot>
+
+```jsx
+<Toggle
+    id="toggle-id-disabled"
+    screenReaderLabel="Disabled Toggle"
+    onChange={handleChange}
+    disabled={true}
+/>
+````
+
+
+---
+### Props
+<PropsTable.Table docs={toggleProps} />
