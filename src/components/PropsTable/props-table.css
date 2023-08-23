@@ -67,6 +67,15 @@
   max-width: 550px;
 }
 
+.props-table .props-table-default-col {
+  min-width: 145px;
+}
+
+.props-table .props-table-default-col code {
+  font-size: .85rem;
+  background-color: #edf6ff;
+}
+
 .props-table .empty-props {
   text-align: center;
   padding: 20px;
