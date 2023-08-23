@@ -1,0 +1,33 @@
+import PropsTable from '@site/src/components/PropsTable';
+import { Root as NewfoldRoot, Title } from "@newfold/ui-component-library";
+import { TitleAs, TitleSizes, titleProps } from '@site/docs/partials/title';
+
+# Title
+The title component is used to display a heading.
+
+<NewfoldRoot>
+    <Title className="nfd-mb-0">Exploring the Mysteries of the Night Sky.</Title>
+</NewfoldRoot>
+
+---
+### Usage
+```jsx
+import { Title } from "@newfold/ui-component-library";
+
+<Title>Exploring the Mysteries of the Night Sky.</Title>
+```
+
+---
+### Title As
+The `as` prop allows you to change the element type of the title component.
+<TitleAs />
+
+---
+### Title Sizes
+The `size` prop allows you to change the size of the title component.
+There are 5 sizes available: `1`, `2`, `3`, `4` and `5`.
+<TitleSizes />
+
+---
+### Props
+<PropsTable.Table docs={titleProps} />
