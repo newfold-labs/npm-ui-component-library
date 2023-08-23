@@ -1,0 +1,110 @@
+import PropsTable from '@site/src/components/PropsTable';
+import { Root as NewfoldRoot, Label, Textarea } from "@newfold/ui-component-library";
+import { textareaProps } from '@site/docs/partials/textarea';
+
+# Textarea
+A simple textarea component. Accept all props of a regular textarea element.
+
+<NewfoldRoot>
+    <Textarea />
+</NewfoldRoot>
+
+### Usage
+```jsx
+import { Textarea } from "@newfold/ui-component-library";
+
+<Textarea />
+```
+
+---
+### HTML Attributes
+Since the `Textarea` component is a wrapper around a regular textarea element, all attributes of a regular textarea element are accepted.
+
+For example, here's a `Textarea` instance with a `placeholder` and an `id`.
+
+<NewfoldRoot>
+    <Textarea 
+        placeholder="Enter some text here"
+        id="my-textarea"
+    />
+</NewfoldRoot>
+
+```jsx
+<Textarea 
+    placeholder="Enter some text here"
+    id="my-textarea"
+/>
+```
+
+---
+### Value
+To add a default value to the `Textarea`, you can render the
+`Textarea` as a dynamic component instead of self-closing.
+
+<NewfoldRoot>
+    <Textarea>
+        The 'textarea' HTML element is a fundamental input control
+        that allows users to input multiple lines of text.
+    </Textarea>
+</NewfoldRoot>
+
+```jsx
+<Textarea>
+    The 'textarea' HTML element is a fundamental input control
+    that allows users to input multiple lines of text.
+</Textarea>
+```
+
+---
+### Labels
+You can use the [`Label`](./label) component to add a label to your textarea.
+
+<NewfoldRoot>
+    <Label 
+        htmlFor="my-textarea-label"
+        label="Share your thoughts with us:"
+        className="nfd-cursor-pointer"
+    />
+    <Textarea 
+        placeholder="Your thoughts here..."
+        id="my-textarea-label"
+        className="nfd-mt-2"
+    />
+</NewfoldRoot>
+
+```jsx
+import { Label, Textarea } from "@newfold/ui-component-library";
+
+<Label 
+    htmlFor="my-textarea-label"
+    label="Share your thoughts with us:"
+    className="nfd-cursor-pointer"
+/>
+<Textarea 
+    placeholder="Your thoughts here..."
+    id="my-textarea-label"
+    className="nfd-mt-2"
+/>
+```
+
+---
+### Disabled
+You can disable the textarea by passing the `disabled` prop.
+
+<NewfoldRoot>
+    <Textarea 
+        placeholder="Add some text here..."
+        disabled={true}
+    />
+</NewfoldRoot>
+
+```jsx
+<Textarea 
+    placeholder="Add some text here..."
+    disabled={true}
+/>
+```
+
+---
+### Props
+<PropsTable.Table docs={textareaProps} />
