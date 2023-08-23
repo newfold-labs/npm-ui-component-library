@@ -8,7 +8,6 @@ sidebar_label: Installation
 To install the Newfold UI library, start with installing the package and its peer dependencies from NPM.
 
 ```shell
-# Add dependencies with NPM
 npm install @newfold/ui-component-library @wordpress/element
 ```
 
