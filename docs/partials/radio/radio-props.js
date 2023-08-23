@@ -23,7 +23,7 @@ const radioProps = {
     isLabelDangerousHtml: {
         type: 'bool',
         description: 'If true, the label will be rendered as HTML',
-        defaultValue: false,
+        defaultValue: 'false',
     },
     screenReaderLabel: {
         type: 'string',
@@ -31,7 +31,7 @@ const radioProps = {
     },
     disabled: {
         type: 'bool',
-        defaultValue: false,
+        defaultValue: 'false',
     },
     className: {
         type: 'string',

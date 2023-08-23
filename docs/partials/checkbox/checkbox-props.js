@@ -17,6 +17,7 @@ const checkboxProps = {
     },
     disabled: {
         type: 'bool',
+        defaultValue: 'false',
     },
     className: {
         type: 'string',

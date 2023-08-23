@@ -37,6 +37,7 @@ const selectProps = {
     disabled: {
         type: 'bool',
         description: 'If true, the select will be disabled.',
+        defaultValue: 'false',
     },
     validation: {
         type: '{ variant: string, message: node }',

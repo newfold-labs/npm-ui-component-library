@@ -2,7 +2,7 @@ const badgeProps = {
     children: {
         type: 'node',
         description: 'The content of the badge.',
-        required: true,
+        isRequired: true,
     },
     variant: {
         type: ['info', 'upsell', 'plain'],

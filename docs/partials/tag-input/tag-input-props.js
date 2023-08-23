@@ -29,6 +29,7 @@ const tagInputProps = {
     },
     disabled: {
         type: 'bool',
+        description: 'If true, the tag input will be disabled.',
         defaultValue: 'false',
     },
     className: {

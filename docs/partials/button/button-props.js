@@ -23,11 +23,11 @@ const buttonProps = {
     },
     isLoading: {
         type: 'bool',
-        defaultValue: false,
+        defaultValue: 'false',
     },
     disabled: {
         type: 'bool',
-        defaultValue: false,
+        defaultValue: 'false',
     },
     className: {
         type: 'string',
