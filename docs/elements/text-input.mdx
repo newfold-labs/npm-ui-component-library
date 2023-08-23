@@ -1,0 +1,116 @@
+import PropsTable from '@site/src/components/PropsTable';
+import { Root as NewfoldRoot, Label, TextInput } from "@newfold/ui-component-library";
+import { textInputProps } from '@site/docs/partials/text-input';
+
+# Text Input
+A simple text input component. Accept all props of a regular input element.
+
+<NewfoldRoot>
+    <TextInput />
+</NewfoldRoot>
+
+### Usage
+```jsx
+import { TextInput } from "@newfold/ui-component-library";
+
+<TextInput />
+```
+
+---
+### HTML Attributes
+Since the Text Input component is a wrapper around a regular input element, all attributes of a regular input element are accepted.
+
+For example, here's an input type `number` with a `placeholder` and an `id`.
+
+<NewfoldRoot>
+    <TextInput 
+        type="number"
+        placeholder="Enter a number"
+        id="number-input"
+    />
+</NewfoldRoot>
+
+```jsx
+<TextInput 
+    type="number"
+    placeholder="Enter a number"
+    id="number-input"
+/>
+```
+
+---
+### Labels
+You can use the [`Label`](./label) component to add a label to your text input.
+
+<NewfoldRoot>
+    <Label 
+        htmlFor="number-input-label"
+        label="Your lucky number:"
+        className="nfd-cursor-pointer"
+    />
+    <TextInput 
+        type="number"
+        placeholder="Enter a number"
+        id="number-input-label"
+        className="nfd-mt-2"
+    />
+</NewfoldRoot>
+
+```jsx
+import { Label, TextInput } from "@newfold/ui-component-library";
+
+<Label 
+    htmlFor="number-input-label"
+    label="Your lucky number:"
+    className="nfd-cursor-pointer"
+/>
+<TextInput 
+    type="number"
+    placeholder="Enter a number"
+    id="number-input-label"
+    className="nfd-mt-2"
+/>
+```
+
+---
+### Disabled
+You can disable the text input by passing the `disabled` prop.
+
+<NewfoldRoot>
+    <TextInput 
+        type="url"
+        placeholder="Website URL"
+        disabled
+    />
+</NewfoldRoot>
+
+```jsx
+<TextInput 
+    type="url"
+    placeholder="Website URL"
+    disabled={true}
+/>
+```
+
+---
+### Read Only
+You can make the text input read only by passing the `readOnly` prop.
+
+<NewfoldRoot>
+    <TextInput 
+        type="url"
+        value="https://maze.toys/mazes/mini/daily/"
+        readOnly
+    />
+</NewfoldRoot>
+
+```jsx
+<TextInput 
+    type="url"
+    value="https://maze.toys/mazes/mini/daily/"
+    readOnly
+/>
+```
+
+### Props
+<PropsTable.Table docs={textInputProps} />
