@@ -1,0 +1,97 @@
+import PropsTable from '@site/src/components/PropsTable';
+import { Root as NewfoldRoot, TagInput } from "@newfold/ui-component-library";
+import { TagInputDemo, tagInputProps } from '@site/docs/partials/tag-input';
+
+# Tag Input
+A tags input is a user interface element that enables users to input
+multiple entries, formatting them as tags within a text field. This
+functionality is also referred to as a Tagging/Tokenizing system.
+
+<NewfoldRoot>
+    <TagInputDemo />
+</NewfoldRoot>
+
+---
+### Usage
+```jsx
+import { TagInput } from "@newfold/ui-component-library";
+
+const tagsPool = [
+    'Adventure', 'Action', 'Comedy', 'Drama', 'Fantasy', 'Horror', 'Mystery',
+    'Romance', 'Thriller', 'Western', 'Sci-Fi', 'Crime', 'Animation',
+    'Documentary', 'Musical', 'War', 'With Space'
+];
+
+const [tags, setTags] = useState(tagsPool || []);
+
+const handleAddTag = (tag) => {
+    setTags([...tags, tag]);
+};
+
+const handleRemoveTag = (index) => {
+    setTags(tags.filter((tag, i) => i !== index));
+}
+
+<TagInput
+    onAddTag={handleAddTag}
+    onRemoveTag={handleRemoveTag}
+    tags={tags}
+/>
+```
+
+---
+### TagInput.Tag Sub Component
+You can use the `TagInput.Tag` sub component to render the tags.
+This will override the the `tags` prop.
+
+With this method, you can pass props individually to each tag,
+giving you more granular control over the rendered tags.
+
+<NewfoldRoot>
+    <TagInputDemo withChildren={true}/>
+</NewfoldRoot>
+
+```jsx
+<TagInput>
+    <TagInput.Tag 
+        key={0}
+        tag="Adventure"
+        index={0}
+        onRemoveTag={() => {alert('custom remove tag function')}}
+    />
+    <TagInput.Tag
+        key={1}
+        tag="Action"
+        index={1}
+        onRemoveTag={x => console.log(x)}
+    />
+    <TagInput.Tag
+        key={2}
+        tag="Disabled Tag"
+        index={2}
+        onRemoveTag={() => {alert('custom remove tag function')}}
+        disabled
+        screenReaderRemoveTag="Non-removable tag"
+    />
+</TagInput>
+```
+
+---
+### Disabled
+Use the `disabled` prop to disable the tag input.
+
+<NewfoldRoot>
+    <TagInputDemo disabled={true}/>
+</NewfoldRoot>
+
+```jsx
+<TagInput
+    onAddTag={handleAddTag}
+    onRemoveTag={handleRemoveTag}
+    tags={tags}
+    disabled
+/>
+```
+
+### Props
+<PropsTable.Table docs={tagInputProps} />
