@@ -38,10 +38,6 @@ const autocompleteProps = {
         description: 'Callback function that is fired when the query changes.',
         isRequired: true,
     },
-    validation: {
-        type: '{ variant: string, message: node }',
-        description: 'Validation variant and message.',
-    },
     className: {
         type: 'string',
     },

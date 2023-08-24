@@ -39,10 +39,6 @@ const selectProps = {
         description: 'If true, the select will be disabled.',
         defaultValue: 'false',
     },
-    validation: {
-        type: '{ variant: string, message: node }',
-        description: 'Validation variant and message.',
-    },
     className: {
         type: 'string',
     }
