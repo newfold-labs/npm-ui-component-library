@@ -1,16 +1,33 @@
----
-
----
 import PropsTable from '@site/src/components/PropsTable';
-import { Root as NewfoldRoot, Card } from "@newfold/ui-component-library";
-import Variants from '@site/docs/partials/card/_card-variants.mdx';
+import { Root as NewfoldRoot, Button, Card, Title } from "@newfold/ui-component-library";
+import { cardProps } from '@site/docs/partials/card';
 
 # Card
-A simple card component. It has subcomponents for header, content and footer that has `as` and `className` props.
+The `Card` component is a generic container for organizing product-like UI elements.
 
-const Card = ();
 <NewfoldRoot>
-    <Card>
+    <div className="nfd-flex">
+        <Card className="nfd-w-[300px]">
+            <Card.Header>
+                This is Card header!
+            </Card.Header>
+            <Card.Content>
+                This is Card content!
+            </Card.Content>
+            <Card.Footer>
+                This is Card footer!
+            </Card.Footer>
+        </Card>
+    </div>
+</NewfoldRoot>
+
+---
+### Usage
+```jsx
+import { Card } from "@newfold/ui-component-library";
+
+<div className="nfd-flex">
+    <Card className="nfd-w-[300px]">
         <Card.Header>
             This is Card header!
         </Card.Header>
@@ -21,50 +38,191 @@ const Card = ();
             This is Card footer!
         </Card.Footer>
     </Card>
+</div>
+```
+
+---
+### Sub-Components
+The `Card` component has three sub-components: `Card.Header`, `Card.Content`, and `Card.Footer`.
+
+The `Card` component is very flexible and can be used in a variety of ways.
+The example below shows how to use the card component without a header by
+simply not including the `Card.Header` sub-component.
+
+<NewfoldRoot>
+    <div className="nfd-flex">
+        <Card className="nfd-w-[300px]">
+            <Card.Content>
+                This is Card content!
+            </Card.Content>
+            <Card.Footer>
+                This is Card footer!
+            </Card.Footer>
+        </Card>
+    </div>
 </NewfoldRoot>
 
----
-### Usage
 ```jsx
-import { Card } from "@newfold/ui-component-library";
-
-<Card>
-    <Card.Header>
-        This is Card header!
-    </Card.Header>
-    <Card.Content>
-        This is Card content!
-    </Card.Content>
-    <Card.Footer>
-        This is Card footer!
-    </Card.Footer>
-</Card>
+<div className="nfd-flex">
+    <Card className="nfd-w-[300px]">
+        <Card.Content>
+            This is Card content!
+        </Card.Content>
+        <Card.Footer>
+            This is Card footer!
+        </Card.Footer>
+    </Card>
+</div>
 ```
+
+You can do the same with the `Card.Content` and `Card.Footer`.
+
 ---
-### Variants
-Card variants
-<Variants />
+### Columns
+The `Card` component can be used to create columns of cards.
+
+<NewfoldRoot>
+    <section className="nfd-grid nfd-gap-8 min-[1200px]:nfd-grid-cols-2
+        min-[1440px]:nfd-grid-cols-3">
+        <Card>
+            <Card.Header className="nfd-p-0 nfd-h-auto">
+                <img
+                    src="https://picsum.photos/id/184/600/350"
+                    className="nfd-w-full"
+                    alt="Arabian Desert"
+                    loading="lazy"
+                />
+            </Card.Header>
+            <Card.Content>
+                <Title as="h3">Arabian Desert</Title>
+                <p className="nfd-mt-2">
+                    Experience the serene beauty of an Arabian Desert night. Bedouin-style
+                    camping, traditional cuisine, and endless dunes await.
+                </p>
+            </Card.Content>
+            <Card.Footer className="nfd-flex nfd-items-center nfd-justify-between">
+                <Button>Book Now</Button>
+                <span>Middle East</span>
+            </Card.Footer>
+        </Card>
+        <Card>
+            <Card.Header className="nfd-p-0 nfd-h-auto">
+                <img
+                    src="https://picsum.photos/id/218/600/350"
+                    className="nfd-w-full"
+                    alt="Bali"
+                    loading="lazy"
+                />
+            </Card.Header>
+            <Card.Content>
+                <Title as="h3">Bali</Title>
+                <p className="nfd-mt-2">
+                    Explore lush landscapes, serene beaches, and vibrant culture in Bali,
+                    Indonesia.
+                </p>
+            </Card.Content>
+            <Card.Footer className="nfd-flex nfd-items-center nfd-justify-between">
+                <Button>Book Now</Button>
+                <span>Southeast Asia</span>
+            </Card.Footer>
+        </Card>
+        <Card>
+            <Card.Header className="nfd-p-0 nfd-h-auto">
+                <img
+                    src="https://picsum.photos/id/249/600/350"
+                    className="nfd-w-full"
+                    alt="Sydney"
+                    loading="lazy"
+                />
+            </Card.Header>
+            <Card.Content>
+                <Title as="h3">Sydney</Title>
+                <p className="nfd-mt-2">
+                    Experience the cosmopolitan vibes, iconic landmarks, and stunning
+                    beaches of Sydney, Australia.
+                </p>
+            </Card.Content>
+            <Card.Footer className="nfd-flex nfd-items-center nfd-justify-between">
+                <Button>Book Now</Button>
+                <span>Oceania</span>
+            </Card.Footer>
+        </Card>
+    </section>
+</NewfoldRoot>
+
+```jsx
+import { Button, Card, Title } from "@newfold/ui-component-library";
+
+<section className="nfd-grid nfd-gap-8 min-[1200px]:nfd-grid-cols-2
+    min-[1440px]:nfd-grid-cols-3">
+    <Card>
+        <Card.Header className="nfd-p-0 nfd-h-auto">
+            <img
+                src="https://picsum.photos/id/184/600/350"
+                className="nfd-w-full"
+                alt="Arabian Desert"
+                loading="lazy"
+            />
+        </Card.Header>
+        <Card.Content>
+            <Title as="h3">Arabian Desert</Title>
+            <p className="nfd-mt-2">
+                Experience the serene beauty of an Arabian Desert night. Bedouin-style
+                camping, traditional cuisine, and endless dunes await.
+            </p>
+        </Card.Content>
+        <Card.Footer className="nfd-flex nfd-items-center nfd-justify-between">
+            <Button>Book Now</Button>
+            <span>Middle East</span>
+        </Card.Footer>
+    </Card>
+
+    <Card>
+        <Card.Header className="nfd-p-0 nfd-h-auto">
+            <img
+                src="https://picsum.photos/id/218/600/350"
+                className="nfd-w-full"
+                alt="Bali"
+                loading="lazy"
+            />
+        </Card.Header>
+        <Card.Content>
+            <Title as="h3">Bali</Title>
+            <p className="nfd-mt-2">
+                Explore lush landscapes, serene beaches, and vibrant culture in Bali,
+                Indonesia.
+            </p>
+        </Card.Content>
+        <Card.Footer className="nfd-flex nfd-items-center nfd-justify-between">
+            <Button>Book Now</Button>
+            <span>Southeast Asia</span>
+        </Card.Footer>
+    </Card>
+
+    <Card>
+        <Card.Header className="nfd-p-0 nfd-h-auto">
+            <img
+                src="https://picsum.photos/id/249/600/350"
+                className="nfd-w-full"
+                alt="Sydney"
+                loading="lazy"
+            />
+        </Card.Header>
+        <Card.Content>
+            <Title as="h3">Sydney</Title>
+            <p className="nfd-mt-2">
+                Experience the cosmopolitan vibes, iconic landmarks, and stunning
+                beaches of Sydney, Australia.
+            </p>
+        </Card.Content>
+        <Card.Footer className="nfd-flex nfd-items-center nfd-justify-between">
+            <Button>Book Now</Button>
+            <span>Oceania</span>
+        </Card.Footer>
+    </Card>
+</section>
+```
 
 ---
 ### Props
-<PropsTable.Table 
-    docs={{
-        as: {
-            type: 'elementType',
-            description: 'Element type of the Card',
-            defaultValue: "div",
-            isRequired: false,
-        },
-        children: {
-            type: 'Card.Header, Card.Content, Card.Footer',
-            description: '',
-            isRequired: true,
-        },
-        className: {
-            type: 'string',
-            description: 'Class attribute to add to the element',
-            defaultValue: "''",
-            isRequired: false,
-        },
-    }}
-/>
+<PropsTable.Table docs={cardProps}/>
