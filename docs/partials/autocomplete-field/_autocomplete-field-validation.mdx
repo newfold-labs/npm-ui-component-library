@@ -1,0 +1,136 @@
+import { Root as NewfoldRoot } from "@newfold/ui-component-library";
+import AutocompleteFieldDemo from './AutocompleteFieldDemo';
+
+#### Success
+<NewfoldRoot>
+    <AutocompleteFieldDemo 
+        label="Success validation variant"
+        value="1"
+        selectedLabel="Option 1"
+        validation={{ variant: 'success', message: 'Success unlocked. Keep soaring!' }}
+    />
+</NewfoldRoot>
+
+```jsx
+<AutocompleteField
+    id="autocomplete-field-select-success"
+    onChange={handleChange}
+    onQueryChange={handleQueryChange}
+    label="Success validation variant"
+    validation={{ 
+        variant: "success", 
+        message: "Success unlocked. Keep soaring!'"
+    }}
+>
+    <AutocompleteField.Option value="1">
+        Option 1
+    </AutocompleteField.Option>
+    <AutocompleteField.Option value="2">
+        Option 2
+    </AutocompleteField.Option>
+    <AutocompleteField.Option value="3">
+        Option 3
+    </AutocompleteField.Option>
+</AutocompleteField>
+```
+
+#### Warning
+<NewfoldRoot>
+    <AutocompleteFieldDemo 
+        label="Warning validation variant"
+        value="1"
+        selectedLabel="Option 1"
+        validation={{ variant: 'warning', message: 'Caution: Proceed with care to avoid potential pitfalls.' }}
+    />
+</NewfoldRoot>
+
+```jsx
+<AutocompleteField
+    id="autocomplete-field-select-warning"
+    onChange={handleChange}
+    onQueryChange={handleQueryChange}
+    label="Warning validation variant"
+    validation={{ 
+        variant: "warning", 
+        message: "Caution: Proceed with care to avoid potential pitfalls."
+    }}
+>
+    <AutocompleteField.Option value="1">
+        Option 1
+    </AutocompleteField.Option>
+    <AutocompleteField.Option value="2">
+        Option 2
+    </AutocompleteField.Option>
+    <AutocompleteField.Option value="3">
+        Option 3
+    </AutocompleteField.Option>
+</AutocompleteField>
+```
+
+
+#### Info
+<NewfoldRoot>
+    <AutocompleteFieldDemo 
+        label="Info validation variant"
+        value="1"
+        selectedLabel="Option 1"
+        validation={{ variant: 'info', message: 'Information: Knowledge is the key to empowerment.' }}
+    />
+</NewfoldRoot>
+
+```jsx
+<AutocompleteField
+    id="autocomplete-field-select-info"
+    onChange={handleChange}
+    onQueryChange={handleQueryChange}
+    label="Info validation variant"
+    validation={{ 
+        variant: "info", 
+        message: "Information: Knowledge is the key to empowerment." 
+    }}
+>
+    <AutocompleteField.Option value="1">
+        Option 1
+    </AutocompleteField.Option>
+    <AutocompleteField.Option value="2">
+        Option 2
+    </AutocompleteField.Option>
+    <AutocompleteField.Option value="3">
+        Option 3
+    </AutocompleteField.Option>
+</AutocompleteField>
+```
+
+
+#### Error
+<NewfoldRoot>
+    <AutocompleteFieldDemo 
+        label="Error validation variant"
+        value="1"
+        selectedLabel="Option 1"
+        validation={{ variant: 'error', message: 'Error: Connection lost. Please reconnect.' }}
+    />
+</NewfoldRoot>
+
+```jsx
+<AutocompleteField
+    id="autocomplete-field-select-error"
+    onChange={handleChange}
+    onQueryChange={handleQueryChange}
+    label="Error validation variant"
+    validation={{ 
+        variant: "error", 
+        message: "Error: Connection lost. Please reconnect." 
+    }}
+>
+    <AutocompleteField.Option value="1">
+        Option 1
+    </AutocompleteField.Option>
+    <AutocompleteField.Option value="2">
+        Option 2
+    </AutocompleteField.Option>
+    <AutocompleteField.Option value="3">
+        Option 3
+    </AutocompleteField.Option>
+</AutocompleteField>
+```

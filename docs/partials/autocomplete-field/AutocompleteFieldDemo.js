@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect, useRef } from "@wordpress/element";
-import { Autocomplete } from "@newfold/ui-component-library";
+import { AutocompleteField } from "@newfold/ui-component-library";
 
 const options = [
     {
@@ -17,12 +17,14 @@ const options = [
     },
 ];
 
-const AutocompleteDemo = ({
+const AutocompleteFieldDemo = ({
     label,
     selectedLabel = "",
     placeholder = "Type to autocomplete options",
     value = "",
-    nullable = false
+    description,
+    validation,
+    nullable = false,
 }) => {
     const [selectedVal, setSelectedVal] = useState(value);
     const [selectedLabelVal, setSelectedLabelVal] = useState(selectedLabel);
@@ -62,25 +64,27 @@ const AutocompleteDemo = ({
     };
 
     return (
-        <Autocomplete
-            id="select-autocomplete"
-            nullable={nullable}
-            onChange={setSelectedVal}
+        <AutocompleteField
+            id="autocomplete-field-select"
+            onChange={(value) => setSelectedVal(value)}
             onQueryChange={handleQueryChange}
             placeholder={placeholder}
             value={selectedVal}
             selectedLabel={selectedLabelVal}
             label={label}
+            validation={validation}
+            description={description}
+            nullable={nullable}
         >
 
             {query.map((option) => (
-                <Autocomplete.Option key={option.value} value={option.value}>
+                <AutocompleteField.Option key={option.value} value={option.value}>
                     {option.label}
-                </Autocomplete.Option>
+                </AutocompleteField.Option>
             ))}
 
-        </Autocomplete>
+        </AutocompleteField>
     );
-}
+};
 
-export default AutocompleteDemo;
+export default AutocompleteFieldDemo;
