@@ -1,73 +1,25 @@
----
-
----
 import PropsTable from '@site/src/components/PropsTable';
 import { Root as NewfoldRoot, FeatureUpsell } from "@newfold/ui-component-library";
-// import Variants from '@site/docs/partials/FeatureUpsell/_FeatureUpsell-variants.mdx';
+import { FeatureUpsellDemo, FeatureUpsellVariants , featureUpsellProps } from '@site/docs/partials/feature-upsell';
 
-# Feature Upsell
-A feature upsell component.
+# Feature Feature
+The `FeatureUpsell` component is used to hide content behind a call to action button.
 
 <NewfoldRoot>
-  <FeatureUpsell
-    cardText="Upgrade Now!"
-    cardLink="https://bluehost.com"
-  >
-    <p className="nfd-p-2 nfd-bg-blue-700 nfd-text-white">
-        Content that will be grayscale.
-    </p>
-  </FeatureUpsell>
+    <FeatureUpsellDemo 
+        cardText="Upgrade to Unlock"
+        carLink="https://github.com/newfold-labs/npm-ui-component-library"
+    />
 </NewfoldRoot>
 
----
 ### Usage
 ```jsx
 import { FeatureUpsell } from "@newfold/ui-component-library";
 
-
-<FeatureUpsell
-    cardText="Upgrade Now!"
-    cardLink="https://bluehost.com"
->
-    <p className="nfd-p-2 nfd-bg-blue-700 nfd-text-white">
-        Content that will be grayscale.
-    </p>
+<FeatureUpsell cardText="Upgrade to Unlock">
+    <CDN />
 </FeatureUpsell>
 ```
----
-### Variants
 
----
 ### Props
-<PropsTable.Table 
-    docs={{
-        cardLink: {
-            type: 'string',
-            defaultValue: '""',
-            description: 'Upsell Link for the upgrade button',
-        },
-        cardText: {
-            type: 'string',
-            defaultValue: '""',
-            description: 'Text for the upgrade button',
-        },
-        children: {
-            type: 'node',
-        },
-        className: {
-            type: 'string',
-            description: 'Class attribute to add to the element',
-            defaultValue: '""',
-        },
-        shouldUpsell: {
-            type: 'boolean',
-            description: 'Upsell flag',
-            defaultValue: 'true',
-        },
-        variant: {
-            type: 'string "default" "card"',
-            defaultValue: 'card',
-            description: 'Type of element to render as',
-        },
-    }}
-/>
+<PropsTable.Table docs={featureUpsellProps} />
