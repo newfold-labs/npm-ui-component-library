@@ -1,0 +1,65 @@
+#### 1. Options as Array
+Use the `options` prop to pass an array of options to the component.
+Each option must be an object with a string `label` and a string `value` property.
+```jsx
+<CheckboxGroup 
+    id="checkbox-group-array"
+    label="A checkbox group"
+    onChange={handleChange}
+    options={[
+        { label: 'Option 1', value: '1' },
+        { label: 'Option 2', value: '2' },
+        { label: 'Option 3', value: '3' },
+        { label: 'Option 4', value: '4' }
+    ]}
+    values={['1', '3']}
+/>
+```
+:::info
+If you want to have pre-selected options, you must pass an array to the
+`values` prop with the values of the options you wish to be selected.
+:::
+
+#### 2. Options as Children
+You can pass options as children to the component. Each child must be
+an instance of `CheckboxGroup.Checkbox` sub-component.
+```jsx
+<CheckboxGroup 
+    id="checkbox-group-children"
+    label="A checkbox group"
+    name="checkbox-group-children"
+    onChange={handleChange}
+>
+    <CheckboxGroup.Checkbox
+        checked
+        id="checkbox-group-option-1"
+        label="Option 1"
+        name="checkbox-group-children"
+        value="1"
+    />
+    <CheckboxGroup.Checkbox
+        id="checkbox-group-option-2"
+        label="Option 2"
+        name="checkbox-group-children"
+        value="2"
+    />
+    <CheckboxGroup.Checkbox
+        id="checkbox-group-option-3"
+        label="Option 3"
+        name="checkbox-group-children"
+        value="3"
+    />
+    <CheckboxGroup.Checkbox
+        id="checkbox-group-option-4"
+        label="Option 4"
+        name="checkbox-group-children"
+        value="4"
+    />
+</CheckboxGroup>
+```
+:::info
+This method is uncontrolled. So you have to manage the state of each
+checkbox individually. And since the `CheckboxGroup.Checkbox` sub-component is mostly
+a wrapper around the native `input[type="checkbox"]` element, you can use the `checked`
+attribute as a prop to do that.
+:::

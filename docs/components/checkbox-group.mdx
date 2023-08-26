@@ -1,130 +1,108 @@
----
-
----
 import PropsTable from '@site/src/components/PropsTable';
 import { Root as NewfoldRoot, CheckboxGroup } from "@newfold/ui-component-library";
-// import Variants from '@site/docs/partials/card/_card-variants.mdx';
+import { CheckboxGroupDemo, CheckboxGroupOptions, checkboxGroupProps } from '@site/docs/partials/checkbox-group';
 
 # Checkbox Group
-A simple checkbox group component.
+The `CheckboxGroup` allows users to select one or more items from a list of choices.
 
 <NewfoldRoot>
-    <CheckboxGroup
-        id="checkbox-group"
-        label="A checkbox group"
-        onChange={function noRefCheck(){}}
-        name="name"
-        description="This is the description"
-        options={[
-        {
-            label: 'Option 1',
-            value: '1'
-        },
-        {
-            label: 'Option 2',
-            value: '2'
-        },
-        {
-            label: 'Option 3',
-            value: '3'
-        },
-        {
-            label: 'Option 4',
-            value: '4'
-        }
-        ]}
-        values={[
-        '1','3'
-        ]}
-    >
-    </CheckboxGroup>
+    <CheckboxGroupDemo values={['1', '3']}/>
 </NewfoldRoot>
 
 ---
 ### Usage
 ```jsx
+import { CheckboxGroup } from "@newfold/ui-component-library";
+
+const options = [
+    { label: 'Option 1', value: '1' },
+    { label: 'Option 2', value: '2' },
+    { label: 'Option 3', value: '3' },
+    { label: 'Option 4', value: '4' }
+];
+
 <CheckboxGroup
     id="checkbox-group"
     label="A checkbox group"
-    onChange={function noRefCheck(){}}
-    name="name"
-    options={[
-    {
-        label: 'Option 1',
-        value: '1'
-    },
-    {
-        label: 'Option 2',
-        value: '2'
-    },
-    {
-        label: 'Option 3',
-        value: '3'
-    },
-    {
-        label: 'Option 4',
-        value: '4'
-    }
-    ]}
-    values={[
-    '1','3'
-    ]}
->
-</CheckboxGroup>
+    onChange={handleChange}
+    options={options}
+    values={['1', '3']}
+/>
 ```
 
 ---
-### Variants
+### Options
+You can pass options to the `CheckboxGroup` component in two ways.
+You can pass them as an array of objects to the `options` prop, or
+you can pass them as children to the component.
+<CheckboxGroupOptions />
+
+---
+### Label
+Use the `label` prop to add a label to the `CheckboxGroup` component.
+
+<NewfoldRoot>
+    <CheckboxGroupDemo 
+        values={['2', '3']}
+        label="This is a label"
+    />
+</NewfoldRoot>
+
+```jsx
+<CheckboxGroup
+    id="checkbox-group-label"
+    onChange={handleChange}
+    options={options}
+    values={selectedValues}
+    label="This is a label"
+/>
+```
+
+---
+### Description
+Use the `description` prop to add a description to the `CheckboxGroup` component.
+
+<NewfoldRoot>
+    <CheckboxGroupDemo 
+        values={['2', '3']}
+        description="This is a description for the checkbox group"
+    />
+</NewfoldRoot>
+
+```jsx
+<CheckboxGroup
+    id="checkbox-group-label"
+    onChange={handleChange}
+    options={options}
+    values={selectedValues}
+    label="This is a label"
+    description="This is a description for the checkbox group"
+/>
+```
+
+---
+### Disabled
+Use the `disabled` prop to disable the `CheckboxGroup` component.
+
+<NewfoldRoot>
+    <CheckboxGroupDemo
+        values={['2', '3']}
+        label="Disabled checkbox group"
+        disabled
+    />
+</NewfoldRoot>
+
+```jsx
+<CheckboxGroup
+    id="checkbox-group-label"
+    label="Disabled checkbox group"
+    onChange={handleChange}
+    options={options}
+    values={selectedValues}
+    disabled
+/>
+```
 
 ---
 ### Props
-<PropsTable.Table 
-    docs={{
-        children: {
-            type: 'node',
-        },
-        className: {
-            type: 'string',
-            description: 'Class attribute to add to the element',
-            defaultValue: '""',
-        },
-        description: {
-            type: 'string',
-            description: 'Form element description for whole checkbox group',
-            defaultValue: '""',
-        },
-        disabled: {
-            type: 'boolean',
-            description: 'Disabled flag',
-            defaultValue: 'false',
-        },
-        id: {
-            type: 'string',
-            description: 'Element id attribute',
-            defaultValue: '""',
-        },
-        label: {
-            type: 'string',
-            description: 'Form label for whole checkbox group',
-            defaultValue: '""',
-        },
-        name: {
-            type: 'string',
-            description: 'Element name',
-            defaultValue: '""',
-        },
-        onChange: {
-            type: 'func',
-            defaultValue: 'noop',
-            description: 'Handler for when value changes',
-        },
-        options: {
-            type: 'Array of Objects',
-            description: 'The checkboxes destined for the group. [{value: string,label: string},...]',
-        },
-        values: {
-            type: 'Array of values',
-            description: 'Desired selected values matching the values of the options',
-        },
-    }} 
-/>
+<PropsTable.Table docs={checkboxGroupProps} />
