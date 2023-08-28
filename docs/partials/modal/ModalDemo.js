@@ -1,39 +1,33 @@
-import React from "react";
+import React from 'react';
 import { useState } from "@wordpress/element";
-import { Root as NewfoldRoot, Modal, Button } from "@newfold/ui-component-library";
+import { Button, Modal } from "@newfold/ui-component-library";
 
+const ModalDemo = ({ withProviders = false }) => {
+    const [isOpen, setIsOpen] = useState(false);
 
-const ModalDemo = () => {
-    const [ modalOpen, setModalOpen ] = useState( false );
-
-    const modalChildren = <Modal.Panel>
-    <Modal.Title>Modal Title</Modal.Title>
-    <Modal.Description>Modal description</Modal.Description>
-    <Button
-        variant="primary"
-        onClick={ () => { 
-            setModalOpen(false);
-        }}
-        >OK
-    </Button>
-    </Modal.Panel>
-
-
-    const modalClose = () => {
-        setModalOpen(false);
-    }
-
-
-    return (
-        <NewfoldRoot>
-            <Button onClick={ () => { setModalOpen(true); }}>Open Modal</Button>
+    return ( 
+        <>
+            <Button onClick={() => setIsOpen(true)}>Open Modal</Button>
             <Modal
-                isOpen={ modalOpen }
-                onClose={ modalClose }
-                children={ modalChildren }
-            />
-        </NewfoldRoot>
-    );
+                isOpen={isOpen}
+                onClose={() => setIsOpen(false)}
+            >
+                <Modal.Panel>
+                    {withProviders ? 
+                        <>
+                            <Modal.Title className="nfd-mb-3">Title Using Modal.Title</Modal.Title>
+                            <Modal.Description className="nfd-text-sm nfd-text-slate-600">
+                                Modal description using Modal.Description sub-component.
+                            </Modal.Description>
+                        </> : 
+                        <>
+                            Modal component using Modal.Panel sub-component.
+                        </>
+                    }
+                </Modal.Panel>
+            </Modal>
+        </>
+     );
 }
-
+ 
 export default ModalDemo;

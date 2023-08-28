@@ -1,68 +1,71 @@
----
-
----
 import PropsTable from '@site/src/components/PropsTable';
-import { Root as NewfoldRoot, Modal, Button } from "@newfold/ui-component-library";
-import CodeBlock from '@theme/CodeBlock';
-// import Variants from '@site/docs/partials/Modal/_Modal-variants.mdx';
-import { ModalDemo } from '@site/docs/partials/modal';
-import ModalDemoCode from '!!raw-loader!../partials/modal/ModalDemo.js';
+import { Root as NewfoldRoot } from "@newfold/ui-component-library";
+import { ModalDemo, modalProps } from '@site/docs/partials/modal';
 
 # Modal
-A modal component.
+The `Modal` component is used to display content in a layer above the rest of the page.
 
-<ModalDemo />
+<NewfoldRoot>
+    <ModalDemo />
+</NewfoldRoot>
 
 ---
 ### Usage
 ```jsx
-import { Modal } from "@newfold/ui-component-library";
-<Modal
-    isOpen={ modalOpen }
-    onClose={ modalClose }
->
- <p>Modal content</p>
-</Modal>
+import { Modal } from '@newfold/ui-component-library';
 
+const [isOpen, setIsOpen] = useState(false);
+
+<>
+    <Button onClick={() => setIsOpen(true)}>Open Modal</Button>
+    <Modal
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+    >
+        <Modal.Panel>
+            Modal component using Modal.Panel sub-compoenent.
+        </Modal.Panel>
+    </Modal>
+</>
 ```
-<CodeBlock language="jsx">{ModalDemoCode}</CodeBlock>
+
+The `Modal.Panel` sub-component in the example above is used as a wrapper for the modal's content.
+It also offers a few things to help with appearance and functionality of the modal:
+
+- Adds a listener to close the modal on overlay click/tap.
+- Adds a background and padding to the content area.
+- Adds a close button in the top right corner of the content area.
+
+If you choose not to use the `Modal.Panel` sub-component, you will need to style the modal's content area
+yourself, add a close button and the overlay listener.
 
 ---
-### Variants
+### Title and Description
+You can use the `Modal.Title` and `Modal.Description` sub-components to add a title and description to the modal.
+
+<NewfoldRoot>
+    <ModalDemo withProviders={true}/>
+</NewfoldRoot>
+
+```jsx
+const [isOpen, setIsOpen] = useState(false);
+
+<>
+    <Button onClick={() => setIsOpen(true)}>Open Modal</Button>
+    <Modal
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+    >
+        <Modal.Panel>
+            <Modal.Title className="nfd-mb-3">Title Using Modal.Title</Modal.Title>
+            <Modal.Description className="nfd-text-sm nfd-text-slate-600">
+                Modal description using Modal.Description sub-component.
+            </Modal.Description>
+        </Modal.Panel>
+    </Modal>
+</>
+```
 
 ---
 ### Props
-<PropsTable.Table
-    docs={{
-        children: {
-            type: 'node',
-            isRequired: true,
-        },
-        className: {
-            type: 'string',
-            description: 'Class attribute to add to the Modal',
-            defaultValue: '""',
-        },
-        isOpen: {
-            type: 'boolean',
-            description: 'Open flag',
-            defaultValue: 'false',
-            isRequired: true,
-        },
-        onClose: {
-            type: 'function',
-            description: 'Close callback',
-            defaultValue: 'false',
-            isRequired: true,
-        },
-        position: {
-            type: 'string [center] [top-center]',
-            description: 'Modal position',
-            defaultValue: 'center',
-        },
-        size: {
-            type: 'number',
-            description: 'Prop for the `Modal.Title` component. [1, 2, 3, 4, 5]',
-        },
-    }}
-/>
+<PropsTable.Table docs={modalProps} />
