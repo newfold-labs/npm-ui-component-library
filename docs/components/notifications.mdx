@@ -1,24 +1,12 @@
----
-
----
 import PropsTable from '@site/src/components/PropsTable';
 import { Root as NewfoldRoot, Notifications } from "@newfold/ui-component-library";
-// import Variants from '@site/docs/partials/Notifications/_Notifications-variants.mdx';
+import { NotificationsVariants, NotificationsSizes, NotificationsDemo, notificationsProps, notificationProps } from '@site/docs/partials/notifications';
 
 # Notifications
-The Notifications component shows notifications on a specified position on the screen. Switch position in the control panel to view.
+The `Notifications` component shows notifications on a specified position on the screen.
 
 <NewfoldRoot >
-    <Notifications>
-        <Notifications.Notification
-            description="Notification description"
-            dismissScreenReaderLabel="Dismiss"
-            id="notification"
-            title="Notification title"
-            onDismiss={ (id) => { console.log('dismissed', id); } }
-        />
-    </Notifications>
-    <p>Default notification position is bottom-left.</p>
+    <NotificationsDemo />
 </NewfoldRoot>
 
 ---
@@ -26,89 +14,99 @@ The Notifications component shows notifications on a specified position on the s
 ```jsx
 import { Notifications } from "@newfold/ui-component-library";
 
-<Notifications>
+<Notifications position="bottom-left">
     <Notifications.Notification
-        description="Notification description"
+        id="notifications-demo-item"
         dismissScreenReaderLabel="Dismiss"
-        id="notification"
         title="Notification title"
-        onDismiss={ (id) => { console.log('dismissed', id); } }
+        description="Notification description"
+        onDismiss={(id) => console.log('Dismissed:', id)}
     />
 </Notifications>
 ```
----
-### Variants
+
+The `Notifications` component serves as a container for [`Notifications.Notification`](#notificationsnotification) sub-components.
+The [`Notifications.Notification`](#notificationsnotification) sub-component is used to display a single notification.
+When used together (like the example above), the notification toast will be rendered on the screen in the desired position.
 
 ---
 ### Notifications Props
-<PropsTable.Table
-    docs={{
-        children: {
-            type: 'node',
-        },
-        className: {
-            type: 'string',
-            description: 'Class attribute to add to the element',
-            defaultValue: '""',
-        },
-        position: {
-            type: 'string',
-            description: 'The desired position of the notifications. ["bottom-center", "bottom-left", "top-center"]',
-            defaultValue: '"bottom-left"',
-        },
-    }}
-/>
+<PropsTable.Table docs={notificationsProps} />
 
-### Notification Props
-<PropsTable.Table
-    docs={{
-        autoDismiss: {
-            type: 'number',
-            description: 'Milliseconds for Notification to disappear',
-        },
-        children: {
-            type: 'node',
-        },
-        description: {
-            type: 'string',
-            description: 'Notification description',
-            defaultValue: '""',
-        },
-        dismissScreenReaderLabel: {
-            type: 'string',
-            description: 'Notification label for screen readers',
-            defaultValue: '""',
-            isRequired: true,
-        },
-        id: {
-            type: 'string',
-            description: 'Element id attribute',
-            defaultValue: '""',
-            isRequired: true,
-        },
-        name: {
-            type: 'string',
-            description: 'Element name',
-            defaultValue: '""',
-        },
-        onDismiss: {
-            type: 'func',
-            description: 'Handler for when notification is dismissed. If omitted, the notification cannot be dismissed',
-        },
-        size: {
-            type: 'string ["large"]',
-            description: 'Notification size',
-            defaultValue: '""',
-        },
-        title: {
-            type: 'string',
-            description: 'Notification Title',
-            defaultValue: '""',
-        },
-        variant: {
-            type: 'string ["info", "warning", "success", "error"]',
-            description: 'The notification variant',
-            defaultValue: '"info"',
-        },
-    }}
+---
+### Notifications.Notification
+The `Notifications.Notification` sub-component is used to display a single notification.
+When used in isolation from the `Notifications` component, the notification toast will be rendered inline.
+
+<NewfoldRoot >
+    <Notifications.Notification
+        id="notification-demo-item"
+        dismissScreenReaderLabel="Dismiss"
+        title="Notification title"
+        description="Inline notification description"
+    />
+</NewfoldRoot>
+
+```jsx
+<Notifications.Notification
+    id="notification-demo-item"
+    dismissScreenReaderLabel="Dismiss"
+    title="Notification title"
+    description="Inline notification description"
 />
+```
+
+---
+### Dismissing Notifications
+To make a notification dismissable, you can provide a callback function to the `onDismiss` prop.
+The `onDismiss` function will be called when the user clicks the dismiss button and receives the notification's `id` as an argument.
+
+<NewfoldRoot >
+    <Notifications.Notification
+        id="notification-demo-item-dismissible"
+        dismissScreenReaderLabel="Dismiss"
+        title="Notification title"
+        description="Dismissible notification description"
+        onDismiss={(id) => console.log('Dismissed:', id)}
+    />
+</NewfoldRoot>
+
+```jsx
+<Notifications.Notification
+    id="notification-demo-item-dismissible"
+    dismissScreenReaderLabel="Dismiss"
+    title="Notification title"
+    description="Dismissible notification description"
+    onDismiss={(id) => console.log('Dismissed:', id)}
+/>
+```
+
+---
+### Auto-dismissing Notifications
+To make a notification auto-dismissable, you can provide time in milliseconds to the `autoDismiss` prop.
+
+```jsx
+// Auto-dismiss after 5 seconds
+<Notifications.Notification
+    id="notification-demo-item-dismissible"
+    dismissScreenReaderLabel="Dismiss"
+    title="Notification title"
+    description="Dismissible notification description"
+    onDismiss={(id) => console.log('Dismissed:', id)}
+    autoDismiss={5000}
+/>
+```
+
+---
+### Variants
+The `Notifications.Notification` provides 4 variants: `info`, `warning`, `success` and `error`.
+<NotificationsVariants />
+
+---
+### Sizes
+The `Notifications.Notification` can be used in 2 sizes: `default` and `large`.
+<NotificationsSizes />
+
+---
+### Notifications.Notification Props
+<PropsTable.Table docs={notificationProps} />
