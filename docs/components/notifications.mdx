@@ -12,9 +12,24 @@ The `Notifications` component shows notifications on a specified position on the
 ---
 ### Usage
 ```jsx
-import { Notifications } from "@newfold/ui-component-library";
+import { Notifications, RadioGroup } from "@newfold/ui-component-library";
 
-<Notifications position="bottom-left">
+const [position, setPosition] = useState("bottom-left");
+
+<RadioGroup
+    id="notifications-demo-radio-group"
+    label="Position"
+    value={position}
+    onChange={(value) => setPosition(value)}
+    options={[
+        { label: "Bottom Left", value: "bottom-left" },
+        { label: "Bottom Center", value: "bottom-center" },
+        { label: "Top Center", value: "top-center" },
+    ]}
+    variant="inline-block"
+/>
+
+<Notifications position={position}>
     <Notifications.Notification
         id="notifications-demo-item"
         dismissScreenReaderLabel="Dismiss"
