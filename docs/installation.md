@@ -41,7 +41,7 @@ To include this packages CSS in your build, import it in your stylesheet **befor
 @tailwind utilities;
 ```
 
-Now that your CSS is set up, you can start using the React components. Always start your React tree with the `Root` component, which provides a context for general options and a CSS classname for scoping this libraries CSS. Without it, components in this library will not render properly.
+Now that your CSS is set up, you can start using the React components. Always start your React tree with the [`Root`](./components/root.mdx) component, which provides a context for general options and a CSS classname for scoping this libraries CSS. Without it, components in this library will not render properly.
 
 ```jsx
 import { Root, Alert } from "@newfold/ui-component-library";
@@ -57,5 +57,5 @@ export default () => (
 
 Please note that the CSS scoping adds one level of CSS specificity. Therefore `TAILWINDCSS_PRESET` does the following:
 1. Enables the `important` rule for all utilities.
-2. Disables the Tailwind `preflight` styles (they are included in the `Root` component's CSS).
-3. Configures `@tailwindcss/forms` to use the `class` strategy (they are included in the `Root` component's CSS).
+2. Disables the Tailwind `preflight` styles (they are included in the [`Root`](./components/root.mdx) component's CSS).
+3. Configures `@tailwindcss/forms` to use the `class` strategy (they are included in the [`Root`](./components/root.mdx) component's CSS).
