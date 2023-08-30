@@ -1,139 +1,115 @@
----
-
----
 import PropsTable from '@site/src/components/PropsTable';
 import { Root as NewfoldRoot, RadioGroup } from "@newfold/ui-component-library";
-// import Variants from '@site/docs/partials/radioGroup/_radioGroup-variants.mdx';
+import { RadioGroupVariants, RadioGroupOptions, RadioGroupDemo, radioGroupProps } from '@site/docs/partials/radio-group';
 
 # Radio Group
-A simple radio group component.
+Radio groups are used to group a set of radio buttons (options) together.
+They allow the user to select one option from a set.
 
 <NewfoldRoot>
-    <RadioGroup
-        id="radio-group"
-        label="A radio group"
-        onChange={function noRefCheck(){}}
-        name="name"
-        description="This is the description"
-        options={[
-        {
-            label: 'Option 1',
-            value: '1',
-            screenReaderLabel: "Option 1",
-        },
-        {
-            label: 'Option 2',
-            value: '2',
-            screenReaderLabel: "Option 2",
-        },
-        {
-            label: 'Option 3',
-            value: '3',
-            screenReaderLabel: "Option 3",
-        },
-        {
-            label: 'Option 4',
-            value: '4',
-            screenReaderLabel: "Option 4",
-        }
-        ]}
-        value='3'
-    >
-    </RadioGroup>
+    <RadioGroupDemo label="Radio Group"/>
 </NewfoldRoot>
 
 ---
 ### Usage
 ```jsx
-<RadioGroup
-    id="radio-group"
-    label="A radio group"
-    onChange={function noRefCheck(){}}
-    name="name"
-    options={[
-    {
-        label: 'Option 1',
-        value: '1',
-        screenReaderLabel: "Option 1",
-    },
-    {
-        label: 'Option 2',
-        value: '2',
-        screenReaderLabel: "Option 2",
-    },
-    {
-        label: 'Option 3',
-        value: '3',
-        screenReaderLabel: "Option 3",
-    },
-    {
-        label: 'Option 4',
-        value: '4',
-        screenReaderLabel: "Option 4",
-    }
-    ]}
-    value='3'
->
-</RadioGroup>
+import { RadioGroup } from "@newfold/ui-component-library";
+
+const options = [
+    { label: "Option 1", value: "1" },
+    { label: "Option 2", value: "2" },
+    { label: "Option 3", value: "3" },
+    { label: "Option 4", value: "4" },
+];
+
+const [selectedValue, setSelectedValue] = useState("");
+
+<RadioGroup 
+    id="radio-group-demo"
+    label="Radio Group"
+    value={selectedValue}
+    options={options}
+    onChange={setSelectedValue}
+/>
+```
+---
+### Options
+You can pass options to the radio group in two ways. Either as an array of objects or
+you can pass them as children using the `RadioGroup.Radio` sub-component.
+<RadioGroupOptions />
+
+---
+### Label
+Use the `label` prop to add a label to the `RadioGroup` component.
+
+<NewfoldRoot>
+    <RadioGroupDemo
+        id="radio-group-label"
+        label="Select an Option"
+    />
+</NewfoldRoot>
+
+```jsx
+<RadioGroup 
+    id="radio-group-label"
+    label="Select an Option"
+    value={selectedValue}
+    options={options}
+    onChange={setSelectedValue}
+/>
+```
+
+---
+### Description
+Use the `description` prop to add a description to the `RadioGroup` component.
+
+<NewfoldRoot>
+    <RadioGroupDemo 
+        id="radio-group-description"
+        label="Select an Option"
+        description="This is a description of the radio group"
+    />
+</NewfoldRoot>
+
+```jsx
+<RadioGroup 
+    id="radio-group-description"
+    label="Select an Option"
+    description="This is a description of the radio group"
+    value={selectedValue}
+    options={options}
+    onChange={setSelectedValue}
+/>
+```
+
+---
+### Disabled
+Use the `disabled` prop to disable the `RadioGroup` component.
+
+<NewfoldRoot>
+    <RadioGroupDemo
+        id="radio-group-disabled"
+        label="Select an Option"
+        disabled
+    />
+</NewfoldRoot>
+
+```jsx
+<RadioGroup 
+    id="radio-group-disabled"
+    label="Select an Option"
+    value={selectedValue}
+    options={options}
+    onChange={setSelectedValue}
+    disabled={true}
+/>
 ```
 
 ---
 ### Variants
+The `RadioGroup` component offers two variants: `default` and `inline-block`.
+<RadioGroupVariants />
 
 ---
 ### Props
-<PropsTable.Table 
-    docs={{
-        children: {
-            type: 'node',
-        },
-        className: {
-            type: 'string',
-            description: 'Class attribute to add to the element',
-            defaultValue: '""',
-        },
-        description: {
-            type: 'string',
-            description: 'Form element description for whole radio group',
-            defaultValue: '""',
-        },
-        disabled: {
-            type: 'boolean',
-            description: 'Disabled flag',
-            defaultValue: 'false',
-        },
-        id: {
-            type: 'string',
-            description: 'Element id attribute',
-            defaultValue: '""',
-        },
-        label: {
-            type: 'string',
-            description: 'Form label for whole radio group',
-            defaultValue: '""',
-        },
-        name: {
-            type: 'string',
-            description: 'Element name',
-            defaultValue: '""',
-        },
-        onChange: {
-            type: 'func',
-            defaultValue: 'noop',
-            description: 'Handler for when value changes',
-        },
-        options: {
-            type: 'Array of Objects',
-            description: 'The radio options destined for the group. [{value: string,label: string,screenReaderLabel: string},...]',
-        },
-        value: {
-            type: 'string',
-            description: 'Desired selected value matching the value of the option',
-        },
-        variant: {
-            type: 'string ["default", "inline-block"]',
-            description: 'Type of radio group to render',
-            defaultValue: "default",
-        },
-    }} 
-/>
+<PropsTable.Table docs={radioGroupProps} />

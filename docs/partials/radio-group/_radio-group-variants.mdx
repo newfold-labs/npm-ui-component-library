@@ -1,0 +1,46 @@
+import { Root as NewfoldRoot } from "@newfold/ui-component-library";
+import { RadioGroupDemo } from '@site/docs/partials/radio-group';
+
+#### 1. Default (default)
+The `default` variant renders classic radio elements.
+
+<NewfoldRoot>
+    <RadioGroupDemo 
+        label="Default Variant"
+        id="radio-group-default"
+        variant="default"
+    />
+</NewfoldRoot>
+
+```jsx
+<RadioGroup 
+    id="radio-group-default"
+    label="Default Variant"
+    value={selectedValue}
+    options={options}
+    onChange={setSelectedValue}
+    variant="default"
+/>
+```
+
+#### 2. Inline Block
+The `inline-block` variant renders button shaped radio elements.
+
+<NewfoldRoot>
+    <RadioGroupDemo 
+        label="Inline Block Variant"
+        id="radio-group-inline-block"
+        variant="inline-block"
+    />
+</NewfoldRoot>
+
+```jsx
+<RadioGroup 
+    id="radio-group-inline-block"
+    label="Inline Block Variant"
+    value={selectedValue}
+    options={options}
+    onChange={setSelectedValue}
+    variant="inline-block"
+/>
+```

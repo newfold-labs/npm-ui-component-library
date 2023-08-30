@@ -1,0 +1,76 @@
+#### 1. Options as Array
+Use the `options` prop to pass an array of options to the component.
+Each option must be an object with a string `label` and a string `value` property.
+```jsx
+<RadioGroup 
+    id="radio-group-array"
+    value=""
+    onChange={handleChange}
+    options={[
+        { label: "Option 1", value: "1" },
+        { label: "Option 2", value: "2" },
+        { label: "Option 3", value: "3" },
+        { label: "Option 4", value: "4" },
+    ]}
+/>
+```
+
+:::info
+If you want to have an option checked by default, you can pass the option's value to the `value` prop.
+:::
+
+:::success
+Accessibility tip: if you need to provide a more descriptive label for screen readers, you can attach
+the optional property `screenReaderLabel` to each object in the `options` prop. See example below.
+:::
+```jsx
+<RadioGroup 
+    id="radio-group-array"
+    value=""
+    onChange={handleChange}
+    options={[
+        { label: "Option 1", value: "1", screenReaderLabel: "Option one" },
+        { label: "Option 2", value: "2", screenReaderLabel: "Option two" },
+        { label: "Option 3", value: "3", screenReaderLabel: "Option three" },
+        { label: "Option 4", value: "4", screenReaderLabel: "Option four" },
+    ]}
+/>
+```
+
+#### 2. Options as Children
+You can pass options as children to the component. Each child must be
+an instance of `RadioGroup.Radio` sub-component.
+```jsx
+<RadioGroup 
+    id="radio-group-children"
+    value=""
+    name="radio-group-children"
+    onChange={handleChange}
+>
+    <RadioGroup.Radio
+      id="radio-group-child-1"
+      label="Option 1"
+      value="1"
+    />
+    <RadioGroup.Radio
+      id="radio-group-child-2"
+      label="Option 2"
+      value="2"
+    />
+    <RadioGroup.Radio
+      id="radio-group-child-3"
+      label="Option 3"
+      value="3"
+    />
+    <RadioGroup.Radio
+      id="radio-group-child-4"
+      label="Option 4"
+      value="4"
+    />
+</RadioGroup>
+```
+
+:::info
+The `RadioGroup.Radio` sub-component is an instance of the [`Radio`](../elements/radio)
+component so it accepts the same props.
+:::
