@@ -42,7 +42,8 @@ you can pass them as children to the component.
 Use the `label` prop to add a label to the `CheckboxGroup` component.
 
 <NewfoldRoot>
-    <CheckboxGroupDemo 
+    <CheckboxGroupDemo
+        id="checkbox-group-label"
         values={['2', '3']}
         label="This is a label"
     />
@@ -64,6 +65,7 @@ Use the `description` prop to add a description to the `CheckboxGroup` component
 
 <NewfoldRoot>
     <CheckboxGroupDemo 
+        id="checkbox-group-description"
         values={['2', '3']}
         description="This is a description for the checkbox group"
     />
@@ -71,7 +73,7 @@ Use the `description` prop to add a description to the `CheckboxGroup` component
 
 ```jsx
 <CheckboxGroup
-    id="checkbox-group-label"
+    id="checkbox-group-description"
     onChange={handleChange}
     options={options}
     values={selectedValues}
@@ -86,6 +88,7 @@ Use the `disabled` prop to disable the `CheckboxGroup` component.
 
 <NewfoldRoot>
     <CheckboxGroupDemo
+        id="checkbox-group-disabled"
         values={['2', '3']}
         label="Disabled checkbox group"
         disabled
@@ -94,7 +97,7 @@ Use the `disabled` prop to disable the `CheckboxGroup` component.
 
 ```jsx
 <CheckboxGroup
-    id="checkbox-group-label"
+    id="checkbox-group-disabled"
     label="Disabled checkbox group"
     onChange={handleChange}
     options={options}
