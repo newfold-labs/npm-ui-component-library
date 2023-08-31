@@ -1,42 +1,13 @@
----
-
----
 import PropsTable from '@site/src/components/PropsTable';
 import { Root as NewfoldRoot, SelectField } from "@newfold/ui-component-library";
-// import Variants from '@site/docs/partials/SelectField/_SelectField-variants.mdx';
+import { SelectFieldValidation, SelectFieldOptions, SelectFieldDemo, selectFieldProps } from '@site/docs/partials/select-field';
 
-# SelectField
-A simple select field component that extends select element.
-
+# Select Field
+A dropdown list for selecting a single item. The `SelectField` component extends
+the [`Select`](../elements/select) element with [description](#description) and [validation variants](#validation).
 
 <NewfoldRoot>
-    <SelectField
-        id="select-field"
-        label="A select field"
-        name="select-field"
-        description="Select field description"
-        onChange={() => {}}
-        options={[
-        {
-            label: 'Option 1',
-            value: '1'
-        },
-        {
-            label: 'Option 2',
-            value: '2'
-        },
-        {
-            label: 'Option 3',
-            value: '3'
-        },
-        {
-            label: 'Option 4',
-            value: '4'
-        }
-        ]}
-        selectedLabel="Option 1"
-        value="1"
-    />
+    <SelectFieldDemo />
 </NewfoldRoot>
 
 ---
@@ -45,93 +16,161 @@ A simple select field component that extends select element.
 import { SelectField } from "@newfold/ui-component-library";
 
 <SelectField
-    id="select-field"
+    id="select-field-demo"
     label="A select field"
-    name="select-field"
-    description="Select field description"
-    onChange={() => {}}
-    options={[
-    {
-        label: 'Option 1',
-        value: '1'
-    },
-    {
-        label: 'Option 2',
-        value: '2'
-    },
-    {
-        label: 'Option 3',
-        value: '3'
-    },
-    {
-        label: 'Option 4',
-        value: '4'
-    }
-    ]}
-    selectedLabel="Option 1"
     value="1"
-/>
+    selectedLabel="Option 1"
+    onChange={handleChange}
+>
+    <SelectField.Option
+        label="Option 1"
+        value="1"
+    />
+    <SelectField.Option
+        label="Option 2"
+        value="2"
+    />
+    <SelectField.Option
+        label="Option 3"
+        value="3"
+    />
+    <SelectField.Option
+        label="Option 4"
+        value="4"
+    />
+</SelectField>
 ```
+
 ---
-### Variants
+### Options
+You can pass options to the component in two ways. You can
+pass them as children of the component or you can
+pass them as an array of objects to the options prop.
+<SelectFieldOptions />
+
+---
+### Label
+Use the `label` prop to add a label to the `SelectField` component.
+
+<NewfoldRoot>
+    <SelectFieldDemo 
+        id="select-field-label"
+        label="This is a label"
+    />
+</NewfoldRoot>
+
+```jsx
+<SelectField
+    id="select-field-label"
+    label="This is a label"
+    value="1"
+    selectedLabel="Option 1"
+    onChange={handleChange}
+>
+    <SelectField.Option
+        label="Option 1"
+        value="1"
+    />
+    <SelectField.Option
+        label="Option 2"
+        value="2"
+    />
+    <SelectField.Option
+        label="Option 3"
+        value="3"
+    />
+    <SelectField.Option
+        label="Option 4"
+        value="4"
+    />
+</SelectField>
+```
+
+---
+### Description
+Use the `description` prop to add a description to the `SelectField` component.
+
+<NewfoldRoot>
+    <SelectFieldDemo 
+        id="select-field-description"
+        description="This is a description"
+    />
+</NewfoldRoot>
+
+```jsx
+<SelectField
+    id="select-field-description"
+    label="A select field"
+    description="This is a description"
+    value="1"
+    selectedLabel="Option 1"
+    onChange={handleChange}
+>
+    <SelectField.Option
+        label="Option 1"
+        value="1"
+    />
+    <SelectField.Option
+        label="Option 2"
+        value="2"
+    />
+    <SelectField.Option
+        label="Option 3"
+        value="3"
+    />
+    <SelectField.Option
+        label="Option 4"
+        value="4"
+    />
+</SelectField>
+```
+
+---
+### Disabled
+Use the `disabled` prop to disable the `SelectField` component.
+
+<NewfoldRoot>
+    <SelectFieldDemo 
+        id="select-field-disabled"
+        label="A disabled select field"
+        disabled={true}
+    />
+</NewfoldRoot>
+
+```jsx
+<SelectField
+    id="select-field-disabled"
+    label="A disabled select field"
+    value="1"
+    selectedLabel="Option 1"
+    onChange={handleChange}
+    disabled={true}
+>
+    <SelectField.Option
+        label="Option 1"
+        value="1"
+    />
+    <SelectField.Option
+        label="Option 2"
+        value="2"
+    />
+    <SelectField.Option
+        label="Option 3"
+        value="3"
+    />
+    <SelectField.Option
+        label="Option 4"
+        value="4"
+    />
+</SelectField>
+```
+
+---
+### Validation
+Use the `validation` prop to add validation to the `SelectField` component.
+The `SelectField` provides four validation variants: `success`, `warning`, `info`, and `error`.
+<SelectFieldValidation />
 
 ---
 ### Props
-<PropsTable.Table docs={{
-    children: {
-        type: 'node',
-        description: 'Alternative to options.',
-    },
-    className: {
-        type: 'string',
-        description: 'Class attribute to add to the element',
-        defaultValue: '""',
-    },
-    description: {
-        type: 'string',
-        description: 'Form element description for whole checkbox group',
-        defaultValue: '""',
-    },
-    disabled: {
-        type: 'boolean',
-        description: 'Disabled flag',
-        defaultValue: 'false',
-    },
-    id: {
-        type: 'string',
-        description: 'Select list id attribute',
-        defaultValue: '""',
-        isRequired: true,
-    },
-    label: {
-        type: 'string',
-        description: 'Form label for select',
-        defaultValue: '""',
-        isRequired: true,
-    },
-    labelSuffix: {
-        type: 'string',
-        description: 'Label suffix',
-        defaultValue: '""',
-    },
-    name: {
-        type: 'string',
-        description: 'Element name',
-        defaultValue: '""',
-        isRequired: true,
-    },
-    options: {
-        type: 'Array of Objects',
-        description: 'The options destined for the select list. [{value: string,label: string},...]',
-    },
-    validation: {
-        type: 'Object',
-        description: '{variant: string, message: node}',
-        defaultValue: '{}',
-    },
-    value: {
-        type: 'string',
-        description: 'Desired selected value matching the value of the selected option',
-    },
-}}
-/>
+<PropsTable.Table docs={selectFieldProps} />

@@ -1,0 +1,174 @@
+import { Root as NewfoldRoot } from "@newfold/ui-component-library";
+import { SelectFieldDemo } from './';
+
+#### Success
+<NewfoldRoot>
+    <SelectFieldDemo 
+        id="select-field-success"
+        label="Success variant"
+        validation={{
+            variant: "success",
+            message: "Success unlocked. Keep soaring!"
+        }}
+    />
+</NewfoldRoot>
+
+```jsx
+<SelectField
+    id='select-field-success'
+    value='1'
+    selectedLabel='Option 1'
+    label="Success variant"
+    onChange={handleChange}
+    validation={{
+        variant: "success",
+        message: "Success unlocked. Keep soaring!"
+    }}
+>
+    <SelectField.Option
+        label="Option 1"
+        value="1"
+    />
+    <SelectField.Option
+        label="Option 2"
+        value="2"
+    />
+    <SelectField.Option
+        label="Option 3"
+        value="3"
+    />
+    <SelectField.Option
+        label="Option 4"
+        value="4"
+    />
+</SelectField>
+```
+
+#### Warning
+<NewfoldRoot>
+    <SelectFieldDemo 
+        id="select-field-warning"
+        label="Warning variant"
+        validation={{
+            variant: "warning",
+            message: "Caution: Proceed with care to avoid potential pitfalls."
+        }}
+    />
+</NewfoldRoot>
+
+```jsx
+<SelectField
+    id='select-field-warning'
+    value='1'
+    selectedLabel='Option 1'
+    label="Warning variant"
+    onChange={handleChange}
+    validation={{
+        variant: "warning",
+        message: "Caution: Proceed with care to avoid potential pitfalls."
+    }}
+>
+    <SelectField.Option
+        label="Option 1"
+        value="1"
+    />
+    <SelectField.Option
+        label="Option 2"
+        value="2"
+    />
+    <SelectField.Option
+        label="Option 3"
+        value="3"
+    />
+    <SelectField.Option
+        label="Option 4"
+        value="4"
+    />
+</SelectField>
+```
+
+#### Info
+<NewfoldRoot>
+    <SelectFieldDemo 
+        id="select-field-info"
+        label="Info variant"
+        validation={{
+            variant: "info",
+            message: "Information: Knowledge is the key to empowerment."
+        }}
+    />
+</NewfoldRoot>
+
+```jsx
+<SelectField
+    id='select-field-info'
+    value='1'
+    selectedLabel='Option 1'
+    label="Info variant"
+    onChange={handleChange}
+    validation={{
+        variant: "info",
+        message: "Information: Knowledge is the key to empowerment."
+    }}
+>
+    <SelectField.Option
+        label="Option 1"
+        value="1"
+    />
+    <SelectField.Option
+        label="Option 2"
+        value="2"
+    />
+    <SelectField.Option
+        label="Option 3"
+        value="3"
+    />
+    <SelectField.Option
+        label="Option 4"
+        value="4"
+    />
+</SelectField>
+```
+
+#### Error
+<NewfoldRoot>
+    <SelectFieldDemo 
+        id="select-field-error"
+        label="Error variant"
+        validation={{
+            variant: "error",
+            message: "Error: Unable to proceed without required input."
+        }}
+    />
+</NewfoldRoot>
+
+```jsx
+<SelectField
+    id='select-field-error'
+    value='1'
+    selectedLabel='Option 1'
+    label="Error variant"
+    onChange={handleChange}
+    validation={{
+        variant: "error",
+        message: "Error: Unable to proceed without required input."
+    }}
+>
+    <SelectField.Option
+        label="Option 1"
+        value="1"
+    />
+    <SelectField.Option
+        label="Option 2"
+        value="2"
+    />
+    <SelectField.Option
+        label="Option 3"
+        value="3"
+    />
+    <SelectField.Option
+        label="Option 4"
+        value="4"
+    />
+</SelectField>
+```

@@ -1,0 +1,73 @@
+#### 1. Options as Children
+You can pass options as children to the component. Each child must be an instance of `SelectField.Option` sub-component.
+In this case changing the `selectedLabel` should be done manually in the `handleChange` function.
+
+```jsx
+const [selectedVal, setSelectedVal] = useState("1");
+
+const handleChange = (val) => {
+    setSelectedVal(val);
+};
+
+<SelectField
+    id='select-field-children'
+    label = "A select field"
+    value={selectedVal}
+    selectedLabel={`Option ${selectedVal}`}
+    onChange={handleChange}
+>
+    <SelectField.Option
+        label="Option 1"
+        value="1"
+    />
+    <SelectField.Option
+        label="Option 2"
+        value="2"
+    />
+    <SelectField.Option
+        label="Option 3"
+        value="3"
+    />
+    <SelectField.Option
+        label="Option 4"
+        value="4"
+    />
+</SelectField>
+```
+
+#### 2. Options as Array
+Use the `options` prop to pass in the options as an array of objects.
+In this case, displayed `selectedLabel` will be updated automatically on change.
+
+```jsx
+const [selectedVal, setSelectedVal] = useState("1");
+
+const handleChange = (val) => {
+    setSelectedVal(val);
+};
+
+<SelectField
+    id='select-field-array'
+    label = "A select field"
+    value={selectedVal}
+    onChange={handleChange}
+    options={[
+      {
+        label: 'Option 1',
+        value: '1'
+      },
+      {
+        label: 'Option 2',
+        value: '2'
+      },
+      {
+        label: 'Option 3',
+        value: '3'
+      },
+      {
+        label: 'Option 4',
+        value: '4'
+      }
+    ]}
+/>
+```
