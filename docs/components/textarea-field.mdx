@@ -1,16 +1,17 @@
----
-
----
 import PropsTable from '@site/src/components/PropsTable';
 import { Root as NewfoldRoot, TextareaField } from "@newfold/ui-component-library";
-// import Variants from '@site/docs/partials/TextArea/_TextArea-variants.mdx';
+import { TextareaFieldValidationVariants, textareaFieldProps } from '@site/docs/partials/textarea-field';
 
 # Textarea Field
-A simple textarea field component.
+A simple textarea component. Accept all props of a regular `textarea` element.
+
+The `TextareaField` extends the [`Textarea`](../elements/textarea.mdx) element
+by adding [label](#label), [description](#description) and
+[validation variants](#validation).
 
 <NewfoldRoot>
     <TextareaField
-        id="textarea-field"
+        id="textarea-field-demo"
         label="A textarea field"
     />
 </NewfoldRoot>
@@ -21,42 +22,121 @@ A simple textarea field component.
 import { TextArea } from "@newfold/ui-component-library";
 
 <TextareaField
-  id="textarea-field"
-  label="A textarea field"
+    id="textarea-field-demo"
+    label="A textarea field"
 />
 ```
+
 ---
-### Variants
+### HTML Attributes
+Since the `TextareaField` component is a wrapper around a regular `textarea` element, all attributes of a regular `textarea` element are accepted.
+
+For example, here's a `textarea` with a `placeholder`.
+
+<NewfoldRoot>
+    <TextareaField
+        id="textarea-field-html-attributes"
+        label="A textarea field"
+        placeholder="HTML attributes placeholder text"
+    />
+</NewfoldRoot>
+
+```jsx
+<TextareaField
+    id="textarea-field-html-attributes"
+    label="A textarea field"
+    placeholder="HTML attributes placeholder text"
+/>
+```
+
+---
+### Value
+To add a default value to the `TextareaField`, you can render the `TextareaField` as a dynamic component instead of self-closing.
+
+<NewfoldRoot>
+    <TextareaField
+        id="textarea-field-value"
+        label="A textarea field"
+    >
+        The 'textarea' HTML element is a fundamental input control
+        that allows users to input multiple lines of text.
+    </TextareaField>
+</NewfoldRoot>
+
+```jsx
+<TextareaField
+    id="textarea-field-value"
+    label="A textarea field"
+>
+    The 'textarea' HTML element is a fundamental input control
+    that allows users to input multiple lines of text.
+</TextareaField>
+```
+
+---
+### Label
+Use the `label` prop to add a label to the `TextareaField` component.
+
+<NewfoldRoot>
+    <TextareaField
+        id="textarea-field-html-label"
+        label="Textarea field label 👋"
+    />
+</NewfoldRoot>
+
+```jsx
+<TextareaField
+    id="textarea-field-html-label"
+    label="Textarea field label 👋"
+/>
+```
+
+---
+### Description
+Use the `description` prop to add a description to the `TextareaField` component.
+
+<NewfoldRoot>
+    <TextareaField
+        id="textarea-field-html-description"
+        label="Textarea field label 👋"
+        description="Textarea field description 🙌"
+    />
+</NewfoldRoot>
+
+```jsx
+<TextareaField
+    id="textarea-field-html-description"
+    label="Textarea field label 👋"
+    description="Textarea field description 🙌"
+/>
+```
+
+---
+### Disabled
+Use the `disabled` prop to disable the `TextareaField` component.
+
+<NewfoldRoot>
+    <TextareaField
+        id="textarea-field-html-disabled"
+        label="Disabled textarea field"
+        disabled
+    />
+</NewfoldRoot>
+
+```jsx
+<TextareaField
+    id="textarea-field-html-disabled"
+    label="Disabled textarea field"
+    disabled
+/>
+```
+
+---
+### Validation
+Use the `validation` prop to add validation to the `TextareaField` component.
+The `TextareaField` provides four validation variants: `success`, `warning`, `info`, and `error`.
+<TextareaFieldValidationVariants />
 
 ---
 ### Props
-<PropsTable.Table 
-    docs={{
-        className: {
-            type: 'string',
-            description: 'Class attribute to add to the element',
-            defaultValue: '""',
-        },
-        description: {
-            type: 'string',
-            description: 'Form element description',
-            defaultValue: '""',
-        },
-        id: {
-            type: 'string',
-            description: 'Element id attribute',
-            defaultValue: '""',
-            isRequired: true,
-        },
-        label: {
-            type: 'string',
-            description: 'Form label for field',
-            defaultValue: '""',
-            isRequired: true,
-        },
-        validation: {
-            type: 'Object',
-            description: '{ variant: string, message: node }',
-        },
-    }}
-/>
+<PropsTable.Table docs={textareaFieldProps} />
