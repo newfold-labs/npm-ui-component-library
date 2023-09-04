@@ -162,6 +162,9 @@ const config = {
       },
     }),
   plugins: [],
+  themes: [
+    '@easyops-cn/docusaurus-search-local',
+  ],
 };
 
 module.exports = config;
