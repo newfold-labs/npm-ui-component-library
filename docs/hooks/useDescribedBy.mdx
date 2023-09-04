@@ -1,0 +1,20 @@
+# useDescribedBy
+The `useDescribedBy` hook generates unique IDs and aria-describedby values using an input
+ID and a provided list of "props".
+
+This hook is designed to assist in creating IDs and `aria-describedby`
+attributes for our form field components. It takes a string as 'id' and an object
+as 'list', and it returns an object containing the generated IDs and describedBy values.
+
+### Usage
+```jsx
+import { useDescribedBy } from from "@newfold/ui-component-library";
+
+const Component = () => {
+    const { ids, describedBy } = useDescribedBy( id, { error, description } );
+
+    return (
+        // JSX...
+    );
+};
+```

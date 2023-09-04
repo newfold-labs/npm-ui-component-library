@@ -1,0 +1,47 @@
+# useToggleState
+The `useToggleState` hook is designed to manage a toggle state. It accepts a boolean value
+to set the initial state, with a default value of `true` if none is provided.
+
+When you use this hook, it returns several values in a specific order:
+
+1. `state` - the current state of the toggle.
+2. `toggleState` - a function that toggles the state.
+3. `setState` - a function to set a new state.
+4. `setTrue` - a function to set the state to `true`.
+5. `setFalse` - a function to set the state to `false`.
+
+The order in which these values are returned is important.
+If you decide to use only some of these values and they are not at the beginning of the returned
+array, you should leave empty spaces for the unused values to maintain the correct order.
+
+#### Example
+
+```jsx
+import { useToggleState } from from "@newfold/ui-component-library";
+
+const [state, toggleState ] = useToggleState();
+
+// eslint-disable-next-line no-unused-vars
+const [state, , , setTrue, setFalse ] = useToggleState();
+```
+
+### Usage
+```jsx
+import { useToggleState } from from "@newfold/ui-component-library";
+
+const Component = () => {
+   const [state, toggleState, setState, setTrue, setFalse ] = useToggleState();
+
+    return ( 
+        <div>
+            <button onClick={ toggleState }>Click Here to Toggle state</button>
+            <button onClick={ setTrue }>Click Here to change state to true</button>
+            <button onClick={ setFalse }>Click Here to change state to false</button>
+            <button onClick={ setState(true) }>setState to true</button>
+            <button onClick={ setState(false) }>setState to false</button>
+
+            { state ? <div>State is true</div> : <div>State is false</div> }
+        </div>
+    )
+};
+```

@@ -1,0 +1,20 @@
+# useSvgAria
+The `useSvgAria` hook is designed to generate ARIA attributes for SVG elements. It accepts
+a boolean value to determine whether the SVG should be focusable and returns an object
+containing the `role` and `aria-hidden` attributes. Optionally, it also includes the `focusable`
+attribute if specified.
+
+### Usage
+```jsx
+import { useSvgAria } from from "@newfold/ui-component-library";
+
+const Component = () => {
+    const ariaSvgProps = useSvgAria();
+
+    return (
+        <div>
+            <RandomIcon { ...ariaSvgProps } />
+        </div>
+    );
+};
+```

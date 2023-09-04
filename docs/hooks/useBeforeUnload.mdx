@@ -1,0 +1,26 @@
+# useBeforeUnload
+The `useBeforeUnload` hook is fired when the window, the document and its resources are about to be
+unloaded. This hook accept a boolean value that indicates when this functionality should be active.
+
+### Usage
+```jsx
+import { useBeforeUnload } from from "@newfold/ui-component-library";
+
+const Component = () => {
+    let when = false;
+
+    useBeforeUnload(when)
+
+    setTimeOut(()=>{
+        when = true;
+        // in 5 seconds a generic message from the browser will
+        // appear to warn of before window will upload.
+    },5000);
+
+    return (
+        // JSX...
+    );
+};
+```
+
+[BeforeUnloadEvent](https://developer.mozilla.org/en-US/docs/Web/API/BeforeUnloadEvent) full documentation.

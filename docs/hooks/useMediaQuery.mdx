@@ -1,0 +1,20 @@
+# useMediaQuery
+The `useMediaQuery` hook generates a media query and provides a boolean value
+indicating whether the specified query conditions are met.
+
+It accepts a `mediaQueryString` parameter (string), which is the media query to
+be evaluated. The hook returns an object containing a `.matches` field that is set
+to `true` if the media query conditions are met.
+
+### Usage
+```jsx
+import { useMediaQuery } from from "@newfold/ui-component-library";
+
+const Component = () => {
+    const isSingleColumn = ! useMediaQuery( "(min-width: 1536px)" ).matches;
+
+    return (
+        // JSX...
+    );
+};
+```

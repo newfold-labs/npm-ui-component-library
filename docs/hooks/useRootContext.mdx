@@ -1,0 +1,15 @@
+# useRootContext
+The `useRootContext` hook returns the root context.
+
+### Usage
+```jsx
+import { useRootContext } from from "@newfold/ui-component-library";
+
+const Component = () => {
+    const { isRtl } = useRootContext();
+
+    return <div className={ isRtl ? "nfd-ml-4" : "nfd-mr-4" } />
+};
+```
+
+Learn more about the [`Root`](../components/root.mdx) component.
