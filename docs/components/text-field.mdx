@@ -1,20 +1,19 @@
----
-
----
 import PropsTable from '@site/src/components/PropsTable';
 import { Root as NewfoldRoot, TextField } from "@newfold/ui-component-library";
-// import Variants from '@site/docs/partials/TextField/_TextField-variants.mdx';
+import { TextFieldValidationVariants, textFieldProps } from '@site/docs/partials/text-field';
 
 # Text Field
-A simple text input field component.
+A simple text field component. Accept all props of a regular `input` element. 
 
+The `TextField` extends the [`TextInput`](../elements/text-input.mdx) element
+by adding [label](#label), [description](#description) and
+[validation variants](#validation).
 
 <NewfoldRoot>
     <TextField
-        description="Text field with a description."
-        id="text-field-1"
-        label="Text field with a label"
-        onChange={() => {}}
+        id="text-field-demo"
+        label="A text field"
+        onChange={(e) => console.log(e.target.value)}
     />
 </NewfoldRoot>
 
@@ -24,58 +23,138 @@ A simple text input field component.
 import { TextField } from "@newfold/ui-component-library";
 
 <TextField
-    description="Text field with a description."
-    id="text-field-1"
-    label="Text field with a label"
-    onChange={() => {}}
+    id="text-field-demo"
+    label="A text field"
+    onChange={(e) => console.log(e.target.value)}
 />
 ```
+
 ---
-### Variants
+### HTML Attributes
+Since the `TextField` component is a wrapper around a regular `input` element, all attributes of a regular `input` element are accepted.
+
+For example, here's an `input` type `number` with a `placeholder`.
+
+<NewfoldRoot>
+    <TextField
+        id="text-field-html-attributes"
+        label="A number input"
+        onChange={(e) => console.log(e.target.value)}
+        type="number"
+        placeholder="Enter a number"
+    />
+</NewfoldRoot>
+
+```jsx
+<TextField
+    id="text-field-html-attributes"
+    label="A number input"
+    onChange={(e) => console.log(e.target.value)}
+    type="number"
+    placeholder="Enter a number"
+/>
+```
+
+---
+### Label
+Use the `label` prop to add a label to the component.
+
+<NewfoldRoot>
+    <TextField
+        id="text-field-label"
+        label="Text field label 👋"
+        onChange={(e) => console.log(e.target.value)}
+    />
+</NewfoldRoot>
+
+```jsx
+<TextField
+    id="text-field-label"
+    label="Text field label 👋"
+    onChange={(e) => console.log(e.target.value)}
+/>
+```
+
+---
+### Description
+Use the `description` prop to add a description to the component.
+
+<NewfoldRoot>
+    <TextField
+        id="text-field-description"
+        label="Text field label 👋"
+        description="Text field description 🙌"
+        onChange={(e) => console.log(e.target.value)}
+    />
+</NewfoldRoot>
+
+```jsx
+<TextField
+    id="text-field-description"
+    label="Text field label 👋"
+    description="Text field description 🙌"
+    onChange={(e) => console.log(e.target.value)}
+/>
+```
+
+---
+### Disabled
+Use the `disabled` prop to disable the component.
+
+<NewfoldRoot>
+    <TextField
+        id="text-field-disabled"
+        label="Disabled text field"
+        type="url"
+        placeholder="https://www.example.com"
+        onChange={(e) => console.log(e.target.value)}
+        disabled
+    />
+</NewfoldRoot>
+
+```jsx
+<TextField
+    id="text-field-disabled"
+    label="Website Address"
+    onChange={(e) => console.log(e.target.value)}
+    type="url"
+    placeholder="https://www.example.com"
+    disabled={true}
+/>
+```
+
+---
+### Read Only
+You can make the input read only by passing the `readOnly` prop.
+
+<NewfoldRoot>
+    <TextField
+        id="text-field-readonly"
+        label="Read only text field"
+        type="url"
+        value="https://maze.toys/mazes/mini/daily/"
+        onChange={(e) => console.log(e.target.value)}
+        readOnly
+    />
+</NewfoldRoot>
+
+```jsx
+<TextField
+    id="text-field-readonly"
+    label="Read only text field"
+    type="url"
+    value="https://maze.toys/mazes/mini/daily/"
+    onChange={(e) => console.log(e.target.value)}
+    readOnly
+/>
+```
+
+---
+### Validation
+Use the `validation` prop to add validation to the `TextField` component. 
+The `TextField` provides four validation variants: `success`, `warning`, `info`, and `error`.
+<TextFieldValidationVariants />
 
 ---
 ### Props
-<PropsTable.Table 
-    docs={{
-        className: {
-            type: 'string',
-            description: 'Class attribute to add to the element',
-            defaultValue: '""',
-        },
-        description: {
-            type: 'string',
-            description: 'Form element description',
-            defaultValue: '""',
-        },
-        disabled: {
-            type: 'boolean',
-            description: 'Disabled flag',
-            defaultValue: 'false',
-        },
-        id: {
-            type: 'string',
-            description: 'Element id attribute',
-            defaultValue: '""',
-            isRequired: true,
-        },
-        label: {
-            type: 'string',
-            description: 'Form label for field',
-            defaultValue: '""',
-            isRequired: true,
-        },
-        labelSuffix: {
-            type: 'string',
-            description: 'Label suffix',
-        },
-        onChange: {
-            type: 'func',
-            defaultValue: 'noop',
-            description: 'Handler for when value changes',
-        },
-        validation: {
-            type: 'Object',
-            description: '{ variant: string, message: node }',
-        },
-    }}
-/>
+<PropsTable.Table docs={textFieldProps} />

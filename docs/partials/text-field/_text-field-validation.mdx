@@ -1,0 +1,101 @@
+import { Root as NewfoldRoot, TextField } from "@newfold/ui-component-library";
+
+#### Success
+<NewfoldRoot>
+    <TextField 
+        id="text-field-success"
+        label="Success variant"
+        onChange={(e) => console.log(e.target.value)}
+        validation={{
+            variant: "success",
+            message: "Success unlocked. Keep soaring!"
+        }}
+    />
+</NewfoldRoot>
+
+```jsx
+<TextField 
+    id="text-field-success"
+    label="Success variant"
+    onChange={(e) => console.log(e.target.value)}
+    validation={{
+        variant: "success",
+        message: "Success unlocked. Keep soaring!"
+    }}
+/>
+```
+
+#### Warning
+<NewfoldRoot>
+    <TextField 
+        id="text-field-warning"
+        label="Warning variant"
+        onChange={(e) => console.log(e.target.value)}
+        validation={{
+            variant: "warning",
+            message: "Caution: Proceed with care to avoid potential pitfalls."
+        }}
+    />
+</NewfoldRoot>
+
+```jsx
+<TextField 
+    id="text-field-warning"
+    label="Warning variant"
+    onChange={(e) => console.log(e.target.value)}
+    validation={{
+        variant: "warning",
+        message: "Caution: Proceed with care to avoid potential pitfalls."
+    }}
+/>
+```
+
+#### Info
+<NewfoldRoot>
+    <TextField 
+        id="text-field-info"
+        label="Info variant"
+        onChange={(e) => console.log(e.target.value)}
+        validation={{
+            variant: "info",
+            message: "Information: Knowledge is the key to empowerment."
+        }}
+    />
+</NewfoldRoot>
+
+```jsx
+<TextField 
+    id="text-field-info"
+    label="Info variant"
+    onChange={(e) => console.log(e.target.value)}
+    validation={{
+        variant: "info",
+        message: "Information: Knowledge is the key to empowerment."
+    }}
+/>
+```
+
+#### Error
+<NewfoldRoot>
+    <TextField 
+        id="text-field-error"
+        label="Error variant"
+        onChange={(e) => console.log(e.target.value)}
+        validation={{
+            variant: "error",
+            message: "Error: Unable to proceed without required input."
+        }}
+    />
+</NewfoldRoot>
+
+```jsx
+<TextField 
+    id="text-field-error"
+    label="Error variant"
+    onChange={(e) => console.log(e.target.value)}
+    validation={{
+        variant: "error",
+        message: "Error: Unable to proceed without required input."
+    }}
+/>
+```
