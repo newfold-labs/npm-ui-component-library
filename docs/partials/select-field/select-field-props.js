@@ -28,6 +28,10 @@ const selectFieldProps = {
         type: 'node',
         description: 'Alternative to options array. Pass `SelectField.Option` components as children.'
     },
+    validation: {
+        type: '{ variant: string, message: node }',
+        description: 'Validation state and message'
+    },
     disabled: {
         type: 'bool',
         defaultValue: 'false',

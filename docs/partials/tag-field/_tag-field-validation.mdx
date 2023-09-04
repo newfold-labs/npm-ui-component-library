@@ -1,0 +1,106 @@
+import { Root as NewfoldRoot } from "@newfold/ui-component-library";
+import { TagFieldDemo } from './';
+
+#### Success
+<NewfoldRoot>
+    <TagFieldDemo 
+        id="tag-field-success"
+        label="Success variant"
+        validation={{
+            variant: "success",
+            message: "Success unlocked. Keep soaring!"
+        }}
+    />
+</NewfoldRoot>
+
+```jsx
+<TagField
+    id="tag-field-success"
+    label="Success variant"
+    onAddTag={handleAddTag}
+    onRemoveTag={handleRemoveTag}
+    tags={tags}
+    validation={{
+        variant: "success",
+        message: "Success unlocked. Keep soaring!"
+    }}
+/>
+```
+
+#### Warning
+<NewfoldRoot>
+    <TagFieldDemo 
+        id="tag-field-warning"
+        label="Warning variant"
+        validation={{
+            variant: "warning",
+            message: "Caution: Proceed with care to avoid potential pitfalls."
+        }}
+    />
+</NewfoldRoot>
+
+```jsx
+<TagField
+    id="tag-field-warning"
+    label="Warning variant"
+    onAddTag={handleAddTag}
+    onRemoveTag={handleRemoveTag}
+    tags={tags}
+    validation={{
+        variant: "warning",
+        message: "Caution: Proceed with care to avoid potential pitfalls."
+    }}
+/>
+```
+
+#### Info
+<NewfoldRoot>
+    <TagFieldDemo 
+        id="tag-field-info"
+        label="Info variant"
+        validation={{
+            variant: "info",
+            message: "Information: Knowledge is the key to empowerment."
+        }}
+    />
+</NewfoldRoot>
+
+```jsx
+<TagField
+    id="tag-field-info"
+    label="Info variant"
+    onAddTag={handleAddTag}
+    onRemoveTag={handleRemoveTag}
+    tags={tags}
+    validation={{
+        variant: "info",
+        message: "Information: Knowledge is the key to empowerment."
+    }}
+/>
+```
+
+#### Error
+<NewfoldRoot>
+    <TagFieldDemo 
+        id="tag-field-error"
+        label="Error variant"
+        validation={{
+            variant: "error",
+            message: "Error: Unable to proceed without required input."
+        }}
+    />
+</NewfoldRoot>
+
+```jsx
+<TagField
+    id="tag-field-error"
+    label="Error variant"
+    onAddTag={handleAddTag}
+    onRemoveTag={handleRemoveTag}
+    tags={tags}
+    validation={{
+        variant: "error",
+        message: "Error: Unable to proceed without required input."
+    }}
+/>
+```

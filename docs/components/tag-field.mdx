@@ -1,27 +1,16 @@
----
-
----
 import PropsTable from '@site/src/components/PropsTable';
 import { Root as NewfoldRoot, TagField } from "@newfold/ui-component-library";
-// import Variants from '@site/docs/partials/TagField/_TagField-variants.mdx';
+import { TagFieldDemo, TagFieldValidationVariants, tagFieldProps } from '@site/docs/partials/tag-field';
 
 # Tag Field
-A simple tag field component.
+A tags input is a user interface element that enables users to input
+multiple entries, formatting them as tags within a text field. This
+functionality is also referred to as a Tagging/Tokenizing system.
+The `TagField` component extends the [`TagInput`](../elements/tag-input.mdx)
+element by adding a [label](#label), [description](#description) and [validation variants](#validation).
 
 <NewfoldRoot>
-    <TagField
-        description="Tag field with a description."
-        id="tag-field-1"
-        label="Tag field with a label"
-        onAddTag={() => {}}
-        onRemoveTag={() => {}}
-        tags={[
-            'Here',
-            'are',
-            'some',
-            'tags'
-        ]}
-    />
+    <TagFieldDemo />
 </NewfoldRoot>
 
 ---
@@ -29,65 +18,102 @@ A simple tag field component.
 ```jsx
 import { TagField } from "@newfold/ui-component-library";
 
+const tagsPool = [
+    'Adventure', 'Action', 'Comedy', 'Drama', 'Fantasy', 'Horror', 'Mystery',
+    'Romance', 'Thriller', 'Western', 'Sci-Fi', 'Crime', 'Animation',
+    'Documentary', 'Musical', 'War', 'With Space'
+];
+
+const [tags, setTags] = useState(tagsPool || []);
+
+const handleAddTag = (tag) => {
+    setTags([...tags, tag]);
+};
+
+const handleRemoveTag = (index) => {
+    setTags(tags.filter((tag, i) => i !== index));
+}
+
 <TagField
-    description="Tag field with a description."
-    id="tag-field-1"
-    label="Tag field with a label"
-    onAddTag={() => {}}
-    onRemoveTag={() => {}}
-    tags={[
-        'Here',
-        'are',
-        'some',
-        'tags'
-    ]}
+    id="tag-field-demo"
+    label="A tag field"
+    onAddTag={handleAddTag}
+    onRemoveTag={handleRemoveTag}
+    tags={tags}
 />
 ```
+
 ---
-### Variants
+### Label
+Use the `label` prop to add a label to the `TagField` component.
+
+<NewfoldRoot>
+    <TagFieldDemo
+        id="tag-field-label"
+        label="Tag field label 👋" 
+    />
+</NewfoldRoot>
+
+```jsx
+<TagField
+    id="tag-field-label"
+    label="Tag field label 👋"
+    onAddTag={handleAddTag}
+    onRemoveTag={handleRemoveTag}
+    tags={tags}
+/>
+```
+
+---
+### Description
+Use the `description` prop to add a description to the `TagField` component.
+
+<NewfoldRoot>
+    <TagFieldDemo
+        id="tag-field-description"
+        label="Tag field label 👋" 
+        description="Tag field description 🙌"
+    />
+</NewfoldRoot>
+
+```jsx
+<TagField
+    id="tag-field-description"
+    label="Tag field label 👋"
+    description="Tag field description 🙌"
+    onAddTag={handleAddTag}
+    onRemoveTag={handleRemoveTag}
+    tags={tags}
+/>
+```
+
+---
+### Disabled
+Use the `disabled` prop to disable the `TagField` component.
+
+<NewfoldRoot>
+    <TagFieldDemo
+        id="tag-field-disabled"
+        disabled
+    />
+</NewfoldRoot>
+
+```jsx
+<TagField
+    id="tag-field-disabled"
+    onAddTag={handleAddTag}
+    onRemoveTag={handleRemoveTag}
+    tags={tags}
+    disabled={true}
+/>
+```
+
+---
+### validation
+Use the `validation` prop to add validation to the `TagField` component.
+The `TagField` provides four validation variants: `success`, `warning`, `info`, and `error`.
+<TagFieldValidationVariants />
 
 ---
 ### Props
-<PropsTable.Table
-    docs={{
-        className: {
-            type: 'string',
-            description: 'Class attribute to add to the element',
-            defaultValue: '""',
-        },
-        description: {
-            type: 'string',
-            description: 'Form element description',
-            defaultValue: '""',
-        },
-        disabled: {
-            type: 'boolean',
-            description: 'Disabled flag',
-            defaultValue: 'false',
-        },
-        id: {
-            type: 'string',
-            description: 'Element id attribute',
-            defaultValue: '""',
-            isRequired: true,
-        },
-        label: {
-            type: 'string',
-            description: 'Form label for field',
-            defaultValue: '""',
-            isRequired: true,
-        },
-        labelSuffix: {
-            type: 'string',
-            description: 'Label suffix',
-        },
-        tags: {
-            type: 'Array of strings',
-            description: 'The tags destined for the tagfield. ["Here", "are", "some", "tags"]',
-        },
-        validation: {
-            type: 'Object',
-            description: '{ variant: string, message: node }',
-        },
-    }}
-/>
+<PropsTable.Table docs={tagFieldProps} />
