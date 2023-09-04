@@ -1,19 +1,17 @@
----
-
----
 import PropsTable from '@site/src/components/PropsTable';
 import { Root as NewfoldRoot, ToggleField } from "@newfold/ui-component-library";
-// import Variants from '@site/docs/partials/ToggleField/_ToggleField-variants.mdx';
+import { ToggleFieldDemo, toggleFieldProps } from '@site/docs/partials/toggle-field';
 
 # Toggle Field
-A simple textarea field component.
+A toggle switch allows users to switch between two states (on and off) by clicking or
+tapping on it. Toggle switches are commonly used in settings or
+options menus to enable or disable certain features or functions.
+
+The `ToggleField` extends the [`Toggle`](../elements/toggle.mdx) element by adding a
+[label](#label) and [description](#description).
 
 <NewfoldRoot>
-    <ToggleField
-        id="textarea-field"
-        label="A textarea field"
-        onChange={()=>{}}
-    />
+    <ToggleFieldDemo />
 </NewfoldRoot>
 
 ---
@@ -21,70 +19,101 @@ A simple textarea field component.
 ```jsx
 import { TextArea } from "@newfold/ui-component-library";
 
+const [isChecked, setIsChecked] = useState(false);
+
 <ToggleField
-    id="textarea-field"
-    label="A textarea field"
-    onChange={()=>{}}
+    id="toggle-field-demo"
+    label="A toggle field"
+    checked={isChecked}
+    onChange={setIsChecked}
 />
 ```
+
 ---
-### Variants
+### Label
+Use the `label` prop to add a label to the `ToggleField` component.
+
+<NewfoldRoot>
+    <ToggleFieldDemo 
+        id="toggle-field-label"
+        label="Toggle field Label 👋"
+    />
+</NewfoldRoot>
+
+```jsx
+<ToggleField
+    id="toggle-field-label"
+    label="Toggle field Label 👋"
+    checked={isChecked}
+    onChange={setIsChecked}
+/>
+```
+
+---
+### Description
+Use the `description` prop to add a description to the `ToggleField` component.
+
+<NewfoldRoot>
+    <ToggleFieldDemo 
+        id="toggle-field-description"
+        label="Toggle field Label 👋"
+        description="Toggle field description 🙌"
+    />
+</NewfoldRoot>
+
+```jsx
+<ToggleField
+    id="toggle-field-description"
+    label="Toggle field Label 👋"
+    description="Toggle field description 🙌"
+    checked={isChecked}
+    onChange={setIsChecked}
+/>
+```
+
+---
+### Checked
+You can set the toggle to be checked by default by passing the `checked` prop.
+
+<NewfoldRoot>
+    <ToggleFieldDemo 
+        id="toggle-field-checked"
+        label="Default checked toggle field"
+        checked={true}
+    />
+</NewfoldRoot>
+
+```jsx
+<ToggleField
+    id="toggle-field-checked"
+    label="Default checked toggle field"
+    checked={true}
+    onChange={setIsChecked}
+/>
+```
+
+---
+### Disabled
+You can disable the toggle by passing the `disabled` prop.
+
+<NewfoldRoot>
+    <ToggleFieldDemo 
+        id="toggle-field-disable"
+        label="Disabled toggle field"
+        disabled
+    />
+</NewfoldRoot>
+
+```jsx
+<ToggleField
+    id="toggle-field-disable"
+    label="Disabled toggle field"
+    checked={isChecked}
+    onChange={setIsChecked}
+    disabled={true}
+/>
+```
 
 ---
 ### Props
-<PropsTable.Table 
-    docs={{
-        "aria-label": {
-            type: 'string',
-        },
-        children: {
-            type: 'node',
-        },
-        className: {
-            type: 'string',
-            description: 'Class attribute to add to the element',
-            defaultValue: '""',
-        },
-        checked: {
-            type: 'boolean',
-            description: 'Checked flag',
-            isRequired: true,
-        },
-        description: {
-            type: 'string',
-            description: 'Form element description',
-            defaultValue: '""',
-        },
-        disabled: {
-            type: 'boolean',
-            description: 'Disabled flag',
-            defaultValue: 'false',
-        },
-        id: {
-            type: 'string',
-            description: 'Element id attribute',
-            defaultValue: '""',
-            isRequired: true,
-        },
-        label: {
-            type: 'string',
-            description: 'Form label for field',
-            defaultValue: '""',
-            isRequired: true,
-        },
-        labelSuffix: {
-            type: 'string',
-            description: 'Label suffix',
-        },
-        onChange: {
-            type: 'func',
-            defaultValue: 'noop',
-            description: 'Handler for when value changes',
-            isRequired: true,
-        },
-        validation: {
-            type: 'Object',
-            description: '{ variant: string, message: node }',
-        },
-    }}
-/>
+<PropsTable.Table docs={toggleFieldProps} />
