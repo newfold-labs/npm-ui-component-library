@@ -16,6 +16,3 @@ The elements layer contains the simplest and stupidest components. They are the 
 
 ### Components
 The components layer contains more complex and smarter components. They are probably the most used building blocks. They are a little opinionated, will sometimes contain internal state and represent regular use case components that group multiple elements together into a friendly interface. Examples of components are the `InputField` and other form field components, that provide an interface for adding labelling and error messaging to an input element.
-
-### Patterns
-The patterns layer contains example implementations of standardized element/component combinations. They are not actually components you can import and use in your code, but function more as a reference on how to work with the UI library to create rich interfaces. Examples of patterns could be `PageLayout` and `Header`, that combine multiple elements/components/plain HTML elements.
