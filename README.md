@@ -12,6 +12,11 @@ git clone -b starter/wp https://github.com/newfold-labs/npm-ui-component-library
 
 Then run `npm run build`.
 
+After you activate the plugin, visit the plugin page.
+
+![WP-Newfold-UI-Starter-‹-Newfold-UI-Starter-Plugin-—-WordPress](https://github.com/newfold-labs/npm-ui-component-library/assets/38976631/a4431f66-60f5-437c-a41e-2776f8eda1f7)
+
+
 **Tip:** run `npm start` to automatically rebuild your changes on save during development.
 
 ## Resources
