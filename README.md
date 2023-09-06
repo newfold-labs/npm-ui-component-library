@@ -7,7 +7,7 @@ This branch serves as a starter template for a plugin that uses React, TailwindC
 Start by cloning the the code from the starter template:
 
 ```bash
-git clone -b wp-newfold-ui-starter https://github.com/newfold-labs/npm-ui-component-library.git
+git clone -b starter/wp https://github.com/newfold-labs/npm-ui-component-library.git
 ```
 
 Then run `npm run build`.
