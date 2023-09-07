@@ -10,7 +10,7 @@ Start by cloning the code from the starter template:
 git clone -b starter/wp https://github.com/newfold-labs/npm-ui-component-library.git
 ```
 
-Then run `npm run build`.
+Then run `npm i && npm run build`.
 
 After you activate the plugin, visit the plugin page.
 
