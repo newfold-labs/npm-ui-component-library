@@ -12,7 +12,9 @@ git clone -b starter/vitejs https://github.com/newfold-labs/npm-ui-component-lib
 
 Then run `npm i && npm run dev` to start the dev server.
 
-Visit the application local page.
+Now open the application's local server.
+
+![Newfold-UI-Vitejs-Starter](https://github.com/newfold-labs/npm-ui-component-library/assets/38976631/93680fb9-e5fa-4b79-b293-cfb3b7e827d5)
 
 ## Resources
 - [ViteJS docs](https://vitejs.dev/guide/)
