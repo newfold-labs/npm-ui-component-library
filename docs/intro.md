@@ -16,3 +16,6 @@ The elements layer contains the simplest and stupidest components. They are the 
 
 ### Components
 The components layer contains more complex and smarter components. They are probably the most used building blocks. They are a little opinionated, will sometimes contain internal state and represent regular use case components that group multiple elements together into a friendly interface. Examples of components are the `InputField` and other form field components, that provide an interface for adding labelling and error messaging to an input element.
+
+### Attribution
+This library is a fork of the [Yoast UI Library](https://ui-library.yoast.com/). It was forked to more easily contribute to and manage deployments independently of any plugin.
