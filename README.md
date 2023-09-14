@@ -61,3 +61,7 @@ Please note that the CSS scoping adds one level of CSS specificity. Therefore `T
 - Enables the `important` rule for all utilities.
 - Disables the Tailwind `preflight` styles (they are included in the `Root` component's CSS).
 - Configures `@tailwindcss/forms` to use the class strategy (they are included in the `Root` component's CSS).
+
+## Attribution
+
+This library is a fork of the [Yoast UI Library](https://ui-library.yoast.com/) which was introduced in the [Yoast SEO 20.0](https://yoast.com/yoast-seo-january-24-2023/). The library was forked to this newfold repository to more easily contribute to and manage deployments independently of any plugin.
