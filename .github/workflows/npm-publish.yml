@@ -1,9 +1,9 @@
 name: Publish NPM Package
 
 on:
-    release:
-        types: 
-            - published
+    push:
+        tags: 
+            - '*'
 
 jobs:
     publish:
@@ -23,7 +23,7 @@ jobs:
             - uses: fregante/setup-git-user@v2
 
             - name: Bump Build Version
-              run: npm version prerelease
+              run: npm version ${{  github.ref_name }}
 
             - name: Install Dependencies
               run: npm ci
@@ -34,4 +34,25 @@ jobs:
             - name: Publish Package
               run: npm publish
               working-directory: ./build
+    
+    bump:
+      needs: publish
+      name: Commit Version Bump
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+          with:
+              ref: main
+              token: ${{ secrets.NEWFOLD_ACCESS_TOKEN }}
+        - uses: actions/setup-node@v3
+          with:
+              node-version: 20.x
+        - uses: fregante/setup-git-user@v2
+
+        - name: Commit Bump
+          run: npm version ${{  github.ref_name }} -m "Bump version to ${{  github.ref_name }}"
+        
+        - name: Push Changes
+          run: git push
+    
 
