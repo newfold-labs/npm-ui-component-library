@@ -1,0 +1,45 @@
+.starter-templates {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    gap: 1rem;
+}
+
+.starter-template {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem;
+    text-decoration: none;
+    border: 1px solid #dadde1;
+    border-radius: .4rem;
+    background-color: #FFFFFF;
+    transition: all .2s ease-in-out;
+}
+
+.starter-template:hover {
+    text-decoration: none;
+    background-color: #f7f7f7;
+}
+
+.starter-template .starter-template__icon {
+    display: flex;
+    align-items: center;
+    padding-right: .75rem;
+    margin-right: 1.15rem;
+    border-right: 1px solid #dadde1;
+}
+
+.starter-template .starter-template__icon svg {
+    width: 36px;
+    height: 36px;
+}
+
+.starter-template h4 {
+    margin: 0 0 .25rem 0;
+    color: #3a3b3d;
+}
+
+.starter-template p {
+    margin: 0;
+    color: #525860;
+}
