@@ -1,0 +1,34 @@
+@layer components {
+	.nfd-root {
+		.nfd-container {
+			@apply
+			nfd-bg-white
+			nfd-w-full
+			nfd-rounded-lg
+			nfd-shadow
+		}
+
+		.nfd-container__header {
+			@apply
+			nfd-p-8
+			nfd-border-b
+			nfd-border-line
+			nfd-flex
+			nfd-flex-col
+			nfd-gap-4
+		}
+
+		.nfd-container__block {
+			@apply
+			nfd-p-8
+			nfd-pb-0
+		}
+
+		.nfd-container__settings-field {
+			@apply
+			nfd-grid
+			xl:nfd-grid-cols-3
+			xl:nfd-gap-12
+		}
+	}
+}
