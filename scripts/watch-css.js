@@ -7,7 +7,7 @@ const { debounce } = require( "lodash" );
 
 const build = () => {
 	console.time( "CSS done" );
-	execSync( "yarn build:css" );
+	execSync( "npm run build:css" );
 	console.timeEnd( "CSS done" );
 };
 
