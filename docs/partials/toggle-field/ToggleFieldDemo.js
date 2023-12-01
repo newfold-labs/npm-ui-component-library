@@ -7,7 +7,8 @@ const ToggleFieldDemo = ({
     label="A toggle field",
     description,
     checked = false,
-    disabled = false
+    disabled = false,
+    className,
 }) => {
     const [isChecked, setIsChecked] = useState(checked);
 
@@ -19,6 +20,7 @@ const ToggleFieldDemo = ({
             checked={isChecked}
             disabled={disabled}
             onChange={setIsChecked}
+            className={className}
         />
     );
 }

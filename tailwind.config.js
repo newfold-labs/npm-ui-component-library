@@ -10,7 +10,11 @@ module.exports = {
     "./docs/**/*.mdx",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        line: "#E2E8F0",
+      }
+    },
   },
   corePlugins: {
     preflight: false,

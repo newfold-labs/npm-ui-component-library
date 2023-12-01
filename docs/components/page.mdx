@@ -1,0 +1,37 @@
+import PropsTable from '@site/src/components/PropsTable';
+import { Root as NewfoldRoot, Page } from "@newfold/ui-component-library";
+import { pageProps } from '@site/docs/partials/page';
+
+# Page
+The `Page` component is used as a wrapper for page content. It doesn't provide any special
+functionality but serves as a container for organizing and styling content within a page.
+
+<NewfoldRoot>
+    <Page>
+        <p>Page Contents</p>
+    </Page>
+</NewfoldRoot>
+
+---
+### Usage
+```jsx title="/src/pages/Settings.js"
+import { Page } from "@newfold/ui-component-library";
+
+export const Settings = () => {
+    return (
+        <Page>
+            // Your page contents
+            <p>Page Contents</p>
+        </Page>
+    );
+};
+```
+
+:::info
+The `Page` component has 3 default classes, `nfd-flex`, `nfd-flex-col` and `nfd-gap-8`.
+You can override these classes by passing in your own class names to the `className` prop.
+:::
+
+---
+### Props
+<PropsTable.Table docs={pageProps} />

@@ -1,0 +1,108 @@
+import PropsTable from '@site/src/components/PropsTable';
+import { Root as NewfoldRoot, Container, Title } from "@newfold/ui-component-library";
+import { containerProps, headerProps, blockProps, SettingsFieldProps, HeaderUsage, BlockUsage, SettingsFieldUsage } from '@site/docs/partials/container';
+import { ToggleFieldDemo } from '@site/docs/partials/toggle-field';
+
+# Container
+The `Container` component is used to group content and elements in a section-like layout.
+
+The `Container` contains 3 sub-components you can use to help you create WordPress settings 
+pages layouts faster, [`Container.Header`](#containerheader), [`Container.Block`](#containerblock), and [`Container.SettingsField`](#containersettingsfield).
+
+<NewfoldRoot>
+    <Container>
+        <Container.Header 
+            title="Settings" 
+            description="This is a description of the settings page." 
+        />
+        <Container.Block separator={true}>
+            <div>
+                <Title as="h4" className="nfd-mb-2">Random Block Content</Title>
+                <p>
+                    You can pass any content in here.
+                </p>
+            </div>
+        </Container.Block>
+        <Container.Block>
+            <Container.SettingsField 
+                title="Performance Settings" 
+                description="Boost speed and performance by storing a copy of your website content, files,and images online so the pages of your website load faster for your visitors." 
+            >
+                <ToggleFieldDemo 
+                    id="toggle-field-description"
+                    label="Enable Cache"
+                    description="Activate the cache to boost your website speed and performance."
+                    className="nfd-mb-6"
+                />
+                <ToggleFieldDemo 
+                    id="toggle-field-description"
+                    label="Minify Assets"
+                    description="Minify your website assets to reduce the size of your website files."
+                    checked={true}
+                />
+            </Container.SettingsField>
+        </Container.Block>
+    </Container>
+</NewfoldRoot>
+
+---
+### Usage
+```jsx
+import { Container } from "@newfold/ui-component-library";
+
+<Container>
+    <Container.Header 
+        title="Settings" 
+        description="This is a description of the settings page." 
+    />
+    <Container.Block separator={true}>
+        <div>
+            <Title>Random Block Content</Title>
+            <p>
+                Container can pass any content in here.
+            </p>
+        </div>
+    </Container.Block>
+    <Container.Block>
+        <Container.SettingsField 
+            title="Performance Settings" 
+            description="Boost speed and performance by storing a copy of your website content,
+            files, and images online so the pages of your website load faster for your visitors." 
+        >
+            ...Performance settings fields
+        </Container.SettingsField>
+    </Container.Block>
+</Container>
+```
+
+---
+### Container Props
+<PropsTable.Table docs={containerProps} />
+
+---
+## Sub-components
+The `Container` component contains 3 sub-components you can use to help you create WordPress settings 
+pages layouts faster.
+
+### Container.Header
+The `Container.Header` component is used to display a title and description for this instance of the container.
+<HeaderUsage/>
+
+### Container.Header Props
+<PropsTable.Table docs={headerProps} />
+
+---
+### Container.Block
+The `Container.Block` component is used to group content and elements together.
+<BlockUsage/>
+
+### Container.Block Props
+<PropsTable.Table docs={blockProps} />
+
+---
+### Container.SettingsField
+The `Container.SettingsField` can be used to generate settings layouts.
+<SettingsFieldUsage/>
+
+### Container.SettingsField Props
+<PropsTable.Table docs={SettingsFieldProps} />
