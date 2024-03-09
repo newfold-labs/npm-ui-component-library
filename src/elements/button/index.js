@@ -63,7 +63,7 @@ const Button = forwardRef( ( {
 const propTypes = {
 	children: PropTypes.node.isRequired,
 	as: PropTypes.elementType,
-	type: PropTypes.oneOf( [ "button", "submit" ] ),
+	type: PropTypes.oneOf( [ "button", "submit", "reset" ] ),
 	variant: PropTypes.oneOf( keys( classNameMap.variant ) ),
 	size: PropTypes.oneOf( keys( classNameMap.size ) ),
 	isLoading: PropTypes.bool,
