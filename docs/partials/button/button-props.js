@@ -10,7 +10,7 @@ const buttonProps = {
         defaultValue: 'button',
     },
     type: {
-        type: ['button', 'submit'],
+        type: ['button', 'submit', 'reset'],
     },
     variant: {
         type: ['primary', 'secondary', 'error', 'upsell'],
