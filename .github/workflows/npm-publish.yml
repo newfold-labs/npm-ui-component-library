@@ -12,7 +12,7 @@ jobs:
         env:
             NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v4
               with:
                   token: ${{ secrets.NEWFOLD_ACCESS_TOKEN }}
             - uses: actions/setup-node@v3
@@ -40,7 +40,7 @@ jobs:
       name: Commit Version Bump
       runs-on: ubuntu-latest
       steps:
-        - uses: actions/checkout@v3
+        - uses: actions/checkout@v4
           with:
               ref: main
               token: ${{ secrets.NEWFOLD_ACCESS_TOKEN }}
