@@ -30,5 +30,15 @@
 			xl:nfd-grid-cols-3
 			xl:nfd-gap-12
 		}
+
+		.nfd-container__footer {
+			@apply
+			nfd-p-8
+			nfd-border-t
+			nfd-border-[#E2E8F0]
+			nfd-flex
+			nfd-flex-col
+			nfd-gap-4
+		}
 	}
 }
