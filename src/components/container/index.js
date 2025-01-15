@@ -112,6 +112,29 @@ SettingsField.propTypes = {
  * @param {string} as The element to render as.
  * @param {Object} children The children.
  * @param {string} className The className.
+ * @returns {JSX.Element} The footer.
+ */
+const Footer = ( {
+	as: Component = "div",
+	children,
+	className = "",
+	...props 
+} ) => (
+	<Component { ...props } className={ classNames( "nfd-container__footer", className ) }>
+		{ children }
+	</Component>
+);
+
+Footer.propTypes = {
+	as: PropTypes.element,
+	children: PropTypes.node.isRequired,
+	className: PropTypes.string,
+};
+
+/**
+ * @param {string} as The element to render as.
+ * @param {Object} children The children.
+ * @param {string} className The className.
  * @returns {JSX.Element} The container component.
  */
 const Container = forwardRef( ( { as: Component = "div", children, className = "", ...props }, ref ) => (
@@ -129,5 +152,6 @@ Container.propTypes = {
 Container.Header = Header;
 Container.Block = Block;
 Container.SettingsField = SettingsField;
+Container.Footer = Footer;
 
 export default Container;
