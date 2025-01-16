@@ -1,6 +1,6 @@
 import PropsTable from '@site/src/components/PropsTable';
-import { Root as NewfoldRoot, Container, Title } from "@newfold/ui-component-library";
-import { containerProps, headerProps, blockProps, settingsFieldProps, HeaderUsage, BlockUsage, SettingsFieldUsage } from '@site/docs/partials/container';
+import { Root as NewfoldRoot, Button, Container, Title } from "@newfold/ui-component-library";
+import { containerProps, headerProps, blockProps, settingsFieldProps, footerProps, HeaderUsage, BlockUsage, SettingsFieldUsage, FooterUsage } from '@site/docs/partials/container';
 import { ToggleFieldDemo } from '@site/docs/partials/toggle-field';
 
 # Container
@@ -42,6 +42,11 @@ pages layouts faster, [`Container.Header`](#containerheader), [`Container.Block`
                 />
             </Container.SettingsField>
         </Container.Block>
+        <Container.Footer>
+            <div>
+                <Button>Save changes</Button>
+            </div>
+        </Container.Footer>
     </Container>
 </NewfoldRoot>
 
@@ -72,6 +77,11 @@ import { Container } from "@newfold/ui-component-library";
             ...Performance settings fields
         </Container.SettingsField>
     </Container.Block>
+    <Container.Footer>
+        <div>
+            <Button>Save changes</Button>
+        </div>
+    </Container.Footer>
 </Container>
 ```
 
@@ -106,3 +116,11 @@ The `Container.SettingsField` can be used to generate settings layouts.
 
 ### Container.SettingsField Props
 <PropsTable.Table docs={settingsFieldProps} />
+
+---
+### Container.Footer
+The `Container.Footer` component is used to display a footer for this instance of the container.
+<FooterUsage/>
+
+### Container.Footer Props
+<PropsTable.Table docs={footerProps} />
