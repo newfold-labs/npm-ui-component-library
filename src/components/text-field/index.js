@@ -15,6 +15,7 @@ import { useDescribedBy } from "../../hooks";
  * @param {JSX.node} [description] A description.
  * @param {boolean} [disabled] The disabled state.
  * @param {boolean} [readOnly] The read-only state.
+ * @param {boolean} [required] The required state.
  * @param {Object} [validation] The validation state.
  * @param {Object} [props] Any extra properties for the TextInput.
  * @returns {JSX.Element} The input field.
@@ -24,8 +25,10 @@ const TextField = forwardRef( ( {
 	onChange,
 	label,
 	labelSuffix,
+	labelRequiredIndicator,
 	disabled,
 	readOnly,
+	required,
 	className,
 	description,
 	validation,
@@ -43,7 +46,13 @@ const TextField = forwardRef( ( {
 			) }
 		>
 			<div className="nfd-flex nfd-items-center nfd-mb-2">
-				<Label className="nfd-text-field__label" htmlFor={ id }>{ label }</Label>
+				<Label
+					requiredIndicator={ ( required && labelRequiredIndicator ) }
+					className="nfd-text-field__label"
+					htmlFor={ id }
+				>
+					{ label }
+				</Label>
 				{ labelSuffix }
 			</div>
 			<ValidationInput
@@ -53,6 +62,7 @@ const TextField = forwardRef( ( {
 				onChange={ onChange }
 				disabled={ disabled }
 				readOnly={ readOnly }
+				required={ required }
 				className="nfd-text-field__input"
 				aria-describedby={ describedBy }
 				validation={ validation }
@@ -75,6 +85,7 @@ const propTypes = {
 	labelSuffix: PropTypes.node,
 	disabled: PropTypes.bool,
 	readOnly: PropTypes.bool,
+	required: PropTypes.bool,
 	className: PropTypes.string,
 	description: PropTypes.node,
 	validation: PropTypes.shape( {
@@ -89,6 +100,7 @@ TextField.defaultProps = {
 	labelSuffix: null,
 	disabled: false,
 	readOnly: false,
+	required: false,
 	className: "",
 	description: null,
 	validation: {},
