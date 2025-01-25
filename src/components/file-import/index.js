@@ -120,6 +120,15 @@ const FileImport = forwardRef( ( {
 		}
 	}, [ onChange ] );
 
+	const handleDrop = useCallback( ( event ) => {
+		if ( ! isEmpty( event.dataTransfer.files ) ) {
+			const file = event.dataTransfer.files[ 0 ];
+			if ( file ) {
+				onChange( file );
+			}
+		}
+	}, [ onChange ] );
+
 	return (
 		<FileImportContext.Provider value={ { status } }>
 			<div className="nfd-file-import">
@@ -130,6 +139,7 @@ const FileImport = forwardRef( ( {
 					// Don't control value here to allow consecutive imports of the same file.
 					value=""
 					onChange={ handleChange }
+					onDrop={ handleDrop }
 					className="nfd-file-import__input"
 					aria-labelledby={ screenReaderLabel }
 					disabled={ isLoading }
