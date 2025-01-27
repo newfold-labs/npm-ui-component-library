@@ -6,6 +6,7 @@ export { default as Checkbox } from "./elements/checkbox";
 export { default as Code } from "./elements/code";
 export { default as DropZone } from "./elements/drop-zone";
 export { default as ErrorBoundary } from "./elements/error-boundary";
+export { default as ImageInput } from "./elements/image-input";
 export { default as Label } from "./elements/label";
 export { default as Link } from "./elements/link";
 export { default as Paper } from "./elements/paper";
