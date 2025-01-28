@@ -29,6 +29,7 @@ export { default as ChildrenLimiter } from "./components/children-limiter";
 export { default as Container } from "./components/container";
 export { default as FeatureUpsell } from "./components/feature-upsell";
 export { default as FileImport } from "./components/file-import";
+export { default as ImageImport } from "./components/image-import";
 export { default as Modal } from "./components/modal";
 export { default as Notifications } from "./components/notifications";
 export { default as Page } from "./components/page";
