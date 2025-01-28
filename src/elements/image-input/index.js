@@ -105,14 +105,14 @@ const ImageInput = forwardRef( ( {
 	}, [ id, preview, onReset ] );
 
 
-	const handleButtonClick = useCallback( () => {
+	const handleButtonClick = useCallback( ( event ) => {
 		if ( disabled ) {
 			return;
 		}
 
 		// onClick callback
 		if ( onClick ) {
-			onClick();
+			onClick( event );
 			return;
 		}
 

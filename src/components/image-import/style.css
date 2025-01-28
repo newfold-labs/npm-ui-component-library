@@ -1,12 +1,14 @@
 @layer components {
 	.nfd-root {
 		.nfd-image-import {
-			.nfd-image-import__content {
+			.nfd-image-import__drop-zone-content {
 				@apply
 				nfd-flex
+				nfd-flex-col-reverse
 				nfd-items-center
 				nfd-justify-between
-				nfd-gap-4;
+				nfd-gap-4
+				@lg/nfd-image-import:nfd-flex-row;
 			}
 
 			.nfd-image-import__drop-label {
@@ -29,6 +31,11 @@
 				.nfd-image-import__drop-label {
 					@apply nfd-cursor-not-allowed;
 				}
+			}
+
+			.nfd-image-import__content {
+				@apply
+				nfd-mt-4;
 			}
 		}
 	}

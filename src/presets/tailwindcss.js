@@ -42,6 +42,7 @@ const TAILWINDCSS_PRESET = {
 		require( "@tailwindcss/forms" )( {
 			strategy: "class",
 		} ),
+		require( "@tailwindcss/container-queries" ),
 	],
 	corePlugins: {
 		preflight: false,

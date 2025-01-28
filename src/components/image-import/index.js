@@ -22,6 +22,7 @@ import Label from "../../elements/label";
  * @param {boolean} disabled Disabled state.
  * @param {string} resetPreviewActionAriaLabel Reset preview action aria label.
  * @param {string} className Classname.
+ * @param {string} children Children.
  * @returns {JSX.Element} The ImageImport component.
  * */
 const ImageImport = forwardRef( ( {
@@ -41,6 +42,7 @@ const ImageImport = forwardRef( ( {
 	disabled,
 	resetPreviewActionAriaLabel,
 	className,
+	children,
 	...props
 }, ref ) => {
 	const inputRef = useRef();
@@ -86,7 +88,7 @@ const ImageImport = forwardRef( ( {
 	return (
 		<div
 			className={ classNames(
-				"nfd-image-import",
+				"nfd-image-import nfd-@container/nfd-image-import",
 				disabled && "nfd-is-disabled",
 				className,
 			) }
@@ -99,7 +101,7 @@ const ImageImport = forwardRef( ( {
 				aria-label={ dropLabel }
 				tabIndex="-1"
 			>
-				<div className="nfd-image-import__content">
+				<div className="nfd-image-import__drop-zone-content">
 					<ImageInput
 						id={ id }
 						name={ name }
@@ -123,6 +125,12 @@ const ImageImport = forwardRef( ( {
 					</Label>
 				</div>
 			</DropZone>
+
+			{ children && (
+				<div className="nfd-image-import__content">
+					{ children }
+				</div>
+			) }
 		</div>
 	);
 } );
@@ -145,6 +153,7 @@ ImageImport.propTypes = {
 	accept: PropTypes.string,
 	resetPreviewActionAriaLabel: PropTypes.string,
 	className: PropTypes.string,
+	children: PropTypes.node,
 };
 
 export default ImageImport;

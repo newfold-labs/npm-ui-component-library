@@ -4,7 +4,8 @@
 			@apply
 			nfd-flex
 			nfd-items-center
-			nfd-gap-4;
+			nfd-gap-4
+			nfd-min-w-max;
 
 			.nfd-image-input__preview {
 				@apply
