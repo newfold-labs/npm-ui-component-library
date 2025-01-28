@@ -126,15 +126,20 @@ const ImageInput = forwardRef( ( {
 	 * Render preview conditionally.
 	 * @returns {JSX.Element} HTML img element | Icon component.
 	 */
-	const renderPreview = () => {
+	const Preview = () => {
 		// Return preview if available
 		if ( preview ) {
 			return (
-				<>
+				<div
+					className={ classNames(
+						"nfd-image-input__preview nfd-group",
+						variants.classes[ variant ] || variants.classes.avatar,
+					) }
+				>
 					<img
 						src={ preview }
 						alt={ previewImageAlt || "Selected" }
-						className="nfd-image-input__preview"
+						className="nfd-image-input__preview-img"
 					/>
 					<div
 						onClick={ handleReset }
@@ -142,24 +147,20 @@ const ImageInput = forwardRef( ( {
 						role="button"
 						tabIndex={ 0 }
 						disabled={ disabled }
-						className={ classNames(
-							"nfd-image-input__preview-reset group-hover:nfd-opacity-100",
-							disabled && "nfd-hidden nfd-cursor-not-allowed",
-						) }
+						className="nfd-image-input__preview-reset group-hover:nfd-opacity-100"
 						aria-label={ resetPreviewActionAriaLabel || "Remove selected image" }
 					>
 						<XCircleIcon
 							className="nfd-m-auto"
-							size={ 24 }
 						/>
 					</div>
-				</>
+				</div>
 			);
 		}
 
 		// Return icon placeholder if no preview
 		if ( variant ) {
-			// Parse variant value to match component name (e.g. "rounded" => "Rounded")
+			// Capitalize variant value to match component name (e.g. "rounded" => "Rounded")
 			variant = variant.trim();
 			variant = variant.toLowerCase();
 			variant = variant.charAt( 0 ).toUpperCase() + variant.slice( 1 );
@@ -170,17 +171,15 @@ const ImageInput = forwardRef( ( {
 	};
 
 	return (
-		<div className={ classNames( "nfd-image-input", className ) }>
-			<div
-				className={ classNames(
-					"nfd-w-12 nfd-h-12 nfd-relative nfd-overflow-hidden nfd-flex nfd-items-center nfd-justify-center nfd-group",
-					variants.classes[ variant ] || variants.classes.avatar,
-					preview && "nfd-border nfd-border-slate-200",
-					disabled && "nfd-opacity-50 nfd-cursor-not-allowed",
-				) }
-			>
-				{ renderPreview() }
-			</div>
+		<div
+			className={ classNames(
+				"nfd-image-input",
+				preview && "nfd-has-preview",
+				disabled && "nfd-is-disabled",
+				className,
+			) }
+		>
+			<Preview />
 
 			<input
 				id={ id }

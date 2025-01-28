@@ -8,6 +8,7 @@ import PropTypes from "prop-types";
  * @param {string} children The children
  * @param {string} className Classname
  * @param {boolean} [disabled=false] Disabled state.
+ * @param {string} [tabIndex] Tab index
  * @returns {JSX.Element} The DropZone component.
  */
 const DropZone = ( {
@@ -15,6 +16,7 @@ const DropZone = ( {
 	children,
 	className,
 	disabled,
+	tabIndex,
 	...props
 } ) => {
 	const [ isDraggingOver, setIsDraggingOver ] = useState( false );
@@ -57,6 +59,7 @@ const DropZone = ( {
 		}
 	  }, [ onDrop ] );
 
+
 	return (
 		<div
 			onDragEnter={ handleDragEnter }
@@ -64,7 +67,7 @@ const DropZone = ( {
 			onDragOver={ handleDragOver }
 			onDrop={ handleDrop }
 			aria-disabled={ disabled }
-			tabIndex={ disabled ? -1 : 0 }
+			tabIndex={ disabled ? "-1" : tabIndex || "0" }
 			className={ classNames(
 				"nfd-drop-zone",
 				{
@@ -87,6 +90,7 @@ DropZone.propTypes = {
 	children: PropTypes.node,
 	className: PropTypes.string,
 	disabled: PropTypes.bool,
+	tabIndex: PropTypes.string,
 };
 
 export default DropZone;
