@@ -11,7 +11,7 @@ import Label from "../../elements/label";
  * @param {string} imageInputVariant Image input variant.
  * @param {string} previewImage Preview image.
  * @param {string} previewImageAlt Preview image alt.
- * @param {string} importText Import text.
+ * @param {string} buttonText Button text.
  * @param {string} buttonVariant Button variant.
  * @param {Function} onClick On click callback.
  * @param {Function} onChange On change callback.
@@ -32,7 +32,7 @@ const ImageImport = forwardRef( ( {
 	imageInputVariant,
 	previewImage,
 	previewImageAlt,
-	importText,
+	buttonText,
 	buttonVariant,
 	onClick,
 	onChange,
@@ -113,7 +113,7 @@ const ImageImport = forwardRef( ( {
 						variant={ imageInputVariant }
 						previewImage={ previewImage }
 						previewImageAlt={ previewImageAlt }
-						buttonText={ importText }
+						buttonText={ buttonText }
 						buttonVariant={ buttonVariant }
 						onClick={ onClick }
 						onChange={ onChange }
