@@ -52,6 +52,14 @@ const ImageImport = forwardRef( ( {
 			return;
 		}
 
+		// onDrop callback
+		if ( onDrop ) {
+			// If onDrop callback is defined, defer to consumer
+			onDrop( event );
+			return;
+		}
+
+		// Default behavior if onDrop callback is not defined
 		const file = event.dataTransfer.files[ 0 ];
 		if ( file ) {
 			try {
@@ -77,11 +85,6 @@ const ImageImport = forwardRef( ( {
 					onError( error );
 				}
 			}
-		}
-
-		// onDrop callback
-		if ( onDrop ) {
-			onDrop( event );
 		}
 	}, [ onError, onDrop ] );
 

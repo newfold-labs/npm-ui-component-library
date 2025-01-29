@@ -4,6 +4,7 @@ import { keys } from "lodash";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import Button from "../button";
+import Spinner from "../spinner";
 
 export const variants = {
 	classes: {
@@ -31,6 +32,7 @@ export const variants = {
  * @param {string} className Classname.
  * @param {boolean} disabled Disabled state.
  * @param {string} accept Accept attribute.
+ * @param {boolean} isloading Is loading state.
  * @param {string} resetPreviewActionAriaLabel Reset preview action aria label.
  * @returns {JSX.Element} The ImageInput component.
  */
@@ -48,6 +50,7 @@ const ImageInput = forwardRef( ( {
 	className,
 	disabled,
 	accept,
+	isloading = false,
 	resetPreviewActionAriaLabel,
 	...props
 }, ref ) => {
@@ -128,7 +131,7 @@ const ImageInput = forwardRef( ( {
 	 */
 	const Preview = () => {
 		// Return preview if available
-		if ( preview ) {
+		if ( preview || isloading ) {
 			return (
 				<div
 					className={ classNames(
@@ -136,24 +139,34 @@ const ImageInput = forwardRef( ( {
 						variants.classes[ variant ] || variants.classes.avatar,
 					) }
 				>
-					<img
-						src={ preview }
-						alt={ previewImageAlt || "Selected" }
-						className="nfd-image-input__preview-img"
-					/>
-					<div
-						onClick={ handleReset }
-						onKeyDown={ handleReset }
-						role="button"
-						tabIndex={ 0 }
-						disabled={ disabled }
-						className="nfd-image-input__preview-reset group-hover:nfd-opacity-100"
-						aria-label={ resetPreviewActionAriaLabel || "Remove selected image" }
-					>
-						<XCircleIcon
-							className="nfd-m-auto"
-						/>
-					</div>
+					{ ! preview && (
+						<div className="nfd-image-input__loading">
+							<Spinner />
+						</div>
+					) }
+
+					{ preview && (
+						<>
+							<img
+								src={ preview }
+								alt={ previewImageAlt || "Selected" }
+								className="nfd-image-input__preview-img"
+							/>
+							<div
+								onClick={ handleReset }
+								onKeyDown={ handleReset }
+								role="button"
+								tabIndex={ 0 }
+								disabled={ disabled }
+								className="nfd-image-input__preview-reset group-hover:nfd-opacity-100"
+								aria-label={ resetPreviewActionAriaLabel || "Remove selected image" }
+							>
+								<XCircleIcon
+									className="nfd-m-auto"
+								/>
+							</div>
+						</>
+					) }
 				</div>
 			);
 		}
