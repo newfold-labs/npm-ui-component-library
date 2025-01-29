@@ -20,6 +20,7 @@ import Label from "../../elements/label";
  * @param {Function} onError On error callback.
  * @param {string} dropLabel Drop label.
  * @param {boolean} disabled Disabled state.
+ * @param {boolean} isLoading Is loading state.
  * @param {string} resetPreviewActionAriaLabel Reset preview action aria label.
  * @param {string} className Classname.
  * @param {string} children Children.
@@ -40,6 +41,7 @@ const ImageImport = forwardRef( ( {
 	onError,
 	dropLabel = "Select an image or drag and drop",
 	disabled,
+	isLoading,
 	resetPreviewActionAriaLabel,
 	className,
 	children,
@@ -117,6 +119,7 @@ const ImageImport = forwardRef( ( {
 						onChange={ onChange }
 						onReset={ onReset }
 						disabled={ disabled }
+						isLoading={ isLoading }
 						resetPreviewActionAriaLabel={ resetPreviewActionAriaLabel }
 						ref={ inputRef }
 					/>
@@ -154,6 +157,7 @@ ImageImport.propTypes = {
 	dropLabel: PropTypes.string,
 	disabled: PropTypes.bool,
 	accept: PropTypes.string,
+	isLoading: PropTypes.bool,
 	resetPreviewActionAriaLabel: PropTypes.string,
 	className: PropTypes.string,
 	children: PropTypes.node,

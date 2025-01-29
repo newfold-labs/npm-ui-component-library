@@ -32,7 +32,7 @@ export const variants = {
  * @param {string} className Classname.
  * @param {boolean} disabled Disabled state.
  * @param {string} accept Accept attribute.
- * @param {boolean} isloading Is loading state.
+ * @param {boolean} isLoading Is loading state.
  * @param {string} resetPreviewActionAriaLabel Reset preview action aria label.
  * @returns {JSX.Element} The ImageInput component.
  */
@@ -50,7 +50,7 @@ const ImageInput = forwardRef( ( {
 	className,
 	disabled,
 	accept,
-	isloading = false,
+	isLoading = false,
 	resetPreviewActionAriaLabel,
 	...props
 }, ref ) => {
@@ -131,7 +131,7 @@ const ImageInput = forwardRef( ( {
 	 */
 	const Preview = () => {
 		// Return preview if available
-		if ( preview || isloading ) {
+		if ( preview || isLoading ) {
 			return (
 				<div
 					className={ classNames(
@@ -230,6 +230,7 @@ ImageInput.propTypes = {
 	className: PropTypes.string,
 	disabled: PropTypes.bool,
 	accept: PropTypes.string,
+	isLoading: PropTypes.bool,
 	resetPreviewActionAriaLabel: PropTypes.string,
 };
 
