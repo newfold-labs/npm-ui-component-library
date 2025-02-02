@@ -20,8 +20,17 @@
 			nfd-text-primary-500
 			nfd-border-slate-300
 			nfd-rounded
+			nfd-shadow-none
+			nfd-cursor-default
 
+			focus:nfd-border-slate-300
 			focus:nfd-ring-primary-500;
+
+			&:checked {
+				@apply
+				before:nfd-content-none
+				before:nfd-hidden;
+			}
 		}
 
 		.nfd-checkbox__label {
