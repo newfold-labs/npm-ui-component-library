@@ -1,0 +1,1 @@
+export { default as dropZoneProps } from './drop-zone-props';

@@ -1,0 +1,52 @@
+import PropsTable from '@site/src/components/PropsTable';
+import { Root as NewfoldRoot, DropZone, Title } from "@newfold/ui-component-library";
+import { dropZoneProps } from '@site/docs/partials/drop-zone';
+
+# DropZone
+The DropZone element provides a way to drag and drop content into a designated area. Helpful for uploading files.
+
+<NewfoldRoot>
+    <DropZone
+        onDrop={ (e) => console.log(e.dataTransfer.items) }
+    >
+        <Title as="h3" className="nfd-text-center">Drop files here</Title>
+    </DropZone>
+</NewfoldRoot>
+
+---
+### Usage
+```jsx
+import { DropZone } from "@newfold/ui-component-library";
+
+<DropZone
+    onDrop={ (e) => console.log(e.dataTransfer.items) }
+>
+    <Title className="nfd-text-center">Drop files here</Title>
+</DropZone>
+```
+
+---
+### Disabled
+Use the `disabled` prop to disable the DropZone component.
+
+<NewfoldRoot>
+    <DropZone
+        disabled
+        onDrop={ (e) => console.log(e.dataTransfer.items) }
+    >
+        <Title as="h3" className="nfd-text-center">Drop files here</Title>
+</DropZone>
+</NewfoldRoot>
+
+```jsx
+<DropZone
+    disabled
+    onDrop={ (e) => console.log(e.dataTransfer.items) }
+>
+    <Title className="nfd-text-center">Drop files here</Title>
+</DropZone>
+```
+
+---
+### Props
+<PropsTable.Table docs={dropZoneProps} />
