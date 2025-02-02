@@ -28,6 +28,7 @@ export { default as CheckboxGroup } from "./components/checkbox-group";
 export { default as ChildrenLimiter } from "./components/children-limiter";
 export { default as Container } from "./components/container";
 export { default as FeatureUpsell } from "./components/feature-upsell";
+export { default as FeaturesSelect } from "./components/features-select";
 export { default as FileImport } from "./components/file-import";
 export { default as ImageImport } from "./components/image-import";
 export { default as Modal } from "./components/modal";
