@@ -1,0 +1,135 @@
+import PropsTable from '@site/src/components/PropsTable';
+import { Root as NewfoldRoot, FeaturesSelect } from "@newfold/ui-component-library";
+import { FeaturesSelectUsageDemo, FeaturesSelectBehavior, FeaturesSelectLayout, featuresSelectProps, featureProps } from '@site/docs/partials/features-select';
+
+# FeaturesSelect
+The `FeaturesSelect` component provides a flexible way to create checkbox or radio-based feature selection cards.
+
+<NewfoldRoot>
+    <FeaturesSelectUsageDemo />
+</NewfoldRoot>
+
+---
+### Usage
+```jsx
+import { FeaturesSelect } from "@newfold/ui-component-library";
+
+<FeaturesSelect>
+    <FeaturesSelect.Feature
+        id="feature-1"
+        name="feature-group"
+        value="1"
+    >
+        Feature 1
+    </FeaturesSelect.Feature>
+
+    <FeaturesSelect.Feature
+        id="feature-2"
+        name="feature-group"
+        value="2"
+    >
+        Feature 2
+    </FeaturesSelect.Feature>
+
+    <FeaturesSelect.Feature
+        id="feature-3"
+        name="feature-group"
+        value="3"
+    >
+        Feature 3
+    </FeaturesSelect.Feature>
+</FeaturesSelect>
+```
+
+As shown in the example above, the `FeaturesSelect` component wraps a set of `FeaturesSelect.Feature` components. The `FeaturesSelect` can be used as container to control the behavior and layout of the features while each `FeaturesSelect.Feature` component represents an option card that can be selected by the user.
+
+---
+### Behavior
+You can use the `behavior` prop in the `FeaturesSelect` component to specify whether the feature cards should behave as checkboxes or radio buttons. The default behavior is `checkbox`.
+<FeaturesSelectBehavior />
+
+---
+### Layout
+You can use the `layout` prop in the `FeaturesSelect` component to specify the layout of the feature cards. There are two layout options: 'row' and 'column'. The default layout is 'row'.
+<FeaturesSelectLayout />
+
+---
+### Props
+<PropsTable.Table docs={featuresSelectProps} />
+
+---
+## FeaturesSelect.Feature
+The `FeaturesSelect.Feature` component is used to create a feature card that can be selected by the user.
+
+```jsx
+import { FeaturesSelect } from "@newfold/ui-component-library";
+
+<FeaturesSelect.Feature
+    id="feature-1"
+    name="feature-group"
+    value="1"
+    className="nfd-w-fit"
+>
+    Feature 1
+</FeaturesSelect.Feature>
+```
+
+---
+### Label
+Use the `label` prop to render a label under the feature card.
+
+<NewfoldRoot>
+    <FeaturesSelect.Feature
+        id="feature-1-label"
+        name="feature-group"
+        value="1"
+        className="nfd-w-fit"
+        label="Feature 1"
+    >
+        Feature 1 with label
+    </FeaturesSelect.Feature>
+</NewfoldRoot>
+
+```jsx
+<FeaturesSelect.Feature
+    id="feature-1"
+    name="feature-group"
+    value="1"
+    className="nfd-w-fit"
+    label="Feature 1"
+>
+    Feature 1 with label
+</FeaturesSelect.Feature>
+```
+
+---
+### Disabled
+Use the `disabled` prop to disable the feature card.
+
+<NewfoldRoot>
+    <FeaturesSelect.Feature
+        id="feature-1-disabled"
+        name="feature-group"
+        value="1"
+        className="nfd-w-fit"
+        disabled
+    >
+        Feature 1
+    </FeaturesSelect.Feature>
+</NewfoldRoot>
+
+```jsx
+<FeaturesSelect.Feature
+    id="feature-1"
+    name="feature-group"
+    value="1"
+    className="nfd-w-fit"
+    disabled
+>
+    Feature 1
+</FeaturesSelect.Feature>
+```
+
+---
+### FeaturesSelect.Feature Props
+<PropsTable.Table docs={featureProps} />

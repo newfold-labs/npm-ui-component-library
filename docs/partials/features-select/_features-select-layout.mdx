@@ -1,0 +1,87 @@
+import { Root as NewfoldRoot } from "@newfold/ui-component-library";
+import { FeaturesSelectLayoutDemo } from ".";
+
+#### 1. Row (default)
+The `row` layout displays the feature cards in a horizontal row.
+
+<NewfoldRoot>
+    <FeaturesSelectLayoutDemo />
+</NewfoldRoot>
+
+```jsx
+<FeaturesSelect layout="row">
+    <FeaturesSelect.Feature
+        id="feature-1"
+        name="feature-group"
+        value="1"
+    >
+        Feature 1
+    </FeaturesSelect.Feature>
+
+    <FeaturesSelect.Feature
+        id="feature-2"
+        name="feature-group"
+        value="2"
+    >
+        Feature 2
+    </FeaturesSelect.Feature>
+
+    <FeaturesSelect.Feature
+        id="feature-3"
+        name="feature-group"
+        value="3"
+    >
+        Feature 3
+    </FeaturesSelect.Feature>
+</FeaturesSelect>
+```
+
+#### 2. Column
+The `column` layout displays the feature cards in a vertical column.
+
+<NewfoldRoot>
+    <FeaturesSelectLayoutDemo layout="column" />
+</NewfoldRoot>
+
+```jsx
+<FeaturesSelect layout="column">
+    <FeaturesSelect.Feature
+        id="feature-1"
+        name="feature-group"
+        value="1"
+    >
+        Feature 1
+    </FeaturesSelect.Feature>
+
+    <FeaturesSelect.Feature
+        id="feature-2"
+        name="feature-group"
+        value="2"
+    >
+        Feature 2
+    </FeaturesSelect.Feature>
+
+    <FeaturesSelect.Feature
+        id="feature-3"
+        name="feature-group"
+        value="3"
+    >
+        Feature 3
+    </FeaturesSelect.Feature>
+</FeaturesSelect>
+```
+
+:::info
+To limit the width of the feature cards in the column layout, you can use the `className` prop to apply custom CSS classes. (see example below)
+:::
+
+```jsx
+<FeaturesSelect.Feature
+        id="feature-1"
+        name="feature-group"
+        value="1"
+        className="nfd-w-fit"
+    >
+    Feature 1
+</FeaturesSelect.Feature>
+```

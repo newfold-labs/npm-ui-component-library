@@ -1,0 +1,71 @@
+import { Root as NewfoldRoot } from "@newfold/ui-component-library";
+import { FeaturesSelectBehaviorDemo } from "."
+
+#### 1. Checkbox (default)
+The `checkbox` behavior allows users to select multiple feature cards.
+
+<NewfoldRoot>
+    <FeaturesSelectBehaviorDemo />
+</NewfoldRoot>
+
+```jsx
+<FeaturesSelect behavior="checkbox">
+    <FeaturesSelect.Feature
+        id="feature-1"
+        name="feature-group"
+        value="1"
+    >
+        Feature 1
+    </FeaturesSelect.Feature>
+
+    <FeaturesSelect.Feature
+        id="feature-2"
+        name="feature-group"
+        value="2"
+    >
+        Feature 2
+    </FeaturesSelect.Feature>
+
+    <FeaturesSelect.Feature
+        id="feature-3"
+        name="feature-group"
+        value="3"
+    >
+        Feature 3
+    </FeaturesSelect.Feature>
+</FeaturesSelect>
+```
+
+#### 2. Radio
+The `radio` behavior allows users to select only one feature card.
+
+<NewfoldRoot>
+    <FeaturesSelectBehaviorDemo behavior="radio" />
+</NewfoldRoot>
+
+```jsx
+<FeaturesSelect behavior="radio">
+    <FeaturesSelect.Feature
+        id="feature-1"
+        name="feature-group"
+        value="1"
+    >
+        Feature 1
+    </FeaturesSelect.Feature>
+
+    <FeaturesSelect.Feature
+        id="feature-2"
+        name="feature-group"
+        value="2"
+    >
+        Feature 2
+    </FeaturesSelect.Feature>
+
+    <FeaturesSelect.Feature
+        id="feature-3"
+        name="feature-group"
+        value="3"
+    >
+        Feature 3
+    </FeaturesSelect.Feature>
+</FeaturesSelect>
