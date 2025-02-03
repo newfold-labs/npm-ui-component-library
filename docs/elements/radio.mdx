@@ -58,29 +58,31 @@ Use the `disabled` prop to disable the radio button.
 />
 ```
 
----
-### Dangerous label
-If you need to render dangerous HTML inside the label, use the `isLabelDangerousHtml` prop.
-
-<NewfoldRoot>
-    <Radio
-        id="radio-dangerous"
-        isLabelDangerousHtml
-        label="&bull; Dangerous label."
-        name="option-dangerous"
-        value="D"
-    />
-</NewfoldRoot>
-
-```jsx
-<Radio
-    id="radio-dangerous"
-    isLabelDangerousHtml
-    label="&bull; Dangerous label."
-    name="option-dangerous"
-    value="dangerous-radio"
-/>
-```
+// The 'Dangerous label' doc is disabled due to a bug in the rendering of the Label element.
+// Ref: https://github.com/newfold-labs/npm-ui-component-library/issues/27
+//---
+//### Dangerous label
+//If you need to render dangerous HTML inside the label, use the `isLabelDangerousHtml` prop.
+//
+//<NewfoldRoot>
+//    <Radio
+//        id="radio-dangerous"
+//        isLabelDangerousHtml={false}
+//        label="&bull; Dangerous label."
+//        name="option-dangerous"
+//        value="D"
+//    />
+//</NewfoldRoot>
+//
+//```jsx
+//<Radio
+//    id="radio-dangerous"
+//    isLabelDangerousHtml
+//    label="&bull; Dangerous label."
+//    name="option-dangerous"
+//    value="dangerous-radio"
+///>
+//```
 
 ---
 ### Radio Group
