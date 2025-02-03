@@ -3,6 +3,11 @@ const labelProps = {
         type: 'string',
         description: 'Label text',
     },
+    requiredIndicator: {
+        type: 'boolean',
+        description: 'Show required indicator',
+        defaultValue: false,
+    },
     as: {
         type: ['label', 'span', 'div'],
         description: 'Rendered HTML element',
