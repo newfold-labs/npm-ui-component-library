@@ -1,0 +1,1 @@
+export { default as imageImportProps } from './image-import-props';
