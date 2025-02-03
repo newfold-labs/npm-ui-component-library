@@ -18,6 +18,6 @@ const dropZoneProps = {
     tabIndex: {
         type: 'string',
     },
-}
+};
 
 export default dropZoneProps;

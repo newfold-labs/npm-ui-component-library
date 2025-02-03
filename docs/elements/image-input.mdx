@@ -1,0 +1,137 @@
+import PropsTable from '@site/src/components/PropsTable';
+import { Root as NewfoldRoot, ImageInput } from "@newfold/ui-component-library";
+import { ImageInputVariants, imageInputProps } from '@site/docs/partials/image-input';
+
+# ImageInput
+The ImageInput element provides a file input to upload images.
+
+<NewfoldRoot>
+    <ImageInput
+        id="image-input-1"
+        name="image-input-1"
+    />
+</NewfoldRoot>
+
+---
+### Usage
+```jsx
+import { ImageInput } from "@newfold/ui-component-library";
+
+<ImageInput
+    id="image-input"
+    name="image-input"
+/>
+```
+
+---
+### Variants
+The ImageInput has 3 variants: `avatar`, `rounded`, and `square`.
+<ImageInputVariants />
+
+---
+### Disabled
+Use the `disabled` prop to disable the ImageInput.
+
+<NewfoldRoot>
+    <ImageInput
+        id="image-input-disabled"
+        name="image-input-disabled"
+        disabled
+    />
+</NewfoldRoot>
+
+```jsx
+<ImageInput
+    id="image-input"
+    name="image-input"
+    disabled
+/>
+```
+
+---
+### isLoading
+Use the `isLoading` prop to show a loading spinner.
+
+<NewfoldRoot>
+    <ImageInput
+        id="image-input-loading"
+        name="image-input-loading"
+        isLoading
+    />
+</NewfoldRoot>
+
+```jsx
+<ImageInput
+    id="image-input"
+    name="image-input"
+    isLoading
+/>
+```
+
+---
+### onClick
+The `onClick` prop allows you to pass a function to be called when the ImageInput button is clicked.
+
+<NewfoldRoot>
+    <ImageInput
+        id="image-input-onclick"
+        name="image-input-onclick"
+        onClick={() => alert('ImageInput clicked!')}
+    />
+</NewfoldRoot>
+
+```jsx
+<ImageInput
+    id="image-input"
+    name="image-input"
+    onClick={() => alert('ImageInput clicked!')}
+/>
+```
+
+:::caution
+The function passed to the `onClick` will replace the default behavior of the input element and will not open the file dialog.
+:::
+
+---
+### onChange
+The `onChange` prop allows you to pass a function to be called when the ImageInput value changes. The function will receive an object with the event and the inserted file.
+
+<NewfoldRoot>
+    <ImageInput
+        id="image-input-onchange"
+        name="image-input-onchange"
+        onChange={({event, file}) => console.log(event, file)}
+    />
+</NewfoldRoot>
+
+```jsx
+<ImageInput
+    id="image-input"
+    name="image-input"
+    onChange={({event, file}) => console.log(event, file)}
+/>
+```
+
+---
+### onReset
+The `onReset` prop allows you to pass a function to be called when the preview image is reset (removed). The function will receive an object of "inputId", "previousPreview" and "event" as an argument.
+
+<NewfoldRoot>
+    <ImageInput
+        id="image-input-onreset"
+        name="image-input-onreset"
+        onReset={({inputId, previousPreview, event}) => console.log(inputId, previousPreview, event)}
+    />
+</NewfoldRoot>
+
+```jsx
+<ImageInput
+    id="image-input"
+    name="image-input"
+    onReset={({inputId, previousPreview, event}) => console.log(inputId, previousPreview, event)}
+/>
+```
+
+---
+### Props
+<PropsTable.Table docs={imageInputProps} />
