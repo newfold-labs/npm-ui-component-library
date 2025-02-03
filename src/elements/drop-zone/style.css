@@ -1,0 +1,31 @@
+@layer components {
+	.nfd-root {
+		.nfd-drop-zone {
+			@apply
+			nfd-w-full
+			nfd-px-6
+			nfd-pt-5
+			nfd-pb-6
+			nfd-border-2
+			nfd-border-dashed
+			nfd-rounded-md
+			nfd-transition-all
+			nfd-ease-out
+			nfd-duration-300
+			nfd-bg-white
+			nfd-border-slate-300;
+
+			&.nfd-drop-zone-is-dragging-over {
+				@apply nfd-bg-primary-50 nfd-border-primary-300;
+
+				.nfd-drop-zone__content {
+					@apply nfd-pointer-events-none;
+				}
+			}
+
+			&.nfd-drop-zone-is-disabled {
+				@apply nfd-opacity-50 nfd-cursor-not-allowed;
+			}
+		}
+	}
+}

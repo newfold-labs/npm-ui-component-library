@@ -1,0 +1,42 @@
+@layer components {
+	.nfd-root {
+		.nfd-image-import {
+			.nfd-image-import__drop-zone-content {
+				@apply
+				nfd-flex
+				nfd-flex-col-reverse
+				nfd-items-center
+				nfd-justify-between
+				nfd-gap-4
+				@lg/nfd-image-import:nfd-flex-row;
+			}
+
+			.nfd-image-import__drop-label {
+				@apply
+				nfd-text-slate-800;
+
+				&:focus {
+					@apply nfd-outline-none nfd-ring-2 nfd-ring-offset-2 nfd-ring-primary-500;
+				}
+			}
+
+			&.nfd-is-disabled {
+				.nfd-image-input .nfd-image-input__icon,
+				.nfd-image-input .nfd-image-input__preview-img,
+				.nfd-image-input .nfd-button--disabled {
+					/* Reset opacity to prevent opacity stacking from DropZone */
+					@apply nfd-opacity-100;
+				}
+
+				.nfd-image-import__drop-label {
+					@apply nfd-cursor-not-allowed;
+				}
+			}
+
+			.nfd-image-import__content {
+				@apply
+				nfd-mt-4;
+			}
+		}
+	}
+}

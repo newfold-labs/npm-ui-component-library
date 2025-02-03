@@ -7,12 +7,14 @@ import PropTypes from "prop-types";
  * @param {string} children Alternative to the label. See label.
  * @param {string|JSX.node} [as] Base component.
  * @param {string} [className] CSS class.
+ * @param {boolean} [requiredIndicator] Whether the label is required.
  * @returns {JSX.Element} Label component.
  */
 const Label = forwardRef( ( {
 	as: Component,
 	className,
 	label,
+	requiredIndicator,
 	children,
 	...props
 }, ref ) => (
@@ -22,6 +24,7 @@ const Label = forwardRef( ( {
 		{ ...props }
 	>
 		{ label || children || null }
+		{ requiredIndicator && <span className="nfd-label__required">*</span> }
 	</Component>
 ) );
 
@@ -30,6 +33,7 @@ const propTypes = {
 	children: PropTypes.string,
 	as: PropTypes.elementType,
 	className: PropTypes.string,
+	required: PropTypes.bool,
 };
 
 Label.propTypes = propTypes;
@@ -39,6 +43,7 @@ Label.defaultProps = {
 	children: "",
 	as: "label",
 	className: "",
+	requiredIndicator: false,
 };
 
 

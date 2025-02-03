@@ -1,6 +1,6 @@
 {
   "name": "@newfold/ui-component-library",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "A UI component library by Newfold Digital",
   "main": "index.js",
   "style": "css/style.css",
@@ -54,6 +54,7 @@
     "@headlessui/react": "^1.7.8",
     "@heroicons/react": "^1.0.6",
     "@reduxjs/toolkit": "^1.8.3",
+    "@tailwindcss/container-queries": "^0.1.1",
     "classnames": "^2.3.2",
     "lodash": "^4.17.21",
     "postcss-import": "^15.1.0",

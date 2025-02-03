@@ -7,6 +7,7 @@ import PropTypes from "prop-types";
  * @param {string} [className=""] CSS class.
  * @param {boolean} [disabled=false] Whether the input is disabled.
  * @param {boolean} [readOnly=false] Whether the input is read-only.
+ * @param {boolean} [required=false] Whether the input is required.
  * @param {object} [props] Optional extra properties.
  * @returns {JSX.Element} TextInput component.
  */
@@ -15,6 +16,7 @@ const TextInput = forwardRef( ( {
 	className,
 	disabled,
 	readOnly,
+	required,
 	...props
 }, ref ) => (
 	<input
@@ -28,6 +30,7 @@ const TextInput = forwardRef( ( {
 		) }
 		disabled={ disabled }
 		readOnly={ readOnly }
+		required={ required }
 		{ ...props }
 	/>
 ) );
@@ -37,6 +40,7 @@ const propTypes = {
 	className: PropTypes.string,
 	disabled: PropTypes.bool,
 	readOnly: PropTypes.bool,
+	required: PropTypes.bool,
 };
 
 TextInput.propTypes = propTypes;
@@ -46,6 +50,7 @@ TextInput.defaultProps = {
 	className: "",
 	disabled: false,
 	readOnly: false,
+	required: false,
 };
 
 export default TextInput;
