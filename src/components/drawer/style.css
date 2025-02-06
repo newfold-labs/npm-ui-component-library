@@ -10,7 +10,8 @@
 			&.nfd-drawer--offset {
 				.nfd-drawer__content {
 					@apply
-					nfd-m-5;
+					nfd-m-5
+					nfd-rounded-lg;
 				}
 
 				.nfd-drawer__panel {
@@ -54,7 +55,8 @@
 			@apply
 			nfd-pointer-events-none
 			nfd-fixed
-			nfd-inset-y-0;
+			nfd-inset-y-0
+			nfd-overflow-hidden;
 		}
 
 		.nfd-drawer__header {
