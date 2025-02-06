@@ -159,6 +159,16 @@ Panel.propTypes = {
 	className: PropTypes.string,
 };
 
+/**
+ * @param {boolean} isOpen Whether the drawer is open.
+ * @param {Function} onClose Function to be called when closing the drawer.
+ * @param {boolean} [overlay=true] Whether to show the overlay.
+ * @param {string} [position="right"] Drawer position.
+ * @param {string} [variant="classic"] Drawer variant.
+ * @param {string} [className] Additional class names.
+ * @param {JSX.Node} children The component props.
+ * @returns {JSX.Element} The drawer.
+ */
 const Drawer = forwardRef( ( {
 	isOpen,
 	onClose,
