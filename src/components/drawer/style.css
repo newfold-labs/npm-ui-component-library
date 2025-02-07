@@ -55,8 +55,7 @@
 			@apply
 			nfd-pointer-events-none
 			nfd-fixed
-			nfd-inset-y-0
-			nfd-overflow-hidden;
+			nfd-inset-y-0;
 		}
 
 		.nfd-drawer__header {
