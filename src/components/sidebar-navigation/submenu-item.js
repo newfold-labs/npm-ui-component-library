@@ -7,6 +7,7 @@ import { useNavigationContext } from "./index";
  * @param {JSX.node} label The label.
  * @param {JSX.ElementClass} [as] The field component.
  * @param {string} [pathProp] The key of the path in the props. Defaults to `href`.
+ * @param {JSX.Element} [icon] Optional icon to put before the label.
  * @param {Object} [props] Extra props.
  * @returns {JSX.Element} The submenu item element.
  */
