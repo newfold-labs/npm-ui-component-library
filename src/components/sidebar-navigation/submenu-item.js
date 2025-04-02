@@ -43,6 +43,7 @@ const SubmenuItem = ( { as: Component = "a", pathProp = "href", icon: Icon = nul
 SubmenuItem.propTypes = {
 	as: PropTypes.elementType,
 	pathProp: PropTypes.string,
+	icon: PropTypes.element,
 	label: PropTypes.node.isRequired,
 	isActive: PropTypes.bool,
 };
