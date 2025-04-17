@@ -26,16 +26,22 @@ const ValidationInput = forwardRef( ( {
 	className = "",
 	...props
 }, ref ) => {
+	const FieldComponent = (<Component
+		ref={ ref }
+		{ ...props }
+		className={ classNames( "nfd-validation-input__input", className ) }
+	/>);
 	return (
 		<div className={ classNames( "nfd-validation-input", validation?.message && CLASSNAME_MAP.variant[ validation?.variant ] ) }>
-			<span className="nfd-group nfd-relative">
-				{ Icon && <Icon className="nfd-text-input__icon nfd-absolute nfd-w-[24px] nfd-h-[24px] nfd-right-3 nfd-top-1/2 nfd--translate-y-1/2 nfd-pointer-events-none nfd-text-slate-400 group-hover:nfd-text-slate-500"/>}
-			<Component
-				ref={ ref }
-				{ ...props }
-				className={ classNames( "nfd-validation-input__input", className ) }
-			/>
-			</span>
+			{
+				Icon ?
+					<span className="nfd-group nfd-relative">
+						<Icon className="nfd-text-input__icon nfd-absolute nfd-w-[24px] nfd-h-[24px] nfd-right-3 nfd-top-1/2 nfd--translate-y-1/2 nfd-pointer-events-none nfd-text-slate-400 group-hover:nfd-text-slate-500"/>
+						{ FieldComponent }
+					</span>
+					:
+					FieldComponent
+			}
 			{ validation?.message && (
 				<ValidationIcon variant={ validation?.variant } className="nfd-validation-input__icon" />
 			) }

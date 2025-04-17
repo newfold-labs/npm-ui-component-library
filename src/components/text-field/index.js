@@ -47,16 +47,19 @@ const TextField = forwardRef( ( {
 				className,
 			) }
 		>
-			<div className="nfd-flex nfd-items-center nfd-mb-2">
-				<Label
-					requiredIndicator={ ( required && labelRequiredIndicator ) }
-					className="nfd-text-field__label"
-					htmlFor={ id }
-				>
-					{ label }
-				</Label>
-				{ labelSuffix }
-			</div>
+			{
+				!! label &&
+				<div className="nfd-flex nfd-items-center nfd-mb-2">
+					<Label
+						requiredIndicator={ (required && labelRequiredIndicator) }
+						className="nfd-text-field__label"
+						htmlFor={ id }
+					>
+						{ label }
+					</Label>
+					{ labelSuffix }
+				</div>
+			}
 			<ValidationInput
 				as={ TextInput }
 				ref={ ref }
