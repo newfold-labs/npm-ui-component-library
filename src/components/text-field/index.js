@@ -29,6 +29,7 @@ const TextField = forwardRef( ( {
 	disabled,
 	readOnly,
 	required,
+	icon,
 	className,
 	description,
 	validation,
@@ -42,6 +43,7 @@ const TextField = forwardRef( ( {
 				"nfd-text-field",
 				disabled && "nfd-text-field--disabled",
 				readOnly && "nfd-text-field--read-only",
+				icon && "nfd-text-field--with-icon",
 				className,
 			) }
 		>
@@ -59,6 +61,7 @@ const TextField = forwardRef( ( {
 				as={ TextInput }
 				ref={ ref }
 				id={ id }
+				icon={ icon }
 				onChange={ onChange }
 				disabled={ disabled }
 				readOnly={ readOnly }
@@ -88,6 +91,7 @@ const propTypes = {
 	required: PropTypes.bool,
 	className: PropTypes.string,
 	description: PropTypes.node,
+	icon: PropTypes.elementType,
 	validation: PropTypes.shape( {
 		variant: PropTypes.string,
 		message: PropTypes.node,
@@ -103,6 +107,7 @@ TextField.defaultProps = {
 	required: false,
 	className: "",
 	description: null,
+	icon: null,
 	validation: {},
 };
 

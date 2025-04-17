@@ -13,24 +13,29 @@ const CLASSNAME_MAP = {
 };
 
 /**
- * @param {string} variant The variant to render.
+ * @param {JSX.Element} as The component to render.
  * @param {Object} [validation] The validation state.
  * @param {string} [className] The classname.
+ * @param {JSX.Element} [icon] The classname.
  * @returns {JSX.Element} The ValidationInput component.
  */
 const ValidationInput = forwardRef( ( {
 	as: Component,
+	icon: Icon,
 	validation = {},
 	className = "",
 	...props
 }, ref ) => {
 	return (
 		<div className={ classNames( "nfd-validation-input", validation?.message && CLASSNAME_MAP.variant[ validation?.variant ] ) }>
+			<span className="nfd-group nfd-relative">
+				{ Icon && <Icon className="nfd-text-input__icon nfd-absolute nfd-w-[24px] nfd-h-[24px] nfd-right-3 nfd-top-1/2 nfd--translate-y-1/2 nfd-pointer-events-none nfd-text-slate-400 group-hover:nfd-text-slate-500"/>}
 			<Component
 				ref={ ref }
 				{ ...props }
 				className={ classNames( "nfd-validation-input__input", className ) }
 			/>
+			</span>
 			{ validation?.message && (
 				<ValidationIcon variant={ validation?.variant } className="nfd-validation-input__icon" />
 			) }
@@ -40,6 +45,7 @@ const ValidationInput = forwardRef( ( {
 
 ValidationInput.propTypes = {
 	as: PropTypes.elementType.isRequired,
+	icon: PropTypes.elementType,
 	validation: PropTypes.shape( {
 		variant: PropTypes.string,
 		message: PropTypes.node,
