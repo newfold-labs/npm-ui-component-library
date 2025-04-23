@@ -18,22 +18,20 @@ const TextInput = forwardRef( ( {
 	readOnly,
 	required,
 	...props
-}, ref ) => (
-	<input
-		ref={ ref }
-		type={ type }
-		className={ classNames(
-			"nfd-text-input",
-			disabled && "nfd-text-input--disabled",
-			readOnly && "nfd-text-input--read-only",
-			className,
-		) }
-		disabled={ disabled }
-		readOnly={ readOnly }
-		required={ required }
-		{ ...props }
-	/>
-) );
+}, ref ) => (<input
+	ref={ ref }
+	type={ type }
+	className={ classNames(
+		'nfd-text-input',
+		disabled && 'nfd-text-input--disabled',
+		readOnly && 'nfd-text-input--read-only',
+		className,
+	) }
+	disabled={ disabled }
+	readOnly={ readOnly }
+	required={ required }
+	{ ...props }
+/> ));
 
 const propTypes = {
 	type: PropTypes.string,

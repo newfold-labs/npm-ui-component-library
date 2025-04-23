@@ -16,6 +16,7 @@ import { useDescribedBy } from "../../hooks";
  * @param {boolean} [disabled] The disabled state.
  * @param {boolean} [readOnly] The read-only state.
  * @param {boolean} [required] The required state.
+ * @param {JSX.Element} [icon] The field icon.
  * @param {Object} [validation] The validation state.
  * @param {Object} [props] Any extra properties for the TextInput.
  * @returns {JSX.Element} The input field.
@@ -29,6 +30,7 @@ const TextField = forwardRef( ( {
 	disabled,
 	readOnly,
 	required,
+	icon,
 	className,
 	description,
 	validation,
@@ -42,23 +44,28 @@ const TextField = forwardRef( ( {
 				"nfd-text-field",
 				disabled && "nfd-text-field--disabled",
 				readOnly && "nfd-text-field--read-only",
+				icon && "nfd-text-field--with-icon",
 				className,
 			) }
 		>
-			<div className="nfd-flex nfd-items-center nfd-mb-2">
-				<Label
-					requiredIndicator={ ( required && labelRequiredIndicator ) }
-					className="nfd-text-field__label"
-					htmlFor={ id }
-				>
-					{ label }
-				</Label>
-				{ labelSuffix }
-			</div>
+			{
+				!! label &&
+				<div className="nfd-flex nfd-items-center nfd-mb-2">
+					<Label
+						requiredIndicator={ (required && labelRequiredIndicator) }
+						className="nfd-text-field__label"
+						htmlFor={ id }
+					>
+						{ label }
+					</Label>
+					{ labelSuffix }
+				</div>
+			}
 			<ValidationInput
 				as={ TextInput }
 				ref={ ref }
 				id={ id }
+				icon={ icon }
 				onChange={ onChange }
 				disabled={ disabled }
 				readOnly={ readOnly }
@@ -88,6 +95,7 @@ const propTypes = {
 	required: PropTypes.bool,
 	className: PropTypes.string,
 	description: PropTypes.node,
+	icon: PropTypes.elementType,
 	validation: PropTypes.shape( {
 		variant: PropTypes.string,
 		message: PropTypes.node,
@@ -103,6 +111,7 @@ TextField.defaultProps = {
 	required: false,
 	className: "",
 	description: null,
+	icon: null,
 	validation: {},
 };
 
