@@ -16,6 +16,7 @@ import { useDescribedBy } from "../../hooks";
  * @param {boolean} [disabled] The disabled state.
  * @param {boolean} [readOnly] The read-only state.
  * @param {boolean} [required] The required state.
+ * @param {JSX.Element} [icon] The field icon.
  * @param {Object} [validation] The validation state.
  * @param {Object} [props] Any extra properties for the TextInput.
  * @returns {JSX.Element} The input field.
