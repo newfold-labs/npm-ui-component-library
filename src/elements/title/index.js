@@ -3,14 +3,32 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import { forwardRef } from "@wordpress/element";
 
-export const classNameMap = {
-	size: {
-		1: "nfd-title--1",
-		2: "nfd-title--2",
-		3: "nfd-title--3",
-		4: "nfd-title--4",
-		5: "nfd-title--5",
-	},
+export const sizeMap = {
+	1:
+		{
+			className: 'nfd-title--1',
+			element: 'h1',
+		},
+	2:
+		{
+			className: 'nfd-title--2',
+			element: 'h2',
+		},
+	3:
+		{
+			className: 'nfd-title--3',
+			element: 'h3',
+		},
+	4:
+		{
+			className: 'nfd-title--4',
+			element: 'h4',
+		},
+	5:
+		{
+			className: 'nfd-title--5',
+			element: 'h5',
+		},
 };
 
 /**
@@ -24,12 +42,18 @@ const Title = forwardRef( ( {
 	className,
 	...props
 }, ref ) => {
+	
+	// If `as` is default and `size` is set, update Component to proper heading level
+	if ( Component === 'h1' && typeof size !== undefined ) {
+		Component = sizeMap[ size ].element;
+	}
+
 	return (
 		<Component
 			ref={ ref }
 			className={ classNames(
 				"nfd-title",
-				classNameMap.size[ size || Component[ 1 ] ],
+				sizeMap[ size || Component[ 1 ] ].className,
 				className,
 			) }
 			{ ...props }
@@ -42,7 +66,7 @@ const Title = forwardRef( ( {
 const propTypes = {
 	children: PropTypes.node.isRequired,
 	as: PropTypes.elementType,
-	size: PropTypes.oneOf( Object.keys( classNameMap.size ) ),
+	size: PropTypes.oneOf( Object.keys( sizeMap ) ),
 	className: PropTypes.string,
 };
 
