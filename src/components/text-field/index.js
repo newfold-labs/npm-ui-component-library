@@ -70,7 +70,12 @@ const TextField = forwardRef( ( {
 				disabled={ disabled }
 				readOnly={ readOnly }
 				required={ required }
-				className="nfd-text-field__input"
+				className={ classNames(
+					'nfd-text-field__input',
+					{
+						'nfd-text-field--input-with-icon': icon
+					}
+				) }
 				aria-describedby={ describedBy }
 				validation={ validation }
 				{ ...props }
