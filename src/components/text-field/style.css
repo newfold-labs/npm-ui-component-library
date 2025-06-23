@@ -24,5 +24,13 @@
 		.nfd-text-field__validation {
 			@apply nfd-mt-2;
 		}
+
+		.nfd-text-field__validation {
+			@apply nfd-mt-2;
+		}
+
+		.nfd-text-field__input.nfd-text-field--input-with-icon{
+			@apply nfd-pr-[calc(1.25rem+24px)];
+		}
 	}
 }
