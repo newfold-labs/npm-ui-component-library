@@ -34,7 +34,7 @@ jobs:
             - name: Publish Package
               run: npm publish
               working-directory: ./build
-    
+
     bump:
       needs: publish
       name: Commit Version Bump
@@ -49,10 +49,16 @@ jobs:
               node-version: 20.x
         - uses: fregante/setup-git-user@024bc0b8e177d7e77203b48dab6fb45666854b35 # v2.0.2
 
-        - name: Commit Bump
-          run: npm version ${{  github.ref_name }} -m "Bump version to ${{  github.ref_name }}"
-        
+        - name: Configure Git
+          run: |
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+        - name: Bump Version
+          run: npm version ${{  github.ref_name }}
+
+        - name: Commit Version Bump
+          run: git commit -m "🤖 bump version to ${{  github.ref_name }}"
+
         - name: Push Changes
           run: git push
-    
-
