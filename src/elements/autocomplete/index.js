@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { forwardRef, Fragment, useCallback } from "@wordpress/element";
+import { forwardRef, Fragment, useCallback } from "react";
 import { Combobox, Transition } from "@headlessui/react";
 import { SelectorIcon, CheckIcon } from "@heroicons/react/solid";
 import { XIcon } from "@heroicons/react/outline";

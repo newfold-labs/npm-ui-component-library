@@ -1,4 +1,4 @@
-import { useCallback, useContext, createContext, useMemo, forwardRef } from "@wordpress/element";
+import { useCallback, useContext, createContext, useMemo, forwardRef } from "react";
 import { values, includes, isEmpty, isNull, capitalize } from "lodash";
 import { DocumentTextIcon, XIcon } from "@heroicons/react/outline";
 import PropTypes from "prop-types";

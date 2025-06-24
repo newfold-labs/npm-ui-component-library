@@ -1,4 +1,4 @@
-import { useMemo, forwardRef } from "@wordpress/element";
+import { useMemo, forwardRef } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 

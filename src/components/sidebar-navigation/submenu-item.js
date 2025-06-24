@@ -1,4 +1,4 @@
-import { useCallback } from "@wordpress/element";
+import { useCallback } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import { useNavigationContext } from "./index";

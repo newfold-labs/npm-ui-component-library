@@ -1,6 +1,6 @@
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
-import { Fragment, useCallback, useMemo, forwardRef } from "@wordpress/element";
+import { Fragment, useCallback, useMemo, forwardRef } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import { useSvgAria } from "../../hooks";

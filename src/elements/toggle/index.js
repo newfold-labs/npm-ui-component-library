@@ -4,7 +4,7 @@ import classNames from "classnames";
 import { noop } from "lodash";
 import PropTypes from "prop-types";
 import { useSvgAria } from "../../hooks";
-import { forwardRef } from "@wordpress/element";
+import { forwardRef } from "react";
 
 /**
  * @param {string} id ID.

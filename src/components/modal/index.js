@@ -1,6 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { XIcon } from "@heroicons/react/outline";
-import { forwardRef, Fragment } from "@wordpress/element";
+import { forwardRef, Fragment } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import { useSvgAria } from "../../hooks";

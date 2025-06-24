@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { keys } from "lodash";
 import PropTypes from "prop-types";
 import { useSvgAria } from "../../hooks";
-import { forwardRef } from "@wordpress/element";
+import { forwardRef } from "react";
 
 export const classNameMap = {
 	variant: {

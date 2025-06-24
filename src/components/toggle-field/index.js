@@ -3,7 +3,7 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import Label from "../../elements/label";
 import Toggle from "../../elements/toggle";
-import { forwardRef } from "@wordpress/element";
+import { forwardRef } from "react";
 
 /**
  * @param {JSX.node} children Children are rendered below the checkbox group.

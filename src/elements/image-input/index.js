@@ -1,5 +1,5 @@
 import { PhotographIcon, UserCircleIcon, XCircleIcon } from "@heroicons/react/solid";
-import { forwardRef, useCallback, useState } from "@wordpress/element";
+import { forwardRef, useCallback, useState } from "react";
 import { keys } from "lodash";
 import PropTypes from "prop-types";
 import classNames from "classnames";

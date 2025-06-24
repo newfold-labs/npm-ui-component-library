@@ -22,12 +22,8 @@ module.exports = {
 		"no-restricted-imports": [
 			"error",
 			{
-				name: "react",
-				message: "Please use @wordpress/element instead. No need to import just for JSX.",
-			},
-			{
-				name: "react-dom",
-				message: "Please use @wordpress/element instead.",
+				name: "@wordpress/element",
+				message: "Please use react instead. This project no longer uses the @wordpress/element package.",
 			},
 		],
 		"no-unused-expressions": [

@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import { ValidationIcon, ValidationMessage } from "../validation";
-import { forwardRef } from "@wordpress/element";
+import { forwardRef } from "react";
 
 export const classNameMap = {
 	variant: {

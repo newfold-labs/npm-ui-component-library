@@ -1,4 +1,4 @@
-import { forwardRef, useCallback, useRef } from "@wordpress/element";
+import { forwardRef, useCallback, useRef } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import DropZone from "../../elements/drop-zone";
