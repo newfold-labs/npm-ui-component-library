@@ -52,7 +52,7 @@ const TextField = forwardRef( ( {
 				!! label &&
 				<div className="nfd-flex nfd-items-center nfd-mb-2">
 					<Label
-						requiredIndicator={ (required && labelRequiredIndicator) }
+						requiredIndicator={ ( required && labelRequiredIndicator ) }
 						className="nfd-text-field__label"
 						htmlFor={ id }
 					>
@@ -71,10 +71,10 @@ const TextField = forwardRef( ( {
 				readOnly={ readOnly }
 				required={ required }
 				className={ classNames(
-					'nfd-text-field__input',
+					"nfd-text-field__input",
 					{
-						'nfd-text-field--input-with-icon': icon
-					}
+						"nfd-text-field--input-with-icon": icon,
+					},
 				) }
 				aria-describedby={ describedBy }
 				validation={ validation }

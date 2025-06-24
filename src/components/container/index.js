@@ -118,7 +118,7 @@ const Footer = ( {
 	as: Component = "div",
 	children,
 	className = "",
-	...props 
+	...props
 } ) => (
 	<Component { ...props } className={ classNames( "nfd-container__footer", className ) }>
 		{ children }
