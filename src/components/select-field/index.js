@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Select from "../../elements/select";
 import { ValidationMessage } from "../../elements/validation";
 import { useDescribedBy } from "../../hooks";
-import { forwardRef } from "@wordpress/element";
+import { forwardRef } from "react";
 /**
  * @param {string} id Identifier.
  * @param {JSX.Element} error Error node.

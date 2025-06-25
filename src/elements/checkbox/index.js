@@ -1,7 +1,7 @@
 /* eslint-disable no-undefined */
 import classNames from "classnames";
 import PropTypes from "prop-types";
-import { forwardRef } from "@wordpress/element";
+import { forwardRef } from "react";
 import Label from "../label";
 
 /**

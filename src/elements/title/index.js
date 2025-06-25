@@ -1,7 +1,7 @@
 /* eslint-disable no-undefined */
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import { forwardRef } from "@wordpress/element";
+import { forwardRef } from "react";
 
 export const classNameMap = {
 	size: {

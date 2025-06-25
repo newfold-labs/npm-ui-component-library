@@ -1,7 +1,7 @@
 /* eslint-disable complexity */
 import { Transition } from "@headlessui/react";
 import PropTypes from "prop-types";
-import { useState, useCallback, useEffect, useContext, createContext } from "@wordpress/element";
+import { useState, useCallback, useEffect, useContext, createContext } from "react";
 import { XIcon } from "@heroicons/react/outline";
 import { isArray, keys } from "lodash";
 import classNames from "classnames";

@@ -1,7 +1,7 @@
 /* eslint-disable react/forbid-foreign-prop-types */
 /* eslint-disable jsx-a11y/tabindex-no-positive */
 import { XIcon } from "@heroicons/react/solid";
-import { useCallback, useState, forwardRef } from "@wordpress/element";
+import { useCallback, useState, forwardRef } from "react";
 import classNames from "classnames";
 import { isString, map, noop } from "lodash";
 import PropTypes from "prop-types";

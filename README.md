@@ -8,7 +8,7 @@ A React component library for building user interfaces. Please visit this resour
 Start with installing the package and its peer dependencies from NPM:
 
 ```bash
-  npm install @newfold/ui-component-library @wordpress/element
+  npm install @newfold/ui-component-library react react-dom
 ```
     
 ## Setup
