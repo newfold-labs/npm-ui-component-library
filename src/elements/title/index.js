@@ -19,17 +19,26 @@ export const classNameMap = {
  */
 const Title = forwardRef( ( {
 	children,
-	as: Component,
+	as: Component = "h1",
 	size,
 	className,
 	...props
 }, ref ) => {
+	// Extract size from component name if size is not provided
+	const getDefaultSize = () => {
+		if (size) return size;
+		if (typeof Component === 'string' && Component.startsWith('h') && Component.length === 2) {
+			return Component[1];
+		}
+		return "1"; // default size
+	};
+
 	return (
 		<Component
 			ref={ ref }
 			className={ classNames(
 				"nfd-title",
-				classNameMap.size[ size || Component[ 1 ] ],
+				classNameMap.size[ getDefaultSize() ],
 				className,
 			) }
 			{ ...props }
@@ -38,6 +47,8 @@ const Title = forwardRef( ( {
 		</Component>
 	);
 } );
+
+Title.displayName = "Title";
 
 const propTypes = {
 	children: PropTypes.node.isRequired,
