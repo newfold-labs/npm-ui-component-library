@@ -8,7 +8,7 @@ sidebar_label: Installation
 To install the Newfold UI library, start with installing the package and its peer dependencies from NPM.
 
 ```shell
-npm install @newfold/ui-component-library @wordpress/element
+npm install @newfold/ui-component-library react react-dom
 ```
 
 ## Setup

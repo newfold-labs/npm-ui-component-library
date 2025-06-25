@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from "@wordpress/element";
+import { useState } from "react";
 import { Button, Modal } from "@newfold/ui-component-library";
 
 const ModalDemo = ({ withProviders = false }) => {
