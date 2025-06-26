@@ -65,6 +65,7 @@ AutocompleteField.defaultProps = {
 	validation: {},
 	className: "",
 };
+AutocompleteField.displayName = "AutocompleteField";
 
 AutocompleteField.Option = Autocomplete.Option;
 
@@ -74,6 +75,6 @@ AutocompleteField.Option.displayName = "AutocompleteField.Option";
 export const StoryComponent = props => <AutocompleteField { ...props } />;
 StoryComponent.propTypes = propTypes;
 StoryComponent.defaultProps = AutocompleteField.defaultProps;
-StoryComponent.displayName = "AutocompleteField";
+StoryComponent.displayName = AutocompleteField.displayName;
 
 export default AutocompleteField;

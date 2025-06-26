@@ -24,13 +24,20 @@ const Title = forwardRef( ( {
 	className,
 	...props
 }, ref ) => {
-	// Extract size from component name if size is not provided
+	/**
+	 * Get the default size for the title component.
+	 * If size prop is provided, use it. Otherwise, extract from component name if it's an h tag.
+	 * @returns {string} The size value for the title.
+	 */
 	const getDefaultSize = () => {
-		if (size) return size;
-		if (typeof Component === 'string' && Component.startsWith('h') && Component.length === 2) {
-			return Component[1];
+		if ( size ) {
+			return size;
 		}
-		return "1"; // default size
+		if ( typeof Component === "string" && Component.startsWith( "h" ) && Component.length === 2 ) {
+			return Component[ 1 ];
+		}
+		// default size
+		return "1";
 	};
 
 	return (
