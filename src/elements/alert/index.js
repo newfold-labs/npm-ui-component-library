@@ -67,6 +67,8 @@ Alert.defaultProps = {
 	role: "status",
 };
 
+Alert.displayName = "Alert";
+
 export default Alert;
 
 // eslint-disable-next-line require-jsdoc

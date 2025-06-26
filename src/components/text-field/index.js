@@ -95,6 +95,7 @@ const propTypes = {
 	onChange: PropTypes.func.isRequired,
 	label: PropTypes.string.isRequired,
 	labelSuffix: PropTypes.node,
+	labelRequiredIndicator: PropTypes.node,
 	disabled: PropTypes.bool,
 	readOnly: PropTypes.bool,
 	required: PropTypes.bool,
@@ -119,6 +120,8 @@ TextField.defaultProps = {
 	icon: null,
 	validation: {},
 };
+
+TextField.displayName = "TextField";
 
 // eslint-disable-next-line require-jsdoc
 export const StoryComponent = props => <TextField { ...props } />;

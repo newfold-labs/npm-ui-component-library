@@ -34,6 +34,7 @@ const Title = forwardRef( ( { children, size, className, as, ...props }, ref ) =
 Title.defaultProps = {
 	className: "",
 	as: "h1",
+	size: "1",
 };
 
 Title.propTypes = {
@@ -42,6 +43,8 @@ Title.propTypes = {
 	children: PropTypes.node.isRequired,
 	as: PropTypes.elementType,
 };
+
+Title.displayName = "Modal.Title";
 
 /**
  * @param {JSX.node} children Contents of the modal.
@@ -82,6 +85,14 @@ Panel.propTypes = {
 	hasCloseButton: PropTypes.bool,
 	closeButtonScreenReaderText: PropTypes.string,
 };
+
+Panel.defaultProps = {
+	className: "",
+	hasCloseButton: true,
+	closeButtonScreenReaderText: "Close",
+};
+
+Panel.displayName = "Modal.Panel";
 
 export const classNameMap = {
 	position: {
@@ -148,6 +159,11 @@ Modal.propTypes = {
 	children: PropTypes.node.isRequired,
 	className: PropTypes.string,
 	position: PropTypes.oneOf( Object.keys( classNameMap.position ) ),
+};
+
+Modal.defaultProps = {
+	className: "",
+	position: "center",
 };
 
 Modal.displayName = "Modal";

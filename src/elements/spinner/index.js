@@ -65,6 +65,8 @@ Spinner.defaultProps = {
 	className: "",
 };
 
+Spinner.displayName = "Spinner";
+
 // eslint-disable-next-line require-jsdoc
 export const StoryComponent = props => <Spinner { ...props } />;
 StoryComponent.propTypes = propTypes;

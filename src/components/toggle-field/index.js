@@ -80,6 +80,8 @@ ToggleField.defaultProps = {
 	className: "",
 };
 
+ToggleField.displayName = "ToggleField";
+
 // eslint-disable-next-line require-jsdoc
 export const StoryComponent = props => <ToggleField { ...props } />;
 StoryComponent.propTypes = propTypes;

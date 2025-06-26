@@ -68,4 +68,12 @@ ValidationInput.propTypes = {
 	className: PropTypes.string,
 };
 
+ValidationInput.defaultProps = {
+	icon: null,
+	validation: {},
+	className: "",
+};
+
+ValidationInput.displayName = "ValidationInput";
+
 export default ValidationInput;

@@ -118,6 +118,17 @@ Header.propTypes = {
 	className: PropTypes.string,
 };
 
+Header.defaultProps = {
+	title: "",
+	titleAs: "h2",
+	titleSize: "4",
+	hasCloseButton: true,
+	closeButtonScreenReaderText: "Close",
+	className: "",
+};
+
+Header.displayName = "Drawer.Header";
+
 /**
  * Drawer panel.
  * @param {JSX.Node} children The component props.
@@ -158,6 +169,12 @@ Panel.propTypes = {
 	children: PropTypes.node.isRequired,
 	className: PropTypes.string,
 };
+
+Panel.defaultProps = {
+	className: "",
+};
+
+Panel.displayName = "Drawer.Panel";
 
 /**
  * @param {boolean} isOpen Whether the drawer is open.
@@ -232,7 +249,17 @@ Drawer.propTypes = {
 	children: PropTypes.node,
 };
 
+Drawer.defaultProps = {
+	overlay: true,
+	position: "right",
+	variant: "classic",
+	className: "",
+	children: null,
+};
+
 Drawer.Header = Header;
 Drawer.Panel = Panel;
+
+Drawer.displayName = "Drawer";
 
 export default Drawer;

@@ -75,6 +75,9 @@ SelectField.defaultProps = {
 	className: "",
 };
 
+
+SelectField.displayName = "SelectField";
+
 // eslint-disable-next-line require-jsdoc
 export const StoryComponent = props => <SelectField { ...props } />;
 StoryComponent.propTypes = propTypes;

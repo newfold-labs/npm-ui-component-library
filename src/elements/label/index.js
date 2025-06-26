@@ -34,6 +34,7 @@ const propTypes = {
 	as: PropTypes.elementType,
 	className: PropTypes.string,
 	required: PropTypes.bool,
+	requiredIndicator: PropTypes.bool,
 };
 
 Label.propTypes = propTypes;
@@ -45,6 +46,8 @@ Label.defaultProps = {
 	className: "",
 	requiredIndicator: false,
 };
+
+Label.displayName = "Label";
 
 
 // eslint-disable-next-line require-jsdoc

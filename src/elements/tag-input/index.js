@@ -163,6 +163,8 @@ const propTypes = {
 
 TagInput.propTypes = propTypes;
 
+TagInput.displayName = "TagInput";
+
 TagInput.Tag = Tag;
 TagInput.Tag.displayName = "TagInput.Tag";
 

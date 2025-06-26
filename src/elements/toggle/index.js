@@ -101,6 +101,8 @@ Toggle.defaultProps = {
 	className: "",
 };
 
+Toggle.displayName = "Toggle";
+
 // eslint-disable-next-line require-jsdoc
 export const StoryComponent = props => <Toggle { ...props } />;
 StoryComponent.propTypes = propTypes;

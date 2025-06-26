@@ -222,6 +222,8 @@ FileImport.defaultProps = {
 	status: FILE_IMPORT_STATUS.idle,
 };
 
+FileImport.displayName = "FileImport";
+
 FileImport.Selected = createStatusConditionalRender( FILE_IMPORT_STATUS.selected );
 FileImport.Loading = createStatusConditionalRender( FILE_IMPORT_STATUS.loading );
 FileImport.Success = createStatusConditionalRender( FILE_IMPORT_STATUS.success );

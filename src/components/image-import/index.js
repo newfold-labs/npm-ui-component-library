@@ -144,6 +144,7 @@ const ImageImport = forwardRef( ( {
 ImageImport.propTypes = {
 	id: PropTypes.string.isRequired,
 	name: PropTypes.string.isRequired,
+	imageInputVariant: PropTypes.string,
 	previewImageVariant: PropTypes.string,
 	previewImage: PropTypes.string,
 	previewImageAlt: PropTypes.string,
@@ -162,5 +163,28 @@ ImageImport.propTypes = {
 	className: PropTypes.string,
 	children: PropTypes.node,
 };
+
+ImageImport.defaultProps = {
+	imageInputVariant: null,
+	previewImageVariant: "avatar",
+	previewImage: null,
+	previewImageAlt: "Selected image",
+	buttonText: "Select Image",
+	buttonVariant: "secondary",
+	onClick: null,
+	onChange: null,
+	onReset: null,
+	onDrop: null,
+	onError: null,
+	dropLabel: "Select an image or drag and drop",
+	disabled: false,
+	accept: "image/*",
+	isLoading: false,
+	resetPreviewActionAriaLabel: "Remove selected image",
+	className: "",
+	children: null,
+};
+
+ImageImport.displayName = "ImageImport";
 
 export default ImageImport;

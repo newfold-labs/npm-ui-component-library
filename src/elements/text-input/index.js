@@ -51,6 +51,8 @@ TextInput.defaultProps = {
 	required: false,
 };
 
+TextInput.displayName = "TextInput";
+
 export default TextInput;
 
 // eslint-disable-next-line require-jsdoc

@@ -164,6 +164,8 @@ Select.defaultProps = {
 	buttonProps: {},
 };
 
+Select.displayName = "Select";
+
 // eslint-disable-next-line require-jsdoc
 export const StoryComponent = props => <Select { ...props } />;
 StoryComponent.propTypes = propTypes;

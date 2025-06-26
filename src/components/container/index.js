@@ -149,9 +149,15 @@ Container.propTypes = {
 	className: PropTypes.string,
 };
 
+Container.defaultProps = {
+	as: "div",
+	className: "",
+};
+
 Container.Header = Header;
 Container.Block = Block;
 Container.SettingsField = SettingsField;
 Container.Footer = Footer;
+Container.displayName = "Container";
 
 export default Container;

@@ -69,6 +69,8 @@ TextareaField.defaultProps = {
 	validation: {},
 };
 
+TextareaField.displayName = "TextareaField";
+
 // eslint-disable-next-line require-jsdoc
 export const StoryComponent = props => <TextareaField { ...props } />;
 StoryComponent.propTypes = propTypes;

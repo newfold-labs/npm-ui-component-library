@@ -78,6 +78,8 @@ TagField.defaultProps = {
 	validation: {},
 };
 
+TagField.displayName = "TagField";
+
 // eslint-disable-next-line require-jsdoc
 export const StoryComponent = props => <TagField { ...props } />;
 StoryComponent.propTypes = propTypes;

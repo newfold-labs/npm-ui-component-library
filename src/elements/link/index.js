@@ -53,6 +53,8 @@ Link.defaultProps = {
 	className: "",
 };
 
+Link.displayName = "Link";
+
 // eslint-disable-next-line require-jsdoc
 export const StoryComponent = props => <Link { ...props } />;
 StoryComponent.propTypes = propTypes;

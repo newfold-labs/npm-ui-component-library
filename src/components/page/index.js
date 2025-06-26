@@ -14,4 +14,11 @@ Page.propTypes = {
 	className: PropTypes.string,
 };
 
+Page.defaultProps = {
+	as: "div",
+	className: "",
+};
+
+Page.displayName = "Page";
+
 export default Page;

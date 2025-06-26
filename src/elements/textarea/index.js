@@ -43,6 +43,8 @@ Textarea.defaultProps = {
 	rows: 2,
 };
 
+Textarea.displayName = "Textarea";
+
 // eslint-disable-next-line require-jsdoc
 export const StoryComponent = props => <Textarea { ...props } />;
 StoryComponent.propTypes = propTypes;

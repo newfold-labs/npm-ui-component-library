@@ -56,6 +56,8 @@ Checkbox.defaultProps = {
 	className: "",
 };
 
+Checkbox.displayName = "Checkbox";
+
 // eslint-disable-next-line require-jsdoc
 export const StoryComponent = props => <Checkbox { ...props } />;
 StoryComponent.propTypes = propTypes;

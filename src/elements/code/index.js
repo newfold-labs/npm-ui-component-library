@@ -34,6 +34,8 @@ const propTypes = {
 
 Code.propTypes = propTypes;
 
+Code.displayName = "Code";
+
 // eslint-disable-next-line require-jsdoc
 export const StoryComponent = props => <Code { ...props } />;
 StoryComponent.propTypes = propTypes;

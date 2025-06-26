@@ -37,6 +37,8 @@ ProgressBar.defaultProps = {
 	className: "",
 };
 
+ProgressBar.displayName = "ProgressBar";
+
 // eslint-disable-next-line require-jsdoc
 export const StoryComponent = props => <ProgressBar { ...props } />;
 StoryComponent.propTypes = propTypes;

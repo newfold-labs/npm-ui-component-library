@@ -31,6 +31,8 @@ Paper.defaultProps = {
 	className: "",
 };
 
+Paper.displayName = "Paper";
+
 Paper.Header = Header;
 Paper.Header.displayName = "Paper.Header";
 

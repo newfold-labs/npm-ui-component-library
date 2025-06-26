@@ -122,6 +122,8 @@ FileInput.defaultProps = {
 
 FileInput.propTypes = propTypes;
 
+FileInput.displayName = "FileInput";
+
 // eslint-disable-next-line require-jsdoc
 export const StoryComponent = props => <FileInput { ...props } />;
 StoryComponent.propTypes = propTypes;

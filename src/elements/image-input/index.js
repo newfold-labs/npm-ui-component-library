@@ -232,6 +232,25 @@ ImageInput.propTypes = {
 	accept: PropTypes.string,
 	isLoading: PropTypes.bool,
 	resetPreviewActionAriaLabel: PropTypes.string,
+	onReset: PropTypes.func,
 };
+
+ImageInput.defaultProps = {
+	variant: "avatar",
+	previewImage: null,
+	previewImageAlt: "Selected image",
+	buttonText: "Select Image",
+	buttonVariant: "secondary",
+	onClick: null,
+	onChange: null,
+	className: "",
+	disabled: false,
+	accept: "image/*",
+	isLoading: false,
+	resetPreviewActionAriaLabel: "Remove selected image",
+	onReset: null,
+};
+
+ImageInput.displayName = "ImageInput";
 
 export default ImageInput;

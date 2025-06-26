@@ -115,6 +115,12 @@ Table.propTypes = {
 	className: PropTypes.string,
 };
 
+Table.defaultProps = {
+	className: "",
+};
+
+Table.displayName = "Table";
+
 Table.Head = Head;
 Table.Head.displayName = "Table.Head";
 Table.Body = Body;

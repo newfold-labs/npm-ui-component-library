@@ -63,6 +63,8 @@ Badge.defaultProps = {
 	className: "",
 };
 
+Badge.displayName = "Badge";
+
 export default Badge;
 
 // eslint-disable-next-line require-jsdoc

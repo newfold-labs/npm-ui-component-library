@@ -121,6 +121,8 @@ Radio.defaultProps = {
 	isLabelDangerousHtml: false,
 };
 
+Radio.displayName = "Radio";
+
 // eslint-disable-next-line require-jsdoc
 export const StoryComponent = props => <Radio { ...props } />;
 StoryComponent.propTypes = propTypes;
