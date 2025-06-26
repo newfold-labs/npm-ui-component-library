@@ -5,7 +5,7 @@ module.exports = {
 	],
 	parser: "@babel/eslint-parser",
 	parserOptions: {
-		ecmaVersion: 2019,
+		ecmaVersion: "latest",
 		sourceType: "module",
 	},
 	plugins: [
@@ -17,7 +17,7 @@ module.exports = {
 		},
 	},
 	rules: {
-		// We use 'wp.element.createElement' instead of the 'react' package directly.
+		// We use React directly instead of wp.element
 		"react/react-in-jsx-scope": "off",
 		"no-restricted-imports": [
 			"error",

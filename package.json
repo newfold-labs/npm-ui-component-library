@@ -36,6 +36,7 @@
     "@babel/parser": "^7.20.5",
     "@babel/plugin-transform-optional-chaining": "^7.24.8",
     "@babel/plugin-transform-runtime": "^7.22.9",
+    "@babel/preset-react": "^7.22.0",
     "@mdx-js/react": "^2.1.5",
     "@tailwindcss/forms": "^0.5.3",
     "@wordpress/babel-preset-default": "^8.26.0",
