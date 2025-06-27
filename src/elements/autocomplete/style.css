@@ -1,35 +1,30 @@
-@layer components {
-	.nfd-root {
-		.nfd-autocomplete {
-			@apply nfd-relative;
-		}
+@utility nfd-root {
+  .nfd-autocomplete {
+    @apply nfd-relative;
+  }
 
-		.nfd-autocomplete--error {
-			.nfd-autocomplete__button {
-				@apply
-				nfd-border-red-300
+  .nfd-autocomplete--error {
+    .nfd-autocomplete__button {
+      @apply nfd-border-red-300
 
 				focus:nfd-outline-none
 				focus:nfd-ring-red-500
 				focus:nfd-border-red-500;
-			}
+    }
 
-			.nfd-autocomplete__input {
-				@apply nfd-placeholder-red-300;
-			}
-		}
+    .nfd-autocomplete__input {
+      @apply nfd-placeholder-red-300;
+    }
+  }
 
-		.nfd-autocomplete--disabled {
-
-			@apply
-			nfd-opacity-50
+  .nfd-autocomplete--disabled {
+    @apply nfd-opacity-50
 			nfd-cursor-not-allowed
 			focus:nfd-ring-0;
-		}
+  }
 
-		.nfd-autocomplete__button {
-			@apply
-			nfd-w-full
+  .nfd-autocomplete__button {
+    @apply nfd-w-full
 			nfd-h-full
 			nfd-rounded-md
 			nfd-shadow-sm
@@ -42,15 +37,14 @@
 			focus-within:nfd-outline-none
 			focus-within:nfd-ring-1
 			focus-within:nfd-ring-primary-500;
-		}
+  }
 
-		.nfd-autocomplete__button-icon {
-			@apply nfd-absolute nfd-top-[0.6875rem] nfd-right-2.5 nfd-text-slate-400 nfd-pointer-events-none nfd-w-5 nfd-h-5;
-		}
+  .nfd-autocomplete__button-icon {
+    @apply nfd-absolute nfd-top-[0.6875rem] nfd-right-2.5 nfd-text-slate-400 nfd-pointer-events-none nfd-w-5 nfd-h-5;
+  }
 
-		.nfd-autocomplete__input {
-			@apply
-			nfd-w-full
+  .nfd-autocomplete__input {
+    @apply nfd-w-full
 			nfd-border-0
 			nfd-bg-white
 			nfd-py-2
@@ -60,11 +54,10 @@
 			nfd-text-sm
 			focus:nfd-ring-0
 			nfd-text-slate-800;
-		}
+  }
 
-		.nfd-autocomplete__options {
-			@apply
-			nfd-absolute
+  .nfd-autocomplete__options {
+    @apply nfd-absolute
 			nfd-z-20
 			nfd-w-full
 			nfd-mt-1
@@ -78,11 +71,10 @@
 			nfd-ring-opacity-5
 			focus:nfd-outline-none
 			nfd-text-sm;
-		}
+  }
 
-		.nfd-autocomplete__option {
-			@apply
-			nfd-cursor-default
+  .nfd-autocomplete__option {
+    @apply nfd-cursor-default
 			nfd-select-none
 			nfd-relative
 			nfd-flex
@@ -92,25 +84,23 @@
 			nfd-py-2
 			nfd-text-slate-700;
 
-			&--active {
-				@apply nfd-bg-slate-200;
-			}
+    &--active {
+      @apply nfd-bg-slate-200;
+    }
 
-			&--selected {
-				@apply nfd-bg-primary-500 nfd-text-white;
-			}
-		}
+    &--selected {
+      @apply nfd-bg-primary-500 nfd-text-white;
+    }
+  }
 
-		.nfd-select__option-label {
-			@apply nfd-block nfd-truncate;
-		}
+  .nfd-select__option-label {
+    @apply nfd-block nfd-truncate;
+  }
 
-		.nfd-autocomplete__option-check {
-			@apply
-			nfd-w-5
+  .nfd-autocomplete__option-check {
+    @apply nfd-w-5
 			nfd-h-5
 			nfd-text-white
 			nfd-shrink-0;
-		}
-	}
+  }
 }

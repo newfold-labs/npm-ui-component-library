@@ -1,8 +1,6 @@
-@layer components {
-    .nfd-root {
-        .nfd-file-input {
-			@apply
-			nfd-w-full
+@utility nfd-root {
+  .nfd-file-input {
+    @apply nfd-w-full
 			nfd-px-6
 			nfd-pt-5
 			nfd-pb-6
@@ -16,40 +14,38 @@
 			nfd-bg-white
 			nfd-border-slate-300;
 
-			&.nfd-is-drag-over {
-				@apply nfd-bg-primary-50 nfd-border-primary-300;
+    &.nfd-is-drag-over {
+      @apply nfd-bg-primary-50 nfd-border-primary-300;
 
-				.nfd-file-input__content {
-					@apply nfd-pointer-events-none;
-				}
+      .nfd-file-input__content {
+        @apply nfd-pointer-events-none;
+      }
 
-				.nfd-file-input__icon {
-					@apply -nfd-translate-y-2 nfd-text-primary-400;
-				}
-			}
+      .nfd-file-input__icon {
+        @apply -nfd-translate-y-2 nfd-text-primary-400;
+      }
+    }
 
-			&.nfd-is-disabled {
-				@apply nfd-opacity-50 nfd-cursor-not-allowed;
+    &.nfd-is-disabled {
+      @apply nfd-opacity-50 nfd-cursor-not-allowed;
 
-				.nfd-file-input__select-label {
-					@apply nfd-cursor-not-allowed;
-				}
-			}
-		}
+      .nfd-file-input__select-label {
+        @apply nfd-cursor-not-allowed;
+      }
+    }
+  }
 
-		.nfd-file-input__content {
-			@apply
-			nfd-max-w-xs
+  .nfd-file-input__content {
+    @apply nfd-max-w-xs
 			nfd-inline-flex
 			nfd-flex-col
 			nfd-space-y-1
 			nfd-items-center
 			nfd-text-center;
-		}
+  }
 
-		.nfd-file-input__icon {
-			@apply
-			nfd-mx-auto
+  .nfd-file-input__icon {
+    @apply nfd-mx-auto
 			nfd-h-12
 			nfd-w-12
 			nfd-text-slate-400
@@ -59,29 +55,34 @@
 			nfd-duration-300
 			nfd-transform;
 
-			> path {
-				stroke-width: 1;
-			}
-		}
-
-		.nfd-file-input__input {
-			@apply nfd-sr-only;
-
-			&:focus + .nfd-file-input__select-label {
-				@apply nfd-outline-none nfd-ring-2 nfd-ring-offset-2 nfd-ring-primary-500;
-			}
-		}
-
-		.nfd-file-input__labels {
-			@apply nfd-flex nfd-font-normal nfd-text-slate-800;
-		}
-
-		.nfd-file-input__select-label {
-			@apply nfd-rounded-md nfd-font-medium;
-		}
+    > path {
+      stroke-width: 1;
     }
+  }
 
-	[dir=rtl] .nfd-root .nfd-file-input__labels {
-		@apply nfd-flex-row-reverse;
-	}
+  .nfd-file-input__input {
+    @apply nfd-sr-only;
+
+    &:focus + .nfd-file-input__select-label {
+      @apply nfd-outline-none nfd-ring-2 nfd-ring-offset-2 nfd-ring-primary-500;
+    }
+  }
+
+  .nfd-file-input__labels {
+    @apply nfd-flex nfd-font-normal nfd-text-slate-800;
+  }
+
+  .nfd-file-input__select-label {
+    @apply nfd-rounded-md nfd-font-medium;
+  }
+
+  [dir='rtl'] & .nfd-file-input__labels {
+    @apply nfd-flex-row-reverse;
+  }
+}
+
+@utility nfd-file-input__labels {
+  [dir='rtl'] .nfd-root & {
+    @apply nfd-flex-row-reverse;
+  }
 }

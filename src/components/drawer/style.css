@@ -1,80 +1,68 @@
-@layer components {
-	.nfd-root {
-		.nfd-drawer {
-			@apply
-			nfd-relative
+@utility nfd-root {
+  .nfd-drawer {
+    @apply nfd-relative
 			nfd-inset-0
 			nfd-overflow-hidden
 			nfd-z-10;
 
-			&.nfd-drawer--offset {
-				.nfd-drawer__content {
-					@apply
-					nfd-m-5
+    &.nfd-drawer--offset {
+      .nfd-drawer__content {
+        @apply nfd-m-5
 					nfd-rounded-lg;
-				}
+      }
 
-				.nfd-drawer__panel {
-					@apply
-					nfd-rounded-lg;
-				}
-			}
+      .nfd-drawer__panel {
+        @apply nfd-rounded-lg;
+      }
+    }
 
-			&.nfd-drawer--right {
-				.nfd-drawer__content {
-					@apply
-					nfd-right-0;
-				}
-			}
+    &.nfd-drawer--right {
+      .nfd-drawer__content {
+        @apply nfd-right-0;
+      }
+    }
 
-			&.nfd-drawer--left {
-				.nfd-drawer__content {
-					@apply
-					nfd-left-0;
-				}
-			}
-		}
+    &.nfd-drawer--left {
+      .nfd-drawer__content {
+        @apply nfd-left-0;
+      }
+    }
+  }
 
-		.nfd-drawer__overlay {
-			@apply
-			nfd-fixed
+  .nfd-drawer__overlay {
+    @apply nfd-fixed
 			nfd-inset-0
 			nfd-bg-slate-500
 			nfd-bg-opacity-75
 			nfd-transition-opacity;
-		}
+  }
 
-		.nfd-drawer__container {
-			@apply
-			nfd-fixed
+  .nfd-drawer__container {
+    @apply nfd-fixed
 			nfd-inset-0
 			nfd-overflow-hidden;
-		}
+  }
 
-		.nfd-drawer__content {
-			@apply
-			nfd-pointer-events-none
+  .nfd-drawer__content {
+    @apply nfd-pointer-events-none
 			nfd-fixed
 			nfd-inset-y-0;
-		}
+  }
 
-		.nfd-drawer__header {
-			@apply
-			nfd-w-full
+  .nfd-drawer__header {
+    @apply nfd-w-full
 			nfd-flex
 			nfd-justify-between
 			nfd-items-center
 			nfd-gap-4;
-		}
+  }
 
-		.nfd-drawer__close {
-			@apply
-			nfd-self-end;
-		}
+  .nfd-drawer__close {
+    @apply nfd-self-end;
+  }
 
-		.nfd-drawer__close-button {
-			@apply
-			nfd-relative
+  .nfd-drawer__close-button {
+    @apply nfd-relative
 			nfd-z-10
 			nfd-bg-white
 			nfd-text-slate-400
@@ -84,11 +72,10 @@
 			focus:nfd-ring-2
 			focus:nfd-ring-offset-2
 			focus:nfd-ring-primary-500;
-		}
+  }
 
-		.nfd-drawer__panel {
-			@apply
-			nfd-pointer-events-auto
+  .nfd-drawer__panel {
+    @apply nfd-pointer-events-auto
 			nfd-flex
 			nfd-flex-col
 			nfd-gap-3
@@ -98,6 +85,5 @@
 			nfd-bg-white
 			nfd-p-6
 			nfd-shadow-xl;
-		}
-	}
+  }
 }

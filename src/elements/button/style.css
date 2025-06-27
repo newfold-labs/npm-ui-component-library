@@ -1,8 +1,6 @@
-@layer components {
-	.nfd-root {
-		.nfd-button {
-			@apply
-			nfd-inline-flex
+@utility nfd-root {
+  .nfd-button {
+    @apply nfd-inline-flex
 			nfd-items-center
 			nfd-justify-center
 			nfd-py-2
@@ -21,20 +19,18 @@
 			focus:nfd-ring-2
 			focus:nfd-ring-offset-2
 			focus:nfd-ring-primary-500;
-		}
+  }
 
-		/* Special styling for buttons rendered `as` "a" (to override anchor defaults). */
-		a.nfd-button {
-			@apply
-			focus:nfd-ring-offset-white
+  /* Special styling for buttons rendered `as` "a" (to override anchor defaults). */
+  a.nfd-button {
+    @apply focus:nfd-ring-offset-white
 			focus:nfd-rounded-md;
-		}
+  }
 
-		/* Variants */
+  /* Variants */
 
-		.nfd-button--primary {
-			@apply
-			nfd-text-white
+  .nfd-button--primary {
+    @apply nfd-text-white
 			nfd-bg-primary-500
 			nfd-border-transparent
 
@@ -44,11 +40,10 @@
 			focus:nfd-ring-primary-700
 			visited:nfd-text-white
 			visited:hover:nfd-text-white;
-		}
+  }
 
-		.nfd-button--secondary {
-			@apply
-			nfd-text-slate-800
+  .nfd-button--secondary {
+    @apply nfd-text-slate-800
 			nfd-bg-white
 			nfd-border-slate-300
 
@@ -58,11 +53,10 @@
 			focus:nfd-ring-primary-700
 			visited:nfd-text-slate-800
 			visited:hover:nfd-text-slate-800;
-		}
+  }
 
-		.nfd-button--error {
-			@apply
-			nfd-text-white
+  .nfd-button--error {
+    @apply nfd-text-white
 			nfd-bg-red-600
 			nfd-border-transparent
 
@@ -72,11 +66,10 @@
 			focus:nfd-ring-red-600
 			visited:nfd-text-white
 			visited:hover:nfd-text-white;
-		}
+  }
 
-		.nfd-button--upsell {
-			@apply
-			nfd-text-amber-900
+  .nfd-button--upsell {
+    @apply nfd-text-amber-900
 			nfd-bg-amber-300
 			nfd-border-transparent
 
@@ -86,33 +79,29 @@
 			focus:nfd-ring-amber-400
 			visited:nfd-text-amber-900
 			visited:hover:nfd-text-amber-900;
-		}
+  }
 
-		/* Sizes */
+  /* Sizes */
 
-		.nfd-button--large {
-			@apply
-			nfd-py-3
+  .nfd-button--large {
+    @apply nfd-py-3
 			nfd-px-6
 			nfd-text-base
 			nfd-leading-5;
-		}
+  }
 
-		.nfd-button--small {
-			@apply
-			nfd-text-xs
+  .nfd-button--small {
+    @apply nfd-text-xs
 			nfd-py-1.5
 			nfd-px-2.5;
-		}
+  }
 
-		/* States */
+  /* States */
 
-		.nfd-button--disabled {
-			@apply
-			nfd-opacity-50
+  .nfd-button--disabled {
+    @apply nfd-opacity-50
 			nfd-cursor-not-allowed
 
 			focus:nfd-ring-0;
-		}
-	}
+  }
 }

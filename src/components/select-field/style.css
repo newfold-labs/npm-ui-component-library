@@ -1,27 +1,22 @@
-@layer components {
-	.nfd-root {
-		.nfd-select-field {}
+@utility nfd-root {
+  .nfd-select-field--disabled {
+    .nfd-select-field__label,
+    .nfd-select-field__description {
+      @apply nfd-opacity-50 nfd-cursor-not-allowed;
+    }
+  }
 
-		.nfd-select-field--disabled {
-			.nfd-select-field__label,
-			.nfd-select-field__description {
-				@apply nfd-opacity-50 nfd-cursor-not-allowed;
-			}
-		}
-
-		.nfd-select-field__options {
-			@apply
-			nfd-flex
+  .nfd-select-field__options {
+    @apply nfd-flex
 			nfd-flex-col
 			nfd-gap-3;
-		}
+  }
 
-		.nfd-select-field__description {
-			@apply nfd-mt-2;
-		}
+  .nfd-select-field__description {
+    @apply nfd-mt-2;
+  }
 
-		.nfd-select-field__validation {
-			@apply nfd-mt-2;
-		}
-	}
+  .nfd-select-field__validation {
+    @apply nfd-mt-2;
+  }
 }

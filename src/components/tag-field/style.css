@@ -1,18 +1,16 @@
-@layer components {
-	.nfd-root {
-		.nfd-tag-field--disabled {
-			.nfd-tag-field__label,
-			.nfd-tag-field__description {
-				@apply nfd-opacity-50 nfd-cursor-not-allowed;
-			}
-		}
+@utility nfd-root {
+  .nfd-tag-field--disabled {
+    .nfd-tag-field__label,
+    .nfd-tag-field__description {
+      @apply nfd-opacity-50 nfd-cursor-not-allowed;
+    }
+  }
 
-		.nfd-tag-field__description {
-			@apply nfd-mt-2;
-		}
+  .nfd-tag-field__description {
+    @apply nfd-mt-2;
+  }
 
-		.nfd-tag-field__validation {
-			@apply nfd-mt-2;
-		}
-	}
+  .nfd-tag-field__validation {
+    @apply nfd-mt-2;
+  }
 }

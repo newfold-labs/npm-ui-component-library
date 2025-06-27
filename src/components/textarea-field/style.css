@@ -1,14 +1,9 @@
-@layer components {
-	.nfd-root {
+@utility nfd-root {
+  .nfd-textarea-field__description {
+    @apply nfd-mt-2;
+  }
 
-		.nfd-textarea-field__label {}
-
-		.nfd-textarea-field__description {
-			@apply nfd-mt-2;
-		}
-
-		.nfd-textarea-field__validation {
-			@apply nfd-mt-2;
-		}
-	}
+  .nfd-textarea-field__validation {
+    @apply nfd-mt-2;
+  }
 }

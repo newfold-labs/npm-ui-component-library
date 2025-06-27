@@ -1,10 +1,7 @@
-@layer components {
-	.nfd-root {
-		.nfd-page {
-			@apply
-			nfd-flex
+@utility nfd-root {
+  .nfd-page {
+    @apply nfd-flex
 			nfd-flex-col
-			nfd-gap-8
-		}
-	}
+			nfd-gap-8;
+  }
 }

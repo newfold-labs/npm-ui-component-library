@@ -1,8 +1,6 @@
-@layer components {
-	.nfd-root {
-		.nfd-text-input {
-			@apply
-			nfd-w-full
+@utility nfd-root {
+  .nfd-text-input {
+    @apply nfd-w-full
 			nfd-py-2
 			nfd-px-3
 			nfd-border
@@ -15,22 +13,19 @@
 			focus:nfd-outline-none
 			focus:nfd-ring-primary-500
 			focus:nfd-border-primary-500;
-		}
+  }
 
-		.nfd-text-input--disabled {
-			@apply
-			nfd-opacity-50
+  .nfd-text-input--disabled {
+    @apply nfd-opacity-50
 			nfd-cursor-not-allowed
 			focus:nfd-ring-0;
-		}
+  }
 
-		.nfd-text-input--read-only {
-			@apply
-			nfd-border-slate-200
+  .nfd-text-input--read-only {
+    @apply nfd-border-slate-200
 			nfd-shadow-none
 			nfd-text-slate-500
 			nfd-bg-slate-50
 			nfd-cursor-default;
-		}
-	}
+  }
 }
