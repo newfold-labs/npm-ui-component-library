@@ -1,4 +1,4 @@
-import { useMemo } from "@wordpress/element";
+import { useMemo } from "react";
 import PropTypes from "prop-types";
 import { values } from "lodash";
 import classNames from "classnames";

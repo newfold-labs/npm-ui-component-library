@@ -3,7 +3,7 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import { useSvgAria } from "../../hooks";
 import Label from "../label";
-import { forwardRef } from "@wordpress/element";
+import { forwardRef } from "react";
 
 const classNameMap = {
 	variant: {
@@ -120,6 +120,8 @@ Radio.defaultProps = {
 	className: "",
 	isLabelDangerousHtml: false,
 };
+
+Radio.displayName = "Radio";
 
 // eslint-disable-next-line require-jsdoc
 export const StoryComponent = props => <Radio { ...props } />;

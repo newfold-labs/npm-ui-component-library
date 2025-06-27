@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { forwardRef, Fragment, useCallback } from "@wordpress/element";
+import { forwardRef, Fragment, useCallback } from "react";
 import { Combobox, Transition } from "@headlessui/react";
 import { SelectorIcon, CheckIcon } from "@heroicons/react/solid";
 import { XIcon } from "@heroicons/react/outline";
@@ -10,6 +10,7 @@ import { ValidationInput } from "../validation";
 
 // Render Combobox.Button as a div always.
 const AutocompleteButton = forwardRef( ( props, ref ) => <Combobox.Button as="div" ref={ ref } { ...props } /> );
+AutocompleteButton.displayName = "AutocompleteButton";
 
 /**
  * @param {JSX.node} children The children.
@@ -166,6 +167,8 @@ const Autocomplete = forwardRef( ( {
 } );
 
 
+Autocomplete.displayName = "Autocomplete";
+
 Autocomplete.Option = Option;
 Autocomplete.Option.displayName = "Autocomplete.Option";
 
@@ -187,6 +190,7 @@ const propTypes = {
 	className: PropTypes.string,
 	buttonProps: PropTypes.object,
 	clearButtonScreenReaderText: PropTypes.string,
+	nullable: PropTypes.bool,
 };
 Autocomplete.propTypes = propTypes;
 

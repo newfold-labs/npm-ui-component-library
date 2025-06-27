@@ -1,6 +1,6 @@
 import { PropTypes } from "prop-types";
 import classNames from "classnames";
-import { forwardRef } from "@wordpress/element";
+import { forwardRef } from "react";
 
 /**
  * @param {string} as The element to render as.
@@ -63,11 +63,13 @@ Footer.propTypes = {
  * @param {string} className The className.
  * @returns {JSX.Element} The card component.
  */
-const Card = forwardRef( ( { as: Component, children, className, ...props }, ref ) => (
+const Card = forwardRef( ( { as: Component = "div", children, className, ...props }, ref ) => (
 	<Component { ...props } className={ classNames( "nfd-card", className ) } ref={ ref }>
 		{ children }
 	</Component>
 ) );
+
+Card.displayName = "Card";
 
 const propTypes = {
 	as: PropTypes.elementType,

@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { keys } from "lodash";
 import PropTypes from "prop-types";
 import Spinner from "../spinner";
-import { forwardRef } from "@wordpress/element";
+import { forwardRef } from "react";
 
 export const classNameMap = {
 	variant: {
@@ -83,6 +83,8 @@ Button.defaultProps = {
 	disabled: false,
 	className: "",
 };
+
+Button.displayName = "Button";
 
 export default Button;
 

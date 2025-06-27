@@ -1,5 +1,5 @@
 /* eslint-disable no-undefined */
-import { useCallback } from "@wordpress/element";
+import { useCallback } from "react";
 import classNames from "classnames";
 import { noop } from "lodash";
 import PropTypes from "prop-types";
