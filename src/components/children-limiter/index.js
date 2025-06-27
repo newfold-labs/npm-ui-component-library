@@ -1,5 +1,4 @@
-import { nanoid } from "@reduxjs/toolkit";
-import { useMemo } from "react";
+import { useMemo, useId } from "react";
 import { flatten, slice } from "lodash";
 import PropTypes from "prop-types";
 import AnimateHeight from "react-animate-height";
@@ -14,11 +13,12 @@ import { useToggleState } from "../../hooks";
  * @returns {JSX.Element|JSX.node[]} The children or the limited children with more/less.
  */
 const ChildrenLimiter = ( { limit, children, renderButton, initialShow = false, id: requestedId = "" } ) => {
+	const reactId = useId();
 	const [ show, toggle ] = useToggleState( initialShow );
 	const flattened = useMemo( () => flatten( children ), [ children ] );
 	const before = useMemo( () => slice( flattened, 0, limit ), [ flattened ] );
 	const after = useMemo( () => slice( flattened, limit ), [ flattened ] );
-	const id = useMemo( () => requestedId || `nfd-animate-height-${ nanoid() }`, [ requestedId ] );
+	const id = useMemo( () => requestedId || `nfd-animate-height-${ reactId }`, [ requestedId, reactId ] );
 	const ariaProps = useMemo( () => ( {
 		"aria-expanded": show,
 		"aria-controls": id,
