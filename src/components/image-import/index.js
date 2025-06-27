@@ -182,7 +182,6 @@ ImageImport.defaultProps = {
 	onError: null,
 	dropLabel: "Select an image or drag and drop",
 	disabled: false,
-	accept: "image/*",
 	isLoading: false,
 	resetPreviewActionAriaLabel: "Remove selected image",
 	className: "",
