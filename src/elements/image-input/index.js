@@ -1,5 +1,5 @@
 import { PhotographIcon, UserCircleIcon, XCircleIcon } from "@heroicons/react/solid";
-import { forwardRef, useCallback, useState } from "react";
+import { forwardRef, useCallback, useState, useEffect } from "react";
 import { keys } from "lodash";
 import PropTypes from "prop-types";
 import classNames from "classnames";
@@ -55,6 +55,10 @@ const ImageInput = forwardRef( ( {
 	...props
 }, ref ) => {
 	const [ preview, setPreview ] = useState( previewImage || null );
+
+	useEffect( () => {
+		setPreview( previewImage || null );
+	}, [ previewImage ] );
 
 	const handleFileChange = useCallback( ( event ) => {
 		const file = event.target.files?.[ 0 ];

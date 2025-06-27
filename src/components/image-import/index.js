@@ -13,6 +13,7 @@ import Label from "../../elements/label";
  * @param {string} previewImageAlt Preview image alt.
  * @param {string} buttonText Button text.
  * @param {string} buttonVariant Button variant.
+ * @param {string} accept Accept.
  * @param {Function} onClick On click callback.
  * @param {Function} onChange On change callback.
  * @param {Function} onReset On reset callback.
@@ -34,6 +35,7 @@ const ImageImport = forwardRef( ( {
 	previewImageAlt,
 	buttonText,
 	buttonVariant,
+	accept,
 	onClick,
 	onChange,
 	onReset,
@@ -113,6 +115,7 @@ const ImageImport = forwardRef( ( {
 						variant={ imageInputVariant }
 						previewImage={ previewImage }
 						previewImageAlt={ previewImageAlt }
+						accept={ accept }
 						buttonText={ buttonText }
 						buttonVariant={ buttonVariant }
 						onClick={ onClick }
@@ -150,6 +153,7 @@ ImageImport.propTypes = {
 	previewImageAlt: PropTypes.string,
 	buttonText: PropTypes.string,
 	buttonVariant: PropTypes.string,
+	accept: PropTypes.string,
 	onClick: PropTypes.func,
 	onChange: PropTypes.func,
 	onReset: PropTypes.func,
@@ -171,6 +175,7 @@ ImageImport.defaultProps = {
 	previewImageAlt: "Selected image",
 	buttonText: "Select Image",
 	buttonVariant: "secondary",
+	accept: "image/*",
 	onClick: null,
 	onChange: null,
 	onReset: null,
