@@ -161,7 +161,6 @@ ImageImport.propTypes = {
 	onError: PropTypes.func,
 	dropLabel: PropTypes.string,
 	disabled: PropTypes.bool,
-	accept: PropTypes.string,
 	isLoading: PropTypes.bool,
 	resetPreviewActionAriaLabel: PropTypes.string,
 	className: PropTypes.string,
