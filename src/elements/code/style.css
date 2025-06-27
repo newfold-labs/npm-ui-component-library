@@ -1,8 +1,6 @@
-@layer components {
-	.nfd-root {
-		.nfd-code {
-			@apply
-			nfd-inline-block
+@utility nfd-root {
+  .nfd-code {
+    @apply nfd-inline-block
 			nfd-text-xs
 			nfd-leading-tight
 			nfd-text-slate-900
@@ -10,17 +8,15 @@
 			nfd-p-1
 			nfd-m-0
 			nfd-rounded;
-		}
+  }
 
-		.nfd-code--block {
-			@apply
-			nfd-block
+  .nfd-code--block {
+    @apply nfd-block
 			nfd-my-2
 			nfd-px-2
 			nfd-py-1
 			nfd-whitespace-nowrap
 			nfd-max-w-full
 			nfd-overflow-x-auto;
-		}
-	}
+  }
 }

@@ -1,55 +1,49 @@
-@layer components {
-	.nfd-root {
-		.nfd-features-select {
-			@apply
-			nfd-flex
+@utility nfd-root {
+  .nfd-features-select {
+    @apply nfd-flex
 			nfd-flex-wrap
 			nfd-gap-4;
-		}
+  }
 
-		.nfd-features-select__feature {
-			@apply
-			nfd-flex
+  .nfd-features-select__feature {
+    @apply nfd-flex
 			nfd-flex-col
 			nfd-gap-2.5;
 
-			.nfd-label:not(.nfd-features-select__feature-label) {
-				@apply
-				nfd-cursor-pointer
-			}
+    .nfd-label:not(.nfd-features-select__feature-label) {
+      @apply nfd-cursor-pointer;
+    }
 
-			.nfd-features-select__feature-input {
-				@apply
-				nfd-sr-only;
+    .nfd-features-select__feature-input {
+      @apply nfd-sr-only;
 
-				&:checked + .nfd-label {
-					.nfd-features-select__feature-content {
-						@apply nfd-border-transparent nfd-ring-2 nfd-ring-primary-500;
+      &:checked + .nfd-label {
+        .nfd-features-select__feature-content {
+          @apply nfd-border-transparent nfd-ring-2 nfd-ring-primary-500;
 
-						.nfd-features-select__feature-check {
-							@apply nfd-visible;
-						}
-					}
-				}
+          .nfd-features-select__feature-check {
+            @apply nfd-visible;
+          }
+        }
+      }
 
-				&:focus + .nfd-label {
-					.nfd-features-select__feature-content {
-						@apply nfd-ring-2 nfd-ring-primary-500 nfd-ring-offset-2;
-					}
-				}
+      &:focus + .nfd-label {
+        .nfd-features-select__feature-content {
+          @apply nfd-ring-2 nfd-ring-primary-500 nfd-ring-offset-2;
+        }
+      }
 
-				&:checked {
-					&:focus + .nfd-label {
-						.nfd-features-select__feature-content {
-							@apply nfd-ring-offset-1 nfd-ring-[3px];
-						}
-					}
-				}
-			}
+      &:checked {
+        &:focus + .nfd-label {
+          .nfd-features-select__feature-content {
+            @apply nfd-ring-offset-1 nfd-ring-[3px];
+          }
+        }
+      }
+    }
 
-			.nfd-features-select__feature-content {
-				@apply
-				nfd-relative
+    .nfd-features-select__feature-content {
+      @apply nfd-relative
 				nfd-pt-5
 				nfd-pb-[18px]
 				nfd-px-5
@@ -62,26 +56,23 @@
 
 				hover:nfd-bg-slate-50
 				hover:nfd-border-slate-400;
-			}
+    }
 
-			.nfd-features-select__feature-check {
-				@apply
-				nfd-invisible
+    .nfd-features-select__feature-check {
+      @apply nfd-invisible
 				nfd-absolute
 				nfd-top-0.5
 				nfd-right-0.5
 				nfd-h-5
 				nfd-w-5
 				nfd-text-primary-600;
-			}
+    }
 
-			&.nfd-is-disabled {
-				.nfd-label {
-					@apply
-					nfd-opacity-50
-					nfd-cursor-not-allowed
-				}
-			}
-		}
-	}
+    &.nfd-is-disabled {
+      .nfd-label {
+        @apply nfd-opacity-50
+					nfd-cursor-not-allowed;
+      }
+    }
+  }
 }

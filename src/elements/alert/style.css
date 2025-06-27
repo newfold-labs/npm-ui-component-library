@@ -1,53 +1,49 @@
-@layer components {
-	.nfd-root {
-		.nfd-alert {
-			@apply
-			nfd-flex
+@utility nfd-root {
+  .nfd-alert {
+    @apply nfd-flex
 			nfd-gap-3
 			nfd-rounded-md
 			nfd-p-4;
-		}
+  }
 
-		/* Variants */
-		.nfd-alert--info {
-			@apply nfd-bg-blue-100;
+  /* Variants */
+  .nfd-alert--info {
+    @apply nfd-bg-blue-100;
 
-			.nfd-alert__message {
-				@apply nfd-text-blue-800;
-			}
-		}
+    .nfd-alert__message {
+      @apply nfd-text-blue-800;
+    }
+  }
 
-		.nfd-alert--warning {
-			@apply nfd-bg-amber-100;
+  .nfd-alert--warning {
+    @apply nfd-bg-amber-100;
 
-			.nfd-alert__message {
-				@apply nfd-text-amber-800;
-			}
-		}
+    .nfd-alert__message {
+      @apply nfd-text-amber-800;
+    }
+  }
 
-		.nfd-alert--success {
-			@apply nfd-bg-green-100;
+  .nfd-alert--success {
+    @apply nfd-bg-green-100;
 
-			.nfd-alert__message {
-				@apply nfd-text-green-800;
-			}
-		}
+    .nfd-alert__message {
+      @apply nfd-text-green-800;
+    }
+  }
 
-		.nfd-alert--error {
-			@apply nfd-bg-red-100;
+  .nfd-alert--error {
+    @apply nfd-bg-red-100;
 
-			.nfd-alert__message {
-				@apply nfd-text-red-800;
-			}
-		}
+    .nfd-alert__message {
+      @apply nfd-text-red-800;
+    }
+  }
 
-		/* Elements */
-		.nfd-alert__icon {
-			@apply
-			nfd-shrink-0
+  /* Elements */
+  .nfd-alert__icon {
+    @apply nfd-shrink-0
 			nfd-grow-0
 			nfd-h-5
 			nfd-w-5;
-		}
-	}
+  }
 }

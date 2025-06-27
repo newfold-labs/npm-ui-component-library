@@ -1,16 +1,12 @@
-@layer components {
-	.nfd-root {
-		.nfd-label {
-			@apply
-			nfd-text-sm
+@utility nfd-root {
+  .nfd-label {
+    @apply nfd-text-sm
 			nfd-font-medium
 			nfd-text-slate-800;
-		}
+  }
 
-		.nfd-label__required {
-			@apply
-			nfd-ml-0.5
+  .nfd-label__required {
+    @apply nfd-ml-0.5
 			nfd-text-red-500;
-		}
-	}
+  }
 }

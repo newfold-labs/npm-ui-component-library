@@ -1,44 +1,37 @@
-@layer components {
-	.nfd-root {
-		.nfd-container {
-			@apply
-			nfd-bg-white
+@utility nfd-root {
+  .nfd-container {
+    @apply nfd-bg-white
 			nfd-w-full
 			nfd-rounded-lg
-			nfd-shadow
-		}
+			nfd-shadow;
+  }
 
-		.nfd-container__header {
-			@apply
-			nfd-p-8
+  .nfd-container__header {
+    @apply nfd-p-8
 			nfd-border-b
 			nfd-border-[#E2E8F0]
 			nfd-flex
 			nfd-flex-col
-			nfd-gap-4
-		}
+			nfd-gap-4;
+  }
 
-		.nfd-container__block {
-			@apply
-			nfd-p-8
-			nfd-pb-0
-		}
+  .nfd-container__block {
+    @apply nfd-p-8
+			nfd-pb-0;
+  }
 
-		.nfd-container__settings-field {
-			@apply
-			nfd-grid
+  .nfd-container__settings-field {
+    @apply nfd-grid
 			xl:nfd-grid-cols-3
-			xl:nfd-gap-12
-		}
+			xl:nfd-gap-12;
+  }
 
-		.nfd-container__footer {
-			@apply
-			nfd-p-8
+  .nfd-container__footer {
+    @apply nfd-p-8
 			nfd-border-t
 			nfd-border-[#E2E8F0]
 			nfd-flex
 			nfd-flex-col
-			nfd-gap-4
-		}
-	}
+			nfd-gap-4;
+  }
 }

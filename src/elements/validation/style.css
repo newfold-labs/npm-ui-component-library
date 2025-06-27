@@ -1,115 +1,104 @@
-@layer components {
-	.nfd-root {
+@utility nfd-root {
+  /* Validation icon */
 
-		/* Validation icon */
+  .nfd-validation-icon {
+    @apply nfd-pointer-events-none;
+  }
 
-		.nfd-validation-icon {
-			@apply nfd-pointer-events-none;
-		}
+  .nfd-validation-icon--success {
+    @apply nfd-text-green-500;
+  }
 
-		.nfd-validation-icon--success {
-			@apply nfd-text-green-500;
-		}
+  .nfd-validation-icon--info {
+    @apply nfd-text-blue-500;
+  }
 
-		.nfd-validation-icon--info {
-			@apply nfd-text-blue-500;
-		}
+  .nfd-validation-icon--warning {
+    @apply nfd-text-amber-500;
+  }
 
-		.nfd-validation-icon--warning {
-			@apply nfd-text-amber-500;
-		}
+  .nfd-validation-icon--error {
+    @apply nfd-text-red-500;
+  }
 
-		.nfd-validation-icon--error {
-			@apply nfd-text-red-500;
-		}
+  /* Validation input */
 
-		/* Validation input */
+  .nfd-validation-input {
+    @apply nfd-relative;
+  }
 
-		.nfd-validation-input {
-			@apply nfd-relative;
-		}
-
-		.nfd-validation-input--success {
-			.nfd-validation-input__input {
-				@apply
-				nfd-pr-10
+  .nfd-validation-input--success {
+    .nfd-validation-input__input {
+      @apply nfd-pr-10
 				nfd-border-green-300
 				focus:nfd-ring-green-500
 				focus:nfd-border-green-500
 				focus-within:nfd-ring-green-500
 				focus-within:nfd-border-green-500;
-			}
-		}
+    }
+  }
 
-		.nfd-validation-input--info {
-			.nfd-validation-input__input {
-				@apply
-				nfd-pr-10
+  .nfd-validation-input--info {
+    .nfd-validation-input__input {
+      @apply nfd-pr-10
 				nfd-border-blue-300
 				focus:nfd-ring-blue-500
 				focus:nfd-border-blue-500
 				focus-within:nfd-ring-blue-500
 				focus-within:nfd-border-blue-500;
-			}
-		}
+    }
+  }
 
-		.nfd-validation-input--warning {
-			.nfd-validation-input__input {
-				@apply
-				nfd-pr-10
+  .nfd-validation-input--warning {
+    .nfd-validation-input__input {
+      @apply nfd-pr-10
 				nfd-border-amber-300
 				focus:nfd-ring-amber-500
 				focus:nfd-border-amber-500
 				focus-within:nfd-ring-amber-500
 				focus-within:nfd-border-amber-500;
-			}
-		}
+    }
+  }
 
-		.nfd-validation-input--error {
-			.nfd-validation-input__input {
-				@apply
-				nfd-pr-10
+  .nfd-validation-input--error {
+    .nfd-validation-input__input {
+      @apply nfd-pr-10
 				nfd-border-red-300
 				focus:nfd-ring-red-500
 				focus:nfd-border-red-500
 				focus-within:nfd-ring-red-500
 				focus-within:nfd-border-red-500;
-			}
-		}
+    }
+  }
 
-		.nfd-validation-input__input {
-		}
+  .nfd-validation-input__icon {
+    @apply nfd-absolute nfd-top-[0.6875rem] nfd-right-2.5 nfd-w-5 nfd-h-5;
+  }
 
-		.nfd-validation-input__icon {
-			@apply nfd-absolute nfd-top-[0.6875rem] nfd-right-2.5 nfd-w-5 nfd-h-5;
-		}
+  /* Validation message */
 
-		/* Validation message */
-
-		.nfd-validation-message {
-			a {
-				@apply
-				nfd-font-medium
+  .nfd-validation-message {
+    a {
+      @apply nfd-font-medium
 				nfd-text-inherit
 				focus:nfd-ring-current
 				hover:visited:nfd-text-inherit;
-			}
-		}
+    }
+  }
 
-		.nfd-validation-message--success {
-			@apply nfd-text-green-600;
-		}
+  .nfd-validation-message--success {
+    @apply nfd-text-green-600;
+  }
 
-		.nfd-validation-message--info {
-			@apply nfd-text-blue-600;
-		}
+  .nfd-validation-message--info {
+    @apply nfd-text-blue-600;
+  }
 
-		.nfd-validation-message--warning {
-			@apply nfd-text-amber-600;
-		}
+  .nfd-validation-message--warning {
+    @apply nfd-text-amber-600;
+  }
 
-		.nfd-validation-message--error {
-			@apply nfd-text-red-600;
-		}
-	}
+  .nfd-validation-message--error {
+    @apply nfd-text-red-600;
+  }
 }

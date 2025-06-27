@@ -1,8 +1,6 @@
-@layer components {
-	.nfd-root {
-		.nfd-tag-input {
-			@apply
-			nfd-flex
+@utility nfd-root {
+  .nfd-tag-input {
+    @apply nfd-flex
 			nfd-flex-wrap
 			nfd-items-center
 			nfd-py-2
@@ -20,45 +18,41 @@
 			focus-within:nfd-ring-1
 			focus-within:nfd-ring-primary-500
 			focus-within:nfd-border-primary-500;
-		}
+  }
 
-		.nfd-tag-input--disabled {
-			@apply
-			nfd-opacity-50
+  .nfd-tag-input--disabled {
+    @apply nfd-opacity-50
 			nfd-cursor-not-allowed
 			focus-within:nfd-ring-0
 			focus-within:nfd-border-slate-300;
 
-			.nfd-tag-input__tag {
-				@apply
-				nfd-cursor-not-allowed
+    .nfd-tag-input__tag {
+      @apply nfd-cursor-not-allowed
 				focus:nfd-outline-none
 				focus:nfd-ring-0
 				focus-visible:nfd-outline-none
 				focus-visible:nfd-ring-0
 				hover:nfd-ring-0;
-			}
+    }
 
-			.nfd-tag-input__remove-tag {
-				@apply
-				nfd-cursor-not-allowed
+    .nfd-tag-input__remove-tag {
+      @apply nfd-cursor-not-allowed
 				hover:nfd-bg-slate-200
 				hover:nfd-text-slate-400
 				focus:nfd-outline-none
 				focus:nfd-ring-0;
-			}
+    }
 
-			.nfd-tag-input__input {
-				@apply nfd-cursor-not-allowed;
-			}
-		}
+    .nfd-tag-input__input {
+      @apply nfd-cursor-not-allowed;
+    }
+  }
 
-		.nfd-tag-input__tag {
-			min-height: 20px;
-			padding-inline-end: 0.125rem;
+  .nfd-tag-input__tag {
+    min-height: 20px;
+    padding-inline-end: 0.125rem;
 
-			@apply
-			nfd-gap-0.5
+    @apply nfd-gap-0.5
 			nfd-cursor-pointer
 			focus:nfd-outline-none
 			focus:nfd-ring-2
@@ -69,11 +63,10 @@
 			hover:nfd-ring-2
 			hover:nfd-ring-primary-500
 			hover:nfd-border-primary-500;
-		}
+  }
 
-		.nfd-tag-input__remove-tag {
-			@apply
-			nfd-inline-flex
+  .nfd-tag-input__remove-tag {
+    @apply nfd-inline-flex
 			nfd-flex-shrink-0
 			nfd-h-4
 			nfd-w-4
@@ -87,11 +80,10 @@
 			focus:nfd-outline-none
 			focus:nfd-ring-2
 			focus:nfd-ring-primary-500;
-		}
+  }
 
-		.nfd-tag-input__input {
-			@apply
-			nfd-inline-flex
+  .nfd-tag-input__input {
+    @apply nfd-inline-flex
 			nfd-flex-1
 			nfd-p-0
 			nfd-m-0
@@ -99,6 +91,5 @@
 			nfd-text-sm
 			focus:nfd-outline-none
 			focus:nfd-ring-0;
-		}
-	}
+  }
 }

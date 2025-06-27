@@ -1,27 +1,25 @@
-@layer components {
-	.nfd-root {
-		.nfd-title {
-			@apply nfd-text-slate-900 nfd-font-medium nfd-leading-tight;
-		}
+@utility nfd-root {
+  .nfd-title {
+    @apply nfd-text-slate-900 nfd-font-medium nfd-leading-tight;
+  }
 
-		.nfd-title--1 {
-			@apply nfd-text-2xl;
-		}
+  .nfd-title--1 {
+    @apply nfd-text-2xl;
+  }
 
-		.nfd-title--2 {
-			@apply nfd-text-lg;
-		}
+  .nfd-title--2 {
+    @apply nfd-text-lg;
+  }
 
-		.nfd-title--3 {
-			@apply nfd-text-tiny;
-		}
+  .nfd-title--3 {
+    @apply nfd-text-tiny;
+  }
 
-		.nfd-title--4 {
-			@apply nfd-text-base;
-		}
+  .nfd-title--4 {
+    @apply nfd-text-base;
+  }
 
-		.nfd-title--5 {
-			@apply nfd-text-sm;
-		}
-	}
+  .nfd-title--5 {
+    @apply nfd-text-sm;
+  }
 }

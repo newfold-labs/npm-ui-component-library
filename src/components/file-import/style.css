@@ -1,42 +1,39 @@
-@layer components {
-	.nfd-root {
-		.nfd-file-import {
-			@apply nfd-space-y-8;
-		}
+@utility nfd-root {
+  .nfd-file-import {
+    @apply nfd-space-y-8;
+  }
 
-		.nfd-file-import__feedback {
-			@apply
-			nfd-rounded-md
+  .nfd-file-import__feedback {
+    @apply nfd-rounded-md
 			nfd-shadow-md
 			nfd-border
 			nfd-border-slate-300
 			nfd-bg-white
 			nfd-p-4;
-		}
+  }
 
-		.nfd-file-import__feedback-header {
-			@apply nfd-flex nfd-items-start nfd-space-x-4;
-		}
+  .nfd-file-import__feedback-header {
+    @apply nfd-flex nfd-items-start nfd-space-x-4;
+  }
 
-		.nfd-file-import__feedback-figure {
-			@apply nfd-bg-primary-100 nfd-w-8 nfd-h-8 nfd-rounded-full nfd-flex nfd-items-center nfd-justify-center;
+  .nfd-file-import__feedback-figure {
+    @apply nfd-bg-primary-100 nfd-w-8 nfd-h-8 nfd-rounded-full nfd-flex nfd-items-center nfd-justify-center;
 
-			> svg {
-				@apply nfd-h-5 nfd-w-5 nfd-text-primary-500;
-			}
-		}
+    > svg {
+      @apply nfd-h-5 nfd-w-5 nfd-text-primary-500;
+    }
+  }
 
-		.nfd-file-import__feedback-title {
-			@apply nfd-block nfd-text-slate-800 nfd-font-medium nfd-mb-0.5 nfd-break-words;
-		}
+  .nfd-file-import__feedback-title {
+    @apply nfd-block nfd-text-slate-800 nfd-font-medium nfd-mb-0.5 nfd-break-words;
+  }
 
-		.nfd-file-import__feedback-description {
-			@apply nfd-block nfd-text-xs nfd-font-medium;
-		}
+  .nfd-file-import__feedback-description {
+    @apply nfd-block nfd-text-xs nfd-font-medium;
+  }
 
-		.nfd-file-import__abort-button {
-			@apply
-			nfd-flex-shrink-0
+  .nfd-file-import__abort-button {
+    @apply nfd-flex-shrink-0
 			nfd-h-5
 			nfd-w-5
 			nfd-rounded-full
@@ -51,13 +48,12 @@
 			focus:nfd-bg-primary-500
 			focus:nfd-text-white;
 
-			> svg {
-				@apply nfd-h-3 nfd-w-3;
+    > svg {
+      @apply nfd-h-3 nfd-w-3;
 
-				> path {
-					stroke-width: 3;
-				}
-			}
-		}
-	}
+      > path {
+        stroke-width: 3;
+      }
+    }
+  }
 }

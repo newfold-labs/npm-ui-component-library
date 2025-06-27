@@ -1,8 +1,6 @@
-@layer components {
-	.nfd-root {
-		.nfd-link {
-			@apply
-			nfd-text-indigo-600
+@utility nfd-root {
+  .nfd-link {
+    @apply nfd-text-indigo-600
 			nfd-cursor-pointer
 			nfd-underline
 
@@ -16,18 +14,15 @@
 			focus:nfd-rounded-sm
 			visited:nfd-text-primary-500
 			visited:hover:nfd-text-primary-400;
-		}
+  }
 
-		/* Variants */
-		.nfd-link--default {
-		}
+  /* Variants */
 
-		.nfd-link--primary {
-			@apply nfd-text-primary-600 hover:nfd-text-primary-500 focus:nfd-text-primary-500 focus:nfd-ring-primary-600;
-		}
+  .nfd-link--primary {
+    @apply nfd-text-primary-600 hover:nfd-text-primary-500 focus:nfd-text-primary-500 focus:nfd-ring-primary-600;
+  }
 
-		.nfd-link--error {
-			@apply nfd-text-red-600 hover:nfd-text-red-500 focus:nfd-text-red-500 focus:nfd-ring-red-600;
-		}
-	}
+  .nfd-link--error {
+    @apply nfd-text-red-600 hover:nfd-text-red-500 focus:nfd-text-red-500 focus:nfd-ring-red-600;
+  }
 }
