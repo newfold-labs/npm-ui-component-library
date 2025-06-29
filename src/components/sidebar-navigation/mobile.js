@@ -1,4 +1,4 @@
-import { Dialog } from "@headlessui/react";
+import { Dialog, DialogPanel } from "@headlessui/react";
 import { MenuAlt2Icon, XIcon } from "@heroicons/react/outline";
 import { useCallback } from "react";
 import PropTypes from "prop-types";
@@ -29,7 +29,7 @@ const Mobile = ( {
 		<Dialog className="nfd-root" open={ isMobileMenuOpen } onClose={ closeMobileMenu } aria-label={ ariaLabel }>
 			<div className="nfd-mobile-navigation__dialog">
 				<div className="nfd-fixed nfd-inset-0 nfd-bg-slate-600 nfd-bg-opacity-75 nfd-z-30" aria-hidden="true" />
-				<Dialog.Panel className="nfd-relative nfd-flex nfd-flex-1 nfd-flex-col nfd-max-w-xs nfd-w-full nfd-z-40 nfd-bg-slate-100">
+				<DialogPanel className="nfd-relative nfd-flex nfd-flex-1 nfd-flex-col nfd-max-w-xs nfd-w-full nfd-z-40 nfd-bg-slate-100">
 					<div className="nfd-absolute nfd-top-0 nfd-right-0 nfd--mr-14 nfd-p-1">
 						<button
 							id={ closeButtonId }
@@ -45,7 +45,7 @@ const Mobile = ( {
 							{ children }
 						</nav>
 					</div>
-				</Dialog.Panel>
+				</DialogPanel>
 			</div>
 		</Dialog>
 		<div className="nfd-mobile-navigation__top">
