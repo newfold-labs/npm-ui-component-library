@@ -1,4 +1,4 @@
-import { Switch } from "@headlessui/react";
+import { Field, Description, Label as HeadlessUiLabel } from "@headlessui/react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import Label from "../../elements/label";
@@ -30,13 +30,13 @@ const ToggleField = forwardRef( ( {
 	"aria-label": ariaLabel,
 	...props
 }, ref ) => (
-	<Switch.Group
+	<Field
 		as="div"
 		className={ classNames( "nfd-toggle-field", disabled && "nfd-toggle-field--disabled", className ) }
 	>
 		<div className="nfd-toggle-field__header">
 			{ label && <div className="nfd-toggle-field__label-wrapper">
-				<Label as={ Switch.Label } className="nfd-toggle-field__label" label={ label } aria-label={ ariaLabel } />
+				<Label as={ HeadlessUiLabel } className="nfd-toggle-field__label" label={ label } aria-label={ ariaLabel } />
 				{ labelSuffix }
 			</div> }
 			<Toggle
@@ -50,11 +50,11 @@ const ToggleField = forwardRef( ( {
 			/>
 		</div>
 		{ ( description || children ) && (
-			<Switch.Description as="div" className="nfd-toggle-field__description">
+			<Description as="div" className="nfd-toggle-field__description">
 				{ description || children }
-			</Switch.Description>
+			</Description>
 		) }
-	</Switch.Group>
+	</Field>
 ) );
 
 const propTypes = {

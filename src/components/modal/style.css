@@ -1,7 +1,7 @@
 @layer components {
 	.nfd-root {
 		.nfd-modal {
-			@apply nfd-fixed nfd-inset-0 nfd-z-10 nfd-p-4 sm:nfd-p-8 md:nfd-p-20;
+			@apply nfd-fixed nfd-inset-0 nfd-z-50 nfd-p-4 sm:nfd-p-8 md:nfd-p-20;
 		}
 
 		.nfd-modal__layout {
@@ -17,7 +17,7 @@
 		}
 
 		.nfd-modal__overlay {
-			@apply nfd-absolute nfd-inset-0 nfd-bg-slate-500 nfd-bg-opacity-75 nfd-transition-opacity;
+			@apply nfd-absolute nfd-inset-0 nfd-bg-slate-500 nfd-bg-opacity-75;
 		}
 
 		.nfd-modal__panel {
