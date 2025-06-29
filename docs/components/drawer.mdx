@@ -1,0 +1,100 @@
+import PropsTable from '@site/src/components/PropsTable';
+import { Root as NewfoldRoot } from "@newfold/ui-component-library";
+import { DrawerDemo, DrawerVariants, DrawerPositions, drawerProps, drawerPanelProps, drawerHeaderProps } from '@site/docs/partials/drawer';
+
+# Drawer
+The `Drawer` component is often referred to as a off-canvas menu or side menu, it is used to display content in a hidden toggleable sidebar.
+
+<NewfoldRoot>
+    <DrawerDemo />
+</NewfoldRoot>
+
+---
+### Usage
+```jsx
+import { Drawer, Button } from '@newfold/ui-component-library';
+
+const [isOpen, setIsOpen] = useState(false);
+
+<>
+    <Button onClick={() => setIsOpen(true)}>Open Drawer</Button>
+    <Drawer isOpen={ isOpen } onClose={ () => setIsOpen(false) }>
+        <Drawer.Panel>
+            <Drawer.Header
+                title="Menu"
+                hasCloseButton={ true }
+            />
+            <div className="nfd-flex nfd-flex-col nfd-gap-4 nfd-min-w-56 nfd-pt-4">
+                <a>Home</a>
+                <a>About</a>
+                <a>Services</a>
+                <a>Blog</a>
+                <a>Contact</a>
+            </div>
+        </Drawer.Panel>
+    </Drawer>
+</>
+```
+
+:::info
+In order to user the `Drawer` component, you must wrap its content in a `Drawer.Panel` sub-component.
+:::
+
+---
+### Variants
+The `Drawer` component offers two variants: `classic` and `offset`.
+
+<DrawerVariants />
+
+---
+### Position
+The `Drawer` component offers two positions: `left` and `right`.
+
+<DrawerPositions />
+
+---
+### Props
+<PropsTable.Table docs={drawerProps} />
+
+---
+## Drawer.Panel
+The `Drawer.Panel` component is used to wrap the content of the drawer.
+
+```jsx
+import { Drawer } from "@newfold/ui-component-library";
+
+<Drawer>
+    <Drawer.Panel>
+        ...
+    </Drawer.Panel>
+</Drawer>
+```
+
+---
+### Drawer.Panel Props
+<PropsTable.Table docs={drawerPanelProps} />
+
+---
+## Drawer.Header
+The `Drawer.Header` component is used to an optional header to the drawer. The header offers a title and a close button.
+
+```jsx
+import { Drawer } from "@newfold/ui-component-library";
+
+<Drawer>
+    <Drawer.Panel>
+        <Drawer.Header
+            title="Menu"
+            titleAs="h2"
+            titleSize="4"
+            hasCloseButton={ true }
+            closeButtonScreenReaderText="Close"
+        />
+        ...
+    </Drawer.Panel>
+</Drawer>
+```
+
+---
+### Drawer.Header Props
+<PropsTable.Table docs={drawerHeaderProps} />
