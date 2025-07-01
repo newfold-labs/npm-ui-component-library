@@ -1,4 +1,4 @@
-import { Listbox, Transition } from "@headlessui/react";
+import { Listbox, ListboxButton, ListboxOption, ListboxOptions, Label as HeadlessUiLabel, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
 import { Fragment, useCallback, useMemo, forwardRef } from "react";
 import classNames from "classnames";
@@ -26,7 +26,7 @@ const Option = ( { value, label } ) => {
 	), [] );
 
 	return (
-		<Listbox.Option value={ value } className={ getClassName }>
+		<ListboxOption value={ value } className={ getClassName }>
 			{ ( { selected } ) => <>
 				<span className={ classNames( "nfd-select__option-label", selected && "nfd-font-semibold" ) }>
 					{ label }
@@ -35,7 +35,7 @@ const Option = ( { value, label } ) => {
 					<CheckIcon className="nfd-select__option-check" { ...svgAriaProps } />
 				) }
 			</> }
-		</Listbox.Option>
+		</ListboxOption>
 	);
 };
 
@@ -95,11 +95,11 @@ const Select = forwardRef( ( {
 			{ ...props }
 		>
 			{ label && <div className="nfd-flex nfd-items-center nfd-mb-2">
-				<Listbox.Label as={ Label } { ...labelProps }>{ label }</Listbox.Label>
+				<HeadlessUiLabel as={ Label } { ...labelProps }>{ label }</HeadlessUiLabel>
 				{ labelSuffix }
 			</div> }
 			<ValidationInput
-				as={ Listbox.Button }
+				as={ ListboxButton }
 				data-id={ id }
 				className="nfd-select__button"
 				validation={ validation }
@@ -119,9 +119,9 @@ const Select = forwardRef( ( {
 				leaveFrom="nfd-transform nfd-scale-100 nfd-opacity-100"
 				leaveTo="nfd-transform nfd-scale-95 nfd-opacity-0"
 			>
-				<Listbox.Options className="nfd-select__options">
+				<ListboxOptions className="nfd-select__options">
 					{ children || options.map( option => <Option key={ option.value } { ...option } /> ) }
-				</Listbox.Options>
+				</ListboxOptions>
 			</Transition>
 		</Listbox>
 	);
