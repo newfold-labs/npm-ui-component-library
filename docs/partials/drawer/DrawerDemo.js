@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Drawer } from "@newfold/ui-component-library";
 
 const DrawerDemo = ( {
@@ -8,6 +8,17 @@ const DrawerDemo = ( {
 	buttonText = "Open Drawer",
 } ) => {
 	const [isOpen, setIsOpen] = useState(false);
+
+	/*
+	 * Remove html element padding added by Headless UI
+	 * @bug https://github.com/tailwindlabs/headlessui/issues/762
+	 */
+	useEffect(() => {
+		if ( isOpen ) {
+			const htmlElement = document.querySelector("html.docs-wrapper");
+			htmlElement.style.paddingRight = "0px";
+		}
+	}, [ isOpen ]);
 
 	return (
 		<>
