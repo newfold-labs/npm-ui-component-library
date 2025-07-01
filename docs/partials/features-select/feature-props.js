@@ -1,4 +1,4 @@
-import { Children } from "@wordpress/element";
+import { Children } from "react";
 
 const featureProps = {
     id: {
