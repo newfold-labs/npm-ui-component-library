@@ -1,5 +1,5 @@
 import { PhotographIcon, UserCircleIcon, XCircleIcon } from "@heroicons/react/solid";
-import { forwardRef, useCallback, useState } from "@wordpress/element";
+import { forwardRef, useCallback, useState, useEffect } from "react";
 import { keys } from "lodash";
 import PropTypes from "prop-types";
 import classNames from "classnames";
@@ -55,6 +55,10 @@ const ImageInput = forwardRef( ( {
 	...props
 }, ref ) => {
 	const [ preview, setPreview ] = useState( previewImage || null );
+
+	useEffect( () => {
+		setPreview( previewImage || null );
+	}, [ previewImage ] );
 
 	const handleFileChange = useCallback( ( event ) => {
 		const file = event.target.files?.[ 0 ];
@@ -232,6 +236,25 @@ ImageInput.propTypes = {
 	accept: PropTypes.string,
 	isLoading: PropTypes.bool,
 	resetPreviewActionAriaLabel: PropTypes.string,
+	onReset: PropTypes.func,
 };
+
+ImageInput.defaultProps = {
+	variant: "avatar",
+	previewImage: null,
+	previewImageAlt: "Selected image",
+	buttonText: "Select Image",
+	buttonVariant: "secondary",
+	onClick: null,
+	onChange: null,
+	className: "",
+	disabled: false,
+	accept: "image/*",
+	isLoading: false,
+	resetPreviewActionAriaLabel: "Remove selected image",
+	onReset: null,
+};
+
+ImageInput.displayName = "ImageInput";
 
 export default ImageInput;

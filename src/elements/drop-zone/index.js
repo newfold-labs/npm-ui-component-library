@@ -1,4 +1,4 @@
-import { useCallback, useState } from "@wordpress/element";
+import { useCallback, useState } from "react";
 import classNames from "classnames";
 import { isEmpty } from "lodash";
 import PropTypes from "prop-types";

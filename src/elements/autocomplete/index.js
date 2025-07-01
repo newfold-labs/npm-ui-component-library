@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
-import { forwardRef, Fragment, useCallback } from "@wordpress/element";
-import { Combobox, Transition } from "@headlessui/react";
+import { forwardRef, Fragment, useCallback } from "react";
+import { Combobox, ComboboxButton, ComboboxOptions, ComboboxOption, Label as ComboboxLabel, ComboboxInput, Transition } from "@headlessui/react";
 import { SelectorIcon, CheckIcon } from "@heroicons/react/solid";
 import { XIcon } from "@heroicons/react/outline";
 import classNames from "classnames";
@@ -8,8 +8,9 @@ import { constant } from "lodash";
 import { useSvgAria } from "../../hooks";
 import { ValidationInput } from "../validation";
 
-// Render Combobox.Button as a div always.
-const AutocompleteButton = forwardRef( ( props, ref ) => <Combobox.Button as="div" ref={ ref } { ...props } /> );
+// Render ComboboxButton as a div always.
+const AutocompleteButton = forwardRef( ( props, ref ) => <ComboboxButton as="div" ref={ ref } { ...props } /> );
+AutocompleteButton.displayName = "AutocompleteButton";
 
 /**
  * @param {JSX.node} children The children.
@@ -28,7 +29,7 @@ const Option = ( {
 	), [] );
 
 	return (
-		<Combobox.Option className={ getClassName } value={ value }>
+		<ComboboxOption className={ getClassName } value={ value }>
 			{ ( { selected } ) => (
 				<>
 					<span className={ classNames( "nfd-autocomplete__option-label", selected && "nfd-font-semibold" ) }>
@@ -39,7 +40,7 @@ const Option = ( {
 					) }
 				</>
 			) }
-		</Combobox.Option>
+		</ComboboxOption>
 	);
 };
 
@@ -123,7 +124,7 @@ const Autocomplete = forwardRef( ( {
 			{ ...props }
 		>
 			{ label && <div className="nfd-flex nfd-items-center nfd-mb-2">
-				<Combobox.Label { ...labelProps }>{ label }</Combobox.Label>
+				<ComboboxLabel { ...labelProps }>{ label }</ComboboxLabel>
 				{ labelSuffix }
 			</div> }
 			<div className="nfd-relative">
@@ -134,7 +135,7 @@ const Autocomplete = forwardRef( ( {
 					className="nfd-autocomplete__button"
 					{ ...buttonProps }
 				>
-					<Combobox.Input
+					<ComboboxInput
 						className="nfd-autocomplete__input"
 						autoComplete="off"
 						placeholder={ placeholder }
@@ -156,15 +157,17 @@ const Autocomplete = forwardRef( ( {
 					leaveFrom="nfd-transform nfd-scale-100 nfd-opacity-100"
 					leaveTo="nfd-transform nfd-scale-95 nfd-opacity-0"
 				>
-					<Combobox.Options className="nfd-autocomplete__options">
+					<ComboboxOptions className="nfd-autocomplete__options">
 						{ children }
-					</Combobox.Options>
+					</ComboboxOptions>
 				</Transition>
 			</div>
 		</Combobox>
 	);
 } );
 
+
+Autocomplete.displayName = "Autocomplete";
 
 Autocomplete.Option = Option;
 Autocomplete.Option.displayName = "Autocomplete.Option";
@@ -187,6 +190,7 @@ const propTypes = {
 	className: PropTypes.string,
 	buttonProps: PropTypes.object,
 	clearButtonScreenReaderText: PropTypes.string,
+	nullable: PropTypes.bool,
 };
 Autocomplete.propTypes = propTypes;
 

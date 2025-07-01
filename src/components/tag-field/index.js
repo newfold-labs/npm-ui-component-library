@@ -1,4 +1,4 @@
-import { forwardRef } from "@wordpress/element";
+import { forwardRef } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import Label from "../../elements/label";
@@ -77,6 +77,8 @@ TagField.defaultProps = {
 	description: null,
 	validation: {},
 };
+
+TagField.displayName = "TagField";
 
 // eslint-disable-next-line require-jsdoc
 export const StoryComponent = props => <TagField { ...props } />;
