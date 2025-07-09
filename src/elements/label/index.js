@@ -17,16 +17,27 @@ const Label = forwardRef( ( {
 	requiredIndicator,
 	children,
 	...props
-}, ref ) => (
-	<Component
-		ref={ ref }
-		className={ classNames( "nfd-label", className ) }
-		{ ...props }
-	>
-		{ label || children || null }
-		{ requiredIndicator && <span className="nfd-label__required">*</span> }
-	</Component>
-) );
+}, ref ) => {
+
+	const hasDangerouslySetInnerHTML = !! props?.dangerouslySetInnerHTML?.__html;
+
+	if ( hasDangerouslySetInnerHTML && requiredIndicator ) {
+		props.dangerouslySetInnerHTML.__html += '<span class="nfd-label__required">*</span>';
+	}
+
+	return hasDangerouslySetInnerHTML
+	?
+		(
+			<Component ref={ ref } className={ classNames( "nfd-label", className ) } { ...props } />
+		)
+	:
+		(
+			<Component ref={ ref } className={ classNames( "nfd-label", className ) } { ...props }>
+				{ label || children || null }
+				{ requiredIndicator && <span className="nfd-label__required">*</span> }
+			</Component>
+		)
+} );
 
 const propTypes = {
 	label: PropTypes.string,
