@@ -107,17 +107,17 @@ const Modal = forwardRef( ( { isOpen, onClose, children, className = "", positio
 				as="div"
 				ref={ ref }
 				className="nfd-root"
-				open={ isOpen }
+				open={true}
 				onClose={ onClose }
 				{ ...props }
 			>
 				<div className={ classNames( "nfd-modal", classNameMap.position[ position ], className ) }>
 					<Transition.Child
 						as={ Fragment }
-						enter="nfd-ease-out nfd-duration-300"
+						enter="nfd-ease-in nfd-duration-300"
 						enterFrom="nfd-opacity-0"
 						enterTo="nfd-opacity-100"
-						leave="nfd-ease-in nfd-duration-200"
+						leave="nfd-ease-out nfd-duration-200"
 						leaveFrom="nfd-opacity-100"
 						leaveTo="nfd-opacity-0"
 					>
@@ -126,12 +126,12 @@ const Modal = forwardRef( ( { isOpen, onClose, children, className = "", positio
 					<div className="nfd-modal__layout">
 						<Transition.Child
 							as={ Fragment }
-							enter="nfd-ease-out nfd-duration-300"
-							enterFrom="nfd-opacity-0 nfd-translate-y-4 sm:nfd-translate-y-0 sm:nfd-scale-95"
-							enterTo="nfd-opacity-100 nfd-translate-y-0 sm:nfd-scale-100"
-							leave="nfd-ease-in nfd-duration-200"
-							leaveFrom="nfd-opacity-100 nfd-translate-y-0 sm:nfd-scale-100"
-							leaveTo="nfd-opacity-0 nfd-translate-y-4 sm:nfd-translate-y-0 sm:nfd-scale-95"
+							enter="nfd-ease-in nfd-duration-300"
+							enterFrom="nfd-opacity-0 nfd-scale-95"
+							enterTo="nfd-opacity-100 nf-scale-100"
+							leave="nfd-ease-out nfd-duration-200"
+							leaveFrom="nfd-opacity-100 nfd-scale-100"
+							leaveTo="nfd-opacity-0 nfd-scale-95"
 						>
 							{ children }
 						</Transition.Child>
