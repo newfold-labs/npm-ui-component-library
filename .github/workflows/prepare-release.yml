@@ -1,3 +1,11 @@
+##
+# This workflow is used to prepare a release of the package. It does the following:
+# 1. Checks out the repository/main branch.
+# 2. Sets up the node environment.
+# 3. Configures the git user.
+# 4. Bumps the version of the package to the input version.
+# 5. Creates a pull request with the new version.
+##
 name: Prepare Release
 
 on:
