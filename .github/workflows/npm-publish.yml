@@ -1,8 +1,16 @@
+##
+# This workflow is used to publish the package to npm. It does the following:
+# 1. Checks out the repository/main branch.
+# 2. Sets up the node environment with the necessary configuration.
+# 3. Installs the dependencies.
+# 4. Creates a build of the package.
+# 5. Publishes the build to npm.
+##
 name: Publish NPM Package
 
 on:
     push:
-        tags: 
+        tags:
             - '*'
 
 jobs:
@@ -22,9 +30,6 @@ jobs:
                   scope: '@newfold'
             - uses: fregante/setup-git-user@024bc0b8e177d7e77203b48dab6fb45666854b35 # v2.0.2
 
-            - name: Bump Build Version
-              run: npm version ${{  github.ref_name }}
-
             - name: Install Dependencies
               run: npm install
 
@@ -34,31 +39,3 @@ jobs:
             - name: Publish Package
               run: npm publish
               working-directory: ./build
-
-    bump:
-      needs: publish
-      name: Commit Version Bump
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-          with:
-              ref: main
-              token: ${{ secrets.NEWFOLD_ACCESS_TOKEN }}
-        - uses: actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e # v4.3.0
-          with:
-              node-version: 20.x
-        - uses: fregante/setup-git-user@024bc0b8e177d7e77203b48dab6fb45666854b35 # v2.0.2
-
-        - name: Configure Git
-          run: |
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-        - name: Bump Version
-          run: npm version ${{  github.ref_name }}
-
-        - name: Commit Version Bump
-          run: git commit -m "🤖 bump version to ${{  github.ref_name }}"
-
-        - name: Push Changes
-          run: git push
