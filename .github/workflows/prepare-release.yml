@@ -46,7 +46,7 @@ jobs:
           id: get-new-version
           run: |
             VERSION=$(node -p "require('./package.json').version")
-            echo "VERSION=${VERSION}" >> $GITHUB_OUTPUT
+            echo "new_version=${VERSION}" >> $GITHUB_OUTPUT
 
         - name: Create Release
           uses: peter-evans/create-pull-request@271a8d0340265f705b14b6d32b9829c1cb33d45e # v7.0.8
