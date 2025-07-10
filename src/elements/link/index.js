@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import PropTypes from "prop-types";
-import { forwardRef } from "@wordpress/element";
+import { forwardRef } from "react";
 
 const classNameMap = {
 	variant: {
@@ -52,6 +52,8 @@ Link.defaultProps = {
 	variant: "default",
 	className: "",
 };
+
+Link.displayName = "Link";
 
 // eslint-disable-next-line require-jsdoc
 export const StoryComponent = props => <Link { ...props } />;

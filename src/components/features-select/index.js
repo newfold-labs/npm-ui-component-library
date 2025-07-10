@@ -1,4 +1,4 @@
-import { createContext, forwardRef, useContext } from "@wordpress/element";
+import { createContext, forwardRef, useContext } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import { CheckCircleIcon } from "@heroicons/react/solid";
@@ -143,6 +143,7 @@ const FeaturesSelect = forwardRef( ( {
 } );
 
 Feature.propTypes = {
+	children: PropTypes.node,
 	id: PropTypes.string.isRequired,
 	name: PropTypes.string.isRequired,
 	value: PropTypes.string.isRequired,
@@ -153,13 +154,32 @@ Feature.propTypes = {
 	screenReaderLabel: PropTypes.string.isRequired,
 	className: PropTypes.string,
 };
+
+Feature.defaultProps = {
+	children: null,
+	type: "checkbox",
+	label: "",
+	labelTextAlign: "center",
+	disabled: false,
+	className: "",
+};
+
+Feature.displayName = "Feature";
+
 FeaturesSelect.propTypes = {
+	children: PropTypes.node,
 	behavior: PropTypes.oneOf( [ "checkbox", "radio" ] ),
 	layout: PropTypes.oneOf( [ "row", "column" ] ),
 	className: PropTypes.string,
 };
 
-Feature.displayName = "Feature";
+FeaturesSelect.defaultProps = {
+	children: null,
+	behavior: "checkbox",
+	layout: "row",
+	className: "",
+};
+
 FeaturesSelect.displayName = "FeaturesSelect";
 
 FeaturesSelect.Feature = Feature;

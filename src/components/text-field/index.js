@@ -1,4 +1,4 @@
-import { forwardRef } from "@wordpress/element";
+import { forwardRef } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import Label from "../../elements/label";
@@ -52,7 +52,7 @@ const TextField = forwardRef( ( {
 				!! label &&
 				<div className="nfd-flex nfd-items-center nfd-mb-2">
 					<Label
-						requiredIndicator={ (required && labelRequiredIndicator) }
+						requiredIndicator={ ( required && labelRequiredIndicator ) }
 						className="nfd-text-field__label"
 						htmlFor={ id }
 					>
@@ -71,10 +71,10 @@ const TextField = forwardRef( ( {
 				readOnly={ readOnly }
 				required={ required }
 				className={ classNames(
-					'nfd-text-field__input',
+					"nfd-text-field__input",
 					{
-						'nfd-text-field--input-with-icon': icon
-					}
+						"nfd-text-field--input-with-icon": icon,
+					},
 				) }
 				aria-describedby={ describedBy }
 				validation={ validation }
@@ -95,6 +95,7 @@ const propTypes = {
 	onChange: PropTypes.func.isRequired,
 	label: PropTypes.string.isRequired,
 	labelSuffix: PropTypes.node,
+	labelRequiredIndicator: PropTypes.node,
 	disabled: PropTypes.bool,
 	readOnly: PropTypes.bool,
 	required: PropTypes.bool,
@@ -119,6 +120,8 @@ TextField.defaultProps = {
 	icon: null,
 	validation: {},
 };
+
+TextField.displayName = "TextField";
 
 // eslint-disable-next-line require-jsdoc
 export const StoryComponent = props => <TextField { ...props } />;

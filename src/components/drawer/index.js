@@ -1,5 +1,5 @@
-import { Children, createContext, forwardRef, Fragment, useContext } from "@wordpress/element";
-import { Dialog, Transition } from "@headlessui/react";
+import { Children, createContext, forwardRef, Fragment, useContext } from "react";
+import { Dialog, DialogPanel, DialogTitle, Transition, TransitionChild } from "@headlessui/react";
 import { XIcon } from "@heroicons/react/outline";
 import classNames from "classnames";
 import { useSvgAria } from "../../hooks";
@@ -36,7 +36,7 @@ const classNameMap = {
  * @returns {JSX.Element} The overlay.
  */
 const Overlay = () => (
-	<Transition.Child
+	<TransitionChild
 		as={ Fragment }
 		enter="nfd-ease-out nfd-duration-300"
 		enterFrom="nfd-opacity-0"
@@ -46,7 +46,7 @@ const Overlay = () => (
 		leaveTo="nfd-opacity-0"
 	>
 		<div className="nfd-drawer__overlay" aria-hidden="true" />
-	</Transition.Child>
+	</TransitionChild>
 );
 
 /**
@@ -82,7 +82,7 @@ const Header = forwardRef( ( {
 			{ ...props }
 		>
 			{ title && (
-				<Dialog.Title
+				<DialogTitle
 					as={ titleAs }
 					className={ classNames(
 						"nfd-drawer__title",
@@ -90,7 +90,7 @@ const Header = forwardRef( ( {
 					) }
 				>
 					{ title }
-				</Dialog.Title>
+				</DialogTitle>
 			) }
 
 			{ hasCloseButton && (
@@ -118,6 +118,17 @@ Header.propTypes = {
 	className: PropTypes.string,
 };
 
+Header.defaultProps = {
+	title: "",
+	titleAs: "h2",
+	titleSize: "4",
+	hasCloseButton: true,
+	closeButtonScreenReaderText: "Close",
+	className: "",
+};
+
+Header.displayName = "Drawer.Header";
+
 /**
  * Drawer panel.
  * @param {JSX.Node} children The component props.
@@ -133,7 +144,7 @@ const Panel = forwardRef( ( {
 	const leaveToClass = position === "left" ? "nfd--translate-x-full" : "nfd-translate-x-full";
 
 	return (
-		<Transition.Child
+		<TransitionChild
 			as={ Fragment }
 			enter="nfd-transform nfd-ease-out nfd-duration-300"
 			enterFrom={ enterFromClass }
@@ -142,15 +153,15 @@ const Panel = forwardRef( ( {
 			leaveFrom="nfd-translate-x-0"
 			leaveTo={ leaveToClass }
 		>
-			<Dialog.Panel
+			<DialogPanel
 				as="div"
 				className={ classNames( "nfd-drawer__panel", className ) }
 				ref={ ref }
 				{ ...props }
 			>
 				{ children }
-			</Dialog.Panel>
-		</Transition.Child>
+			</DialogPanel>
+		</TransitionChild>
 	);
 } );
 
@@ -158,6 +169,12 @@ Panel.propTypes = {
 	children: PropTypes.node.isRequired,
 	className: PropTypes.string,
 };
+
+Panel.defaultProps = {
+	className: "",
+};
+
+Panel.displayName = "Drawer.Panel";
 
 /**
  * @param {boolean} isOpen Whether the drawer is open.
@@ -232,7 +249,17 @@ Drawer.propTypes = {
 	children: PropTypes.node,
 };
 
+Drawer.defaultProps = {
+	overlay: true,
+	position: "right",
+	variant: "classic",
+	className: "",
+	children: null,
+};
+
 Drawer.Header = Header;
 Drawer.Panel = Panel;
+
+Drawer.displayName = "Drawer";
 
 export default Drawer;

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Select from "../../elements/select";
 import { ValidationMessage } from "../../elements/validation";
 import { useDescribedBy } from "../../hooks";
-import { forwardRef } from "@wordpress/element";
+import { forwardRef } from "react";
 /**
  * @param {string} id Identifier.
  * @param {JSX.Element} error Error node.
@@ -74,6 +74,9 @@ SelectField.defaultProps = {
 	validation: {},
 	className: "",
 };
+
+
+SelectField.displayName = "SelectField";
 
 // eslint-disable-next-line require-jsdoc
 export const StoryComponent = props => <SelectField { ...props } />;

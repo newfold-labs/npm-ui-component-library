@@ -1,4 +1,4 @@
-import { forwardRef } from "@wordpress/element";
+import { forwardRef } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 
@@ -17,16 +17,27 @@ const Label = forwardRef( ( {
 	requiredIndicator,
 	children,
 	...props
-}, ref ) => (
-	<Component
-		ref={ ref }
-		className={ classNames( "nfd-label", className ) }
-		{ ...props }
-	>
-		{ label || children || null }
-		{ requiredIndicator && <span className="nfd-label__required">*</span> }
-	</Component>
-) );
+}, ref ) => {
+
+	const hasDangerouslySetInnerHTML = !! props?.dangerouslySetInnerHTML?.__html;
+
+	if ( hasDangerouslySetInnerHTML && requiredIndicator ) {
+		props.dangerouslySetInnerHTML.__html += '<span class="nfd-label__required">*</span>';
+	}
+
+	return hasDangerouslySetInnerHTML
+	?
+		(
+			<Component ref={ ref } className={ classNames( "nfd-label", className ) } { ...props } />
+		)
+	:
+		(
+			<Component ref={ ref } className={ classNames( "nfd-label", className ) } { ...props }>
+				{ label || children || null }
+				{ requiredIndicator && <span className="nfd-label__required">*</span> }
+			</Component>
+		)
+} );
 
 const propTypes = {
 	label: PropTypes.string,
@@ -34,6 +45,7 @@ const propTypes = {
 	as: PropTypes.elementType,
 	className: PropTypes.string,
 	required: PropTypes.bool,
+	requiredIndicator: PropTypes.bool,
 };
 
 Label.propTypes = propTypes;
@@ -45,6 +57,8 @@ Label.defaultProps = {
 	className: "",
 	requiredIndicator: false,
 };
+
+Label.displayName = "Label";
 
 
 // eslint-disable-next-line require-jsdoc

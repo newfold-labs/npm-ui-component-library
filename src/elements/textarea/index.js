@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import PropTypes from "prop-types";
-import { forwardRef } from "@wordpress/element";
+import { forwardRef } from "react";
 
 /**
  * @param {boolean} [disabled=false] Whether the input is disabled.
@@ -42,6 +42,8 @@ Textarea.defaultProps = {
 	cols: 20,
 	rows: 2,
 };
+
+Textarea.displayName = "Textarea";
 
 // eslint-disable-next-line require-jsdoc
 export const StoryComponent = props => <Textarea { ...props } />;

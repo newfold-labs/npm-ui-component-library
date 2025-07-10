@@ -1,4 +1,4 @@
-import { useState, useCallback, forwardRef } from "@wordpress/element";
+import { useState, useCallback, forwardRef } from "react";
 import { isEmpty, noop } from "lodash";
 import PropTypes from "prop-types";
 import classNames from "classnames";
@@ -121,6 +121,8 @@ FileInput.defaultProps = {
 };
 
 FileInput.propTypes = propTypes;
+
+FileInput.displayName = "FileInput";
 
 // eslint-disable-next-line require-jsdoc
 export const StoryComponent = props => <FileInput { ...props } />;

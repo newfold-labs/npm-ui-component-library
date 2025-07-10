@@ -13,3 +13,6 @@ storybook-git-repo
 
 # Misc
 .DS_Store
+
+# yalc
+/.yalc

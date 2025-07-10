@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Autocomplete from "../../elements/autocomplete";
 import { ValidationMessage } from "../../elements/validation";
 import { useDescribedBy } from "../../hooks";
-import { forwardRef } from "@wordpress/element";
+import { forwardRef } from "react";
 
 /**
  * @param {string} id Identifier.
@@ -65,6 +65,7 @@ AutocompleteField.defaultProps = {
 	validation: {},
 	className: "",
 };
+AutocompleteField.displayName = "AutocompleteField";
 
 AutocompleteField.Option = Autocomplete.Option;
 
@@ -74,6 +75,6 @@ AutocompleteField.Option.displayName = "AutocompleteField.Option";
 export const StoryComponent = props => <AutocompleteField { ...props } />;
 StoryComponent.propTypes = propTypes;
 StoryComponent.defaultProps = AutocompleteField.defaultProps;
-StoryComponent.displayName = "AutocompleteField";
+StoryComponent.displayName = AutocompleteField.displayName;
 
 export default AutocompleteField;

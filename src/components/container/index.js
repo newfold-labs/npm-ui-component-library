@@ -1,6 +1,6 @@
 import { PropTypes } from "prop-types";
 import classNames from "classnames";
-import { forwardRef } from "@wordpress/element";
+import { forwardRef } from "react";
 import Title from "../../elements/title";
 
 /**
@@ -118,7 +118,7 @@ const Footer = ( {
 	as: Component = "div",
 	children,
 	className = "",
-	...props 
+	...props
 } ) => (
 	<Component { ...props } className={ classNames( "nfd-container__footer", className ) }>
 		{ children }
@@ -149,9 +149,15 @@ Container.propTypes = {
 	className: PropTypes.string,
 };
 
+Container.defaultProps = {
+	as: "div",
+	className: "",
+};
+
 Container.Header = Header;
 Container.Block = Block;
 Container.SettingsField = SettingsField;
 Container.Footer = Footer;
+Container.displayName = "Container";
 
 export default Container;

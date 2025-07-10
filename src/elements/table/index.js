@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import PropTypes from "prop-types";
-import { forwardRef } from "@wordpress/element";
+import { forwardRef } from "react";
 
 const rowClassNameMap = {
 	variant: {
@@ -114,6 +114,12 @@ Table.propTypes = {
 	children: PropTypes.node.isRequired,
 	className: PropTypes.string,
 };
+
+Table.defaultProps = {
+	className: "",
+};
+
+Table.displayName = "Table";
 
 Table.Head = Head;
 Table.Head.displayName = "Table.Head";

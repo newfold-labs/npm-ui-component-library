@@ -1,4 +1,4 @@
-import { useMemo, forwardRef } from "@wordpress/element";
+import { useMemo, forwardRef } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
@@ -36,6 +36,8 @@ ProgressBar.propTypes = propTypes;
 ProgressBar.defaultProps = {
 	className: "",
 };
+
+ProgressBar.displayName = "ProgressBar";
 
 // eslint-disable-next-line require-jsdoc
 export const StoryComponent = props => <ProgressBar { ...props } />;

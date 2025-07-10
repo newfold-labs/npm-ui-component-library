@@ -1,4 +1,4 @@
-import { forwardRef, useCallback, useRef } from "@wordpress/element";
+import { forwardRef, useCallback, useRef } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import DropZone from "../../elements/drop-zone";
@@ -13,6 +13,7 @@ import Label from "../../elements/label";
  * @param {string} previewImageAlt Preview image alt.
  * @param {string} buttonText Button text.
  * @param {string} buttonVariant Button variant.
+ * @param {string} accept Accept.
  * @param {Function} onClick On click callback.
  * @param {Function} onChange On change callback.
  * @param {Function} onReset On reset callback.
@@ -34,6 +35,7 @@ const ImageImport = forwardRef( ( {
 	previewImageAlt,
 	buttonText,
 	buttonVariant,
+	accept,
 	onClick,
 	onChange,
 	onReset,
@@ -113,6 +115,7 @@ const ImageImport = forwardRef( ( {
 						variant={ imageInputVariant }
 						previewImage={ previewImage }
 						previewImageAlt={ previewImageAlt }
+						accept={ accept }
 						buttonText={ buttonText }
 						buttonVariant={ buttonVariant }
 						onClick={ onClick }
@@ -144,11 +147,13 @@ const ImageImport = forwardRef( ( {
 ImageImport.propTypes = {
 	id: PropTypes.string.isRequired,
 	name: PropTypes.string.isRequired,
+	imageInputVariant: PropTypes.string,
 	previewImageVariant: PropTypes.string,
 	previewImage: PropTypes.string,
 	previewImageAlt: PropTypes.string,
 	buttonText: PropTypes.string,
 	buttonVariant: PropTypes.string,
+	accept: PropTypes.string,
 	onClick: PropTypes.func,
 	onChange: PropTypes.func,
 	onReset: PropTypes.func,
@@ -156,11 +161,33 @@ ImageImport.propTypes = {
 	onError: PropTypes.func,
 	dropLabel: PropTypes.string,
 	disabled: PropTypes.bool,
-	accept: PropTypes.string,
 	isLoading: PropTypes.bool,
 	resetPreviewActionAriaLabel: PropTypes.string,
 	className: PropTypes.string,
 	children: PropTypes.node,
 };
+
+ImageImport.defaultProps = {
+	imageInputVariant: null,
+	previewImageVariant: "avatar",
+	previewImage: null,
+	previewImageAlt: "Selected image",
+	buttonText: "Select Image",
+	buttonVariant: "secondary",
+	accept: "image/*",
+	onClick: null,
+	onChange: null,
+	onReset: null,
+	onDrop: null,
+	onError: null,
+	dropLabel: "Select an image or drag and drop",
+	disabled: false,
+	isLoading: false,
+	resetPreviewActionAriaLabel: "Remove selected image",
+	className: "",
+	children: null,
+};
+
+ImageImport.displayName = "ImageImport";
 
 export default ImageImport;

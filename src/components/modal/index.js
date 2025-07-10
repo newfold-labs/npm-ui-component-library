@@ -1,6 +1,6 @@
-import { Dialog, Transition } from "@headlessui/react";
+import { Dialog, DialogPanel, DialogTitle, Description, Transition, TransitionChild, DialogBackdrop } from "@headlessui/react";
 import { XIcon } from "@heroicons/react/outline";
-import { forwardRef, Fragment } from "@wordpress/element";
+import { forwardRef, Fragment } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import { useSvgAria } from "../../hooks";
@@ -17,7 +17,7 @@ import { classNameMap as titleClassNameMap } from "../../elements/title";
  */
 const Title = forwardRef( ( { children, size, className, as, ...props }, ref ) => {
 	return (
-		<Dialog.Title
+		<DialogTitle
 			as={ as }
 			ref={ ref }
 			className={ classNames(
@@ -27,13 +27,14 @@ const Title = forwardRef( ( { children, size, className, as, ...props }, ref ) =
 			{ ...props }
 		>
 			{ children }
-		</Dialog.Title>
+		</DialogTitle>
 	);
 } );
 
 Title.defaultProps = {
 	className: "",
 	as: "h1",
+	size: "1",
 };
 
 Title.propTypes = {
@@ -42,6 +43,8 @@ Title.propTypes = {
 	children: PropTypes.node.isRequired,
 	as: PropTypes.elementType,
 };
+
+Title.displayName = "Modal.Title";
 
 /**
  * @param {JSX.node} children Contents of the modal.
@@ -56,7 +59,7 @@ const Panel = forwardRef( ( { children, className = "", hasCloseButton = true, c
 	const svgAriaProps = useSvgAria();
 
 	return (
-		<Dialog.Panel
+		<DialogPanel
 			ref={ ref }
 			className={ classNames( "nfd-modal__panel", className ) }
 			{ ...props }
@@ -72,7 +75,7 @@ const Panel = forwardRef( ( { children, className = "", hasCloseButton = true, c
 				</button>
 			</div> }
 			{ children }
-		</Dialog.Panel>
+		</DialogPanel>
 	);
 } );
 
@@ -82,6 +85,14 @@ Panel.propTypes = {
 	hasCloseButton: PropTypes.bool,
 	closeButtonScreenReaderText: PropTypes.string,
 };
+
+Panel.defaultProps = {
+	className: "",
+	hasCloseButton: true,
+	closeButtonScreenReaderText: "Close",
+};
+
+Panel.displayName = "Modal.Panel";
 
 export const classNameMap = {
 	position: {
@@ -101,18 +112,21 @@ export const classNameMap = {
  */
 const Modal = forwardRef( ( { isOpen, onClose, children, className = "", position = "center", ...props }, ref ) => (
 	<ModalContext.Provider value={ { isOpen, onClose } }>
-		<Transition.Root show={ isOpen } as={ Fragment }>
-			{ /* Using the `nfd-root` class here to get our styling within the portal. */ }
-			<Dialog
-				as="div"
-				ref={ ref }
-				className="nfd-root"
-				open={ isOpen }
-				onClose={ onClose }
-				{ ...props }
+		<Dialog
+			as="div"
+			ref={ ref }
+			className="nfd-root"
+			open={ isOpen }
+			onClose={ onClose }
+			{ ...props }
+		>
+			<Transition
+				as={ Fragment }
+				show={ isOpen }
+				appear
 			>
 				<div className={ classNames( "nfd-modal", classNameMap.position[ position ], className ) }>
-					<Transition.Child
+					<TransitionChild
 						as={ Fragment }
 						enter="nfd-ease-out nfd-duration-300"
 						enterFrom="nfd-opacity-0"
@@ -121,24 +135,25 @@ const Modal = forwardRef( ( { isOpen, onClose, children, className = "", positio
 						leaveFrom="nfd-opacity-100"
 						leaveTo="nfd-opacity-0"
 					>
-						<div className="nfd-modal__overlay" />
-					</Transition.Child>
-					<div className="nfd-modal__layout">
-						<Transition.Child
-							as={ Fragment }
-							enter="nfd-ease-out nfd-duration-300"
-							enterFrom="nfd-opacity-0 nfd-translate-y-4 sm:nfd-translate-y-0 sm:nfd-scale-95"
-							enterTo="nfd-opacity-100 nfd-translate-y-0 sm:nfd-scale-100"
-							leave="nfd-ease-in nfd-duration-200"
-							leaveFrom="nfd-opacity-100 nfd-translate-y-0 sm:nfd-scale-100"
-							leaveTo="nfd-opacity-0 nfd-translate-y-4 sm:nfd-translate-y-0 sm:nfd-scale-95"
-						>
+						<DialogBackdrop className="nfd-modal__overlay" />
+					</TransitionChild>
+
+					<TransitionChild
+						as={ Fragment }
+						enter="nfd-ease-out nfd-duration-300"
+						enterFrom="nfd-opacity-0 nfd-scale-95 nfd-translate-y-4 sm:nfd-translate-y-0 sm:nfd-scale-95"
+						enterTo="nfd-opacity-100 nfd-scale-100 nfd-translate-y-0 sm:nfd-scale-100"
+						leave="nfd-ease-in nfd-duration-200"
+						leaveFrom="nfd-opacity-100 nfd-scale-100 nfd-translate-y-0 sm:nfd-scale-100"
+						leaveTo="nfd-opacity-0 nfd-scale-95 nfd-translate-y-4 sm:nfd-translate-y-0 sm:nfd-scale-95"
+					>
+						<div className="nfd-modal__layout">
 							{ children }
-						</Transition.Child>
-					</div>
+						</div>
+					</TransitionChild>
 				</div>
-			</Dialog>
-		</Transition.Root>
+			</Transition>
+		</Dialog>
 	</ModalContext.Provider>
 ) );
 
@@ -150,12 +165,17 @@ Modal.propTypes = {
 	position: PropTypes.oneOf( Object.keys( classNameMap.position ) ),
 };
 
+Modal.defaultProps = {
+	className: "",
+	position: "center",
+};
+
 Modal.displayName = "Modal";
 Modal.Panel = Panel;
 Modal.Panel.displayName = "Modal.Panel";
 Modal.Title = Title;
 Modal.Title.displayName = "Modal.Title";
-Modal.Description = Dialog.Description;
+Modal.Description = Description;
 Modal.Description.displayName = "Modal.Description";
 
 export default Modal;

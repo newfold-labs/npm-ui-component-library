@@ -1,4 +1,4 @@
-import { useMemo } from "@wordpress/element";
+import { useMemo } from "react";
 import { reduce, values } from "lodash";
 
 /**
