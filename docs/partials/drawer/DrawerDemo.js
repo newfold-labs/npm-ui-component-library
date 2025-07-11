@@ -15,8 +15,11 @@ const DrawerDemo = ( {
 	 */
 	useEffect(() => {
 		if ( isOpen ) {
-			const htmlElement = document.querySelector("html.docs-wrapper");
-			htmlElement.style.paddingRight = "0px";
+			// Wrap in delay to prevent race condition with Headless UI
+			setTimeout(() => {
+				const htmlElement = document.querySelector("html.docs-wrapper");
+				htmlElement.style.paddingRight = "0px";
+			}, 50);
 		}
 	}, [ isOpen ]);
 
