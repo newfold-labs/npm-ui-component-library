@@ -1,6 +1,6 @@
-import { Dialog, DialogPanel, DialogTitle, Description, Transition, TransitionChild, DialogBackdrop } from "@headlessui/react";
+import { Dialog, DialogPanel, DialogTitle, Description, DialogBackdrop } from "@headlessui/react";
 import { XIcon } from "@heroicons/react/outline";
-import { forwardRef, Fragment } from "react";
+import { forwardRef } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import { useSvgAria } from "../../hooks";
@@ -61,7 +61,8 @@ const Panel = forwardRef( ( { children, className = "", hasCloseButton = true, c
 	return (
 		<DialogPanel
 			ref={ ref }
-			className={ classNames( "nfd-modal__panel", className ) }
+			transition
+			className={ classNames( "nfd-modal__panel nfd-transition nfd-ease-out data-[closed]:nfd-scale-95 data-[closed]:nfd-opacity-0 data-[enter]:nfd-duration-300 data-[leave]:nfd-duration-200", className ) }
 			{ ...props }
 		>
 			{ hasCloseButton && <div className="nfd-modal__close">
@@ -120,39 +121,14 @@ const Modal = forwardRef( ( { isOpen, onClose, children, className = "", positio
 			onClose={ onClose }
 			{ ...props }
 		>
-			<Transition
-				as={ Fragment }
-				show={ isOpen }
-				appear
-			>
-				<div className={ classNames( "nfd-modal", classNameMap.position[ position ], className ) }>
-					<TransitionChild
-						as={ Fragment }
-						enter="nfd-ease-out nfd-duration-300"
-						enterFrom="nfd-opacity-0"
-						enterTo="nfd-opacity-100"
-						leave="nfd-ease-in nfd-duration-200"
-						leaveFrom="nfd-opacity-100"
-						leaveTo="nfd-opacity-0"
-					>
-						<DialogBackdrop className="nfd-modal__overlay" />
-					</TransitionChild>
-
-					<TransitionChild
-						as={ Fragment }
-						enter="nfd-ease-out nfd-duration-300"
-						enterFrom="nfd-opacity-0 nfd-scale-95 nfd-translate-y-4 sm:nfd-translate-y-0 sm:nfd-scale-95"
-						enterTo="nfd-opacity-100 nfd-scale-100 nfd-translate-y-0 sm:nfd-scale-100"
-						leave="nfd-ease-in nfd-duration-200"
-						leaveFrom="nfd-opacity-100 nfd-scale-100 nfd-translate-y-0 sm:nfd-scale-100"
-						leaveTo="nfd-opacity-0 nfd-scale-95 nfd-translate-y-4 sm:nfd-translate-y-0 sm:nfd-scale-95"
-					>
-						<div className="nfd-modal__layout">
-							{ children }
-						</div>
-					</TransitionChild>
+			<div className={ classNames( "nfd-modal", classNameMap.position[ position ], className ) }>
+				<DialogBackdrop
+					transition
+					className="nfd-modal__overlay nfd-transition nfd-ease-out data-[closed]:nfd-opacity-0 data-[enter]:nfd-duration-300 data-[leave]:nfd-duration-200" />
+				<div className="nfd-modal__layout">
+					{ children }
 				</div>
-			</Transition>
+			</div>
 		</Dialog>
 	</ModalContext.Provider>
 ) );
