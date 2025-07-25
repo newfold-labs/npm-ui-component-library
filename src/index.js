@@ -23,6 +23,7 @@ export { default as Toggle } from "./elements/toggle";
 export { ValidationIcon, ValidationInput, ValidationMessage } from "./elements/validation";
 
 export { default as AutocompleteField } from "./components/autocomplete-field";
+export { default as BrandLogo } from "./components/brand-logo";
 export { default as Card } from "./components/card";
 export { default as CheckboxGroup } from "./components/checkbox-group";
 export { default as ChildrenLimiter } from "./components/children-limiter";
