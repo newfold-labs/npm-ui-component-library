@@ -39,13 +39,10 @@ const PriceField = forwardRef( ( {
 									...props
 								}, ref ) => {
 
-	const { ids, describedBy } = useDescribedBy( id, { validation: validation?.message, description } );
-	const [ price, setPrice ] = useState( props?.value || '' );
-
-	const validatePrice = (e) => {
+	const validatePrice = (price) => {
 
 		let number   = parseFloat(
-				e.target.value
+				price
 					.replace( new RegExp(`[^0-9${format.decimalSeparator}]`, 'gm'), '' )
 					.replace( format.decimalSeparator, '.' )
 			),
@@ -54,7 +51,7 @@ const PriceField = forwardRef( ( {
 		if ( ! isNaN( number ) ) {
 			// Check if the original value contains the decimal separator character, and preserve it in the formatted value as well.
 			// This is because parseFloat removes it, making it impossible to enter a decimal number.
-			let hasDecimal = -1 !== e.target.value.indexOf( format.decimalSeparator );
+			let hasDecimal = -1 !== price.indexOf( format.decimalSeparator );
 
 			// Convert to string.
 			number = number + '';
@@ -69,8 +66,21 @@ const PriceField = forwardRef( ( {
 			formatted += hasDecimal ? format.decimalSeparator + decimals.slice( 0, format.decimals ) : '';
 		}
 
-		setPrice(formatted);
+		return formatted;
 	}
+
+	const handleInputChange = (e) => {
+		e.preventDefault();
+
+		setPrice( validatePrice( e.target.value ) );
+
+		if ( typeof onChange === 'function' ){
+			onChange(e);
+		}
+	}
+
+	const { ids, describedBy } = useDescribedBy( id, { validation: validation?.message, description } );
+	const [ price, setPrice ] = useState( validatePrice( props?.value || '' ) );
 
 	return (
 		<div
@@ -100,7 +110,7 @@ const PriceField = forwardRef( ( {
 				ref={ ref }
 				id={ id }
 				icon={ icon }
-				onChange={ validatePrice }
+				onChange={ handleInputChange }
 				disabled={ disabled }
 				readOnly={ readOnly }
 				required={ required }
