@@ -1,0 +1,36 @@
+@layer components {
+	.nfd-root {
+		.nfd-price-field--disabled {
+			.nfd-price-field__label,
+			.nfd-price-field__description {
+				@apply nfd-opacity-50;
+			}
+
+			.nfd-price-field__label {
+				@apply nfd-cursor-not-allowed;
+			}
+		}
+
+		.nfd-price-field--read-only {
+			.nfd-price-field__label {
+				@apply nfd-cursor-default;
+			}
+		}
+
+		.nfd-price-field__description {
+			@apply nfd-mt-2;
+		}
+
+		.nfd-price-field__validation {
+			@apply nfd-mt-2;
+		}
+
+		.nfd-price-field__validation {
+			@apply nfd-mt-2;
+		}
+
+		.nfd-price-field__input.nfd-price-field--input-with-icon{
+			@apply nfd-pr-[calc(1.25rem+24px)];
+		}
+	}
+}
