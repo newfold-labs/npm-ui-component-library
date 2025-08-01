@@ -36,6 +36,7 @@ const PriceField = forwardRef( ( {
 									description,
 									validation,
 									format,
+									value,
 									...props
 								}, ref ) => {
 
@@ -80,7 +81,7 @@ const PriceField = forwardRef( ( {
 	}
 
 	const { ids, describedBy } = useDescribedBy( id, { validation: validation?.message, description } );
-	const [ price, setPrice ] = useState( validatePrice( props?.value || '' ) );
+	const [ price, setPrice ] = useState( validatePrice( value ) );
 
 	return (
 		<div
@@ -147,6 +148,7 @@ const propTypes = {
 	className: PropTypes.string,
 	description: PropTypes.node,
 	icon: PropTypes.elementType,
+	value: PropTypes.string,
 	validation: PropTypes.shape( {
 		variant: PropTypes.string,
 		message: PropTypes.node,
@@ -165,10 +167,11 @@ PriceField.defaultProps = {
 	disabled: false,
 	readOnly: false,
 	required: false,
-	className: "",
+	className: '',
 	description: null,
 	icon: null,
 	validation: {},
+	value: '',
 	format: {
 		decimals: 2,
 		decimalSeparator: '.',
