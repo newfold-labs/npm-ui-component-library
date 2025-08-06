@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
-import { useNavigationContext } from "./index";
+import { useNavigationContext } from "../../hooks";
 
 /**
  * @param {JSX.node} label The label.
