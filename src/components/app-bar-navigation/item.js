@@ -17,6 +17,7 @@ const Item = ( {
 	icon: Icon = null,
 	label,
 	children,
+	className,
 	...props
 } ) => {
 	const { activePath, setMobileMenuOpen } = useNavigationContext();
@@ -32,13 +33,19 @@ const Content = () => (
 );
 
 	return (
-		<li className="nfd-flex nfd-items-center nfd-justify-center nfd-h-full nfd-m-0 nfd-p-0">
+		<li className={ classNames(
+			'nfd-appbar-item nfd-group nfd-flex nfd-items-center nfd-justify-center nfd-h-full nfd-m-0 nfd-p-0',
+			{
+				'nfd-appbar-item--active' : activePath === props[ pathProp ]
+			}
+		) }>
 			<Component
 				className={ classNames(
 					'nfd-flex nfd-items-center nfd-h-full nfd-px-3 nfd-py-2 nfd-text-sm nfd-font-medium nfd-no-underline focus:nfd-outline-none focus:nfd-ring-transparent',
 					activePath === props[ pathProp ]
 						? 'nfd-bg-slate-200 nfd-text-slate-900'
 						: 'nfd-text-slate-600 hover:nfd-text-slate-900 hover:nfd-bg-slate-50',
+					className
 				) }
 				aria-current={ activePath === props[ pathProp ] ? 'page' : null }
 				onClick={ handleClick }
