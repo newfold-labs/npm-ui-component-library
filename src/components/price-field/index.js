@@ -39,8 +39,8 @@ const PriceField = forwardRef( ( {
 									 value,
 									 ...props
 								 }, ref ) => {
-	const { ids, describedBy } = useDescribedBy( id, { validation: validation?.message, description } );
 	const [ price, setPrice ] = useState( "" );
+	const { ids, describedBy } = useDescribedBy( id, { validation: validation?.message, description } );
 
 	/**
 	 * Validate and format given price
