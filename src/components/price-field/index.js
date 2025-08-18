@@ -1,4 +1,4 @@
-import { forwardRef, useState } from "react";
+import { forwardRef, useEffect, useState, useCallback } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import Label from "../../elements/label";
@@ -23,65 +23,78 @@ import { useDescribedBy } from "../../hooks";
  * @returns {JSX.Element} The input field.
  */
 const PriceField = forwardRef( ( {
-									id,
-									onChange,
-									label,
-									labelSuffix,
-									labelRequiredIndicator,
-									disabled,
-									readOnly,
-									required,
-									icon,
-									className,
-									description,
-									validation,
-									format,
-									value,
-									...props
-								}, ref ) => {
+									 id,
+									 onChange,
+									 label,
+									 labelSuffix,
+									 labelRequiredIndicator,
+									 disabled,
+									 readOnly,
+									 required,
+									 icon,
+									 className,
+									 description,
+									 validation,
+									 format,
+									 value,
+									 ...props
+								 }, ref ) => {
+	const { ids, describedBy } = useDescribedBy( id, { validation: validation?.message, description } );
+	const [ price, setPrice ] = useState( "" );
 
-	const validatePrice = (price) => {
+	/**
+	 * Validate and format given price
+	 *
+	 * @param {string|number} priceToValidate - The price to validate
+	 * @returns {string} Validated and formatted price.
+	 */
+	const validatePrice = ( priceToValidate )=> {
+		// Price to validate must be a string.
+		priceToValidate = priceToValidate.toString();
 
-		let number   = parseFloat(
-				price
-					.replace( new RegExp(`[^0-9${format.decimalSeparator}]`, 'gm'), '' )
-					.replace( format.decimalSeparator, '.' )
-			),
-			formatted = '';
+		const number = parseFloat(
+			priceToValidate
+				.replace( new RegExp( `[^0-9${ format.decimalSeparator }]`, "gm" ), "" )
+				.replace( format.decimalSeparator, "." ),
+		);
+
+		let formatted = "";
 
 		if ( ! isNaN( number ) ) {
 			// Check if the original value contains the decimal separator character, and preserve it in the formatted value as well.
 			// This is because parseFloat removes it, making it impossible to enter a decimal number.
-			let hasDecimal = -1 !== price.indexOf( format.decimalSeparator );
+			const hasDecimal = -1 !== priceToValidate.indexOf( format.decimalSeparator );
 
-			// Convert to string.
-			number = number + '';
-
-			let [thousands = '', decimals = ''] = number.split('.'),
-				mod = thousands.length > 3 ? thousands.length % 3 : 0;
+			const [ thousands = "", decimals = "" ] = number.toString().split( "." );
+			const mod = thousands.length > 3 ? thousands.length % 3 : 0;
 
 			// Format thousands.
-			formatted = (mod ? thousands.slice(0, mod) + format.thousandSeparator : '') + thousands.slice(mod).replace(/(\d{3})(?=\d)/g, "$1" + format.thousandSeparator);
+			formatted = ( mod ? thousands.slice( 0, mod ) + format.thousandSeparator : "" ) + thousands.slice( mod ).replace( /(\d{3})(?=\d)/g, "$1" + format.thousandSeparator );
 
 			// Format decimals.
-			formatted += hasDecimal ? format.decimalSeparator + decimals.slice( 0, format.decimals ) : '';
+			formatted += hasDecimal ? format.decimalSeparator + decimals.slice( 0, format.decimals ) : "";
 		}
 
 		return formatted;
-	}
+	};
 
-	const handleInputChange = (e) => {
+	useEffect( () => {
+		setPrice( validatePrice( value ) );
+	}, [ value ] );
+
+	const handleInputChange = useCallback( ( e ) => {
 		e.preventDefault();
+
+		if ( readOnly || disabled ) {
+			return false;
+		}
 
 		setPrice( validatePrice( e.target.value ) );
 
-		if ( typeof onChange === 'function' ){
-			onChange(e);
+		if ( typeof onChange === "function" ) {
+			onChange( e );
 		}
-	}
-
-	const { ids, describedBy } = useDescribedBy( id, { validation: validation?.message, description } );
-	const [ price, setPrice ] = useState( validatePrice( value ) );
+	}, [ readOnly, disabled, onChange ] );
 
 	return (
 		<div
@@ -123,7 +136,7 @@ const PriceField = forwardRef( ( {
 				) }
 				aria-describedby={ describedBy }
 				validation={ validation }
-				value={price}
+				value={ price }
 				{ ...props }
 			/>
 			{ validation?.message && (
@@ -167,16 +180,16 @@ PriceField.defaultProps = {
 	disabled: false,
 	readOnly: false,
 	required: false,
-	className: '',
+	className: "",
 	description: null,
 	icon: null,
 	validation: {},
-	value: '',
+	value: "",
 	format: {
 		decimals: 2,
-		decimalSeparator: '.',
-		thousandSeparator: '',
-	}
+		decimalSeparator: ".",
+		thousandSeparator: "",
+	},
 };
 
 PriceField.displayName = "PriceField";

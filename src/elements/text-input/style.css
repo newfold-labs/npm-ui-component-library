@@ -17,20 +17,19 @@
 			focus:nfd-border-primary-500;
 		}
 
-		.nfd-text-input--disabled {
-			@apply
-			nfd-opacity-50
-			nfd-cursor-not-allowed
-			focus:nfd-ring-0;
-		}
-
-		.nfd-text-input--read-only {
+		.nfd-text-input--read-only, .nfd-text-input--disabled {
 			@apply
 			nfd-border-slate-200
 			nfd-shadow-none
 			nfd-text-slate-500
 			nfd-bg-slate-50
 			nfd-cursor-default;
+		}
+
+		.nfd-text-input--disabled {
+			@apply
+			nfd-cursor-not-allowed
+			focus:nfd-ring-0;
 		}
 	}
 }
