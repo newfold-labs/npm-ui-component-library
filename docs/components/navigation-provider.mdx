@@ -1,0 +1,131 @@
+import { Root as NewfoldRoot, NavigationProvider, AppBarNavigation, SidebarNavigation } from "@newfold/ui-component-library";
+
+# Navigation Provider
+
+A context provider component that manages navigation state for `AppBarNavigation` and `SidebarNavigation` components. The `NavigationProvider` allows these components to share navigation state and work together seamlessly.
+
+<NewfoldRoot>
+    <NavigationProvider activePath="/dashboard">
+        <AppBarNavigation>
+            <AppBarNavigation.AppBar>
+                <AppBarNavigation.Item
+                    label="Dashboard"
+                    href="/dashboard"
+                />
+                <AppBarNavigation.Item
+                    label="Settings"
+                    href="/settings"
+                />
+            </AppBarNavigation.AppBar>
+        </AppBarNavigation>
+    </NavigationProvider>
+</NewfoldRoot>
+
+---
+### Usage
+```jsx
+import { NavigationProvider, AppBarNavigation, SidebarNavigation } from "@newfold/ui-component-library";
+
+<NavigationProvider activePath="/dashboard">
+    <AppBarNavigation>
+        <AppBarNavigation.AppBar>
+            <AppBarNavigation.Item
+                label="Dashboard"
+                href="/dashboard"
+            />
+            <AppBarNavigation.Item
+                label="Settings"
+                href="/settings"
+            />
+        </AppBarNavigation.AppBar>
+    </AppBarNavigation>
+    
+    <SidebarNavigation>
+        <SidebarNavigation.Sidebar>
+            <SidebarNavigation.MenuItem
+                id="dashboard"
+                label="Dashboard"
+            >
+                <SidebarNavigation.SubmenuItem
+                    label="Overview"
+                    href="/dashboard"
+                />
+            </SidebarNavigation.MenuItem>
+        </SidebarNavigation.Sidebar>
+    </SidebarNavigation>
+</NavigationProvider>
+```
+
+---
+### Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `activePath` | `string` | `""` | The initial active navigation path |
+| `children` | `node` | - | The child components that will have access to the navigation context |
+
+---
+### Context Value
+
+The `NavigationProvider` provides the following context value:
+
+#### `activePath`
+- **Type**: `string`
+- **Description**: The current active navigation path
+
+#### `setActivePath`
+- **Type**: `function`
+- **Description**: Function to update the active navigation path
+
+#### `isMobileMenuOpen`
+- **Type**: `boolean`
+- **Description**: Whether the mobile navigation menu is currently open
+
+#### `setMobileMenuOpen`
+- **Type**: `function`
+- **Description**: Function to control the mobile navigation menu open state
+
+---
+### Integration with Navigation Components
+
+The `NavigationProvider` is automatically used by both `AppBarNavigation` and `SidebarNavigation` components. When you use these components, they will automatically wrap themselves with the `NavigationProvider` if one is not already present in the component tree.
+
+This allows you to use the components independently:
+
+```jsx
+// AppBarNavigation automatically provides NavigationProvider
+<AppBarNavigation activePath="/dashboard">
+    <AppBarNavigation.AppBar>
+        <AppBarNavigation.Item label="Dashboard" href="/dashboard" />
+    </AppBarNavigation.AppBar>
+</AppBarNavigation>
+
+// SidebarNavigation automatically provides NavigationProvider
+<SidebarNavigation activePath="/dashboard">
+    <SidebarNavigation.Sidebar>
+        <SidebarNavigation.MenuItem id="dashboard" label="Dashboard">
+            <SidebarNavigation.SubmenuItem label="Overview" href="/dashboard" />
+        </SidebarNavigation.MenuItem>
+    </SidebarNavigation.Sidebar>
+</SidebarNavigation>
+```
+
+Or you can manually wrap multiple navigation components to share state:
+
+```jsx
+<NavigationProvider activePath="/dashboard">
+    <AppBarNavigation>
+        <AppBarNavigation.AppBar>
+            <AppBarNavigation.Item label="Dashboard" href="/dashboard" />
+        </AppBarNavigation.AppBar>
+    </AppBarNavigation>
+    
+    <SidebarNavigation>
+        <SidebarNavigation.Sidebar>
+            <SidebarNavigation.MenuItem id="dashboard" label="Dashboard">
+                <SidebarNavigation.SubmenuItem label="Overview" href="/dashboard" />
+            </SidebarNavigation.MenuItem>
+        </SidebarNavigation.Sidebar>
+    </SidebarNavigation>
+</NavigationProvider>
+```

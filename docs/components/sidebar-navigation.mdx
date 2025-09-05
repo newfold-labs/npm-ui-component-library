@@ -1,14 +1,8 @@
-import PropsTable from '@site/src/components/PropsTable';
 import { Root as NewfoldRoot, SidebarNavigation } from "@newfold/ui-component-library";
-import { sidebarNavigationProps } from '@site/docs/partials/sidebar-navigation';
-import { SidebarUsage, sidebarProps } from '@site/docs/partials/sidebar-navigation';
-import { MobileUsage, mobileProps } from '@site/docs/partials/sidebar-navigation';
-import { MenuItemUsage, menuItemProps } from '@site/docs/partials/sidebar-navigation';
-import { SubmenuItemUsage, submenuItemProps } from '@site/docs/partials/sidebar-navigation';
 
 # Sidebar Navigation
 A sidebar navigation component. The component contains the [`Sidebar`](#sidebar), [`Mobile`](#mobile),
-[`MenuItem`](#menuitem) and [`SubmenuItem`](#submenuitem) sub-components and also contains the [`useNavigationContext`](#usenavigationcontext) hook.
+[`MenuItem`](#menuitem) and [`SubmenuItem`](#submenuitem) sub-components and uses the [`NavigationProvider`](#navigationprovider) context for state management.
 
 <NewfoldRoot>
     <SidebarNavigation>
@@ -132,10 +126,6 @@ import { SidebarNavigation } from "@newfold/ui-component-library";
 </SidebarNavigation>
 ```
 
----
-### SidebarNavigation Props
-<PropsTable.Table docs={sidebarNavigationProps} />
-
 ## Sub-components
 The `SidebarNavigation` has the following sub-components [`Sidebar`](#sidebar), [`Mobile`](#mobile),
 [`MenuItem`](#menuitem) and [`SubmenuItem`](#submenuitem)
@@ -143,42 +133,37 @@ The `SidebarNavigation` has the following sub-components [`Sidebar`](#sidebar), 
 ---
 ### Sidebar
 The sub-component `SidebarNavigation.Sidebar` is a `<nav>` wrapper component.
-<SidebarUsage />
-
-#### Sidebar Props
-<PropsTable.Table docs={sidebarProps} />
 
 ---
 ### Mobile
 The sub-component `SidebarNavigation.Mobile` is a wrapper component over the
 `MenuItem` sub-components for mobile view.
-<MobileUsage />
-
-#### Mobile Props
-<PropsTable.Table docs={mobileProps} />
 
 ---
 ### MenuItem
 The sub-component `SidebarNavigation.MenuItem` is a top-level menu item that is used
 to group `SubmenuItem` sub-components.
-<MenuItemUsage />
-
-#### MenuItem Props
-<PropsTable.Table docs={menuItemProps} />
 
 ---
 ### SubmenuItem
 The `SidebarNavigation.SubmenuItem` renders the actual link to the desired page or destination.
-<SubmenuItemUsage />
-
-#### SubmenuItem Props
-<PropsTable.Table docs={submenuItemProps} />
 
 ---
+## NavigationProvider
+The `SidebarNavigation` component uses the `NavigationProvider` context to manage navigation state. This context provides the following properties:
+
+- `activePath` - The current active path.
+- `setActivePath` - Function to set the active path.
+- `isMobileMenuOpen` - A boolean indicating if the mobile menu is open.
+- `setMobileMenuOpen` - A function to set the mobile menu open state.
+
+The `NavigationProvider` is shared between `SidebarNavigation` and `AppBarNavigation` components, allowing them to work together seamlessly.
+
 ## useNavigationContext
-The `useNavigationContext` hook is used to provide the `SidebarNavigation` context.
+The `useNavigationContext` hook is used to access the `NavigationProvider` context.
 The context provides the following properties:
 
 - `activePath` - The current active path.
+- `setActivePath` - Function to set the active path.
 - `isMobileMenuOpen` - A boolean indicating if the mobile menu is open.
 - `setMobileMenuOpen` - A function to set the mobile menu open state.
