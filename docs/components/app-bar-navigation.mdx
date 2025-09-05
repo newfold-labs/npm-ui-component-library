@@ -1,0 +1,93 @@
+import PropsTable from '@site/src/components/PropsTable';
+import { Root as NewfoldRoot, AppBarNavigation } from "@newfold/ui-component-library";
+import { appBarNavigationProps } from '@site/docs/partials/app-bar-navigation';
+import { AppBarUsage, appBarProps } from '@site/docs/partials/app-bar-navigation';
+import { ItemUsage, itemProps } from '@site/docs/partials/app-bar-navigation';
+import { MobileUsage, mobileProps } from '@site/docs/partials/app-bar-navigation';
+
+# AppBar Navigation
+An app bar navigation component for horizontal navigation. The component contains the [`AppBar`](#appbar), [`Item`](#item), and [`Mobile`](#mobile) sub-components and uses the [`NavigationProvider`](#navigationprovider) context for state management.
+
+<NewfoldRoot>
+    <AppBarNavigation activePath="/dashboard">
+        <AppBarNavigation.AppBar position="sticky">
+            <AppBarNavigation.Item
+                label="Dashboard"
+                href="/dashboard"
+            />
+            <AppBarNavigation.Item
+                label="Settings"
+                href="/settings"
+            />
+            <AppBarNavigation.Item
+                label="Profile"
+                href="/profile"
+            />
+        </AppBarNavigation.AppBar>
+    </AppBarNavigation>
+</NewfoldRoot>
+
+---
+### Usage
+```jsx
+import { AppBarNavigation } from "@newfold/ui-component-library";
+
+<AppBarNavigation activePath="/dashboard">
+    <AppBarNavigation.AppBar position="sticky">
+        <AppBarNavigation.Item
+            label="Dashboard"
+            href="/dashboard"
+        />
+        <AppBarNavigation.Item
+            label="Settings"
+            href="/settings"
+        />
+        <AppBarNavigation.Item
+            label="Profile"
+            href="/profile"
+        />
+    </AppBarNavigation.AppBar>
+</AppBarNavigation>
+```
+
+---
+### AppBarNavigation Props
+<PropsTable.Table docs={appBarNavigationProps} />
+
+## Sub-components
+The `AppBarNavigation` has the following sub-components [`AppBar`](#appbar), [`Item`](#item), and [`Mobile`](#mobile)
+
+---
+### AppBar
+The sub-component `AppBarNavigation.AppBar` is a `<nav>` wrapper component that provides the horizontal navigation bar.
+<AppBarUsage />
+
+#### AppBar Props
+<PropsTable.Table docs={appBarProps} />
+
+---
+### Item
+The sub-component `AppBarNavigation.Item` renders individual navigation items with support for active states and icons.
+<ItemUsage />
+
+#### Item Props
+<PropsTable.Table docs={itemProps} />
+
+---
+### Mobile
+The sub-component `AppBarNavigation.Mobile` provides a mobile-friendly navigation experience with a hamburger menu and slide-out panel.
+<MobileUsage />
+
+#### Mobile Props
+<PropsTable.Table docs={mobileProps} />
+
+---
+## NavigationProvider
+The `AppBarNavigation` component uses the `NavigationProvider` context to manage navigation state. This context provides the following properties:
+
+- `activePath` - The current active path.
+- `setActivePath` - Function to set the active path.
+- `isMobileMenuOpen` - A boolean indicating if the mobile menu is open.
+- `setMobileMenuOpen` - A function to set the mobile menu open state.
+
+The `NavigationProvider` is shared between `AppBarNavigation` and `SidebarNavigation` components, allowing them to work together seamlessly.
