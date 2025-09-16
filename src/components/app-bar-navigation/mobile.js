@@ -1,8 +1,7 @@
-import { Dialog, DialogPanel } from "@headlessui/react";
-import { MenuAlt2Icon, XIcon } from "@heroicons/react/outline";
-import { useCallback } from "react";
-import PropTypes from "prop-types";
-import { useNavigationContext } from "../../hooks";
+
+import { useCallback } from 'react';
+import PropTypes from 'prop-types';
+import { useNavigationContext } from '../../hooks';
 
 /**
  * @param {JSX.node} children The menu items.
@@ -17,49 +16,36 @@ const Mobile = ( {
 	children,
 	openButtonId,
 	closeButtonId,
-	openButtonScreenReaderText = "Open",
-	closeButtonScreenReaderText = "Close",
-	"aria-label": ariaLabel,
+	openButtonScreenReaderText = 'Open',
+	closeButtonScreenReaderText = 'Close',
+	'aria-label': ariaLabel,
 } ) => {
 	const { isMobileMenuOpen, setMobileMenuOpen } = useNavigationContext();
 	const openMobileMenu = useCallback( () => setMobileMenuOpen( true ), [ setMobileMenuOpen ] );
 	const closeMobileMenu = useCallback( () => setMobileMenuOpen( false ), [ setMobileMenuOpen ] );
 
 	return <>
-		<Dialog className="nfd-root" open={ isMobileMenuOpen } onClose={ closeMobileMenu } aria-label={ ariaLabel }>
-			<div className="nfd-mobile-navigation__dialog">
-				<div className="nfd-fixed nfd-inset-0 nfd-bg-slate-600 nfd-bg-opacity-75 nfd-z-30" aria-hidden="true" />
-				<DialogPanel className="nfd-relative nfd-flex nfd-flex-1 nfd-flex-col nfd-max-w-xs nfd-w-full nfd-z-40 nfd-bg-slate-100">
-					<div className="nfd-absolute nfd-top-0 nfd-right-0 nfd--mr-14 nfd-p-1">
-						<button
-							id={ closeButtonId }
-							className="nfd-flex nfd-h-12 nfd-w-12 nfd-items-center nfd-justify-center nfd-rounded-full focus:nfd-outline-none nfd-bg-slate-600 focus:nfd-ring-2 focus:nfd-ring-inset focus:nfd-ring-primary-500"
-							onClick={ closeMobileMenu }
-						>
-							<span className="nfd-sr-only">{ closeButtonScreenReaderText }</span>
-							<XIcon className="nfd-h-6 nfd-w-6 nfd-text-white" />
-						</button>
-					</div>
-					<div className="nfd-flex-1 nfd-h-0 nfd-overflow-y-auto">
-						<nav className="nfd-h-full nfd-flex nfd-flex-col nfd-py-6 nfd-px-2">
-							{ children }
-						</nav>
-					</div>
-				</DialogPanel>
-			</div>
-		</Dialog>
-		<div className="nfd-mobile-navigation__top">
-			<div className="nfd-flex nfd-relative nfd-flex-shrink-0 nfd-h-16 nfd-z-10 nfd-bg-white nfd-border-b nfd-border-slate-200">
+		<dialog className="nfd-mobile-navigation__dialog nfd-flex" open={ isMobileMenuOpen } onClose={ closeMobileMenu } aria-label={ ariaLabel }>
+			<div className="nfd-absolute nfd-top-0 nfd-right-0 nfd--mr-14 nfd-p-1">
 				<button
-					id={ openButtonId }
-					className="nfd-px-4 nfd-border-r nfd-border-slate-200 nfd-text-slate-500 focus:nfd-outline-none focus:nfd-ring-2 focus:nfd-ring-inset focus:nfd-ring-primary-500"
-					onClick={ openMobileMenu }
+					id={ closeButtonId }
+					className="nfd-flex nfd-h-12 nfd-w-12 nfd-items-center nfd-justify-center nfd-rounded-full focus:nfd-outline-none nfd-bg-slate-600 focus:nfd-ring-2 focus:nfd-ring-inset focus:nfd-ring-primary-500"
+					onClick={ closeMobileMenu }
 				>
-					<span className="nfd-sr-only">{ openButtonScreenReaderText }</span>
-					<MenuAlt2Icon className="nfd-w-6 nfd-h-6" />
+					<span className="nfd-sr-only">{ closeButtonScreenReaderText }</span>
+					<XIcon className="nfd-h-6 nfd-w-6 nfd-text-white"/>
 				</button>
 			</div>
-		</div>
+			<div className="nfd-flex-1 nfd-h-0 nfd-overflow-y-auto">
+				<nav className="nfd-h-full nfd-flex nfd-flex-col nfd-py-6 nfd-px-2">
+					{ children }
+				</nav>
+			</div>
+		</dialog>
+		<nav className={ className } { ...props }>
+			<Bars3Icon className={'nfd-h-4'}/>
+			{ children }
+		</nav>
 	</>;
 };
 
@@ -69,7 +55,7 @@ Mobile.propTypes = {
 	closeButtonId: PropTypes.string,
 	openButtonScreenReaderText: PropTypes.string,
 	closeButtonScreenReaderText: PropTypes.string,
-	"aria-label": PropTypes.string,
+	'aria-label': PropTypes.string,
 };
 
 export default Mobile;
