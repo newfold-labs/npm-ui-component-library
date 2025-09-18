@@ -2,8 +2,8 @@
   "name": "@newfold/ui-component-library",
   "version": "2.0.0",
   "description": "A UI component library by Newfold Digital",
-  "main": "index.js",
-  "style": "css/style.css",
+  "main": "build/index.js",
+  "style": "build/css/style.css",
   "author": {
     "name": "Newfold Labs",
     "url": "https://github.com/newfold-labs"
@@ -21,7 +21,7 @@
     "build": "npm run clean:build && npm run build:js && npm run build:css && npm run copy:package-files",
     "build:js": "babel src --out-dir build --ignore \"src/**/*.stories.js\",\"src/**/stories.js\"",
     "build:css": "node ./scripts/build-css.js",
-    "copy:package-files": "cp README.md package.json build/",
+    "copy:package-files": "node ./scripts/prepare-build-package.js",
     "watch": "npm run watch:js & npm run watch:css",
     "watch:js": "npm run build:js -- --watch",
     "watch:css": "node ./scripts/watch-css.js",
