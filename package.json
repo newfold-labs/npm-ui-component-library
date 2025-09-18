@@ -2,8 +2,8 @@
   "name": "@newfold/ui-component-library",
   "version": "2.0.0",
   "description": "A UI component library by Newfold Digital",
-  "main": "index.js",
-  "style": "css/style.css",
+  "main": "build/index.js",
+  "style": "build/css/style.css",
   "author": {
     "name": "Newfold Labs",
     "url": "https://github.com/newfold-labs"
@@ -21,9 +21,9 @@
     "build": "npm run clean:build && npm run build:js && npm run build:css && npm run copy:package-files",
     "build:js": "babel src --out-dir build --ignore \"src/**/*.stories.js\",\"src/**/stories.js\"",
     "build:css": "node ./scripts/build-css.js",
-    "copy:package-files": "cp README.md package.json build/",
+    "copy:package-files": "node ./scripts/prepare-build-package.js",
     "watch": "npm run watch:js & npm run watch:css",
-    "watch:js": "npm run build:js --watch",
+    "watch:js": "npm run build:js -- --watch",
     "watch:css": "node ./scripts/watch-css.js",
     "test": "npm test:storyshots",
     "lint": "eslint src --max-warnings=0"
@@ -38,7 +38,6 @@
     "@babel/plugin-transform-runtime": "^7.22.9",
     "@babel/preset-react": "^7.22.0",
     "@mdx-js/react": "^2.1.5",
-    "@tailwindcss/forms": "^0.5.3",
     "@wordpress/babel-preset-default": "^8.26.0",
     "babel-loader": "^9.1.0",
     "eslint": "^8.57.1",
@@ -54,6 +53,7 @@
     "@headlessui/react": "^2.2.4",
     "@heroicons/react": "^1.0.6",
     "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/forms": "^0.5.10",
     "classnames": "^2.3.2",
     "lodash": "^4.17.21",
     "postcss-import": "^15.1.0",

@@ -1,0 +1,11 @@
+@layer components {
+	.nfd-root {
+		.nfd-mobile-navigation__top {
+			@apply nfd-sticky nfd-top-0 nfd-w-full nfd-z-50;
+		}
+
+		.nfd-mobile-navigation__dialog {
+			@apply nfd-fixed nfd-inset-0 nfd-flex nfd-z-50;
+		}
+	}
+}

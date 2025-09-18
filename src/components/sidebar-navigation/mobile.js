@@ -2,7 +2,7 @@ import { Dialog, DialogPanel } from "@headlessui/react";
 import { MenuAlt2Icon, XIcon } from "@heroicons/react/outline";
 import { useCallback } from "react";
 import PropTypes from "prop-types";
-import { useNavigationContext } from "./index";
+import { useNavigationContext } from "../../hooks";
 
 /**
  * @param {JSX.node} children The menu items.
