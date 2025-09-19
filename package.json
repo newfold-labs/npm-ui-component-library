@@ -41,7 +41,7 @@
     "@wordpress/babel-preset-default": "^8.26.0",
     "babel-loader": "^9.1.0",
     "eslint": "^8.57.1",
-    "eslint-config-yoast": "^5.1.0",
+    "eslint-config-yoast": "^6.0.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-react": "^7.31.11",
     "postcss": "^8.4.19",
