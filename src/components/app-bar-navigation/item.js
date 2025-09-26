@@ -36,13 +36,17 @@ const Item = ( {
 	);
 
 	return (
-		<li className={ classNames(
-			'nfd-appbar-item nfd-group nfd-flex nfd-items-center nfd-justify-center nfd-h-full nfd-m-0 nfd-p-0',
-			{
-				'nfd-appbar-item--active': activePath === props[ pathProp ]
-			}
-		) }>
+		<li
+			role="presentation"
+			className={ classNames(
+				'nfd-appbar-item nfd-group nfd-flex nfd-items-center nfd-justify-center nfd-h-full nfd-m-0 nfd-p-0',
+				{
+					'nfd-appbar-item--active': activePath === props[ pathProp ]
+				}
+			) 
+		}>
 			<Component
+				role="menuitem"
 				className={ classNames(
 					className,
 					'nfd-flex nfd-items-center nfd-h-full nfd-px-3 nfd-py-2 nfd-text-sm nfd-no-underline focus:nfd-outline-none focus:nfd-ring-transparent',
