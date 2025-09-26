@@ -31,6 +31,7 @@ const Mobile = ( {
 					id={ closeButtonId }
 					className="nfd-flex nfd-h-12 nfd-w-12 nfd-items-center nfd-justify-center nfd-rounded-full focus:nfd-outline-none nfd-bg-slate-600 focus:nfd-ring-2 focus:nfd-ring-inset focus:nfd-ring-primary-500"
 					onClick={ closeMobileMenu }
+					aria-haspopup="true"
 				>
 					<span className="nfd-sr-only">{ closeButtonScreenReaderText }</span>
 					<XIcon className="nfd-h-6 nfd-w-6 nfd-text-white"/>
