@@ -8,7 +8,7 @@ import { useAppBarContext } from './app-bar';
  * @param {string} position The CSS classname.
  * @returns {JSX.Element} The app bar element.
  */
-const AppBarNav = ( { className = '', children } ) => {
+const AppBarNav = ( { className = '', children, ...props } ) => {
 	const { mode, open } = useAppBarContext();
 	className = classnames(
 		'nfd-appbar-nav',
@@ -37,6 +37,7 @@ const AppBarNav = ( { className = '', children } ) => {
 						<ul
 							role="menubar"
 							className={ className }
+							{...props}
 						>
 							{ children }
 						</ul>
@@ -46,6 +47,7 @@ const AppBarNav = ( { className = '', children } ) => {
 				<ul
 					role="menubar"
 					className={ className }
+					{...props}
 				>
 					{ children }
 				</ul>

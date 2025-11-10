@@ -15,6 +15,8 @@ const ProgressBar = forwardRef( ( {
 	className,
 	...props
 }, ref ) => {
+	progress = Math.min( Math.max( progress, 0 ), 100 );
+	console.log({ min, max, progress } );
 	const percentage = useMemo( () => progress / ( max - min ) * 100, [ min, max, progress ] );
 
 	return (
