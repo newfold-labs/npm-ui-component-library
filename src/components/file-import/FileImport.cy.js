@@ -41,15 +41,24 @@ const dropFile = (selector, { name, type, content = 'x' }) => {
 }
 
 describe('<FileImport />', () => {
-	it('renders base structure and children', () => {
+	it('renders base structure in idle state', () => {
 		mountWith()
+
 		cy.get('.nfd-file-import').should('exist')
 		cy.get('.nfd-file-import__input').should('exist')
 		cy.contains('Drop here').should('exist')
-		cy.get('[data-cy="extra"]').should('exist')
+		cy.get('[data-cy="extra"]').should('not.exist')
+
 		cy.get('input[type="file"]')
 			.should('have.attr', 'aria-labelledby', 'Upload file')
 			.and('not.be.disabled')
+	})
+
+	it('renders feedback and children when status is not idle', () => {
+		mountWith({ status: FILE_IMPORT_STATUS.selected })
+
+		cy.get('.nfd-file-import__feedback').should('exist')
+		cy.get('[data-cy="extra"]').should('exist')
 	})
 
 	it('does not show feedback when status is idle', () => {

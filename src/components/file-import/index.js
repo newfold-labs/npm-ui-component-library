@@ -25,6 +25,7 @@ const FileImportContext = createContext( { status: FILE_IMPORT_STATUS.idle } );
 const useFileImportContext = () => useContext( FileImportContext );
 
 const statusIconTransitionProps = {
+	as: "div",
 	enter: "nfd-transition-opacity nfd-ease-in-out nfd-duration-1000 nfd-delay-200",
 	enterFrom: "nfd-opacity-0",
 	enterTo: "nfd-opacity-100",
@@ -47,6 +48,7 @@ const createStatusConditionalRender = ( status ) => {
 		const { status: currentStatus } = useFileImportContext();
 		return (
 			<Transition
+				as="div"
 				show={ currentStatus === status }
 				enter="nfd-transition-opacity nfd-ease-in-out nfd-duration-1000 nfd-delay-200"
 				enterFrom="nfd-opacity-0"
@@ -149,6 +151,7 @@ const FileImport = forwardRef( ( {
 					selectDescription={ selectDescription }
 				/>
 				<Transition
+					as="div"
 					show={ hasFeedback }
 					enter="nfd-transition-opacity nfd-ease-in-out nfd-duration-1000 nfd-delay-200"
 					enterFrom="nfd-opacity-0"
