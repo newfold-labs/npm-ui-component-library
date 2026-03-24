@@ -1,10 +1,10 @@
-import { useState, useCallback, forwardRef } from "react";
-import { isEmpty, noop } from "lodash";
-import PropTypes from "prop-types";
-import classNames from "classnames";
-import { DocumentAddIcon } from "@heroicons/react/outline";
+import { useState, useCallback, forwardRef } from 'react';
+import { isEmpty, noop } from 'lodash';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import { DocumentAddIcon } from '@heroicons/react/outline';
 
-import Link from "../link";
+import Link from '../link';
 
 /**
  * @param {string} id Id.
@@ -66,14 +66,17 @@ const FileInput = forwardRef( ( {
 			onDragLeave={ handleDragLeave }
 			onDragOver={ handleDragOver }
 			onDrop={ handleDrop }
-			className={ classNames( "nfd-file-input", {
-				"nfd-is-drag-over": isDragOver,
-				"nfd-is-disabled": disabled,
+			className={ classNames(
+				'nfd-file-input',
 				className,
-			} ) }
+				{
+					'nfd-is-drag-over': isDragOver,
+					'nfd-is-disabled': disabled,
+				}
+			) }
 		>
 			<div className="nfd-file-input__content">
-				<IconComponent className="nfd-file-input__icon" />
+				<IconComponent className="nfd-file-input__icon"/>
 				<div className="nfd-file-input__labels">
 					<input
 						ref={ ref }
@@ -113,21 +116,21 @@ const propTypes = {
 };
 
 FileInput.defaultProps = {
-	selectDescription: "",
+	selectDescription: '',
 	disabled: false,
 	iconAs: DocumentAddIcon,
-	className: "",
+	className: '',
 	onDrop: noop,
 };
 
 FileInput.propTypes = propTypes;
 
-FileInput.displayName = "FileInput";
+FileInput.displayName = 'FileInput';
 
 // eslint-disable-next-line require-jsdoc
 export const StoryComponent = props => <FileInput { ...props } />;
 StoryComponent.propTypes = propTypes;
 StoryComponent.defaultProps = FileInput.defaultProps;
-StoryComponent.displayName = "FileInput";
+StoryComponent.displayName = 'FileInput';
 
 export default FileInput;

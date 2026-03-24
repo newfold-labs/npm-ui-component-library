@@ -1,6 +1,6 @@
 @layer components {
 	.nfd-root {
-		.nfd-card {
+		& .nfd-card {
 			@apply
 			nfd-relative
 			nfd-flex
@@ -15,7 +15,7 @@
 			nfd-ease-in-out nfd-shadow-sm;
 		}
 
-		.nfd-card__header {
+		& .nfd-card__header {
 			@apply
 			nfd-relative
 			nfd-flex
@@ -28,11 +28,11 @@
 			nfd-p-6;
 		}
 
-		.nfd-card__content {
+		& .nfd-card__content {
 			@apply nfd-flex-grow;
 		}
 
-		.nfd-card__footer {
+		& .nfd-card__footer {
 			@apply
 			nfd-border-t
 			nfd-border-gray-200

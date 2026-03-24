@@ -1,6 +1,6 @@
 import { Listbox, ListboxButton, ListboxOption, ListboxOptions, Label as HeadlessUiLabel, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
-import { Fragment, useCallback, useMemo, forwardRef } from "react";
+import { Fragment, useCallback, useMemo, forwardRef, Children, isValidElement } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import { useSvgAria } from "../../hooks";
@@ -17,7 +17,7 @@ const optionPropType = {
  * @param {string} label Label.
  * @returns {JSX.Element} The option.
  */
-const Option = ( { value, label } ) => {
+const Option = ({ value, label }) => {
 	const svgAriaProps = useSvgAria();
 	const getClassName = useCallback( ( { active, selected } ) => classNames(
 		"nfd-select__option",
@@ -27,26 +27,50 @@ const Option = ( { value, label } ) => {
 
 	return (
 		<ListboxOption value={ value } className={ getClassName }>
-			{ ( { selected } ) => <>
-				<span className={ classNames( "nfd-select__option-label", selected && "nfd-font-semibold" ) }>
+			{({ selected }) => <>
+				<span className={ classNames("nfd-select__option-label", selected && "nfd-font-semibold") }>
 					{ label }
 				</span>
 				{ selected && (
 					<CheckIcon className="nfd-select__option-check" { ...svgAriaProps } />
 				) }
-			</> }
+			</>}
 		</ListboxOption>
 	);
 };
 
 Option.propTypes = optionPropType;
 
+const extractOptionsFromChildren = ( children ) => {
+	const out = [];
+	Children.forEach( children, ( child ) => {
+		if ( ! isValidElement( child ) ) return;
+
+		const isSelectOption =
+			child.type === Option ||
+			child.type?.displayName === 'Select.Option';
+
+		if ( isSelectOption ) {
+			const { value, label, ...rest } = child.props || {};
+			if ( typeof value !== 'undefined' && typeof label !== 'undefined' ) {
+				out.push( { value, label, ...rest } );
+			}
+			return;
+		}
+
+		if ( child.props?.children ) {
+			out.push( ...extractOptionsFromChildren( child.props.children ) );
+		}
+	} );
+	return out;
+};
+
 /**
  * @param {string} id Identifier.
- * @param {string} value Selected value.
+ * @param {string|number|boolean} value Selected value.
  * @param {{ value, label }[]} [options] Options to choose from.
- * @param {JSX.node} [children] Defer from the default options rendering.
- * @param {string} [selectedLabel] When using children instead of options, pass the label of the selected option.
+ * @param {JSX.node} [children] Defer/extend the default options rendering.
+ * @param {string} [selectedLabel] Optional override for button label.
  * @param {string} [label] Label.
  * @param {Object} [labelProps] Extra label props.
  * @param {JSX.node} [labelSuffix] Optional label suffix.
@@ -58,26 +82,35 @@ Option.propTypes = optionPropType;
  * @param {Object} [props] Any extra props.
  * @returns {JSX.Element} Select component.
  */
-const Select = forwardRef( ( {
-	id,
-	value,
-	options,
-	children,
-	selectedLabel,
-	label,
-	labelProps,
-	labelSuffix,
-	onChange,
-	disabled,
-	validation,
-	className,
-	buttonProps,
-	...props
-}, ref ) => {
-	const selectedOption = useMemo( () => (
-		// Default to first option if value is missing.
-		options.find( ( option ) => value === option?.value ) || options[ 0 ]
-	), [ value, options ] );
+const Select = forwardRef((
+	{
+		id,
+		value,
+		options,
+		children,
+		selectedLabel,
+		label,
+		labelProps,
+		labelSuffix,
+		onChange,
+		disabled,
+		validation,
+		className,
+		buttonProps,
+		...props
+	}, ref
+) => {
+	const childrenOptions = useMemo(() => extractOptionsFromChildren(children), [children]);
+
+	const mergedOptions = useMemo(
+		() => [...(options || []), ...childrenOptions],
+		[options, childrenOptions]
+	);
+
+	const selectedOption = useMemo(() => (
+		mergedOptions.find((option) => value === option?.value) || mergedOptions[0]
+	), [value, mergedOptions]);
+
 	const svgAriaProps = useSvgAria();
 
 	return (
@@ -120,7 +153,11 @@ const Select = forwardRef( ( {
 				leaveTo="nfd-transform nfd-scale-95 nfd-opacity-0"
 			>
 				<ListboxOptions className="nfd-select__options">
-					{ children || options.map( option => <Option key={ option.value } { ...option } /> ) }
+					{/* Render: prima le options da props, poi i children */}
+					{ (options || []).map((option) => (
+						<Option key={`prop-${option.value}`} { ...option } />
+					)) }
+					{ children }
 				</ListboxOptions>
 			</Transition>
 		</Listbox>

@@ -6,16 +6,16 @@ import classnames from 'classnames';
  * @param {string} position The CSS classname.
  * @returns {JSX.Element} The app bar element.
  */
-const AppBarNav = ({ className='', children }) => {
+const Actions = ({ className='', children, ...props }) => {
 	className = classnames(
 		'nfd-appbar-actions',
 		className,
 		'nfd-flex nfd-items-center nfd-gap-2 nfd-h-full nfd-w-full'
 	);
 
-	return <div className={ className }>
+	return <div className={ className } {...props}>
 		{ children }
 	</div>;
 };
 
-export default AppBarNav;
+export default Actions;
