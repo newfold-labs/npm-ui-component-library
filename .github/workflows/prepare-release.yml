@@ -28,6 +28,7 @@ permissions: {}
 jobs:
     prepare-release:
         runs-on: ubuntu-latest
+        timeout-minutes: 10
         permissions:
             contents: write       # Required for peter-evans/create-pull-request to push the release branch using GITHUB_TOKEN.
             pull-requests: write  # Required for peter-evans/create-pull-request to open the pull request using GITHUB_TOKEN.
