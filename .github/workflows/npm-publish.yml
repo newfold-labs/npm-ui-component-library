@@ -13,10 +13,16 @@ on:
         tags:
             - '*'
 
+# Disable permissions for all available scopes by default.
+# Any needed permissions should be configured at the job level.
+permissions: {}
+
 jobs:
     publish:
         name: Publish Package
         runs-on: ubuntu-latest
+        timeout-minutes: 15
+        permissions: {} # Checkout authenticates with NEWFOLD_ACCESS_TOKEN (PAT) and npm publish uses NODE_AUTH_TOKEN; GITHUB_TOKEN is not used to interact with any GitHub service.
         env:
             NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
         steps:
