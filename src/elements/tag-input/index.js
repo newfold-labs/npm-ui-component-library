@@ -86,9 +86,15 @@ const TagInput = forwardRef( ( {
 	...props
 }, ref ) => {
 	const [ text, setText ] = useState( "" );
+
+	// Get props name if passed and remove from props.
+	const inputName = props?.name || "";
+	delete props?.name
+
 	const handleChange = useCallback( event => {
 		isString( event?.target?.value ) && setText( event.target.value );
 	}, [ setText ] );
+
 	const handleKeyDown = useCallback( event => {
 		switch ( event.key ) {
 			case ",":
@@ -114,6 +120,7 @@ const TagInput = forwardRef( ( {
 				return true;
 		}
 	}, [ text, tags, setText, onAddTag ] );
+
 	const handleBlur = useCallback( event => {
 		if ( text.length > 0 ) {
 			onAddTag( text );
@@ -145,6 +152,7 @@ const TagInput = forwardRef( ( {
 				onBlur={ handleBlur }
 				value={ text }
 			/>
+			{inputName && <input type="hidden" readOnly name={inputName} value={JSON.stringify(tags)} /> }
 		</div>
 	);
 } );
